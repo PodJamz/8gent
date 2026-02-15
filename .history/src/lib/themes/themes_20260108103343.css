@@ -1,0 +1,995 @@
+/* Theme CSS Variables - Based on tweakcn themes */
+/* Each theme defines HSL values and font families for consistent theming */
+
+/* Utilitarian - Tactical briefing document aesthetic */
+/* Inspired by Atlas Tactical AI Laboratory design */
+[data-design-theme="utilitarian"] {
+  --theme-background: 45 30% 92%;
+  --theme-foreground: 0 0% 0%;
+  --theme-card: 45 35% 95%;
+  --theme-card-foreground: 0 0% 0%;
+  --theme-primary: 15 85% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 45 20% 85%;
+  --theme-secondary-foreground: 0 0% 0%;
+  --theme-muted: 45 15% 88%;
+  --theme-muted-foreground: 0 0% 35%;
+  --theme-accent: 15 85% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 0%;
+  --theme-ring: 15 85% 55%;
+  --theme-font: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+  --theme-font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Base/Default Theme */
+[data-design-theme="base"] {
+  --theme-background: 0 0% 100%;
+  --theme-foreground: 222.2 84% 4.9%;
+  --theme-card: 0 0% 100%;
+  --theme-card-foreground: 222.2 84% 4.9%;
+  --theme-primary: 222.2 47.4% 11.2%;
+  --theme-primary-foreground: 210 40% 98%;
+  --theme-secondary: 210 40% 96.1%;
+  --theme-secondary-foreground: 222.2 47.4% 11.2%;
+  --theme-muted: 210 40% 96.1%;
+  --theme-muted-foreground: 215.4 16.3% 46.9%;
+  --theme-accent: 210 40% 96.1%;
+  --theme-accent-foreground: 222.2 47.4% 11.2%;
+  --theme-border: 214.3 31.8% 91.4%;
+  --theme-ring: 222.2 84% 4.9%;
+  --theme-font: Inter, system-ui, -apple-system, sans-serif;
+  --theme-font-heading: Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* Claude Theme - Warm orange/terracotta */
+[data-design-theme="claude"] {
+  --theme-background: 30 20% 98%;
+  --theme-foreground: 20 14% 10%;
+  --theme-card: 30 30% 96%;
+  --theme-card-foreground: 20 14% 10%;
+  --theme-primary: 24 90% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 30 20% 90%;
+  --theme-secondary-foreground: 20 14% 20%;
+  --theme-muted: 30 15% 92%;
+  --theme-muted-foreground: 20 10% 40%;
+  --theme-accent: 24 80% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 30 20% 85%;
+  --theme-ring: 24 90% 55%;
+  --theme-font: "Söhne", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --theme-font-heading: "Söhne", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* ChatGPT Theme - OpenAI dark interface */
+[data-design-theme="chatgpt"] {
+  --theme-background: 220 13% 10%;
+  --theme-foreground: 0 0% 95%;
+  --theme-card: 220 13% 13%;
+  --theme-card-foreground: 0 0% 95%;
+  --theme-primary: 160 84% 39%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 220 13% 18%;
+  --theme-secondary-foreground: 0 0% 85%;
+  --theme-muted: 220 13% 15%;
+  --theme-muted-foreground: 0 0% 55%;
+  --theme-accent: 160 84% 39%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 13% 20%;
+  --theme-ring: 160 84% 39%;
+  --theme-font: "Söhne", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --theme-font-heading: "Söhne", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* Vercel Theme - Clean black and white with Geist */
+[data-design-theme="vercel"] {
+  --theme-background: 0 0% 0%;
+  --theme-foreground: 0 0% 100%;
+  --theme-card: 0 0% 4%;
+  --theme-card-foreground: 0 0% 100%;
+  --theme-primary: 0 0% 100%;
+  --theme-primary-foreground: 0 0% 0%;
+  --theme-secondary: 0 0% 10%;
+  --theme-secondary-foreground: 0 0% 90%;
+  --theme-muted: 0 0% 8%;
+  --theme-muted-foreground: 0 0% 60%;
+  --theme-accent: 0 0% 100%;
+  --theme-accent-foreground: 0 0% 0%;
+  --theme-border: 0 0% 15%;
+  --theme-ring: 0 0% 100%;
+  --theme-font: "Geist", Inter, system-ui, -apple-system, sans-serif;
+  --theme-font-heading: "Geist", Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* Kodama Grove - Forest green nature */
+[data-design-theme="kodama-grove"] {
+  --theme-background: 120 20% 97%;
+  --theme-foreground: 120 30% 10%;
+  --theme-card: 120 25% 94%;
+  --theme-card-foreground: 120 30% 10%;
+  --theme-primary: 142 70% 35%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 120 20% 88%;
+  --theme-secondary-foreground: 120 30% 15%;
+  --theme-muted: 120 15% 90%;
+  --theme-muted-foreground: 120 15% 40%;
+  --theme-accent: 142 60% 40%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 120 20% 82%;
+  --theme-ring: 142 70% 35%;
+  --theme-font: "Nunito", "Quicksand", system-ui, sans-serif;
+  --theme-font-heading: "Nunito", "Quicksand", system-ui, sans-serif;
+}
+
+/* Vintage Paper - Sepia/aged paper look */
+[data-design-theme="vintage-paper"] {
+  --theme-background: 40 30% 95%;
+  --theme-foreground: 30 20% 15%;
+  --theme-card: 40 35% 92%;
+  --theme-card-foreground: 30 20% 15%;
+  --theme-primary: 30 50% 35%;
+  --theme-primary-foreground: 40 30% 95%;
+  --theme-secondary: 40 25% 85%;
+  --theme-secondary-foreground: 30 20% 20%;
+  --theme-muted: 40 20% 88%;
+  --theme-muted-foreground: 30 15% 45%;
+  --theme-accent: 30 60% 45%;
+  --theme-accent-foreground: 40 30% 95%;
+  --theme-border: 40 25% 78%;
+  --theme-ring: 30 50% 35%;
+  --theme-font: "Courier Prime", "Courier New", Courier, monospace;
+  --theme-font-heading: "Playfair Display", "Times New Roman", Georgia, serif;
+}
+
+/* Claymorphism - Soft shadows, rounded, clay-like */
+[data-design-theme="claymorphism"] {
+  --theme-background: 220 20% 97%;
+  --theme-foreground: 220 30% 15%;
+  --theme-card: 220 25% 94%;
+  --theme-card-foreground: 220 30% 15%;
+  --theme-primary: 220 80% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 220 20% 88%;
+  --theme-secondary-foreground: 220 30% 20%;
+  --theme-muted: 220 15% 90%;
+  --theme-muted-foreground: 220 15% 45%;
+  --theme-accent: 260 70% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 20% 85%;
+  --theme-ring: 220 80% 55%;
+  --theme-font: "Poppins", "Nunito Sans", system-ui, sans-serif;
+  --theme-font-heading: "Poppins", "Nunito Sans", system-ui, sans-serif;
+}
+
+/* Nature - Earth tones */
+[data-design-theme="nature"] {
+  --theme-background: 45 25% 96%;
+  --theme-foreground: 30 30% 12%;
+  --theme-card: 45 30% 92%;
+  --theme-card-foreground: 30 30% 12%;
+  --theme-primary: 85 50% 40%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 45 20% 85%;
+  --theme-secondary-foreground: 30 30% 18%;
+  --theme-muted: 45 15% 88%;
+  --theme-muted-foreground: 30 20% 45%;
+  --theme-accent: 30 60% 50%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 45 20% 78%;
+  --theme-ring: 85 50% 40%;
+  --theme-font: "Lora", "Merriweather", Georgia, serif;
+  --theme-font-heading: "Lora", "Merriweather", Georgia, serif;
+}
+
+/* Neo Brutalism - Bold, raw, high contrast */
+[data-design-theme="neo-brutalism"] {
+  --theme-background: 60 100% 97%;
+  --theme-foreground: 0 0% 0%;
+  --theme-card: 0 0% 100%;
+  --theme-card-foreground: 0 0% 0%;
+  --theme-primary: 0 0% 0%;
+  --theme-primary-foreground: 60 100% 97%;
+  --theme-secondary: 60 100% 85%;
+  --theme-secondary-foreground: 0 0% 0%;
+  --theme-muted: 60 50% 90%;
+  --theme-muted-foreground: 0 0% 30%;
+  --theme-accent: 350 100% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 0%;
+  --theme-ring: 0 0% 0%;
+  --theme-font: "Space Grotesk", "Space Mono", Impact, sans-serif;
+  --theme-font-heading: "Space Grotesk", Impact, "Arial Black", sans-serif;
+}
+
+/* Elegant Luxury - Gold and dark */
+[data-design-theme="elegant-luxury"] {
+  --theme-background: 30 10% 8%;
+  --theme-foreground: 40 50% 90%;
+  --theme-card: 30 10% 12%;
+  --theme-card-foreground: 40 50% 90%;
+  --theme-primary: 45 90% 55%;
+  --theme-primary-foreground: 30 10% 8%;
+  --theme-secondary: 30 10% 18%;
+  --theme-secondary-foreground: 40 40% 80%;
+  --theme-muted: 30 8% 20%;
+  --theme-muted-foreground: 40 20% 55%;
+  --theme-accent: 45 100% 60%;
+  --theme-accent-foreground: 30 10% 8%;
+  --theme-border: 30 15% 25%;
+  --theme-ring: 45 90% 55%;
+  --theme-font: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+  --theme-font-heading: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+}
+
+/* Pastel Dreams - Soft pastels */
+[data-design-theme="pastel-dreams"] {
+  --theme-background: 300 30% 98%;
+  --theme-foreground: 280 20% 20%;
+  --theme-card: 300 40% 95%;
+  --theme-card-foreground: 280 20% 20%;
+  --theme-primary: 280 60% 70%;
+  --theme-primary-foreground: 280 20% 15%;
+  --theme-secondary: 200 50% 90%;
+  --theme-secondary-foreground: 280 20% 25%;
+  --theme-muted: 300 25% 92%;
+  --theme-muted-foreground: 280 15% 45%;
+  --theme-accent: 340 60% 75%;
+  --theme-accent-foreground: 280 20% 15%;
+  --theme-border: 300 30% 85%;
+  --theme-ring: 280 60% 70%;
+  --theme-font: "Quicksand", "Comfortaa", system-ui, sans-serif;
+  --theme-font-heading: "Quicksand", "Comfortaa", system-ui, sans-serif;
+}
+
+/* Cosmic Night - Deep space purple/blue */
+[data-design-theme="cosmic-night"] {
+  --theme-background: 260 40% 8%;
+  --theme-foreground: 260 20% 95%;
+  --theme-card: 260 35% 12%;
+  --theme-card-foreground: 260 20% 95%;
+  --theme-primary: 280 80% 65%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 260 30% 18%;
+  --theme-secondary-foreground: 260 20% 85%;
+  --theme-muted: 260 25% 15%;
+  --theme-muted-foreground: 260 15% 55%;
+  --theme-accent: 200 100% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 260 25% 25%;
+  --theme-ring: 280 80% 65%;
+  --theme-font: "Orbitron", "Exo 2", system-ui, sans-serif;
+  --theme-font-heading: "Orbitron", "Exo 2", system-ui, sans-serif;
+}
+
+/* Clean Slate - Minimal gray */
+[data-design-theme="clean-slate"] {
+  --theme-background: 210 15% 98%;
+  --theme-foreground: 210 20% 15%;
+  --theme-card: 210 15% 95%;
+  --theme-card-foreground: 210 20% 15%;
+  --theme-primary: 210 100% 50%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 210 10% 90%;
+  --theme-secondary-foreground: 210 20% 20%;
+  --theme-muted: 210 10% 92%;
+  --theme-muted-foreground: 210 10% 45%;
+  --theme-accent: 210 90% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 210 15% 85%;
+  --theme-ring: 210 100% 50%;
+  --theme-font: "DM Sans", "Roboto", system-ui, sans-serif;
+  --theme-font-heading: "DM Sans", "Roboto", system-ui, sans-serif;
+}
+
+/* Caffeine - Coffee browns */
+[data-design-theme="caffeine"] {
+  --theme-background: 30 15% 95%;
+  --theme-foreground: 25 40% 12%;
+  --theme-card: 30 20% 90%;
+  --theme-card-foreground: 25 40% 12%;
+  --theme-primary: 25 70% 30%;
+  --theme-primary-foreground: 30 15% 95%;
+  --theme-secondary: 30 15% 82%;
+  --theme-secondary-foreground: 25 40% 18%;
+  --theme-muted: 30 12% 85%;
+  --theme-muted-foreground: 25 25% 40%;
+  --theme-accent: 15 80% 45%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 30 15% 75%;
+  --theme-ring: 25 70% 30%;
+  --theme-font: "Libre Baskerville", "Georgia", serif;
+  --theme-font-heading: "Libre Baskerville", "Georgia", serif;
+}
+
+/* Ocean Breeze - Cool blues */
+[data-design-theme="ocean-breeze"] {
+  --theme-background: 200 30% 97%;
+  --theme-foreground: 200 40% 12%;
+  --theme-card: 200 35% 93%;
+  --theme-card-foreground: 200 40% 12%;
+  --theme-primary: 200 90% 45%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 200 25% 85%;
+  --theme-secondary-foreground: 200 40% 18%;
+  --theme-muted: 200 20% 88%;
+  --theme-muted-foreground: 200 20% 42%;
+  --theme-accent: 180 70% 45%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 200 25% 78%;
+  --theme-ring: 200 90% 45%;
+  --theme-font: "Source Sans Pro", "Open Sans", system-ui, sans-serif;
+  --theme-font-heading: "Source Sans Pro", "Open Sans", system-ui, sans-serif;
+}
+
+/* Perpetuity - Monochrome elegance */
+[data-design-theme="perpetuity"] {
+  --theme-background: 0 0% 98%;
+  --theme-foreground: 0 0% 8%;
+  --theme-card: 0 0% 95%;
+  --theme-card-foreground: 0 0% 8%;
+  --theme-primary: 0 0% 15%;
+  --theme-primary-foreground: 0 0% 98%;
+  --theme-secondary: 0 0% 88%;
+  --theme-secondary-foreground: 0 0% 15%;
+  --theme-muted: 0 0% 90%;
+  --theme-muted-foreground: 0 0% 45%;
+  --theme-accent: 0 0% 25%;
+  --theme-accent-foreground: 0 0% 98%;
+  --theme-border: 0 0% 82%;
+  --theme-ring: 0 0% 15%;
+  --theme-font: "EB Garamond", "Garamond", "Times New Roman", serif;
+  --theme-font-heading: "EB Garamond", "Garamond", "Times New Roman", serif;
+}
+
+/* Midnight Bloom - Dark with purple accents */
+[data-design-theme="midnight-bloom"] {
+  --theme-background: 270 30% 6%;
+  --theme-foreground: 270 15% 92%;
+  --theme-card: 270 25% 10%;
+  --theme-card-foreground: 270 15% 92%;
+  --theme-primary: 300 70% 60%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 270 20% 15%;
+  --theme-secondary-foreground: 270 15% 82%;
+  --theme-muted: 270 18% 12%;
+  --theme-muted-foreground: 270 12% 50%;
+  --theme-accent: 330 80% 65%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 270 20% 20%;
+  --theme-ring: 300 70% 60%;
+  --theme-font: "Crimson Text", "Crimson Pro", Georgia, serif;
+  --theme-font-heading: "Crimson Text", "Crimson Pro", Georgia, serif;
+}
+
+/* Northern Lights - Aurora colors */
+[data-design-theme="northern-lights"] {
+  --theme-background: 220 30% 8%;
+  --theme-foreground: 180 30% 92%;
+  --theme-card: 220 25% 12%;
+  --theme-card-foreground: 180 30% 92%;
+  --theme-primary: 160 80% 50%;
+  --theme-primary-foreground: 220 30% 8%;
+  --theme-secondary: 220 20% 18%;
+  --theme-secondary-foreground: 180 25% 80%;
+  --theme-muted: 220 18% 15%;
+  --theme-muted-foreground: 180 15% 50%;
+  --theme-accent: 280 70% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 20% 22%;
+  --theme-ring: 160 80% 50%;
+  --theme-font: "Outfit", "Montserrat", system-ui, sans-serif;
+  --theme-font-heading: "Outfit", "Montserrat", system-ui, sans-serif;
+}
+
+/* Sunset Horizon - Warm sunset gradients */
+[data-design-theme="sunset-horizon"] {
+  --theme-background: 25 40% 96%;
+  --theme-foreground: 15 50% 12%;
+  --theme-card: 25 45% 92%;
+  --theme-card-foreground: 15 50% 12%;
+  --theme-primary: 15 90% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 35 35% 85%;
+  --theme-secondary-foreground: 15 50% 18%;
+  --theme-muted: 30 30% 88%;
+  --theme-muted-foreground: 15 30% 42%;
+  --theme-accent: 340 85% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 25 35% 78%;
+  --theme-ring: 15 90% 55%;
+  --theme-font: "Rubik", "Nunito", system-ui, sans-serif;
+  --theme-font-heading: "Rubik", "Nunito", system-ui, sans-serif;
+}
+
+/* Modern Minimal - Ultra clean */
+[data-design-theme="modern-minimal"] {
+  --theme-background: 0 0% 100%;
+  --theme-foreground: 0 0% 5%;
+  --theme-card: 0 0% 98%;
+  --theme-card-foreground: 0 0% 5%;
+  --theme-primary: 0 0% 5%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 0 0% 95%;
+  --theme-secondary-foreground: 0 0% 10%;
+  --theme-muted: 0 0% 96%;
+  --theme-muted-foreground: 0 0% 40%;
+  --theme-accent: 0 0% 15%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 90%;
+  --theme-ring: 0 0% 5%;
+  --theme-font: "Manrope", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --theme-font-heading: "Manrope", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Candyland - Bright playful colors */
+[data-design-theme="candyland"] {
+  --theme-background: 330 50% 97%;
+  --theme-foreground: 330 60% 15%;
+  --theme-card: 330 60% 94%;
+  --theme-card-foreground: 330 60% 15%;
+  --theme-primary: 330 90% 60%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 180 60% 85%;
+  --theme-secondary-foreground: 330 60% 20%;
+  --theme-muted: 330 40% 90%;
+  --theme-muted-foreground: 330 40% 40%;
+  --theme-accent: 50 100% 55%;
+  --theme-accent-foreground: 330 60% 15%;
+  --theme-border: 330 50% 82%;
+  --theme-ring: 330 90% 60%;
+  --theme-font: "Baloo 2", "Comic Neue", "Comic Sans MS", cursive;
+  --theme-font-heading: "Baloo 2", "Fredoka One", "Comic Sans MS", cursive;
+}
+
+/* Cyberpunk - Neon on dark */
+[data-design-theme="cyberpunk"] {
+  --theme-background: 260 50% 5%;
+  --theme-foreground: 180 100% 80%;
+  --theme-card: 260 45% 8%;
+  --theme-card-foreground: 180 100% 80%;
+  --theme-primary: 320 100% 60%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 260 40% 12%;
+  --theme-secondary-foreground: 180 80% 70%;
+  --theme-muted: 260 35% 10%;
+  --theme-muted-foreground: 180 50% 50%;
+  --theme-accent: 180 100% 50%;
+  --theme-accent-foreground: 260 50% 5%;
+  --theme-border: 260 40% 18%;
+  --theme-ring: 320 100% 60%;
+  --theme-font: "Share Tech Mono", "Fira Code", "Roboto Mono", monospace;
+  --theme-font-heading: "Rajdhani", "Audiowide", "Impact", sans-serif;
+}
+
+/* Retro Arcade - 80s game aesthetics */
+[data-design-theme="retro-arcade"] {
+  --theme-background: 240 40% 8%;
+  --theme-foreground: 60 100% 70%;
+  --theme-card: 240 35% 12%;
+  --theme-card-foreground: 60 100% 70%;
+  --theme-primary: 120 100% 50%;
+  --theme-primary-foreground: 240 40% 8%;
+  --theme-secondary: 240 30% 18%;
+  --theme-secondary-foreground: 60 90% 60%;
+  --theme-muted: 240 28% 15%;
+  --theme-muted-foreground: 60 60% 45%;
+  --theme-accent: 0 100% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 240 30% 25%;
+  --theme-ring: 120 100% 50%;
+  --theme-font: "Press Start 2P", "VT323", "Courier New", monospace;
+  --theme-font-heading: "Press Start 2P", "VT323", "Courier New", monospace;
+}
+
+/* Quantum Rose - Soft pink/rose */
+[data-design-theme="quantum-rose"] {
+  --theme-background: 350 30% 97%;
+  --theme-foreground: 350 40% 15%;
+  --theme-card: 350 35% 94%;
+  --theme-card-foreground: 350 40% 15%;
+  --theme-primary: 350 80% 60%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 350 25% 88%;
+  --theme-secondary-foreground: 350 40% 20%;
+  --theme-muted: 350 20% 90%;
+  --theme-muted-foreground: 350 20% 45%;
+  --theme-accent: 320 70% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 350 25% 82%;
+  --theme-ring: 350 80% 60%;
+  --theme-font: "Raleway", "Lato", system-ui, sans-serif;
+  --theme-font-heading: "Raleway", "Lato", system-ui, sans-serif;
+}
+
+/* Bold Tech - Strong tech-forward colors */
+[data-design-theme="bold-tech"] {
+  --theme-background: 220 25% 10%;
+  --theme-foreground: 0 0% 95%;
+  --theme-card: 220 22% 14%;
+  --theme-card-foreground: 0 0% 95%;
+  --theme-primary: 200 100% 55%;
+  --theme-primary-foreground: 220 25% 10%;
+  --theme-secondary: 220 20% 20%;
+  --theme-secondary-foreground: 0 0% 85%;
+  --theme-muted: 220 18% 17%;
+  --theme-muted-foreground: 0 0% 55%;
+  --theme-accent: 160 100% 45%;
+  --theme-accent-foreground: 220 25% 10%;
+  --theme-border: 220 20% 25%;
+  --theme-ring: 200 100% 55%;
+  --theme-font: "JetBrains Mono", "Fira Code", "Source Code Pro", monospace;
+  --theme-font-heading: "Inter", "SF Pro Display", system-ui, sans-serif;
+}
+
+/* ============================================
+   DARK MODE VARIANTS
+   ============================================ */
+
+/* Utilitarian Dark */
+.dark [data-design-theme="utilitarian"] {
+  --theme-background: 45 20% 12%;
+  --theme-foreground: 0 0% 95%;
+  --theme-card: 45 25% 15%;
+  --theme-card-foreground: 0 0% 95%;
+  --theme-primary: 15 85% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 45 15% 20%;
+  --theme-secondary-foreground: 0 0% 90%;
+  --theme-muted: 45 12% 18%;
+  --theme-muted-foreground: 0 0% 65%;
+  --theme-accent: 15 85% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 45 20% 25%;
+  --theme-ring: 15 85% 55%;
+}
+
+/* Base Dark */
+.dark [data-design-theme="base"] {
+  --theme-background: 222.2 47.4% 11.2%;
+  --theme-foreground: 210 40% 98%;
+  --theme-card: 222.2 47.4% 13%;
+  --theme-card-foreground: 210 40% 98%;
+  --theme-primary: 210 40% 98%;
+  --theme-primary-foreground: 222.2 47.4% 11.2%;
+  --theme-secondary: 217.2 32.6% 17.5%;
+  --theme-secondary-foreground: 210 40% 98%;
+  --theme-muted: 217.2 32.6% 17.5%;
+  --theme-muted-foreground: 215 20.2% 65.1%;
+  --theme-accent: 217.2 32.6% 17.5%;
+  --theme-accent-foreground: 210 40% 98%;
+  --theme-border: 217.2 32.6% 17.5%;
+  --theme-ring: 212.7 26.8% 83.9%;
+}
+
+/* Claude Dark */
+.dark [data-design-theme="claude"] {
+  --theme-background: 30 15% 10%;
+  --theme-foreground: 20 10% 92%;
+  --theme-card: 30 20% 12%;
+  --theme-card-foreground: 20 10% 92%;
+  --theme-primary: 24 90% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 30 15% 18%;
+  --theme-secondary-foreground: 20 10% 85%;
+  --theme-muted: 30 12% 15%;
+  --theme-muted-foreground: 20 8% 60%;
+  --theme-accent: 24 80% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 30 15% 22%;
+  --theme-ring: 24 90% 55%;
+}
+
+/* ChatGPT Dark - Already dark, slight adjustment */
+.dark [data-design-theme="chatgpt"] {
+  --theme-background: 220 13% 8%;
+  --theme-foreground: 0 0% 98%;
+  --theme-card: 220 13% 11%;
+  --theme-card-foreground: 0 0% 98%;
+  --theme-primary: 160 84% 42%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 220 13% 16%;
+  --theme-secondary-foreground: 0 0% 88%;
+  --theme-muted: 220 13% 13%;
+  --theme-muted-foreground: 0 0% 58%;
+  --theme-accent: 160 84% 42%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 13% 18%;
+  --theme-ring: 160 84% 42%;
+}
+
+/* Vercel Dark - Already dark, keep similar */
+.dark [data-design-theme="vercel"] {
+  --theme-background: 0 0% 2%;
+  --theme-foreground: 0 0% 98%;
+  --theme-card: 0 0% 6%;
+  --theme-card-foreground: 0 0% 98%;
+  --theme-primary: 0 0% 98%;
+  --theme-primary-foreground: 0 0% 2%;
+  --theme-secondary: 0 0% 12%;
+  --theme-secondary-foreground: 0 0% 92%;
+  --theme-muted: 0 0% 10%;
+  --theme-muted-foreground: 0 0% 62%;
+  --theme-accent: 0 0% 98%;
+  --theme-accent-foreground: 0 0% 2%;
+  --theme-border: 0 0% 18%;
+  --theme-ring: 0 0% 98%;
+}
+
+/* Kodama Grove Dark */
+.dark [data-design-theme="kodama-grove"] {
+  --theme-background: 120 25% 8%;
+  --theme-foreground: 120 20% 92%;
+  --theme-card: 120 30% 10%;
+  --theme-card-foreground: 120 20% 92%;
+  --theme-primary: 142 70% 40%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 120 25% 15%;
+  --theme-secondary-foreground: 120 20% 85%;
+  --theme-muted: 120 20% 12%;
+  --theme-muted-foreground: 120 15% 55%;
+  --theme-accent: 142 60% 45%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 120 25% 20%;
+  --theme-ring: 142 70% 40%;
+}
+
+/* Vintage Paper Dark */
+.dark [data-design-theme="vintage-paper"] {
+  --theme-background: 40 25% 12%;
+  --theme-foreground: 30 15% 88%;
+  --theme-card: 40 30% 15%;
+  --theme-card-foreground: 30 15% 88%;
+  --theme-primary: 30 50% 45%;
+  --theme-primary-foreground: 40 25% 12%;
+  --theme-secondary: 40 20% 20%;
+  --theme-secondary-foreground: 30 15% 82%;
+  --theme-muted: 40 18% 18%;
+  --theme-muted-foreground: 30 12% 55%;
+  --theme-accent: 30 60% 55%;
+  --theme-accent-foreground: 40 25% 12%;
+  --theme-border: 40 22% 25%;
+  --theme-ring: 30 50% 45%;
+}
+
+/* Claymorphism Dark */
+.dark [data-design-theme="claymorphism"] {
+  --theme-background: 220 25% 10%;
+  --theme-foreground: 220 20% 92%;
+  --theme-card: 220 30% 12%;
+  --theme-card-foreground: 220 20% 92%;
+  --theme-primary: 220 80% 60%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 220 25% 18%;
+  --theme-secondary-foreground: 220 20% 85%;
+  --theme-muted: 220 20% 15%;
+  --theme-muted-foreground: 220 15% 55%;
+  --theme-accent: 260 70% 65%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 25% 22%;
+  --theme-ring: 220 80% 60%;
+}
+
+/* Nature Dark */
+.dark [data-design-theme="nature"] {
+  --theme-background: 45 20% 10%;
+  --theme-foreground: 30 25% 90%;
+  --theme-card: 45 25% 12%;
+  --theme-card-foreground: 30 25% 90%;
+  --theme-primary: 85 50% 45%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 45 18% 18%;
+  --theme-secondary-foreground: 30 25% 85%;
+  --theme-muted: 45 15% 15%;
+  --theme-muted-foreground: 30 20% 55%;
+  --theme-accent: 30 60% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 45 20% 22%;
+  --theme-ring: 85 50% 45%;
+}
+
+/* Neo Brutalism Dark */
+.dark [data-design-theme="neo-brutalism"] {
+  --theme-background: 0 0% 5%;
+  --theme-foreground: 60 100% 95%;
+  --theme-card: 0 0% 8%;
+  --theme-card-foreground: 60 100% 95%;
+  --theme-primary: 60 100% 95%;
+  --theme-primary-foreground: 0 0% 5%;
+  --theme-secondary: 0 0% 12%;
+  --theme-secondary-foreground: 60 100% 90%;
+  --theme-muted: 0 0% 10%;
+  --theme-muted-foreground: 60 50% 70%;
+  --theme-accent: 350 100% 65%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 15%;
+  --theme-ring: 60 100% 95%;
+}
+
+/* Elegant Luxury Dark - Already dark, slight adjustment */
+.dark [data-design-theme="elegant-luxury"] {
+  --theme-background: 30 10% 6%;
+  --theme-foreground: 40 50% 92%;
+  --theme-card: 30 10% 10%;
+  --theme-card-foreground: 40 50% 92%;
+  --theme-primary: 45 90% 58%;
+  --theme-primary-foreground: 30 10% 6%;
+  --theme-secondary: 30 10% 16%;
+  --theme-secondary-foreground: 40 40% 82%;
+  --theme-muted: 30 8% 18%;
+  --theme-muted-foreground: 40 20% 58%;
+  --theme-accent: 45 100% 63%;
+  --theme-accent-foreground: 30 10% 6%;
+  --theme-border: 30 15% 23%;
+  --theme-ring: 45 90% 58%;
+}
+
+/* Pastel Dreams Dark */
+.dark [data-design-theme="pastel-dreams"] {
+  --theme-background: 280 30% 12%;
+  --theme-foreground: 300 20% 88%;
+  --theme-card: 280 35% 15%;
+  --theme-card-foreground: 300 20% 88%;
+  --theme-primary: 280 60% 75%;
+  --theme-primary-foreground: 280 30% 12%;
+  --theme-secondary: 200 40% 20%;
+  --theme-secondary-foreground: 280 20% 82%;
+  --theme-muted: 280 25% 18%;
+  --theme-muted-foreground: 280 15% 55%;
+  --theme-accent: 340 60% 80%;
+  --theme-accent-foreground: 280 30% 12%;
+  --theme-border: 280 30% 22%;
+  --theme-ring: 280 60% 75%;
+}
+
+/* Cosmic Night Dark - Already dark, slight adjustment */
+.dark [data-design-theme="cosmic-night"] {
+  --theme-background: 260 40% 6%;
+  --theme-foreground: 260 20% 98%;
+  --theme-card: 260 35% 10%;
+  --theme-card-foreground: 260 20% 98%;
+  --theme-primary: 280 80% 68%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 260 30% 16%;
+  --theme-secondary-foreground: 260 20% 88%;
+  --theme-muted: 260 25% 13%;
+  --theme-muted-foreground: 260 15% 58%;
+  --theme-accent: 200 100% 63%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 260 25% 23%;
+  --theme-ring: 280 80% 68%;
+}
+
+/* Clean Slate Dark */
+.dark [data-design-theme="clean-slate"] {
+  --theme-background: 210 20% 10%;
+  --theme-foreground: 210 15% 92%;
+  --theme-card: 210 18% 12%;
+  --theme-card-foreground: 210 15% 92%;
+  --theme-primary: 210 100% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 210 15% 18%;
+  --theme-secondary-foreground: 210 15% 85%;
+  --theme-muted: 210 12% 15%;
+  --theme-muted-foreground: 210 10% 55%;
+  --theme-accent: 210 90% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 210 18% 22%;
+  --theme-ring: 210 100% 55%;
+}
+
+/* Caffeine Dark */
+.dark [data-design-theme="caffeine"] {
+  --theme-background: 30 20% 8%;
+  --theme-foreground: 25 35% 90%;
+  --theme-card: 30 25% 10%;
+  --theme-card-foreground: 25 35% 90%;
+  --theme-primary: 25 70% 35%;
+  --theme-primary-foreground: 30 20% 8%;
+  --theme-secondary: 30 20% 15%;
+  --theme-secondary-foreground: 25 35% 85%;
+  --theme-muted: 30 18% 12%;
+  --theme-muted-foreground: 25 25% 50%;
+  --theme-accent: 15 80% 50%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 30 20% 20%;
+  --theme-ring: 25 70% 35%;
+}
+
+/* Ocean Breeze Dark */
+.dark [data-design-theme="ocean-breeze"] {
+  --theme-background: 200 35% 10%;
+  --theme-foreground: 200 30% 92%;
+  --theme-card: 200 40% 12%;
+  --theme-card-foreground: 200 30% 92%;
+  --theme-primary: 200 90% 50%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 200 30% 18%;
+  --theme-secondary-foreground: 200 30% 85%;
+  --theme-muted: 200 25% 15%;
+  --theme-muted-foreground: 200 20% 52%;
+  --theme-accent: 180 70% 50%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 200 30% 22%;
+  --theme-ring: 200 90% 50%;
+}
+
+/* Perpetuity Dark */
+.dark [data-design-theme="perpetuity"] {
+  --theme-background: 0 0% 8%;
+  --theme-foreground: 0 0% 92%;
+  --theme-card: 0 0% 12%;
+  --theme-card-foreground: 0 0% 92%;
+  --theme-primary: 0 0% 85%;
+  --theme-primary-foreground: 0 0% 8%;
+  --theme-secondary: 0 0% 18%;
+  --theme-secondary-foreground: 0 0% 85%;
+  --theme-muted: 0 0% 15%;
+  --theme-muted-foreground: 0 0% 55%;
+  --theme-accent: 0 0% 75%;
+  --theme-accent-foreground: 0 0% 8%;
+  --theme-border: 0 0% 22%;
+  --theme-ring: 0 0% 85%;
+}
+
+/* Midnight Bloom Dark - Already dark, slight adjustment */
+.dark [data-design-theme="midnight-bloom"] {
+  --theme-background: 270 30% 5%;
+  --theme-foreground: 270 15% 95%;
+  --theme-card: 270 25% 8%;
+  --theme-card-foreground: 270 15% 95%;
+  --theme-primary: 300 70% 63%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 270 20% 13%;
+  --theme-secondary-foreground: 270 15% 85%;
+  --theme-muted: 270 18% 10%;
+  --theme-muted-foreground: 270 12% 53%;
+  --theme-accent: 330 80% 68%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 270 20% 18%;
+  --theme-ring: 300 70% 63%;
+}
+
+/* Northern Lights Dark - Already dark, slight adjustment */
+.dark [data-design-theme="northern-lights"] {
+  --theme-background: 220 30% 6%;
+  --theme-foreground: 180 30% 95%;
+  --theme-card: 220 25% 10%;
+  --theme-card-foreground: 180 30% 95%;
+  --theme-primary: 160 80% 53%;
+  --theme-primary-foreground: 220 30% 6%;
+  --theme-secondary: 220 20% 16%;
+  --theme-secondary-foreground: 180 25% 83%;
+  --theme-muted: 220 18% 13%;
+  --theme-muted-foreground: 180 15% 53%;
+  --theme-accent: 280 70% 63%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 20% 20%;
+  --theme-ring: 160 80% 53%;
+}
+
+/* Sunset Horizon Dark */
+.dark [data-design-theme="sunset-horizon"] {
+  --theme-background: 25 35% 10%;
+  --theme-foreground: 15 45% 90%;
+  --theme-card: 25 40% 12%;
+  --theme-card-foreground: 15 45% 90%;
+  --theme-primary: 15 90% 58%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 35 30% 18%;
+  --theme-secondary-foreground: 15 45% 85%;
+  --theme-muted: 30 25% 15%;
+  --theme-muted-foreground: 15 30% 52%;
+  --theme-accent: 340 85% 63%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 25 32% 22%;
+  --theme-ring: 15 90% 58%;
+}
+
+/* Modern Minimal Dark */
+.dark [data-design-theme="modern-minimal"] {
+  --theme-background: 0 0% 5%;
+  --theme-foreground: 0 0% 95%;
+  --theme-card: 0 0% 8%;
+  --theme-card-foreground: 0 0% 95%;
+  --theme-primary: 0 0% 95%;
+  --theme-primary-foreground: 0 0% 5%;
+  --theme-secondary: 0 0% 12%;
+  --theme-secondary-foreground: 0 0% 90%;
+  --theme-muted: 0 0% 10%;
+  --theme-muted-foreground: 0 0% 50%;
+  --theme-accent: 0 0% 85%;
+  --theme-accent-foreground: 0 0% 5%;
+  --theme-border: 0 0% 18%;
+  --theme-ring: 0 0% 95%;
+}
+
+/* Candyland Dark */
+.dark [data-design-theme="candyland"] {
+  --theme-background: 330 45% 12%;
+  --theme-foreground: 330 50% 88%;
+  --theme-card: 330 50% 15%;
+  --theme-card-foreground: 330 50% 88%;
+  --theme-primary: 330 90% 65%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 180 50% 20%;
+  --theme-secondary-foreground: 330 50% 82%;
+  --theme-muted: 330 35% 18%;
+  --theme-muted-foreground: 330 35% 52%;
+  --theme-accent: 50 100% 60%;
+  --theme-accent-foreground: 330 45% 12%;
+  --theme-border: 330 45% 25%;
+  --theme-ring: 330 90% 65%;
+}
+
+/* Cyberpunk Dark - Already dark, slight adjustment */
+.dark [data-design-theme="cyberpunk"] {
+  --theme-background: 260 50% 4%;
+  --theme-foreground: 180 100% 83%;
+  --theme-card: 260 45% 6%;
+  --theme-card-foreground: 180 100% 83%;
+  --theme-primary: 320 100% 63%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 260 40% 10%;
+  --theme-secondary-foreground: 180 80% 73%;
+  --theme-muted: 260 35% 8%;
+  --theme-muted-foreground: 180 50% 53%;
+  --theme-accent: 180 100% 53%;
+  --theme-accent-foreground: 260 50% 4%;
+  --theme-border: 260 40% 16%;
+  --theme-ring: 320 100% 63%;
+}
+
+/* Retro Arcade Dark - Already dark, slight adjustment */
+.dark [data-design-theme="retro-arcade"] {
+  --theme-background: 240 40% 6%;
+  --theme-foreground: 60 100% 73%;
+  --theme-card: 240 35% 10%;
+  --theme-card-foreground: 60 100% 73%;
+  --theme-primary: 120 100% 53%;
+  --theme-primary-foreground: 240 40% 6%;
+  --theme-secondary: 240 30% 16%;
+  --theme-secondary-foreground: 60 90% 63%;
+  --theme-muted: 240 28% 13%;
+  --theme-muted-foreground: 60 60% 48%;
+  --theme-accent: 0 100% 58%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 240 30% 23%;
+  --theme-ring: 120 100% 53%;
+}
+
+/* Quantum Rose Dark */
+.dark [data-design-theme="quantum-rose"] {
+  --theme-background: 350 25% 12%;
+  --theme-foreground: 350 35% 90%;
+  --theme-card: 350 30% 15%;
+  --theme-card-foreground: 350 35% 90%;
+  --theme-primary: 350 80% 65%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 350 20% 20%;
+  --theme-secondary-foreground: 350 35% 85%;
+  --theme-muted: 350 18% 18%;
+  --theme-muted-foreground: 350 18% 52%;
+  --theme-accent: 320 70% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 350 22% 25%;
+  --theme-ring: 350 80% 65%;
+}
+
+/* Bold Tech Dark - Already dark, slight adjustment */
+.dark [data-design-theme="bold-tech"] {
+  --theme-background: 220 25% 8%;
+  --theme-foreground: 0 0% 98%;
+  --theme-card: 220 22% 12%;
+  --theme-card-foreground: 0 0% 98%;
+  --theme-primary: 200 100% 58%;
+  --theme-primary-foreground: 220 25% 8%;
+  --theme-secondary: 220 20% 18%;
+  --theme-secondary-foreground: 0 0% 88%;
+  --theme-muted: 220 18% 15%;
+  --theme-muted-foreground: 0 0% 58%;
+  --theme-accent: 160 100% 48%;
+  --theme-accent-foreground: 220 25% 8%;
+  --theme-border: 220 20% 23%;
+  --theme-ring: 200 100% 58%;
+}

@@ -1,0 +1,331 @@
+# Style Brainstorm Session - Unbreakable Series
+# UPDATED: Multi-modal style system with dynamic color shifts
+#
+# Key Insight from James:
+# The style isn't one thing. It's a LIVING visual language that shifts
+# based on perspective, mood, and narrative moment.
+#
+# Nick sees the world differently - he uses thermal filters on his camera.
+# That's not a gimmick, that's characterization. The visual style should
+# reflect whose eyes we're seeing through and what they're feeling.
+
+session:
+  id: "brainstorm-001"
+  series: "Unbreakable"
+  created: "2026-02-07"
+  updated: "2026-02-07"
+
+# ═══════════════════════════════════════════════════
+# THE STYLE SYSTEM (not a single style - a system of modes)
+# ═══════════════════════════════════════════════════
+
+style_system:
+  name: "Living Canvas"
+  philosophy: >
+    The visual style is a character itself. It breathes, shifts, and responds
+    to the narrative. Different perspectives get different visual treatments.
+    The color palette is alive - it changes with mood, music energy, and
+    whose eyes we're looking through. Part manga, part watercolor, part
+    rotoscoping, part thermal vision, part pure realism. All of it true.
+
+  # ─────────────────────────────────────────────────
+  # MODE 1: DEFAULT / ILLUSTRATED REALITY
+  # The main visual mode. Most scenes live here.
+  # ─────────────────────────────────────────────────
+  modes:
+    default:
+      name: "Illustrated Reality"
+      when: "Standard narration, establishing shots, most scenes"
+      description: >
+        Hybrid illustration style: manga-influenced composition with watercolor
+        textures and semi-realistic character rendering. Medium ink outlines
+        that breathe - thicker in emotional moments, thinner in gentle ones.
+        Detailed backgrounds with environmental storytelling. Warm palette
+        by default but shifts with mood.
+      influences:
+        - "manga (dynamic composition, speed lines for energy, panel-like framing)"
+        - "watercolor (soft color bleeds, visible paper texture, wet edges)"
+        - "rotoscoping (semi-realistic movement, traced-from-life quality)"
+        - "editorial illustration (rich detail, magazine quality)"
+      prompt_fragment: >
+        Hybrid manga-watercolor illustration with semi-realistic character
+        rendering, ink outlines that vary in weight, soft watercolor color
+        bleeds and paper texture, dynamic manga-influenced composition,
+        rich environmental detail, cinematic framing
+      color_palette:
+        warm_default: ["#D4915C", "#8B6914", "#4A6741", "#2C5F7C", "#F5E6CC"]
+        cool_tension: ["#2C3E50", "#5D6D7E", "#8395A7", "#B0C4DE", "#E8E8E8"]
+        golden_joy: ["#FFD700", "#E87040", "#F5C842", "#FF8C42", "#FFF3B0"]
+        desaturated_loss: ["#808080", "#A0A0A0", "#C0C0C0", "#8B8B83", "#D4D4CC"]
+
+    # ─────────────────────────────────────────────────
+    # MODE 2: NICK'S VISION
+    # When we see through Nick's eyes. The world transforms.
+    # ─────────────────────────────────────────────────
+    nicks_vision:
+      name: "Nick's Eyes"
+      when: >
+        POV shots from Nick's perspective. When he's taking photos.
+        When he's lost in his imagination. When the music swells and
+        it's HIS moment.
+      description: >
+        The world shifts to how Nick literally sees it. Thermal-vision
+        colors (neon green, hot orange, electric blue, deep red). Like
+        the thermal camera filter he uses on his phone. But not just
+        thermal - sometimes it's oversaturated candy colors, sometimes
+        infrared purple, sometimes everything glows. Nick sees warmth
+        in everything. People glow with color. The world is electric.
+      prompt_fragment: >
+        Thermal infrared vision style, neon green and hot orange and
+        electric blue color palette, glowing heat signatures on people,
+        radiating warmth visualization, psychedelic color mapping,
+        a child's magical perception of the world
+      reference: "thermal-selfie.jpg (Nick's actual thermal photo of them)"
+      color_palette:
+        thermal: ["#00FF41", "#FF4500", "#00BFFF", "#FFD700", "#FF1493"]
+        infrared: ["#8B00FF", "#FF0080", "#00FF80", "#FF4444", "#4444FF"]
+        candy: ["#FF69B4", "#87CEEB", "#98FB98", "#DDA0DD", "#F0E68C"]
+      transitions:
+        enter: "Color channels split and shift, reality bleeds into thermal"
+        exit: "Colors slowly cool back to illustrated reality"
+
+    # ─────────────────────────────────────────────────
+    # MODE 3: EMOTIONAL SURGE
+    # Big musical moments. Chorus hits. Emotional peaks.
+    # ─────────────────────────────────────────────────
+    emotional_surge:
+      name: "The Surge"
+      when: "Chorus peaks, emotional climaxes, breakthroughs"
+      description: >
+        Colors intensify dramatically. Light becomes a character - lens
+        flares, volumetric rays, everything glows from within. The
+        illustration style loosens - brushstrokes become visible, paint
+        splatters appear at the edges, like the emotion is too big for
+        the frame. Manga-style impact lines radiate from characters.
+        Speed lines on movement. Everything is MORE.
+      prompt_fragment: >
+        Emotionally intense illustration with dramatic volumetric lighting,
+        visible paint splatters and brushstrokes at frame edges, manga
+        impact lines radiating from characters, lens flares, colors
+        pushed to maximum saturation, overwhelming warmth and energy
+      color_palette:
+        joy_surge: ["#FFD700", "#FF6B35", "#FF1744", "#FFEB3B", "#FFF"]
+        tender_surge: ["#E8D5B7", "#F5E6CC", "#FFE4C4", "#FFF8DC", "#FFFAF0"]
+
+    # ─────────────────────────────────────────────────
+    # MODE 4: MEMORY / FLASHBACK
+    # Looking back. Nostalgia. Things remembered.
+    # ─────────────────────────────────────────────────
+    memory:
+      name: "Memory Wash"
+      when: "Flashbacks, nostalgic moments, 'remember when' scenes"
+      description: >
+        Softer, slightly overexposed. Like a sun-bleached photograph.
+        Watercolor dominates - edges dissolve, colors bleed more.
+        Slight vignette. Film grain heavier. The image feels fragile,
+        like it could dissolve. Because memories do.
+      prompt_fragment: >
+        Nostalgic watercolor memory style, overexposed highlights,
+        dissolved soft edges, heavy film grain, faded vintage colors,
+        sun-bleached quality, vignette border, like a cherished
+        photograph left in sunlight, fragile and beautiful
+      color_palette:
+        nostalgia: ["#F5DEB3", "#DEB887", "#D2B48C", "#C4A882", "#FFF8DC"]
+
+    # ─────────────────────────────────────────────────
+    # MODE 5: THE DARK (for later episodes)
+    # When things go wrong. The separation. The fight.
+    # ─────────────────────────────────────────────────
+    the_dark:
+      name: "The Dark"
+      when: "Betrayal, separation, the 278 days, loneliness"
+      description: >
+        Color drains away progressively. Not black and white - more like
+        the world losing its saturation. Only Nick's green headphones
+        retain full color (the one constant, the thing that connects them).
+        Harsher lines. More angular manga influence. Shadows deeper.
+        But always - ALWAYS - a thread of warm light somewhere. Because
+        James never stopped fighting.
+      prompt_fragment: >
+        Desaturated illustration with deep shadows, angular manga-influenced
+        composition, harsh ink lines, color drained from the world except
+        for one bright green element (headphones), atmospheric fog,
+        isolated figures, oppressive but with a single thread of warm
+        golden light breaking through
+      color_palette:
+        despair: ["#2C2C2C", "#4A4A4A", "#6B6B6B", "#8B8B8B", "#6BBF59"]
+        # Note: #6BBF59 is Nick's headphone green - always present
+      signature: >
+        The green headphones NEVER lose their color. Even in the darkest
+        episodes. They are the visual thread - the connection between
+        father and son that can't be severed.
+
+    # ─────────────────────────────────────────────────
+    # MODE 6: ROTOSCOPE REAL
+    # Grounding moments. Raw truth.
+    # ─────────────────────────────────────────────────
+    rotoscope:
+      name: "Real"
+      when: "Spoken word sections, the most honest moments, truth-telling"
+      description: >
+        Shifts toward rotoscoped realism. Almost photographic but with
+        visible illustration technique. Like watching real footage
+        through a painted glass. Used sparingly for maximum impact.
+        When Dad speaks directly, when the truth is too big for cartoon.
+      prompt_fragment: >
+        Rotoscoped illustration from life, photorealistic proportions
+        with visible paint technique overlay, almost-real but with
+        visible brushwork and artistic interpretation, raw and honest,
+        documentary quality crossed with fine art
+
+  # ─────────────────────────────────────────────────
+  # MODE TRANSITIONS (how we shift between modes)
+  # ─────────────────────────────────────────────────
+  transitions:
+    default_to_nicks_vision:
+      description: "Color channels split apart like a prism, reality fragments into thermal heat map"
+      trigger: "Cut to Nick's POV, or Nick takes a photo"
+      duration: "0.5-1 seconds, synced to a beat"
+
+    default_to_emotional_surge:
+      description: "Colors slowly oversaturate, then POP on a downbeat. Paint splatters fly in from edges."
+      trigger: "Chorus hit, emotional peak"
+      duration: "Builds over 2-4 beats, pops on downbeat"
+
+    default_to_memory:
+      description: "Image softens and overexposes, like turning up the brightness on a warm lamp"
+      trigger: "Spoken word, reflective moment"
+      duration: "1-2 seconds, gentle"
+
+    default_to_dark:
+      description: "Color slowly bleeds out like ink in water, until only the green headphones remain vibrant"
+      trigger: "Narrative shift to conflict (later episodes)"
+      duration: "Gradual across a full verse"
+
+    any_to_rotoscope:
+      description: "Illustration 'zooms in' until the art style dissolves into near-reality"
+      trigger: "Spoken word truth-bomb, most raw moments"
+      duration: "1-2 seconds"
+
+# ═══════════════════════════════════════════════════
+# GENERATION PROMPTS FOR STYLE TEST
+# ═══════════════════════════════════════════════════
+# Test scene: Dad and Nick walking on Irish country road
+# Generate one image per mode to see them all side by side
+
+test_prompts:
+
+  - id: "test-default"
+    mode: "default"
+    prompt: >
+      Hybrid manga-watercolor illustration with semi-realistic character
+      rendering. A father in his mid-30s with messy brown hair, stubble,
+      blue hoodie walks with his 6-year-old son on an Irish country road.
+      The boy has curly brown hair, freckles, oversized bright green
+      headphones. Rolling green fields, old stone walls, grey-blue Irish
+      sky with golden light breaking through clouds. Ink outlines that vary
+      in weight, soft watercolor color bleeds at edges, paper texture
+      visible. Dynamic manga-influenced low-angle composition. Rich
+      environmental detail - wildflowers, distant sheep, puddles reflecting
+      sky. Warm earth tones with green and blue accents. Emotionally warm,
+      intimate. The boy is pointing at something with excitement.
+    negative: "photorealistic, 3D render, anime eyes, flat colors, simple background, dark, gloomy, ugly"
+
+  - id: "test-nicks-vision"
+    mode: "nicks_vision"
+    prompt: >
+      Thermal infrared camera vision of a father and young son walking on
+      a country road. Neon green background, bodies glowing hot orange and
+      deep red, cool blue clothing, electric yellow highlights where skin
+      is warmest. Psychedelic heat-map color palette. The father and son
+      are brightest - they radiate warmth. The road is cool blue-green.
+      Trees are medium green. A magical child's-eye thermal perception
+      of the world where love literally glows hot. Grainy texture like
+      a real thermal camera but artistically enhanced. Beautiful and strange.
+    negative: "normal colors, photorealistic, boring, flat, simple"
+
+  - id: "test-emotional-surge"
+    mode: "emotional_surge"
+    prompt: >
+      Emotionally overwhelming manga-watercolor illustration. A father
+      lifting his young son onto his shoulders on an Irish country road.
+      BURST of golden light from behind them. Paint splatters and
+      brushstrokes exploding from edges of frame. Manga-style impact
+      lines radiating outward. Colors pushed to maximum - golden yellows,
+      warm oranges, bright greens. Lens flare. The boy's green headphones
+      catch the light. Everything glows from within. Visible paper texture
+      breaking through. The emotion is too big for the frame. Pure joy.
+    negative: "calm, muted, desaturated, simple, boring, photorealistic, dark"
+
+  - id: "test-memory-wash"
+    mode: "memory"
+    prompt: >
+      Nostalgic watercolor memory of a father and son walking on an Irish
+      country road. Overexposed highlights, sun-bleached colors. Soft
+      dissolved edges where the image fades into white paper. Heavy film
+      grain. Faded warm palette - creams, soft golds, gentle greens.
+      Slight vignette darkening the corners. The figures are slightly
+      ghostly, translucent at edges. Like a cherished photograph left
+      in sunlight for years. Beautiful but fragile. The boy's green
+      headphones are the most vivid element remaining.
+    negative: "sharp, high contrast, saturated, modern, digital, dark"
+
+  - id: "test-rotoscope"
+    mode: "rotoscope"
+    prompt: >
+      Rotoscoped illustration from life. Near-photorealistic father and
+      young son walking on an Irish country road, but with visible paint
+      technique overlay - brushstrokes following contours of faces,
+      subtle color shifts in skin tones, slightly impressionistic
+      background treatment. The boy wears bright green headphones.
+      Documentary quality crossed with fine art. Raw, honest, real.
+      Like watching actual footage through painted glass. Natural
+      lighting, natural proportions, natural emotion.
+    negative: "cartoon, anime, flat, over-stylized, exaggerated features, dark"
+
+# ═══════════════════════════════════════════════════
+# SERIES VISUAL SIGNATURE ELEMENTS
+# ═══════════════════════════════════════════════════
+
+signature_elements:
+  green_headphones:
+    description: >
+      Nick's bright green headphones are ALWAYS present and ALWAYS retain
+      their green color, even when the rest of the image desaturates.
+      They are the visual throughline of the entire series. When Nick
+      and James are separated, the headphones are what connects them
+      across episodes. In the darkest moments, that green is the only
+      color that survives.
+    color: "#6BBF59"
+    rule: "NEVER desaturate. NEVER remove. ALWAYS visible."
+
+  light_thread:
+    description: >
+      In every single frame, no matter how dark the story gets, there
+      is always a thread of warm light. A crack under a door. A distant
+      sunrise. A lamp left on. A phone screen glowing. James never
+      gave up, and the visual language reflects that.
+    rule: "Even in Mode 5 (The Dark), warm light is always present somewhere."
+
+  paint_at_the_edges:
+    description: >
+      In emotional moments, the illustration's edges break down. Paint
+      splatters, watercolor bleeds, brush marks visible at the margins
+      of the frame. Like the emotion is too much for the art to contain.
+      This intensifies through the series - by the reunion episodes,
+      the paint practically explodes.
+    rule: "Intensity of edge breakdown matches emotional intensity."
+
+# ═══════════════════════════════════════════════════
+# GENERATION SETTINGS
+# ═══════════════════════════════════════════════════
+
+generation:
+  model: "flux-pro"
+  width: 1024
+  height: 1024
+  guidance_scale: 3.5
+  num_steps: 28
+  seed: 42
+  # Also try: fal-ai/flux/dev, stability SDXL, midjourney-style models
+  # For video: kling-1.5-pro (image-to-video from approved frames)

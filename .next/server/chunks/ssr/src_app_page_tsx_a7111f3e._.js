@@ -1,0 +1,3 @@
+module.exports=[240777,a=>{"use strict";var b=a.i(499969),c=a.i(863050),d=a.i(925440);a.i(617620);var e=a.i(508256);function f(){let a=(0,d.useRouter)(),[f,g]=(0,c.useState)(!0);return((0,c.useEffect)(()=>{"true"===localStorage.getItem("openclaw_onboarding_complete")?g(!1):a.push("/onboarding")},[a]),f)?(0,b.jsx)("div",{className:"min-h-screen bg-slate-950 flex items-center justify-center",children:(0,b.jsx)("div",{className:"text-emerald-400 text-lg",children:"Loading OpenClaw-OS..."})}):(0,b.jsx)(e.IOSHome,{})}a.s(["default",()=>f])}];
+
+//# sourceMappingURL=src_app_page_tsx_a7111f3e._.js.map

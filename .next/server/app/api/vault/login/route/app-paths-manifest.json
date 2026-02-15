@@ -1,0 +1,3 @@
+{
+  "/api/vault/login/route": "app/api/vault/login/route.js"
+}

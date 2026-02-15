@@ -1,0 +1,3 @@
+{
+  "/api/webhooks/discovery/route": "app/api/webhooks/discovery/route.js"
+}

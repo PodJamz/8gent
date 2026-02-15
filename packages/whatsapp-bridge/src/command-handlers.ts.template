@@ -1,0 +1,230 @@
+/**
+ * Command Handler Implementations
+ *
+ * These methods should be added to the MessageHandler class in handler.ts
+ * Replace the placeholder implementations in the handleCommand switch statement
+ */
+
+// === ADD THESE METHODS TO MessageHandler CLASS ===
+
+private async handleSearch(args: string, senderName: string): Promise<string> {
+  const systemContext = `You are AI James. The user wants to search the portfolio. Use the search_portfolio tool with query: "${args}". Respond with what you found in a concise WhatsApp-friendly format.`;
+
+  try {
+    const response = await this.callAIJames(
+      [{ role: 'user', content: `Search for: ${args}` }],
+      senderName,
+      systemContext,
+      true
+    );
+
+    if (response.error) {
+      return `❌ Search error: ${response.error}`;
+    }
+
+    return response.content || '❌ No results found.';
+  } catch (error) {
+    console.error('[Handler] Search error:', error);
+    return '❌ Search failed.';
+  }
+}
+
+private async handleSchedule(args: string, senderName: string): Promise<string> {
+  const systemContext = `You are AI James. The user wants to check availability or book a meeting. Use scheduling tools. Args: "${args}". Keep response concise for WhatsApp.`;
+
+  try {
+    const response = await this.callAIJames(
+      [{ role: 'user', content: args || 'Show me available times this week' }],
+      senderName,
+      systemContext,
+      true
+    );
+
+    if (response.error) {
+      return `❌ Schedule error: ${response.error}`;
+    }
+
+    return response.content || '❌ Could not fetch schedule.';
+  } catch (error) {
+    console.error('[Handler] Schedule error:', error);
+    return '❌ Schedule command failed.';
+  }
+}
+
+private async handleWeather(args: string, senderName: string): Promise<string> {
+  const location = args || 'San Francisco';
+  const systemContext = `You are AI James. Use the show_weather tool for location: "${location}". Format the response nicely for WhatsApp with emojis.`;
+
+  try {
+    const response = await this.callAIJames(
+      [{ role: 'user', content: `What's the weather in ${location}?` }],
+      senderName,
+      systemContext,
+      true
+    );
+
+    if (response.error) {
+      return `❌ Weather error: ${response.error}`;
+    }
+
+    return response.content || '❌ Could not fetch weather.';
+  } catch (error) {
+    console.error('[Handler] Weather error:', error);
+    return '❌ Weather command failed.';
+  }
+}
+
+private async handleRemember(args: string, senderName: string): Promise<string> {
+  const systemContext = `You are AI James. The user wants to query your memory. Use the remember tool with query: "${args}". Respond with relevant memories in a concise format.`;
+
+  try {
+    const response = await this.callAIJames(
+      [{ role: 'user', content: `Remember: ${args}` }],
+      senderName,
+      systemContext,
+      true
+    );
+
+    if (response.error) {
+      return `❌ Memory error: ${response.error}`;
+    }
+
+    return response.content || '❌ No memories found.';
+  } catch (error) {
+    console.error('[Handler] Remember error:', error);
+    return '❌ Memory query failed.';
+  }
+}
+
+private async handleSkills(args: string): Promise<string> {
+  return `*🧠 AI Skills*
+
+Available skill categories:
+• Creative Writing
+• Software Development
+• Infrastructure & DevOps
+• Design Excellence
+• Security Research
+
+_Type /skills <category> for details_
+
+(Full implementation coming soon)`;
+}
+
+private async handleContacts(args: string): Promise<string> {
+  const [action] = args.split(' ');
+
+  if (!action || action === 'list') {
+    const allowed = this.config.allowedNumbers.length;
+    return `*📇 WhatsApp Contacts*
+
+*Allowed numbers:* ${allowed === 0 ? 'All' : allowed}
+*Owner:* ${this.config.ownerNumber || 'Not set'}
+
+_Contact management coming soon_`;
+  }
+
+  return '❌ Contact management not yet implemented.';
+}
+
+private async handleSend(args: string): Promise<string> {
+  const match = args.match(/^(\+?\d+|[A-Za-z]+)\s+(.+)$/);
+  if (!match) {
+    return `❌ Invalid format.\n\n*Usage:* /send <contact> <message>`;
+  }
+
+  const [, contact, message] = match;
+
+  return `📤 *Send Message*
+
+*To:* ${contact}
+*Message:* ${message}
+
+_Direct messaging coming soon_`;
+}
+
+private async handleBroadcast(args: string): Promise<string> {
+  const match = args.match(/^(\S+)\s+(.+)$/);
+  if (!match) {
+    return `❌ Invalid format.\n\n*Usage:* /broadcast <group> <message>`;
+  }
+
+  const [, group, message] = match;
+
+  return `📢 *Broadcast Message*
+
+*Group:* ${group}
+*Message:* ${message}
+
+_Broadcast coming soon_`;
+}
+
+private async handleGenerate(args: string): Promise<string> {
+  const match = args.match(/^(\S+)\s+(.+)$/);
+  if (!match) {
+    return `❌ Invalid format.\n\n*Usage:* /generate <type> <prompt>\n\n*Types:* music, video, image`;
+  }
+
+  const [, type, prompt] = match;
+
+  return `🎨 *Generation Started*
+
+*Type:* ${type}
+*Prompt:* ${prompt}
+
+_I'll message you when it's ready (background jobs coming soon)_`;
+}
+
+private async handleResearch(args: string): Promise<string> {
+  return `🔍 *Research Task Started*
+
+*Topic:* ${args}
+
+_I'll compile findings and message you when complete (background jobs coming soon)_`;
+}
+
+private async handleBuild(args: string): Promise<string> {
+  return `🔨 *Build Task Started*
+
+*Description:* ${args}
+
+_I'll work on this and update you with progress (∞gent integration coming soon)_`;
+}
+
+// === UPDATE handleCommand SWITCH STATEMENT ===
+// Replace the placeholder cases with:
+
+/*
+case 'handleSearch':
+  return await this.handleSearch(args, senderName);
+
+case 'handleSchedule':
+  return await this.handleSchedule(args, senderName);
+
+case 'handleWeather':
+  return await this.handleWeather(args, senderName);
+
+case 'handleRemember':
+  return await this.handleRemember(args, senderName);
+
+case 'handleSkills':
+  return await this.handleSkills(args);
+
+case 'handleContacts':
+  return await this.handleContacts(args);
+
+case 'handleSend':
+  return await this.handleSend(args);
+
+case 'handleBroadcast':
+  return await this.handleBroadcast(args);
+
+case 'handleGenerate':
+  return await this.handleGenerate(args);
+
+case 'handleResearch':
+  return await this.handleResearch(args);
+
+case 'handleBuild':
+  return await this.handleBuild(args);
+*/

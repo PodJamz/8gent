@@ -1,0 +1,3 @@
+{
+  "/api/cron/james-reflection/route": "app/api/cron/james-reflection/route.js"
+}

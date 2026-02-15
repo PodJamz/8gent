@@ -1,0 +1,3 @@
+{
+  "/api/webhooks/health/route": "app/api/webhooks/health/route.js"
+}

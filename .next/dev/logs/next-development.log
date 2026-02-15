@@ -1,0 +1,155 @@
+[08:12:42.072] Browser ERROR   ./src/app/api/chat/route.ts:3:1
+Export getLoadedLayers doesn't exist in target module
+  1 | import { NextRequest, NextResponse } from 'next/server';
+  2 | import { cookies } from 'next/headers';
+> 3 | import { assembleSoulPrompt, getLoadedLayers } from '@/lib/ai-james/soul-layers';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { parseToolCalls, ToolCall, toOpenAITools } from '@/lib/ai-james/tools';
+  5 | import { executeTool, formatToolResults } from '@/lib/ai-james/tool-executor';
+  6 | import { MemoryManager } from '@/lib/memory';
+
+The export getLoadedLayers was not found in module [project]/src/lib/ai-james/soul-layers.ts [app-route] (ecmascript).
+Did you mean to import assembleSoulPrompt?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+[08:12:57.424] Server  LOG     ○ Compiling /chat ...
+[08:16:30.571] Server  ERROR   ⨯ Error: ENOENT: no such file or directory, open '/Users/jamesspalding/OpenClaw-OS/.next/dev/server/app/page/build-manifest.json'
+[08:16:31.494] Server  WARN    ⚠ ./src/hooks/useFeatureAccess.tsx:18:23
+Module not found: Can't resolve '../../convex/_generated/api'
+  16 | try {
+  17 |   // Dynamic import to handle cases where Convex isn't configured
+> 18 |   userManagementApi = require('../../convex/_generated/api').api?.userManagement;
+     |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | } catch {
+  20 |   userManagementApi = null;
+  21 | }
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/hooks/useFeatureAccess.tsx [Client Component Browser]
+    ./src/app/music/MusicClient.tsx [Client Component Browser]
+    ./src/app/music/page.tsx [Client Component Browser]
+    ./src/app/music/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[08:16:48.666] Server  ERROR   ⨯ Error: ENOENT: no such file or directory, open '/Users/jamesspalding/OpenClaw-OS/.next/dev/server/app/page/build-manifest.json'
+[08:16:49.231] Server  WARN    ⚠ ./src/hooks/useFeatureAccess.tsx:18:23
+Module not found: Can't resolve '../../convex/_generated/api'
+  16 | try {
+  17 |   // Dynamic import to handle cases where Convex isn't configured
+> 18 |   userManagementApi = require('../../convex/_generated/api').api?.userManagement;
+     |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | } catch {
+  20 |   userManagementApi = null;
+  21 | }
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/hooks/useFeatureAccess.tsx [Client Component Browser]
+    ./src/app/music/MusicClient.tsx [Client Component Browser]
+    ./src/app/music/page.tsx [Client Component Browser]
+    ./src/app/music/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[08:16:53.793] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/jamesspalding/OpenClaw-OS/.next/dev/server/app/page/build-manifest.json'
+[08:16:54.114] Server  WARN    ⚠ ./src/hooks/useFeatureAccess.tsx:18:23
+Module not found: Can't resolve '../../convex/_generated/api'
+  16 | try {
+  17 |   // Dynamic import to handle cases where Convex isn't configured
+> 18 |   userManagementApi = require('../../convex/_generated/api').api?.userManagement;
+     |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | } catch {
+  20 |   userManagementApi = null;
+  21 | }
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/hooks/useFeatureAccess.tsx [Client Component Browser]
+    ./src/app/music/MusicClient.tsx [Client Component Browser]
+    ./src/app/music/page.tsx [Client Component Browser]
+    ./src/app/music/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[08:17:08.071] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/jamesspalding/OpenClaw-OS/.next/dev/server/app/page/build-manifest.json'
+[08:17:10.105] Server  WARN    ⚠ ./src/hooks/useFeatureAccess.tsx:18:23
+Module not found: Can't resolve '../../convex/_generated/api'
+  16 | try {
+  17 |   // Dynamic import to handle cases where Convex isn't configured
+> 18 |   userManagementApi = require('../../convex/_generated/api').api?.userManagement;
+     |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | } catch {
+  20 |   userManagementApi = null;
+  21 | }
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/hooks/useFeatureAccess.tsx [Client Component Browser]
+    ./src/app/music/MusicClient.tsx [Client Component Browser]
+    ./src/app/music/page.tsx [Client Component Browser]
+    ./src/app/music/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[08:17:23.694] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/jamesspalding/OpenClaw-OS/.next/dev/server/pages/_app/build-manifest.json'
+[08:17:33.821] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/jamesspalding/OpenClaw-OS/.next/dev/server/pages/_app/build-manifest.json'
+[08:18:15.488] Server  ERROR   ⨯ Error: ENOENT: no such file or directory, open '/Users/jamesspalding/OpenClaw-OS/.next/dev/server/app/page/build-manifest.json'
+[08:18:15.721] Server  WARN    ⚠ ./src/hooks/useFeatureAccess.tsx:18:23
+Module not found: Can't resolve '../../convex/_generated/api'
+  16 | try {
+  17 |   // Dynamic import to handle cases where Convex isn't configured
+> 18 |   userManagementApi = require('../../convex/_generated/api').api?.userManagement;
+     |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | } catch {
+  20 |   userManagementApi = null;
+  21 | }
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/hooks/useFeatureAccess.tsx [Client Component Browser]
+    ./src/app/music/MusicClient.tsx [Client Component Browser]
+    ./src/app/music/page.tsx [Client Component Browser]
+    ./src/app/music/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[08:18:27.406] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/jamesspalding/OpenClaw-OS/.next/dev/server/app/page/build-manifest.json'
+[08:18:27.633] Server  WARN    ⚠ ./src/hooks/useFeatureAccess.tsx:18:23
+Module not found: Can't resolve '../../convex/_generated/api'
+  16 | try {
+  17 |   // Dynamic import to handle cases where Convex isn't configured
+> 18 |   userManagementApi = require('../../convex/_generated/api').api?.userManagement;
+     |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  19 | } catch {
+  20 |   userManagementApi = null;
+  21 | }
+
+
+
+Import trace:
+  Client Component Browser:
+    ./src/hooks/useFeatureAccess.tsx [Client Component Browser]
+    ./src/app/music/MusicClient.tsx [Client Component Browser]
+    ./src/app/music/page.tsx [Client Component Browser]
+    ./src/app/music/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[08:18:39.163] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/jamesspalding/OpenClaw-OS/.next/dev/server/pages/_app/build-manifest.json'

@@ -1,0 +1,286 @@
+# Episode 1: "Worries Into Love"
+# Series: Unbreakable
+# Setting: Ireland, early 2024 - before the trip to Brazil
+# Context: The calm before the storm. James and Nick (age 6) living their
+#          normal happy life. School routine, park visits, cozy evenings.
+#          The audience knows what's coming but they don't. Pure innocence.
+#
+# Song: "Worries Into Love" by Salvador James
+# Source: https://2oczblkb3byymav8.public.blob.vercel-storage.com/Unbreakable/Worries%20into%20love-SalvadorJames.wav
+
+# SERIES METADATA
+series:
+  title: "Unbreakable"
+  description: >
+    An animated series telling the true story of a father and son's journey
+    through separation, a 278-day custody battle in Brazil, and reunification.
+    Told through music, cartoon illustration, and moments of spoken word.
+    Each episode is a song. The music carries the story.
+  creator: "OpenClaw-OS"
+  characters:
+    dad:
+      name: "Dad (James)"
+      age: "Late-30s/40"
+      features:
+        - messy tousled brown hair
+        - light stubble
+        - blue zip-up hoodie or blue jacket
+        - warm blue eyes
+        - big genuine open-mouth smile
+      personality: "Creative, warm, fully present with his son. Irish creative technologist and musician."
+    son:
+      name: "Nick"
+      age: "6 (in this episode)"
+      features:
+        - mostly straight brown hair with a slight curl at the ends
+        - oversized bright green headphones (signature)
+        - freckles across nose and cheeks
+        - big dark expressive eyes
+        - sometimes a chewy on a string around his neck
+        - boundless energy
+      personality: "Joyful, curious, music-loving, affectionate. Autistic, minimally verbal - communicates through gestures and AAC (iPad)."
+
+# SONG STRUCTURE (from lyrics analysis)
+song:
+  title: "Worries Into Love"
+  artist: "Salvador James"
+  url: "https://2oczblkb3byymav8.public.blob.vercel-storage.com/Unbreakable/Worries%20into%20love-SalvadorJames.wav"
+  album: "Unbreakable"
+  estimated_bpm: ~95  # To be confirmed by beat analyzer
+  structure:
+    - section: intro
+      label: "intro"
+      description: "Instrumental opening"
+    - section: verse
+      label: "verse1"
+      lyrics: "Sometimes life can get real hazy / Seems like nothing's working out / All these things that I've been chasing / Never leaving, always arriving / And now I've found out"
+    - section: chorus
+      label: "chorus1"
+      lyrics: "It's up to you, it's up to me / If you feel like giving up / Turn your feelings into love / Let's turn your worries into love"
+    - section: verse
+      label: "verse2"
+      lyrics: "There's no time like the present / A chance to see that here is heaven / The world will be what I make it / I've got to be the change I want to see / In this world"
+    - section: chorus
+      label: "chorus2"
+      lyrics: "It's up to you, it's up to me / If you might feel like giving up / Turn your feelings into love / Let's turn your worries into love"
+    - section: bridge
+      label: "bridge"
+      lyrics: "Don't forget to say please / And thank you (x4)"
+    - section: chorus
+      label: "chorus3"
+      lyrics: "It's up to you, it's up to me / If you feel like giving up / Feelings into love / Let's turn your worries into love"
+    - section: outro
+      label: "outro"
+      lyrics: "Don't forget to say please / And thank you (x4, fading)"
+
+# EPISODE SCRIPT
+episode:
+  number: 1
+  title: "Worries Into Love"
+  series: "Unbreakable"
+  setting: "Ireland, early 2024"
+  tone: "Warm, innocent, bittersweet (for the audience who knows what's coming)"
+  theme: >
+    The beauty of ordinary days. The moments we don't know to treasure
+    until they're threatened. A father and son in their element, unaware
+    that everything is about to change.
+
+  scenes:
+    - id: "s1-morning"
+      order: 1
+      title: "Morning Light"
+      song_section: "intro"
+      emotion: "cozy"
+      description: >
+        Early morning. Irish light filtering through curtains. Nick's bedroom -
+        toys scattered, drawings on the wall. Dad gently wakes him up.
+        Nick stirs, reaches for his green headphones on the nightstand.
+        Puts them on before he even opens his eyes properly. Dad smiles.
+      visual_notes: >
+        Warm golden morning light. Cozy bedroom with character - dinosaur
+        duvet, drawings taped to wall, toy tiger on the floor. Close-up on
+        green headphones being put on. Dad's silhouette in doorway.
+      sync_opportunities:
+        - "First beat: Nick's eyes open"
+        - "Headphones click on: musical element enters"
+      transition: { type: "crossfade", durationBeats: 2 }
+
+    - id: "s2-school-run"
+      order: 2
+      title: "The School Run"
+      song_section: "verse1"
+      emotion: "playful"
+      description: >
+        In the car together. Nick in the back with headphones on, bopping
+        to the music, pointing at things out the window. Irish countryside
+        passing by - green fields, stone walls, grey sky but they don't care.
+        Dad glancing in the rearview mirror, grinning at his son's joy.
+        They arrive at school. Nick hops out. Quick hug. "Have a good day."
+      visual_notes: >
+        Match the reference image of them in the car. Green headphones,
+        Nick pointing excitedly. Irish landscape through windows - very green,
+        wet roads, maybe a rainbow. School gate arrival. Other kids in
+        uniform. Nick's backpack bouncing as he runs in.
+      sync_opportunities:
+        - "'Nothing's working out' - Nick's feet hit the ground running into school"
+        - "'Always arriving' - school gate appears"
+        - "'And now I've found out' - Dad watches him go, quiet pride"
+      transition: { type: "cut", on: "kick" }
+
+    - id: "s3-dads-day"
+      order: 3
+      title: "The Hours Between"
+      song_section: "chorus1"
+      emotion: "determined"
+      description: >
+        Quick montage of Dad's day while Nick's at school. Working on music
+        (laptop, headphones, studio vibes). Working on OpenClaw-OS maybe.
+        Checking the clock. Making Nick's lunch for when he gets home.
+        The energy of the chorus carries the montage - "It's up to you,
+        it's up to me." Dad building their life.
+      visual_notes: >
+        Split into quick cuts synced to the beat. Laptop screen glowing.
+        Headphones on (Dad's are dark/black, contrast with Nick's green).
+        Clock on the wall. Sandwich being made with care. Each cut lands
+        on a beat. The "It's up to you" line should show Dad looking at
+        a photo of Nick on his desk/phone.
+      sync_opportunities:
+        - "Every 'up to you' / 'up to me' = new quick cut"
+        - "'Feelings into love' = photo of Nick, soft moment"
+        - "'Turn your worries into love' = packing Nick's lunchbox"
+      transition: { type: "cut", on: "snare" }
+
+    - id: "s4-after-school"
+      order: 4
+      title: "The Park"
+      song_section: "verse2"
+      emotion: "adventurous"
+      description: >
+        After school. The park. Nick running ahead on a trail, arms out
+        like an airplane. Dad following, hands in hoodie pockets. Irish
+        nature around them - tall trees, ferns, maybe a stream. Nick
+        crouches to look at something - a bug, a frog, a weird mushroom.
+        Dad crouches next to him. They're in their own world.
+        "There's no time like the present / A chance to see that here is heaven."
+        This IS heaven. They just don't know it's about to be taken.
+      visual_notes: >
+        Match the forest reference image. Lush greens. Dad in blue hoodie.
+        Nick with green headphones around his neck now (not on ears - he's
+        exploring). Dappled sunlight. Maybe the little green creature from
+        the reference image peeking from behind a tree. Piggyback ride.
+      sync_opportunities:
+        - "'No time like the present' = Nick leaps over a puddle"
+        - "'Here is heaven' = wide shot of the two of them in the forest, golden light"
+        - "'Be the change I want to see' = Dad lifting Nick onto his shoulders"
+      transition: { type: "crossfade", durationBeats: 2 }
+
+    - id: "s5-please-and-thank-you"
+      order: 5
+      title: "Manners"
+      song_section: "bridge"
+      emotion: "tender"
+      description: >
+        This is the heart of the episode. Quick, warm cuts of Nick being
+        a good kid. Gesturing "please" at dinner. Smiling gratefully at a
+        shopkeeper. Holding a door for someone. Sharing a snack with a
+        friend at school. Dad gently reminding, Nick responding in his own
+        way - through gestures, looks, and little acts of kindness.
+        Dad watching with quiet pride.
+        "Don't forget to say please and thank you."
+        These are the values Dad taught him. The small things that make
+        a good person. The things that matter.
+      visual_notes: >
+        Each "please and thank you" repetition = one small moment.
+        Close-ups on Nick's face, sincere and sweet. Different locations
+        for each one - dinner table, shop, school, park. Dad in the
+        background of each, beaming. Warm, golden tones throughout.
+        Nick communicates through gestures and expressions, not words.
+        This section should feel like a photo album of good memories.
+      sync_opportunities:
+        - "Each 'please' = new cut to a new moment"
+        - "Each 'and thank you' = Nick's reaction/smile"
+        - "Rhythmic, predictable, comforting - like a routine"
+      transition: { type: "cut", on: "downbeat" }
+
+    - id: "s6-couch-time"
+      order: 6
+      title: "Our World"
+      song_section: "chorus3"
+      emotion: "content"
+      description: >
+        Evening. The couch. Match the reference image exactly. Nick on
+        Dad's lap with the tablet, both looking at it together. Laptop
+        open nearby. Toys scattered. The room is their kingdom.
+        Headphones back on Nick. He's swaying to music.
+        "It's up to you, it's up to me" - in this moment, it's just them.
+        Their little universe. Complete.
+      visual_notes: >
+        Directly reference the couch illustration. Night sky through
+        window, rocket ship drawing on wall, stuffed tiger, alphabet
+        blocks. Warm lamp light. Nick nestled into Dad. Both faces lit
+        by the tablet screen. Comfortable, lived-in, loved.
+      sync_opportunities:
+        - "'It's up to you' = Dad looks down at Nick"
+        - "'It's up to me' = Nick looks up at Dad"
+        - "'Turn your worries into love' = Dad's arm tightens around Nick slightly"
+      transition: { type: "crossfade", durationBeats: 4 }
+
+    - id: "s7-goodnight"
+      order: 7
+      title: "Goodnight"
+      song_section: "outro"
+      emotion: "bittersweet"
+      description: >
+        Bedtime. Dad tucking Nick in. Green headphones placed on the
+        nightstand. Nick's eyes closing. Dad lingering at the door,
+        looking back. "Don't forget to say please and thank you" echoing
+        softly. The light from the hallway catches Dad's face - a
+        moment of something. Not worry exactly. Just... a father
+        looking at his sleeping son, not knowing these ordinary nights
+        are numbered.
+        Fade to black. The song fades.
+      visual_notes: >
+        Quiet, dim. Nick asleep, peaceful face. Green headphones on
+        nightstand catch a glint of hallway light. Dad's silhouette
+        in the doorway. Last frame: the door slowly closing, a sliver
+        of light narrowing.
+        The bittersweet is for the AUDIENCE. Dad doesn't know yet.
+        He just sees his beautiful sleeping boy. That's what makes it hit.
+      sync_opportunities:
+        - "'Don't forget to say please' = headphones placed down"
+        - "'And thank you' = Nick's eyes close"
+        - "Final beat: door closes to a crack of light"
+        - "Last 'oh' = fade to black"
+      transition: { type: "fade-black", durationMs: 2000 }
+
+  spoken_word:
+    - id: "sw1-opening"
+      text: "Ireland. Early twenty-twenty-four. Before everything changed."
+      placement: "Over the intro, before verse 1"
+      voice: "James, natural, quiet"
+      notes: "Brief. Sets the time and place. The audience should feel the weight of 'before everything changed' without it being heavy-handed."
+
+    - id: "sw2-closing"
+      text: "We didn't know it then. But these were the last normal days."
+      placement: "Over the outro, as the door closes"
+      voice: "James, natural, reflective"
+      notes: "Optional. Might be more powerful without it. Let the image and music carry it. Discuss with James."
+
+  emotional_arc:
+    # The audience knows the story. James and Nick don't (in the episode).
+    # The tension is dramatic irony - everything is beautiful precisely
+    # because we know it's about to be shattered.
+    intro: "warmth, morning calm"
+    verse1: "playful routine, school run energy"
+    chorus1: "dad's purpose, building their life"
+    verse2: "adventure, freedom, 'this is heaven'"
+    bridge: "innocence, values, the small things"
+    chorus3: "togetherness, completeness, their world"
+    outro: "bittersweet, lingering, a door closing"
+
+  series_notes: >
+    This episode establishes the baseline of happiness. Everything that
+    follows in the series - the Brazil trip, the betrayal, the 278 days
+    fighting, the reunion - will be measured against this episode.
+    This is what was at stake. This is what was worth fighting for.
+    An ordinary Tuesday with your kid.

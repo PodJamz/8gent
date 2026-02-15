@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="designGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb"/>
+      <stop offset="100%" style="stop-color:#f5576c"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#designGradient)"/>
+  <!-- Color palette circle -->
+  <circle cx="100" cy="100" r="55" fill="white" fill-opacity="0.95"/>
+  <!-- Color dots -->
+  <circle cx="75" cy="70" r="14" fill="#FF6B6B"/>
+  <circle cx="125" cy="70" r="14" fill="#4ECDC4"/>
+  <circle cx="65" cy="115" r="14" fill="#45B7D1"/>
+  <circle cx="120" cy="120" r="14" fill="#96CEB4"/>
+  <!-- Center hole -->
+  <circle cx="100" cy="100" r="16" fill="white"/>
+</svg>
