@@ -2,7 +2,7 @@
 
 ## 📋 Executive Summary
 
-**8gent** is an AI-native operating system interface that combines a professional **8gent Frontend** (abstracted from `jamesspalding.org`) with the **OpenClaw agentic backend**. This creates a powerful, single-user OS designed for seamless human-AI collaboration.
+**8gent** is an AI-native operating system interface that combines a professional **8gent Frontend** (abstracted from `jamesspalding.org`) with the **OpenClaw agentic backend**. This creates a powerful, standalone workspace designed for seamless human-AI collaboration.
 
 ### Key Achievements
 - ✅ **Successfully integrated** OpenClaw WebSocket backend
@@ -323,7 +323,7 @@ Built to grow and adapt with your needs.
 ---
 
 **Built with ❤️ by the 8gent Team**  
-**A fork of OpenClaw**  
+**An OpenClaw Integrated Workspace**  
 **Inspired by the amazing developer community**
 
 ---

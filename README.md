@@ -1,6 +1,6 @@
 # ♾️ 8gent (Infinity Agent)
 
-**8gent** (Infinity Agent) is a next-generation, AI-native operating system interface. It is a highly modular frontend fork of the **OpenClaw** ecosystem, featuring a specialized workspace abstracted from [jamesspalding.org](https://jamesspalding.org).
+**8gent** (Infinity Agent) is a next-generation, AI-native operating system interface. It is a highly modular, standalone frontend for the **OpenClaw** ecosystem, featuring a specialized workspace abstracted from [jamesspalding.org](https://jamesspalding.org).
 
 > [!IMPORTANT]
 > **Agent-Ready Modularity**: This repository is designed to be easily "latched" onto any existing OpenClaw agentic backend. Whether you are a human developer or a coding agent, you can integrate this frontend by simply pointing your backend to this source.
@@ -137,4 +137,4 @@ See [/inspirations](http://localhost:3000/inspirations) for 20+ amazing creators
 
 ---
 
-*Built with ❤️ by the 8gent Team — A fork of OpenClaw*
+*Built with ❤️ by the 8gent Team — An OpenClaw Integrated Workspace*
