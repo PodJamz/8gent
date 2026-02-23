@@ -127,7 +127,7 @@ export function MusicAdminPanel({ onClose }: MusicAdminPanelProps) {
           </AnimatePresence>
         </div>
 
-        {/* Claw AI Chat Footer */}
+        {/* 8gent Chat Footer */}
         <div className="flex-shrink-0 px-6 py-4 border-t border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800/50">
           <EphemeralMusicChat
             isAdmin

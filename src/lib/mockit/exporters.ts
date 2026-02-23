@@ -124,7 +124,7 @@ export function generateJSON(options: ExportOptions): string {
 
   const exportData = {
     version: '1.0',
-    generator: 'Mockit by OpenClaw-OS',
+    generator: 'Mockit by 8gent',
     metadata: {
       title: generateTitle(sourceUrl, devices),
       altText: generateAltText(sourceUrl, devices),

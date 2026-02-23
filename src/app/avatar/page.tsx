@@ -29,7 +29,7 @@ import {
 
 // Demo avatar images for the showcase
 const DEMO_AVATARS = [
-  { id: 'demo-1', src: '/openclaw-logo.png', name: 'Owner' },
+  { id: 'demo-1', src: '/8gent-logo.png', name: 'Owner' },
 ];
 
 // Generation modes
@@ -159,7 +159,7 @@ export default function AvatarPage() {
                     className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
                   >
                     <ChevronLeft className="w-4 h-4" />
-                    <span className="text-sm">OpenClaw-OS</span>
+                    <span className="text-sm">8gent</span>
                   </Link>
                   <div className="hidden sm:block w-px h-6 bg-border" />
                   <div className="hidden sm:flex items-center gap-2">
@@ -618,7 +618,7 @@ export default function AvatarPage() {
               className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-card/80 backdrop-blur-xl text-foreground text-sm sm:text-base hover:bg-card transition-colors border border-border/50 shadow-lg"
             >
               <ChevronLeft className="w-4 h-4" />
-              Back to OpenClaw-OS
+              Back to 8gent
             </Link>
           </div>
         </div>

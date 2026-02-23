@@ -18,7 +18,7 @@ interface AgentAccessRestrictedProps {
 const JAMES_MESSAGES = [
   "Ah, here's the thing...",
   "I'd love to let you into the workshop, truly I would. But this particular room is where I keep all the sharp tools and live wires.",
-  "The ∞gent can execute code, push to repos, and deploy to production. So I keep it locked up tight. Nothing personal, just being a responsible host.",
+  "The OpenClaw can execute code, push to repos, and deploy to production. So I keep it locked up tight. Nothing personal, just being a responsible host.",
 ];
 
 // Full message for TTS (all messages combined)
@@ -76,7 +76,7 @@ async function generateSpeech(text: string): Promise<Blob> {
 }
 
 /**
- * AgentAccessRestricted - Claw AI gracefully declines access to non-owners
+ * AgentAccessRestricted - 8gent gracefully declines access to non-owners
  *
  * The agent/sandbox feature is owner-only for security reasons:
  * - It can execute arbitrary code
@@ -272,7 +272,7 @@ export function AgentAccessRestricted({ isLoading, isSignedIn, clerkId, userEmai
             transition={{ duration: 2, repeat: Infinity }}
           >
             <Image
-              src="/openclaw-logo.png"
+              src="/8gent-logo.png"
               alt="James"
               width={64}
               height={64}
@@ -324,7 +324,7 @@ export function AgentAccessRestricted({ isLoading, isSignedIn, clerkId, userEmai
             }}
           >
             <Image
-              src="/openclaw-logo.png"
+              src="/8gent-logo.png"
               alt="James"
               width={96}
               height={96}

@@ -1,13 +1,20 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Github, MessageCircle, Send, Hash, Mail, Loader2 } from 'lucide-react';
+import type { AestheticChoice } from '../hooks/useOnboardingState';
 
 interface IntegrationsScreenProps {
     onAdvance: () => void;
+    aesthetic?: AestheticChoice | null;
 }
 
-export function IntegrationsScreen({ onAdvance }: IntegrationsScreenProps) {
+export function IntegrationsScreen({ onAdvance, aesthetic }: IntegrationsScreenProps) {
     const [connecting, setConnecting] = useState<string | null>(null);
+
+    const isDark = aesthetic === 'dark' || aesthetic === 'vivid' || !aesthetic;
+    const textColor = isDark ? 'text-white' : 'text-slate-900';
+    const subtextColor = isDark ? 'text-white/60' : 'text-slate-600';
+    const mutedColor = isDark ? 'text-white/40' : 'text-slate-400';
 
     const handleConnect = (platform: string) => {
         setConnecting(platform);
@@ -24,24 +31,25 @@ export function IntegrationsScreen({ onAdvance }: IntegrationsScreenProps) {
                 animate={{ opacity: 1, y: 0 }}
                 className="flex-1"
             >
-                <span className="inline-block px-3 py-1 mb-6 rounded-full bg-white/10 text-xs font-medium tracking-wider text-white/80 uppercase">
+                <span className={`inline-block px-3 py-1 mb-6 rounded-full ${isDark ? 'bg-white/10 text-white/80' : 'bg-slate-200 text-slate-700'} text-xs font-medium tracking-wider uppercase`}>
                     Connectivity
                 </span>
 
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <h1 className={`text-4xl md:text-5xl font-bold ${textColor} mb-6`}>
                     Connect your world.
                 </h1>
-                <p className="text-xl text-white/60 mb-12 max-w-lg">
+                <p className={`text-xl ${subtextColor} mb-12 max-w-lg`}>
                     Link your accounts to give your OS context and communication powers.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <IntegrationOption
                         name="GitHub"
-                        icon={<Github className="w-5 h-5 text-white" />}
+                        icon={<Github className={`w-5 h-5 ${isDark ? 'text-white' : 'text-slate-900'}`} />}
                         bgColor="bg-gray-800"
                         onClick={() => handleConnect('github')}
                         isLoading={connecting === 'github'}
+                        isDark={isDark}
                     />
                     <IntegrationOption
                         name="WhatsApp"
@@ -49,6 +57,7 @@ export function IntegrationsScreen({ onAdvance }: IntegrationsScreenProps) {
                         bgColor="bg-green-600"
                         onClick={() => handleConnect('whatsapp')}
                         isLoading={connecting === 'whatsapp'}
+                        isDark={isDark}
                     />
                     <IntegrationOption
                         name="Telegram"
@@ -56,6 +65,7 @@ export function IntegrationsScreen({ onAdvance }: IntegrationsScreenProps) {
                         bgColor="bg-blue-500"
                         onClick={() => handleConnect('telegram')}
                         isLoading={connecting === 'telegram'}
+                        isDark={isDark}
                     />
                     <IntegrationOption
                         name="Slack"
@@ -63,10 +73,11 @@ export function IntegrationsScreen({ onAdvance }: IntegrationsScreenProps) {
                         bgColor="bg-purple-600"
                         onClick={() => handleConnect('slack')}
                         isLoading={connecting === 'slack'}
+                        isDark={isDark}
                     />
                 </div>
 
-                <p className="mt-8 text-sm text-white/40">
+                <p className={`mt-8 text-sm ${mutedColor}`}>
                     You can configure these later in Settings.
                 </p>
             </motion.div>
@@ -76,7 +87,7 @@ export function IntegrationsScreen({ onAdvance }: IntegrationsScreenProps) {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
                 onClick={onAdvance}
-                className="group flex items-center gap-3 text-lg font-medium text-white/80 hover:text-white transition-colors"
+                className={`group flex items-center gap-3 text-lg font-medium ${isDark ? 'text-white/80 hover:text-white' : 'text-slate-700 hover:text-slate-900'} transition-colors mt-8`}
             >
                 Continue
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -90,25 +101,27 @@ function IntegrationOption({
     icon,
     bgColor,
     onClick,
-    isLoading
+    isLoading,
+    isDark
 }: {
     name: string;
     icon: React.ReactNode;
     bgColor: string;
     onClick: () => void;
     isLoading: boolean;
+    isDark: boolean;
 }) {
     return (
         <button
             onClick={onClick}
-            className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-left"
+            className={`flex items-center gap-4 p-4 rounded-xl border transition-colors text-left ${isDark ? 'bg-white/5 border-white/10 hover:bg-white/10' : 'bg-slate-50 border-slate-200 hover:bg-slate-100'}`}
         >
             <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${bgColor}`}>
                 {isLoading ? <Loader2 className="w-5 h-5 animate-spin text-white" /> : icon}
             </div>
             <div>
-                <div className="font-medium text-white">{name}</div>
-                <div className="text-xs text-white/40">Connect account</div>
+                <div className={`font-medium ${isDark ? 'text-white' : 'text-slate-900'}`}>{name}</div>
+                <div className={`text-xs ${isDark ? 'text-white/40' : 'text-slate-500'}`}>Connect account</div>
             </div>
         </button>
     );

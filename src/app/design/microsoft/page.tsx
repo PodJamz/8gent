@@ -167,7 +167,7 @@ function Windows11StartMenu() {
             <User className="w-4 h-4 text-white" />
           </div>
           <span className="text-sm" style={{ color: 'hsl(var(--theme-foreground))' }}>
-            OpenClaw-OS
+            8gent
           </span>
         </button>
         <button className="p-2 rounded-lg hover:bg-black/5">

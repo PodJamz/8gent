@@ -1,8 +1,8 @@
 /**
- * Tools Registry - Browseable catalog of all Claw AI tools
+ * Tools Registry - Browseable catalog of all 8gent tools
  *
  * Provides categorization, access levels, and metadata for displaying
- * the complete set of 121 Claw AI tools on the /skills page.
+ * the complete set of 121 8gent tools on the /skills page.
  */
 
 import { CLAW_AI_TOOLS, ToolDefinition } from './claw-ai/tools';
@@ -12,7 +12,7 @@ import { CLAW_AI_TOOLS, ToolDefinition } from './claw-ai/tools';
 // ============================================================================
 
 export type ToolCategory =
-  | 'portfolio'
+  | 'system'
   | 'scheduling'
   | 'ui'
   | 'product'
@@ -52,10 +52,10 @@ export interface ToolCategoryInfo {
 // ============================================================================
 
 export const TOOL_CATEGORY_INFO: Record<ToolCategory, ToolCategoryInfo> = {
-  portfolio: {
-    label: 'Portfolio & Navigation',
+  system: {
+    label: 'System & Navigation',
     icon: 'Briefcase',
-    description: 'Search and navigate the portfolio',
+    description: 'Search and navigate the workspace',
   },
   scheduling: {
     label: 'Scheduling & Calendar',
@@ -144,14 +144,14 @@ export const TOOL_CATEGORY_INFO: Record<ToolCategory, ToolCategoryInfo> = {
 // ============================================================================
 
 const TOOL_CATEGORIES: Record<string, ToolCategory> = {
-  // Portfolio & Navigation
-  search_portfolio: 'portfolio',
-  navigate_to: 'portfolio',
-  list_themes: 'portfolio',
-  open_search_app: 'portfolio',
-  show_weather: 'portfolio',
-  show_photos: 'portfolio',
-  show_kanban_tasks: 'portfolio',
+  // System & Navigation
+  search_system: 'system',
+  navigate_to: 'system',
+  list_themes: 'system',
+  open_search_app: 'system',
+  show_weather: 'system',
+  show_photos: 'system',
+  show_kanban_tasks: 'system',
 
   // Scheduling
   schedule_call: 'scheduling',
@@ -305,7 +305,7 @@ const TOOL_CATEGORIES: Record<string, ToolCategory> = {
 // ============================================================================
 
 const VISITOR_TOOLS = new Set([
-  'search_portfolio',
+  'search_system',
   'navigate_to',
   'list_themes',
   'open_search_app',

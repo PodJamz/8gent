@@ -4,7 +4,7 @@
  * Called by Vercel cron every minute to process due user jobs.
  * Supports multiple action types: ai_message, notification, email, webhook
  *
- * Similar to Clawdbot's cron system but integrated with Claw AI.
+ * Similar to Clawdbot's cron system but integrated with 8gent.
  */
 
 import { NextRequest, NextResponse } from "next/server";
@@ -61,7 +61,7 @@ interface JobResult {
 }
 
 /**
- * Execute an AI message action - send prompt to Claw AI and get response
+ * Execute an AI message action - send prompt to 8gent and get response
  */
 async function executeAIMessage(
   job: {
@@ -77,7 +77,7 @@ async function executeAIMessage(
   }
 
   try {
-    // Call the Claw AI chat API
+    // Call the 8gent chat API
     const response = await fetch(`${baseUrl}/api/chat`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -151,14 +151,14 @@ async function executeEmail(
 
   try {
     const result = await resend.emails.send({
-      from: "8gent Automation <noreply@8gent.app>",
+      from: "OpenClaw Automation <noreply@8gent.app>",
       to: [recipientEmail],
       subject,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <div style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); padding: 20px; border-radius: 12px 12px 0 0; color: white;">
             <h2 style="margin: 0;">${subject}</h2>
-            <p style="margin: 8px 0 0 0; opacity: 0.9; font-size: 14px;">Automated message from 8gent</p>
+            <p style="margin: 8px 0 0 0; opacity: 0.9; font-size: 14px;">Automated message from OpenClaw</p>
           </div>
           <div style="background: #f5f3ff; padding: 24px; border-radius: 0 0 12px 12px; border: 1px solid #c4b5fd; border-top: none;">
             <div style="font-size: 15px; line-height: 1.6;">${body.replace(/\n/g, "<br>")}</div>
@@ -378,7 +378,7 @@ export async function GET(request: NextRequest) {
     // Get base URL for internal API calls
     const baseUrl =
       process.env.NEXT_PUBLIC_APP_URL ||
-      process.env.VERCEL_URL
+        process.env.VERCEL_URL
         ? `https://${process.env.VERCEL_URL}`
         : "http://localhost:3000";
 

@@ -1,5 +1,5 @@
 /**
- * Ralph Loop Integration for OpenClaw-OS
+ * Ralph Loop Integration for 8gent
  *
  * This integrates the ralph-loop-agent SDK with our durable job system.
  * Ralph Mode = Continuous autonomy with verification loops.
@@ -34,7 +34,7 @@ export type {
 } from 'ai';
 
 /**
- * Configuration for Ralph Mode in OpenClaw-OS
+ * Configuration for Ralph Mode in 8gent
  */
 export interface RalphModeConfig {
   /** Maximum iterations before stopping */

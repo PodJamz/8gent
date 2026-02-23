@@ -26,7 +26,7 @@ export function AppIcon({ name, href, icon, imageUrl, gradient, delay = 0, exter
   const handleClick = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
 
-    // Custom onClick handler (e.g., for Claw AI chat)
+    // Custom onClick handler (e.g., for 8gent chat)
     if (onClick) {
       onClick();
       return;

@@ -310,7 +310,7 @@ export default function BubbleTimerPage() {
                   className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
                 >
                   <ChevronLeft className="w-4 h-4" />
-                  <span className="text-sm">OpenClaw-OS</span>
+                  <span className="text-sm">8gent</span>
                 </Link>
 
                 <div className="flex items-center gap-2">
@@ -523,7 +523,7 @@ export default function BubbleTimerPage() {
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-800/80 backdrop-blur-xl text-white text-sm hover:bg-slate-700/80 transition-colors border border-white/10 shadow-lg"
             >
               <ChevronLeft className="w-4 h-4" />
-              Back to OpenClaw-OS
+              Back to 8gent
             </Link>
           </div>
         </div>

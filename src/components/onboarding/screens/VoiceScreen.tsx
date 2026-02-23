@@ -21,7 +21,7 @@ function getContextualQuestion(intent?: string | null): { question: string; plac
   switch (intent) {
     case 'hiring':
       return {
-        question: "How do you plan to use OpenClaw-OS for work?",
+        question: "How do you plan to use 8gent for work?",
         placeholder: "e.g., I need to manage projects and automate tasks..."
       };
     case 'collaboration':
@@ -37,7 +37,7 @@ function getContextualQuestion(intent?: string | null): { question: string; plac
     case 'curiosity':
     default:
       return {
-        question: "What brings you to OpenClaw-OS today?",
+        question: "What brings you to 8gent today?",
         placeholder: "e.g., Just exploring the features..."
       };
   }
@@ -48,7 +48,7 @@ function generateClawResponse(userMessage: string, intent?: string | null): stri
   const message = userMessage.toLowerCase();
 
   if (intent === 'hiring') {
-    return "Understood. OpenClaw-OS is designed for high-performance productivity. You'll find tools for project management, automated workflows, and AI assistance in the dock below. Let's get started with your workspace.";
+    return "Understood. 8gent is designed for high-performance productivity. You'll find tools for project management, automated workflows, and AI assistance in the dock below. Let's get started with your workspace.";
   }
 
   if (intent === 'collaboration') {
@@ -60,10 +60,10 @@ function generateClawResponse(userMessage: string, intent?: string | null): stri
   }
 
   if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
-    return "Hello! Welcome to OpenClaw-OS. I'm your AI assistant, ready to help you navigate this environment. Feel free to explore the apps in the dock.";
+    return "Hello! Welcome to 8gent. I'm your AI assistant, ready to help you navigate this environment. Feel free to explore the apps in the dock.";
   }
 
-  return "Glad to have you here. OpenClaw-OS is now configured for your needs. You can use the orange orb at the bottom of the screen to chat with me anytime you have questions.";
+  return "Glad to have you here. 8gent is now configured for your needs. You can use the orange orb at the bottom of the screen to chat with me anytime you have questions.";
 }
 
 // Try Eleven Labs first, fall back to OpenAI
@@ -144,12 +144,12 @@ export function VoiceScreen({ onSave, onAdvance, aesthetic, intent }: VoiceScree
   const hasAutoAdvanced = useRef(false);
   const textInputRef = useRef<HTMLTextAreaElement>(null);
 
-  const isDark = true; // Force dark mode aesthetics for onboarding
+  const isDark = aesthetic === 'dark' || aesthetic === 'vivid' || !aesthetic;
   const bgClass = 'bg-transparent';
-  const textClass = 'text-white';
-  const mutedClass = 'text-white/40';
-  const buttonBg = 'bg-white/10 hover:bg-white/20';
-  const inputBg = 'bg-white/5 border-white/10';
+  const textClass = isDark ? 'text-white' : 'text-slate-900';
+  const mutedClass = isDark ? 'text-white/40' : 'text-slate-400';
+  const buttonBg = isDark ? 'bg-white/10 hover:bg-white/20' : 'bg-slate-200 hover:bg-slate-300';
+  const inputBg = isDark ? 'bg-white/5 border-white/10' : 'bg-slate-100 border-slate-200';
 
   const { question, placeholder } = getContextualQuestion(intent);
 
@@ -608,7 +608,7 @@ export function VoiceScreen({ onSave, onAdvance, aesthetic, intent }: VoiceScree
               </motion.div>
             )}
 
-            {/* Claw AI is speaking */}
+            {/* 8gent is speaking */}
             {phase === 'playing' && (
               <motion.div
                 key="playing"

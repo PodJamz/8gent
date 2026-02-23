@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/jamesspalding/OpenClaw-OS/src/app/music/page.tsx"],"sourcesContent":["'use client';\n\nimport dynamic from 'next/dynamic';\n\nconst MusicClient = dynamic(\n  () => import('./MusicClient').then((mod) => mod.MusicClient),\n  { ssr: false }\n);\n\nexport default function MusicPage() {\n  return <MusicClient />;\n}\n"],"names":[],"mappings":";;;;;AAEA;;AAFA;;;AAIA,MAAM,cAAc,IAAA,sXAAO,EACzB,IAAM,+HAAwB,IAAI,CAAC,CAAC,MAAQ,IAAI,WAAW;;;;;;IACzD,KAAK;;KAFH;AAKS,SAAS;IACtB,qBAAO,sYAAC;;;;;AACV;MAFwB"}}]
+}

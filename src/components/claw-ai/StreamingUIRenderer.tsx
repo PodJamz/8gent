@@ -20,7 +20,7 @@ import { memo, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Boxes, Loader2, AlertCircle, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { ClawAIUIRenderer, parseUITree, type UITree } from '@/lib/claw-ai/json-render-provider';
+import { ClawAIUIRenderer, parseUITree, type UITree } from '@/lib/8gent/json-render-provider';
 import { useJsonRenderStream, type StreamingUIState } from '@/hooks/useJsonRenderStream';
 
 // =============================================================================

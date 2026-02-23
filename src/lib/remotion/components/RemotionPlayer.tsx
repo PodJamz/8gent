@@ -2,7 +2,7 @@
  * Remotion Player Wrapper
  *
  * A reusable player component for rendering video compositions
- * in the Canvas and other parts of OpenClaw-OS.
+ * in the Canvas and other parts of 8gent.
  */
 
 "use client";

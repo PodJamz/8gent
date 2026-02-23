@@ -221,7 +221,7 @@ export default function InviteAcceptPage() {
                   </div>
                   <h1 className="text-white text-xl font-semibold mb-2">You're Invited!</h1>
                   <p className="text-zinc-400 text-sm">
-                    {inviteData.createdByName} has invited you to join OpenClaw-OS
+                    {inviteData.createdByName} has invited you to join 8gent
                   </p>
                 </div>
 
@@ -342,7 +342,7 @@ export default function InviteAcceptPage() {
                     className="w-full flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white font-medium py-3 px-6 rounded-full transition-colors"
                   >
                     <Home className="w-4 h-4" />
-                    Go to OpenClaw-OS
+                    Go to 8gent
                   </button>
                 </div>
               </motion.div>
@@ -360,7 +360,7 @@ export default function InviteAcceptPage() {
                 <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <CheckCircle className="w-8 h-8 text-green-400" />
                 </div>
-                <h1 className="text-white text-xl font-semibold mb-2">Welcome to OpenClaw-OS!</h1>
+                <h1 className="text-white text-xl font-semibold mb-2">Welcome to 8gent!</h1>
                 <p className="text-zinc-400 text-sm mb-6">
                   Your access has been set up. Redirecting you now...
                 </p>
@@ -370,7 +370,7 @@ export default function InviteAcceptPage() {
                   className="w-full flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-black font-medium py-3 px-6 rounded-full transition-colors"
                 >
                   <Home className="w-4 h-4" />
-                  Go to OpenClaw-OS
+                  Go to 8gent
                 </button>
               </motion.div>
             )}
@@ -397,7 +397,7 @@ export default function InviteAcceptPage() {
                   className="w-full flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white font-medium py-3 px-6 rounded-full transition-colors"
                 >
                   <Home className="w-4 h-4" />
-                  Go to OpenClaw-OS
+                  Go to 8gent
                 </button>
               </motion.div>
             )}
@@ -424,7 +424,7 @@ export default function InviteAcceptPage() {
                   className="w-full flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white font-medium py-3 px-6 rounded-full transition-colors"
                 >
                   <Home className="w-4 h-4" />
-                  Go to OpenClaw-OS
+                  Go to 8gent
                 </button>
               </motion.div>
             )}
@@ -451,7 +451,7 @@ export default function InviteAcceptPage() {
                   className="w-full flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white font-medium py-3 px-6 rounded-full transition-colors"
                 >
                   <Home className="w-4 h-4" />
-                  Go to OpenClaw-OS
+                  Go to 8gent
                 </button>
               </motion.div>
             )}
@@ -460,7 +460,7 @@ export default function InviteAcceptPage() {
 
         {/* Footer */}
         <p className="text-center text-zinc-600 text-xs mt-4">
-          OpenClaw-OS - Personal Operating System
+          8gent - Personal Operating System
         </p>
       </motion.div>
     </div>

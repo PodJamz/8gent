@@ -133,7 +133,7 @@ export interface Episode {
   seriesId: string;
   number: number;
   title: string;
-  /** James's verbal/text description of what happens */
+  /** The creator's verbal/text description of what happens */
   description: string;
   song: SongReference;
   scenes: Scene[];

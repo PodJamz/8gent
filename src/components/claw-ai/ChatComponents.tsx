@@ -22,7 +22,7 @@ import {
 /**
  * Chat Component Registry
  *
- * Claw AI can render any of these components inline in chat.
+ * 8gent can render any of these components inline in chat.
  * Each component is self-contained and renders its own data.
  */
 

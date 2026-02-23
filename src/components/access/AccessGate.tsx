@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * AccessGate - Graceful Access Denial with Claw AI
+ * AccessGate - Graceful Access Denial with 8gent
  *
  * When users attempt to access features they don't have permission for,
  * this component creates a friendly, conversational experience instead
@@ -10,7 +10,7 @@
  * Uses the same aesthetic as /onboarding and /updates:
  * - White sheet fade in
  * - Typewriter text animation
- * - Claw AI personality
+ * - 8gent personality
  * - Voice/text response option
  */
 
@@ -221,7 +221,7 @@ export function AccessGate({
   const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     if (userInput.trim()) {
-      // Could integrate with Claw AI chat here
+      // Could integrate with 8gent chat here
       setPhase('responding');
       // For now, just redirect to contact
       setTimeout(() => {
@@ -263,7 +263,7 @@ export function AccessGate({
 
         {/* Content */}
         <div className="relative z-10 max-w-lg mx-auto px-8 text-center">
-          {/* Claw AI indicator */}
+          {/* 8gent indicator */}
           <motion.div
             className="mb-8 flex items-center justify-center gap-2"
             initial={{ opacity: 0, y: 10 }}
@@ -272,7 +272,7 @@ export function AccessGate({
           >
             <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
             <span className="text-xs font-medium tracking-wider text-zinc-400 dark:text-zinc-500 uppercase">
-              Claw AI
+              8gent
             </span>
           </motion.div>
 

@@ -15,9 +15,10 @@ export function HonestyScreen({ onAdvance, aesthetic }: HonestyScreenProps) {
     onAdvance,
   });
 
+  const isDark = aesthetic === 'dark' || aesthetic === 'vivid' || !aesthetic;
   const bgClass = 'bg-transparent';
-  const textClass = 'text-white';
-  const mutedClass = 'text-white/40';
+  const textClass = isDark ? 'text-white' : 'text-slate-900';
+  const mutedClass = isDark ? 'text-white/40' : 'text-slate-400';
 
   const lines = [
     { text: 'This began as an exploration into AI-native design.', delay: 0.33 },

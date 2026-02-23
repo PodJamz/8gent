@@ -1,8 +1,8 @@
 /**
  * useAgenticActions - Hook for executing agentic tool actions
  *
- * Handles the bridge between Claw AI tool responses and Convex mutations.
- * When Claw AI invokes an agentic tool (create_project, create_ticket, etc.),
+ * Handles the bridge between 8gent tool responses and Convex mutations.
+ * When 8gent invokes an agentic tool (create_project, create_ticket, etc.),
  * this hook executes the corresponding Convex mutation and returns the result.
  *
  * Inspired by BMAD-METHOD and CCPM workflows.
@@ -85,7 +85,7 @@ export function useAgenticActions(options: UseAgenticActionsOptions) {
   const updateCanvasData = useMutation(designCanvasApi?.updateCanvasData ?? (() => { }));
 
   /**
-   * Execute an agentic action from Claw AI tool response
+   * Execute an agentic action from 8gent tool response
    */
   const executeAction = useCallback(async (action: AgenticAction): Promise<AgenticActionResult> => {
     try {

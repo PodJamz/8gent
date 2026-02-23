@@ -33,19 +33,19 @@ interface ToolUsed {
 
 interface ToolAction {
   type:
-    | 'navigate' | 'open_calendar' | 'show_results' | 'show_available_times' | 'show_bookings' | 'booking_confirmed'
-    | 'render_ui' | 'render_component' | 'open_search' | 'show_kanban'
-    | 'project_created' | 'prd_created' | 'prd_sharded' | 'ticket_created' | 'ticket_updated'
-    | 'memory_stored' | 'memory_recalled' | 'memory_learned' | 'memory_deleted'
-    | 'file_read' | 'file_written' | 'directory_listed' | 'files_searched'
-    | 'git_status' | 'git_diff' | 'git_committed' | 'git_pushed' | 'branch_created' | 'repo_cloned'
-    | 'command_executed' | 'server_started' | 'preview_ready'
-    | 'coding_task_created' | 'coding_task_updated'
-    | 'cron_job_created' | 'cron_job_updated' | 'cron_job_deleted' | 'cron_jobs_listed'
-    | 'context_loaded' | 'context_updated'
-    | 'conversation_compacted' | 'compaction_retrieved'
-    | 'message_sent'
-    | 'check_provider_status';
+  | 'navigate' | 'open_calendar' | 'show_results' | 'show_available_times' | 'show_bookings' | 'booking_confirmed'
+  | 'render_ui' | 'render_component' | 'open_search' | 'show_kanban'
+  | 'project_created' | 'prd_created' | 'prd_sharded' | 'ticket_created' | 'ticket_updated'
+  | 'memory_stored' | 'memory_recalled' | 'memory_learned' | 'memory_deleted'
+  | 'file_read' | 'file_written' | 'directory_listed' | 'files_searched'
+  | 'git_status' | 'git_diff' | 'git_committed' | 'git_pushed' | 'branch_created' | 'repo_cloned'
+  | 'command_executed' | 'server_started' | 'preview_ready'
+  | 'coding_task_created' | 'coding_task_updated'
+  | 'cron_job_created' | 'cron_job_updated' | 'cron_job_deleted' | 'cron_jobs_listed'
+  | 'context_loaded' | 'context_updated'
+  | 'conversation_compacted' | 'compaction_retrieved'
+  | 'message_sent'
+  | 'check_provider_status';
   payload: Record<string, unknown>;
 }
 
@@ -61,7 +61,7 @@ interface Message {
 const INITIAL_MESSAGE: Message = {
   id: '1',
   role: 'assistant',
-  content: "Claw AI here... can I help you with understanding where we could work together? Tell me a bit about your business or what you're looking to build.",
+  content: "8gent here... can I help you with understanding where we could work together? Tell me a bit about your business or what you're looking to build.",
   suggestedThemes: undefined,
 };
 
@@ -247,10 +247,10 @@ export function ClawAIChat({ isOpen, onClose }: ClawAIChatProps) {
                 };
                 const result = await executeAction(agenticAction);
                 if (!result.success) {
-                  console.error(`[Claw AI] Agentic action ${action.type} failed:`, result.error);
+                  console.error(`[8gent] Agentic action ${action.type} failed:`, result.error);
                 }
               } catch (err) {
-                console.error(`[Claw AI] Error executing agentic action ${action.type}:`, err);
+                console.error(`[8gent] Error executing agentic action ${action.type}:`, err);
               }
             }
           }
@@ -390,297 +390,293 @@ export function ClawAIChat({ isOpen, onClose }: ClawAIChatProps) {
             className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50"
           />
 
-            {/* Chat Window */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="fixed inset-x-4 top-16 bottom-24 sm:inset-x-auto sm:right-8 sm:top-auto sm:bottom-8 sm:w-[400px] sm:h-[550px] z-50 flex flex-col overflow-hidden"
-              style={{ maxWidth: 'calc(100vw - 32px)' }}
+          {/* Chat Window */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            className="fixed inset-x-4 top-16 bottom-24 sm:inset-x-auto sm:right-8 sm:top-auto sm:bottom-8 sm:w-[400px] sm:h-[550px] z-50 flex flex-col overflow-hidden"
+            style={{ maxWidth: 'calc(100vw - 32px)' }}
+          >
+            <LiquidGlass
+              variant="card"
+              intensity="medium"
+              className="!p-0 flex flex-col h-full w-full overflow-hidden !rounded-3xl"
             >
-              <LiquidGlass
-                variant="card"
-                intensity="medium"
-                className="!p-0 flex flex-col h-full w-full overflow-hidden !rounded-3xl"
-              >
-                {/* Header */}
-                <div className="flex items-center justify-between p-4 border-b border-white/10">
-                  <div className="flex items-center gap-3">
-                    <div className="relative">
-                      <ClawAIAvatar
-                        size={40}
-                        isActive={isTyping || voiceChat.mode === 'speaking'}
+              {/* Header */}
+              <div className="flex items-center justify-between p-4 border-b border-white/10">
+                <div className="flex items-center gap-3">
+                  <div className="relative">
+                    <ClawAIAvatar
+                      size={40}
+                      isActive={isTyping || voiceChat.mode === 'speaking'}
+                    />
+                    {/* Recording/Voice indicator */}
+                    {voiceRecorder.isRecording ? (
+                      <motion.div
+                        className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-red-500 rounded-full border-2 border-black/50"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: [1, 1.2, 1] }}
+                        transition={{ repeat: Infinity, duration: 1 }}
                       />
-                      {/* Recording/Voice indicator */}
-                      {voiceRecorder.isRecording ? (
-                        <motion.div
-                          className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-red-500 rounded-full border-2 border-black/50"
-                          initial={{ scale: 0 }}
-                          animate={{ scale: [1, 1.2, 1] }}
-                          transition={{ repeat: Infinity, duration: 1 }}
-                        />
-                      ) : voiceChat.isVoiceEnabled ? (
-                        <motion.div
-                          className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-black/50"
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                        />
-                      ) : null}
-                    </div>
-                    <div>
-                      <h3 className="text-white font-semibold">Claw AI</h3>
-                      <p className="text-white/50 text-xs">
-                        {voiceRecorder.isRecording ? 'Recording...' :
-                         isTranscribing ? 'Transcribing...' :
-                         voiceChat.mode === 'speaking' ? 'Speaking...' :
-                         isTyping ? 'Thinking...' :
-                         'Creative Technologist'}
-                      </p>
-                    </div>
+                    ) : voiceChat.isVoiceEnabled ? (
+                      <motion.div
+                        className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-black/50"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                      />
+                    ) : null}
                   </div>
-                  <button
-                    onClick={() => onClose()}
-                    className="p-2 rounded-full hover:bg-white/10 transition-colors"
-                  >
-                    <X className="w-5 h-5 text-white/60" />
-                  </button>
+                  <div>
+                    <h3 className="text-white font-semibold">8gent</h3>
+                    <p className="text-white/50 text-xs">
+                      {voiceRecorder.isRecording ? 'Recording...' :
+                        isTranscribing ? 'Transcribing...' :
+                          voiceChat.mode === 'speaking' ? 'Speaking...' :
+                            isTyping ? 'Thinking...' :
+                              'Product Builder'}
+                    </p>
+                  </div>
                 </div>
+                <button
+                  onClick={() => onClose()}
+                  className="p-2 rounded-full hover:bg-white/10 transition-colors"
+                >
+                  <X className="w-5 h-5 text-white/60" />
+                </button>
+              </div>
 
-                {/* Messages */}
-                <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 space-y-4">
-                  {messages.map((message) => (
-                    <motion.div
-                      key={message.id}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
-                    >
-                      <div
-                        className={`max-w-[85%] rounded-2xl px-4 py-3 ${
-                          message.role === 'user'
-                            ? 'bg-white/20 text-white'
-                            : 'bg-white/10 text-white/90'
+              {/* Messages */}
+              <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 space-y-4">
+                {messages.map((message) => (
+                  <motion.div
+                    key={message.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                  >
+                    <div
+                      className={`max-w-[85%] rounded-2xl px-4 py-3 ${message.role === 'user'
+                          ? 'bg-white/20 text-white'
+                          : 'bg-white/10 text-white/90'
                         }`}
-                      >
-                        <p className="text-sm leading-relaxed break-words whitespace-pre-wrap">{message.content}</p>
-
-                        {/* Tool executions */}
-                        {message.toolsUsed && message.toolsUsed.length > 0 && (
-                          <div className="mt-3 space-y-2">
-                            {message.toolsUsed.map((tool, idx) => (
-                              <ToolExecution
-                                key={`${tool.name}-${idx}`}
-                                toolName={tool.name}
-                                status="complete"
-                                result={tool.result}
-                                onNavigate={handleNavigate}
-                              />
-                            ))}
-                          </div>
-                        )}
-
-                        {/* Theme suggestions */}
-                        {message.suggestedThemes && (
-                          <div className="mt-3 space-y-2">
-                            {message.suggestedThemes.map((theme) => (
-                              <Link
-                                key={theme.href}
-                                href={theme.href}
-                                onClick={() => onClose()}
-                                className="block"
-                              >
-                                <motion.div
-                                  whileHover={{ scale: 1.02, x: 4 }}
-                                  className="p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
-                                >
-                                  <div className="flex items-center justify-between">
-                                    <span className="text-white font-medium text-sm">{theme.name}</span>
-                                    <span className="text-white/40 text-xs">→</span>
-                                  </div>
-                                  <p className="text-white/50 text-xs mt-1">{theme.description}</p>
-                                </motion.div>
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    </motion.div>
-                  ))}
-
-                  {/* Typing indicator */}
-                  {isTyping && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="flex justify-start"
                     >
-                      <div className="bg-white/10 rounded-2xl px-4 py-3">
-                        <div className="flex gap-1">
-                          <span className="w-2 h-2 bg-white/40 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                          <span className="w-2 h-2 bg-white/40 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                          <span className="w-2 h-2 bg-white/40 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                      <p className="text-sm leading-relaxed break-words whitespace-pre-wrap">{message.content}</p>
+
+                      {/* Tool executions */}
+                      {message.toolsUsed && message.toolsUsed.length > 0 && (
+                        <div className="mt-3 space-y-2">
+                          {message.toolsUsed.map((tool, idx) => (
+                            <ToolExecution
+                              key={`${tool.name}-${idx}`}
+                              toolName={tool.name}
+                              status="complete"
+                              result={tool.result}
+                              onNavigate={handleNavigate}
+                            />
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Theme suggestions */}
+                      {message.suggestedThemes && (
+                        <div className="mt-3 space-y-2">
+                          {message.suggestedThemes.map((theme) => (
+                            <Link
+                              key={theme.href}
+                              href={theme.href}
+                              onClick={() => onClose()}
+                              className="block"
+                            >
+                              <motion.div
+                                whileHover={{ scale: 1.02, x: 4 }}
+                                className="p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
+                              >
+                                <div className="flex items-center justify-between">
+                                  <span className="text-white font-medium text-sm">{theme.name}</span>
+                                  <span className="text-white/40 text-xs">→</span>
+                                </div>
+                                <p className="text-white/50 text-xs mt-1">{theme.description}</p>
+                              </motion.div>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+
+                {/* Typing indicator */}
+                {isTyping && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex justify-start"
+                  >
+                    <div className="bg-white/10 rounded-2xl px-4 py-3">
+                      <div className="flex gap-1">
+                        <span className="w-2 h-2 bg-white/40 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                        <span className="w-2 h-2 bg-white/40 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                        <span className="w-2 h-2 bg-white/40 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+
+                <div ref={messagesEndRef} />
+              </div>
+
+              {/* Input */}
+              <div className="p-4 border-t border-white/10">
+                {/* Transcribing indicator */}
+                <AnimatePresence>
+                  {isTranscribing && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="mb-3"
+                    >
+                      <div className="bg-white/5 rounded-xl px-4 py-3 border border-white/10">
+                        <div className="flex items-center gap-2">
+                          <Loader2 className="w-4 h-4 text-amber-500 animate-spin" />
+                          <span className="text-white/60 text-sm">
+                            Transcribing your message...
+                          </span>
                         </div>
                       </div>
                     </motion.div>
                   )}
+                </AnimatePresence>
 
-                  <div ref={messagesEndRef} />
-                </div>
-
-                {/* Input */}
-                <div className="p-4 border-t border-white/10">
-                  {/* Transcribing indicator */}
-                  <AnimatePresence>
-                    {isTranscribing && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="mb-3"
-                      >
-                        <div className="bg-white/5 rounded-xl px-4 py-3 border border-white/10">
-                          <div className="flex items-center gap-2">
-                            <Loader2 className="w-4 h-4 text-amber-500 animate-spin" />
-                            <span className="text-white/60 text-sm">
-                              Transcribing your message...
-                            </span>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-
-                  <div className="flex items-center gap-2">
-                    {/* Microphone button - iMessage/WhatsApp style */}
-                    {voiceRecorder.isSupported && (
-                      <motion.button
-                        onClick={handleMicToggle}
-                        disabled={isTranscribing || isTyping}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className={`p-3 rounded-full transition-all flex-shrink-0 ${
-                          voiceRecorder.isRecording
-                            ? 'bg-red-500 text-white'
-                            : isTranscribing
+                <div className="flex items-center gap-2">
+                  {/* Microphone button - iMessage/WhatsApp style */}
+                  {voiceRecorder.isSupported && (
+                    <motion.button
+                      onClick={handleMicToggle}
+                      disabled={isTranscribing || isTyping}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`p-3 rounded-full transition-all flex-shrink-0 ${voiceRecorder.isRecording
+                          ? 'bg-red-500 text-white'
+                          : isTranscribing
                             ? 'bg-amber-500/20 text-amber-400'
                             : 'bg-white/10 text-white/60 hover:bg-white/20'
                         }`}
-                        title={
-                          voiceRecorder.isRecording
-                            ? 'Tap to stop and send'
-                            : isTranscribing
+                      title={
+                        voiceRecorder.isRecording
+                          ? 'Tap to stop and send'
+                          : isTranscribing
                             ? 'Transcribing...'
                             : 'Tap to record voice message'
-                        }
+                      }
+                    >
+                      {isTranscribing ? (
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                      ) : (
+                        <Mic className="w-4 h-4" />
+                      )}
+                    </motion.button>
+                  )}
+
+                  {/* Recording indicator with waveform and timer */}
+                  <AnimatePresence mode="wait">
+                    {voiceRecorder.isRecording ? (
+                      <motion.div
+                        key="recording"
+                        className="flex-1 flex items-center"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
                       >
-                        {isTranscribing ? (
+                        <VoiceRecordingIndicator
+                          isRecording={voiceRecorder.isRecording}
+                          duration={voiceRecorder.duration}
+                          audioLevels={voiceRecorder.audioLevels}
+                          className="flex-1"
+                        />
+                      </motion.div>
+                    ) : (
+                      <motion.input
+                        key="input"
+                        ref={inputRef}
+                        type="text"
+                        value={inputValue}
+                        onChange={(e) => setInputValue(e.target.value)}
+                        onKeyDown={handleKeyPress}
+                        placeholder="Tell me about your project..."
+                        className="flex-1 bg-white/10 rounded-full px-4 py-3 text-white text-base placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
+                        disabled={isTranscribing}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                      />
+                    )}
+                  </AnimatePresence>
+
+                  {/* Send button - hidden during recording */}
+                  <AnimatePresence>
+                    {!voiceRecorder.isRecording && (
+                      <motion.button
+                        onClick={handleSend}
+                        disabled={!inputValue.trim() || isTranscribing}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.8 }}
+                        className={`p-3 rounded-full transition-colors flex-shrink-0 ${inputValue.trim() && !isTranscribing
+                            ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-white'
+                            : 'bg-white/10 text-white/40'
+                          }`}
+                      >
+                        {isTyping ? (
                           <Loader2 className="w-4 h-4 animate-spin" />
                         ) : (
-                          <Mic className="w-4 h-4" />
+                          <Send className="w-4 h-4" />
                         )}
                       </motion.button>
                     )}
-
-                    {/* Recording indicator with waveform and timer */}
-                    <AnimatePresence mode="wait">
-                      {voiceRecorder.isRecording ? (
-                        <motion.div
-                          key="recording"
-                          className="flex-1 flex items-center"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                        >
-                          <VoiceRecordingIndicator
-                            isRecording={voiceRecorder.isRecording}
-                            duration={voiceRecorder.duration}
-                            audioLevels={voiceRecorder.audioLevels}
-                            className="flex-1"
-                          />
-                        </motion.div>
-                      ) : (
-                        <motion.input
-                          key="input"
-                          ref={inputRef}
-                          type="text"
-                          value={inputValue}
-                          onChange={(e) => setInputValue(e.target.value)}
-                          onKeyDown={handleKeyPress}
-                          placeholder="Tell me about your project..."
-                          className="flex-1 bg-white/10 rounded-full px-4 py-3 text-white text-base placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
-                          disabled={isTranscribing}
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                        />
-                      )}
-                    </AnimatePresence>
-
-                    {/* Send button - hidden during recording */}
-                    <AnimatePresence>
-                      {!voiceRecorder.isRecording && (
-                        <motion.button
-                          onClick={handleSend}
-                          disabled={!inputValue.trim() || isTranscribing}
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          exit={{ opacity: 0, scale: 0.8 }}
-                          className={`p-3 rounded-full transition-colors flex-shrink-0 ${
-                            inputValue.trim() && !isTranscribing
-                              ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-white'
-                              : 'bg-white/10 text-white/40'
-                          }`}
-                        >
-                          {isTyping ? (
-                            <Loader2 className="w-4 h-4 animate-spin" />
-                          ) : (
-                            <Send className="w-4 h-4" />
-                          )}
-                        </motion.button>
-                      )}
-                    </AnimatePresence>
-                  </div>
-
-                  {/* Voice toggle for TTS responses */}
-                  <div className="flex items-center justify-between mt-3">
-                    <button
-                      onClick={voiceChat.toggleVoice}
-                      className={`flex items-center gap-2 text-xs transition-colors ${
-                        voiceChat.isVoiceEnabled
-                          ? 'text-green-400'
-                          : 'text-white/40 hover:text-white/60'
-                      }`}
-                    >
-                      {voiceChat.isVoiceEnabled ? (
-                        <Volume2 className="w-3 h-3" />
-                      ) : (
-                        <VolumeX className="w-3 h-3" />
-                      )}
-                      <span>{voiceChat.isVoiceEnabled ? 'Voice responses on' : 'Voice responses off'}</span>
-                    </button>
-                  </div>
-
-                  {/* Error messages */}
-                  <AnimatePresence>
-                    {(voiceRecorder.error || voiceChat.error) && (
-                      <motion.p
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        className="mt-2 text-xs text-red-400 text-center"
-                      >
-                        {voiceRecorder.error?.message || voiceChat.error?.message}
-                      </motion.p>
-                    )}
                   </AnimatePresence>
                 </div>
-              </LiquidGlass>
-            </motion.div>
-          </>
-        )}
+
+                {/* Voice toggle for TTS responses */}
+                <div className="flex items-center justify-between mt-3">
+                  <button
+                    onClick={voiceChat.toggleVoice}
+                    className={`flex items-center gap-2 text-xs transition-colors ${voiceChat.isVoiceEnabled
+                        ? 'text-green-400'
+                        : 'text-white/40 hover:text-white/60'
+                      }`}
+                  >
+                    {voiceChat.isVoiceEnabled ? (
+                      <Volume2 className="w-3 h-3" />
+                    ) : (
+                      <VolumeX className="w-3 h-3" />
+                    )}
+                    <span>{voiceChat.isVoiceEnabled ? 'Voice responses on' : 'Voice responses off'}</span>
+                  </button>
+                </div>
+
+                {/* Error messages */}
+                <AnimatePresence>
+                  {(voiceRecorder.error || voiceChat.error) && (
+                    <motion.p
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="mt-2 text-xs text-red-400 text-center"
+                    >
+                      {voiceRecorder.error?.message || voiceChat.error?.message}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
+              </div>
+            </LiquidGlass>
+          </motion.div>
+        </>
+      )}
     </AnimatePresence>
   );
 }

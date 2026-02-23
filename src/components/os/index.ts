@@ -1,5 +1,5 @@
 /**
- * Claw AI OS - Core Components
+ * 8gent OS - Core Components
  *
  * These components form the foundation of the operating system UI.
  */

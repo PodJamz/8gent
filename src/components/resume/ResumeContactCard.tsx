@@ -96,7 +96,7 @@ export function ResumeContactCard({ lang = 'en' }: ResumeContactCardProps) {
               className="text-sm truncate"
               style={{ color: 'hsl(var(--theme-muted-foreground))' }}
             >
-              {lang === 'en' ? 'Creative Technologist' : 'Tecnólogo Criativo'}
+              {lang === 'en' ? 'Product Builder' : 'Construtor de Produtos'}
             </p>
           </div>
         </div>

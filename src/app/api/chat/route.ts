@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
-import { assembleSoulPrompt, getLoadedLayers } from '@/lib/claw-ai/soul-layers';
-import { parseToolCalls, ToolCall, toOpenAITools } from '@/lib/claw-ai/tools';
-import { executeTool, formatToolResults } from '@/lib/claw-ai/tool-executor';
+import { assembleSoulPrompt, getLoadedLayers } from '@/lib/8gent/soul-layers';
+import { parseToolCalls, ToolCall, toOpenAITools } from '@/lib/8gent/tools';
+import { executeTool, formatToolResults } from '@/lib/8gent/tool-executor';
 import { MemoryManager } from '@/lib/memory';
 import { verifySession, ADMIN_COOKIE } from '@/lib/passcodeAuth';
 import { checkRateLimit, getClientIp } from '@/lib/security';
@@ -11,7 +11,7 @@ import {
   getToolsForAccessLevel,
   filterToolCalls,
   describeAccessLevel,
-} from '@/lib/claw-ai/access-control';
+} from '@/lib/8gent/access-control';
 import { OllamaClient, type OllamaChatRequest, type OllamaMessage } from '@/lib/ollama';
 import { getLynkrClient, type LynkrMessage } from '@/lib/lynkr';
 import { auth } from '@/lib/openclaw/auth-server';
@@ -65,7 +65,7 @@ async function getUserIdentity(): Promise<{ accessLevel: AccessLevel; userId: st
     const { userId: clerkUserId } = await auth();
 
     if (clerkUserId) {
-      // Assume owner for now in OpenClaw OS single-user mode
+      // Assume owner for now in 8gent single-user mode
       return { accessLevel: 'owner', userId: clerkUserId };
     }
 
@@ -98,7 +98,7 @@ async function getAIProviderSettings(accessLevel: AccessLevel): Promise<AIProvid
     return { primaryProvider: 'cloud' };
   }
 
-  // Use environment variables for default settings in OpenClaw OS
+  // Use environment variables for default settings in 8gent
   return {
     primaryProvider: 'cloud', // Default to cloud for reliability
     // Could load from localStorage passed in headers or similar if needed

@@ -22,7 +22,7 @@ interface NotificationsPanelProps {
 
 // App name mapping
 const appNames: Record<string, string> = {
-  clawai: 'Claw AI',
+  clawai: '8gent',
   projects: 'Projects',
   design: 'Design',
   product: 'Product',
@@ -209,7 +209,7 @@ export function NotificationsPanel({ isOpen, onClose }: NotificationsPanelProps)
                     <Bell className="w-12 h-12 text-white/20 mb-3" />
                     <p className="text-white/40 text-sm">No notifications yet</p>
                     <p className="text-white/30 text-xs mt-1">
-                      Activity from Claw AI will appear here
+                      Activity from 8gent will appear here
                     </p>
                   </div>
                 ) : (

@@ -276,7 +276,7 @@ export function ExpandedNowPlaying({ onShowQueue, onShowPlaylist }: ExpandedNowP
         </ControlButton>
       </div>
 
-      {/* Ephemeral Claw AI Chat */}
+      {/* Ephemeral 8gent Chat */}
       <div className="mt-auto pt-2 border-t border-zinc-200/50 dark:border-zinc-700/50">
         <EphemeralMusicChat />
       </div>

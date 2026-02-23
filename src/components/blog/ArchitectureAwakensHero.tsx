@@ -51,7 +51,7 @@ export default function ArchitectureAwakensHero({ className = "" }: Architecture
   useEffect(() => {
     const initialNodes: Node[] = [
       // Central project
-      { id: "p1", x: 0.5, y: 0.5, targetX: 0.5, targetY: 0.5, type: "Project", name: "OpenClaw-OS", visible: false, connected: false },
+      { id: "p1", x: 0.5, y: 0.5, targetX: 0.5, targetY: 0.5, type: "Project", name: "8gent", visible: false, connected: false },
       // Tickets orbiting
       { id: "t1", x: 0.2, y: 0.3, targetX: 0.25, targetY: 0.3, type: "Ticket", name: "JAMES-001", visible: false, connected: false },
       { id: "t2", x: 0.8, y: 0.3, targetX: 0.75, targetY: 0.3, type: "Ticket", name: "JAMES-002", visible: false, connected: false },

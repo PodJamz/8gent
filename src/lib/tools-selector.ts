@@ -1,5 +1,5 @@
 /**
- * Dynamic Tool Selector - Claw AI picks only what he needs
+ * Dynamic Tool Selector - 8gent picks only what he needs
  *
  * Analyzes the user's message to determine which tool categories are relevant,
  * then returns only those tools. Keeps the OpenAI payload small (~5-15 tools)
@@ -26,12 +26,12 @@ interface CategoryTrigger {
 
 const CATEGORY_TRIGGERS: CategoryTrigger[] = [
   {
-    category: 'portfolio',
-    keywords: ['search', 'find', 'look up', 'portfolio', 'resume', 'skills', 'experience', 'projects', 'work'],
-    tools: ['search_portfolio', 'list_themes', 'open_search_app'],
+    category: 'system',
+    keywords: ['search', 'find', 'look up', 'system', 'documentation', 'skills', 'experience', 'projects', 'architecture'],
+    tools: ['search_system', 'list_themes', 'open_search_app'],
   },
   {
-    category: 'portfolio',
+    category: 'system',
     keywords: ['go to', 'navigate', 'open', 'show me', 'take me to', 'switch to', 'visit'],
     tools: ['navigate_to', 'open_search_app'],
   },
@@ -119,7 +119,7 @@ const CATEGORY_TRIGGERS: CategoryTrigger[] = [
 
 // Tools always included (lightweight, universally useful for any conversation)
 const BASE_TOOLS = new Set([
-  'search_portfolio',
+  'search_system',
   'navigate_to',
   'render_ui',
 ]);
@@ -149,7 +149,7 @@ export function selectToolsForMessage(
   const selected = allowedTools.filter(tool => selectedToolNames.has(tool.name));
 
   // Safety: if nothing matched beyond base tools, include UI tools
-  // so James can still render rich responses
+  // so the system can still render rich responses
   if (selected.length <= BASE_TOOLS.size) {
     const fallback = ['show_weather', 'show_photos', 'list_themes', 'show_kanban_tasks', 'remember', 'recall_preference'];
     fallback.forEach(t => selectedToolNames.add(t));

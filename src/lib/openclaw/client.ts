@@ -9,9 +9,26 @@ class OpenClawClient {
 
   public static getInstance(): OpenClawClientImpl {
     if (!OpenClawClient.instance) {
+      // Load from localStorage if possible
+      let url = GATEWAY_URL;
+      let token = GATEWAY_TOKEN;
+
+      if (typeof window !== 'undefined') {
+        const stored = localStorage.getItem('openclaw_onboarding');
+        if (stored) {
+          try {
+            const parsed = JSON.parse(stored);
+            if (parsed.gatewayUrl) url = parsed.gatewayUrl;
+            if (parsed.gatewayToken) token = parsed.gatewayToken;
+          } catch (e) {
+            // Use defaults
+          }
+        }
+      }
+
       OpenClawClient.instance = new OpenClawClientImpl({
-        url: GATEWAY_URL,
-        authToken: GATEWAY_TOKEN
+        url: url,
+        authToken: token
       });
     }
     return OpenClawClient.instance;

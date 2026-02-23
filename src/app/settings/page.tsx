@@ -359,7 +359,7 @@ export default function SettingsPage() {
           iconBg: 'bg-gradient-theme',
           type: 'link',
           href: '/resume',
-          value: 'OpenClaw-OS',
+          value: '8gent',
           ariaLabel: 'View profile',
         },
       ],
@@ -418,7 +418,7 @@ export default function SettingsPage() {
       ],
     },
     {
-      title: 'Claw AI',
+      title: '8gent',
       items: [
         {
           id: 'skills',
@@ -428,17 +428,17 @@ export default function SettingsPage() {
           type: 'link',
           href: '/skills',
           value: '89 skills',
-          ariaLabel: 'Manage Claw AI skills',
+          ariaLabel: 'Manage 8gent skills',
         },
         {
           id: 'clawAI',
-          label: 'Claw AI Assistant',
+          label: '8gent Assistant',
           icon: <Sparkles className="w-4 h-4 text-white" />,
           iconBg: 'bg-gradient-to-br from-orange-500 to-amber-600',
           type: 'link',
           href: '#claw-ai',
           value: 'Active',
-          ariaLabel: 'Configure Claw AI',
+          ariaLabel: 'Configure 8gent',
         },
         {
           id: 'notifications',
@@ -489,12 +489,12 @@ export default function SettingsPage() {
       items: [
         {
           id: 'about',
-          label: 'About OpenClaw-OS',
+          label: 'About 8gent',
           icon: <Info className="w-4 h-4 text-white" />,
           iconBg: 'bg-gradient-to-br from-blue-500 to-cyan-600',
           type: 'link',
           href: '/story',
-          ariaLabel: 'About OpenClaw-OS',
+          ariaLabel: 'About 8gent',
         },
       ],
     },
@@ -639,7 +639,7 @@ export default function SettingsPage() {
 
           {/* Footer */}
           <footer className="mt-8 text-center text-xs text-white/30">
-            <p>OpenClaw-OS • Built with Next.js & Framer Motion</p>
+            <p>8gent • Built with Next.js & Framer Motion</p>
             <p className="mt-1">Themes apply across all apps</p>
           </footer>
         </main>

@@ -10,7 +10,7 @@ import {
   getDefaultEngagementState,
   type EngagementState,
   type ProactiveMessage,
-} from '@/lib/claw-ai/proactive-engine';
+} from '@/lib/8gent/proactive-engine';
 
 interface UseClawAIProactiveReturn {
   engagementState: EngagementState;

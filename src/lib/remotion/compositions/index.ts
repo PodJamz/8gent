@@ -42,7 +42,7 @@ export {
   type SlideshowProps,
 } from "./AdvancedCompositions";
 
-// OpenClaw-OS Presentation (Theme-Aware)
+// 8gent Presentation (Theme-Aware)
 export {
   OpenClawOSPresentation,
   OPENCLAW_OS_PRESENTATION_CONFIG,

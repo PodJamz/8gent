@@ -413,7 +413,7 @@ export function AdminLoginButton({ className }: AdminLoginButtonProps) {
                   className="text-[10px] text-center"
                   style={{ color: 'hsl(var(--theme-muted-foreground) / 0.6)' }}
                 >
-                  OpenClaw-OS Admin Panel
+                  8gent Admin Panel
                 </p>
               </div>
             </motion.div>

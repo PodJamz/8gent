@@ -46,7 +46,7 @@ export interface DimensionHeaderProps {
   config?: DimensionConfig;
   /** Show home button */
   showHome?: boolean;
-  /** Show Claw AI context indicator */
+  /** Show 8gent context indicator */
   showAIContext?: boolean;
   /** Callback when home is clicked */
   onHomeClick?: () => void;
@@ -260,7 +260,7 @@ export const DimensionHeader = memo(function DimensionHeader({
         {showAIContext && (
           <motion.button
             type="button"
-            aria-label="Claw AI is watching"
+            aria-label="8gent is watching"
             onClick={onAIContextClick}
             className={cn(
               "flex items-center gap-2",

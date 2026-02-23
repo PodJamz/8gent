@@ -2,7 +2,7 @@
  * Discord Webhook Handler
  *
  * Handles incoming interactions from Discord.
- * Processes messages with Claw AI and sends responses.
+ * Processes messages with 8gent and sends responses.
  *
  * Setup:
  * 1. Create Discord Application at discord.com/developers
@@ -392,7 +392,7 @@ function isAllowedMediaDomain(url: string): boolean {
 // =============================================================================
 
 /**
- * Process message with Claw AI
+ * Process message with 8gent
  */
 async function processWithClawAI(
   userId: string,
@@ -414,7 +414,7 @@ async function processWithClawAI(
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Claw AI error:", errorText);
+      console.error("8gent error:", errorText);
       return "I'm having trouble processing that right now. Please try again.";
     }
 
@@ -520,7 +520,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       return NextResponse.json({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: `Hey ${username}! I'm Claw AI. To chat with me, please connect your Discord account at openclaw.io/settings/channels`,
+          content: `Hey ${username}! I'm 8gent. To chat with me, please connect your Discord account at openclaw.io/settings/channels`,
         },
       });
     }
@@ -530,7 +530,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       return NextResponse.json({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: "Your Claw AI integration is currently disabled. Enable it in settings to continue chatting.",
+          content: "Your 8gent integration is currently disabled. Enable it in settings to continue chatting.",
         },
       });
     }
@@ -602,7 +602,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
             integration.settings.contextLimit
           );
 
-          // Process with Claw AI
+          // Process with 8gent
           const aiResponse = await processWithClawAI(
             integration.userId,
             content,

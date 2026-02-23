@@ -116,9 +116,9 @@ const MOCK_PEOPLE: MockPerson[] = [
   {
     id: 'mock-8',
     url: 'https://angel.co/u/james-lee-founder',
-    title: 'James Lee - Serial Entrepreneur & Angel Investor',
+    title: 'Angel Investor - Serial Entrepreneur & Angel Investor',
     snippet: 'Serial entrepreneur with 3 exits. Angel investor in 50+ startups. YC alum. Currently building in the climate tech space. Based in Austin, TX. @jameslee_vc',
-    author: 'James Lee',
+    author: 'Angel Investor',
     socialLinks: {
       linkedin: 'https://linkedin.com/in/jameslee-founder',
       x: 'jameslee_vc',
@@ -551,7 +551,7 @@ function extractSocialLinks(result: SearchProviderResult & { socialLinks?: Socia
 
   // Extract personal website
   const websitePatterns = [
-    /(?:website|site|portfolio|blog):\s*(https?:\/\/[^\s,]+)/i,
+    /(?:website|site|workspace|blog):\s*(https?:\/\/[^\s,]+)/i,
     /(?:https?:\/\/)?([a-zA-Z0-9-]+\.(?:dev|io|me|com|co|design|tech))(?:\/|$|\s)/i,
   ];
   for (const pattern of websitePatterns) {

@@ -1,5 +1,5 @@
 /**
- * useWorkingContext - Unified context management for ∞gent
+ * useWorkingContext - Unified context management for OpenClaw
  *
  * Manages the active working context (project, ticket, PRD, etc.)
  * and provides methods to update context when user @mentions entities.
@@ -57,7 +57,7 @@ export interface WorkingContextResult {
   contextSummary: string | null;
   isLoading: boolean;
 
-  // Context chain for display (e.g., "@project:OpenClaw-OS → @prd:ERV → @ticket:ARC-042")
+  // Context chain for display (e.g., "@project:8gent → @prd:ERV → @ticket:ARC-042")
   contextChain: string[];
 
   // Methods

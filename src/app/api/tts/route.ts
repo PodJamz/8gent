@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
     const body: TTSRequestBody = await request.json();
     const {
       text,
-      voice = 'nova', // Nova is warm and conversational - perfect for Claw AI
+      voice = 'nova', // Nova is warm and conversational - perfect for 8gent
       model = 'tts-1-hd', // HD for better quality
       speed = 1.0
     } = body;

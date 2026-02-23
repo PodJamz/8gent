@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Photos - OpenClaw-OS | Visual Journey & Photography",
+  title: "Photos - 8gent | Visual Journey & Photography",
   description:
-    "Photo gallery from OpenClaw-OS. Visual documentation of life, work, and travels between Dublin, Ireland and Brazil. A Creative Technologist's perspective.",
+    "Photo gallery from 8gent. Visual documentation of life, work, and travels between Dublin, Ireland and Brazil. A Creative Technologist's perspective.",
   keywords: [
-    "OpenClaw-OS photos",
-    "OpenClaw-OS photography",
+    "8gent photos",
+    "8gent photography",
     "Dublin photography",
     "Ireland photos",
     "Brazil photos",
@@ -14,21 +14,21 @@ export const metadata: Metadata = {
     "Tech leader photography",
   ],
   openGraph: {
-    title: "Photos - OpenClaw-OS",
+    title: "Photos - 8gent",
     description: "Visual journey and photography from a Creative Technologist.",
     url: "https://openclaw.io/photos",
     type: "website",
     images: [
       {
-        url: "https://openclaw.io/openclaw-logo.png",
+        url: "https://openclaw.io/8gent-logo.png",
         width: 1200,
         height: 630,
-        alt: "OpenClaw-OS - Photos",
+        alt: "8gent - Photos",
       },
     ],
   },
   twitter: {
-    title: "OpenClaw-OS's Photos",
+    title: "8gent's Photos",
     description: "Photography from a Creative Technologist.",
     card: "summary_large_image",
   },

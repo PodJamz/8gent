@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Mockit - Device Mockup Generator | OpenClaw-OS',
-  description: 'Generate beautiful device mockups from any website. Capture screenshots in mobile, tablet, and desktop views, add animations, and export as PNG, GIF, JSON, or React code. Free mockup tool by OpenClaw-OS.',
+  title: 'Mockit - Device Mockup Generator | 8gent',
+  description: 'Generate beautiful device mockups from any website. Capture screenshots in mobile, tablet, and desktop views, add animations, and export as PNG, GIF, JSON, or React code. Free mockup tool by 8gent.',
   keywords: [
     'mockup generator',
     'screenshot tool',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     'MacBook mockup',
     'iPad mockup',
     'free mockup tool',
-    'OpenClaw-OS',
+    '8gent',
   ],
   openGraph: {
     title: 'Mockit - Free Device Mockup Generator',
@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://openclaw.io/openclaw-logo.png',
+        url: 'https://openclaw.io/8gent-logo.png',
         width: 1200,
         height: 630,
-        alt: 'Mockit - Device Mockup Generator by OpenClaw-OS',
+        alt: 'Mockit - Device Mockup Generator by 8gent',
       },
     ],
   },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'Mockit - Free Device Mockup Generator',
     description: 'Generate beautiful device mockups from any website.',
     card: 'summary_large_image',
-    images: ['https://openclaw.io/openclaw-logo.png'],
+    images: ['https://openclaw.io/8gent-logo.png'],
   },
   alternates: {
     canonical: 'https://openclaw.io/mockit',

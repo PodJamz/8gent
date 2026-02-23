@@ -23,7 +23,7 @@ import {
   CATEGORY_LABELS,
   CATEGORY_COLORS,
   formatCommandPreview,
-} from '@/lib/claw-ai/slash-command-registry';
+} from '@/lib/8gent/slash-command-registry';
 
 // ============================================================================
 // Types

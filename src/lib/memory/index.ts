@@ -1,7 +1,7 @@
 /**
  * Memory Layer Module
  *
- * Recursive Memory Layer (RLM) for OpenClaw-OS self-learning capability.
+ * Recursive Memory Layer (RLM) for 8gent self-learning capability.
  *
  * @see docs/philosophy/README.md#self-learning-systems
  * @see docs/planning/recursive-memory-layer-scope.md

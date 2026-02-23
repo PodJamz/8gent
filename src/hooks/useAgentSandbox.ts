@@ -2,7 +2,7 @@
 
 import { useCallback, useState, useRef, useEffect } from 'react';
 import { useSandboxContext, type LogEntry } from '@/contexts/SandboxContext';
-import type { ToolAction } from '@/lib/claw-ai/tools';
+import type { ToolAction } from '@/lib/8gent/tools';
 import type { FileInfo, CommandState } from '@/lib/sandbox';
 
 // =============================================================================

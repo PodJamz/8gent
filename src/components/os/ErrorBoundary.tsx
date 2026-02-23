@@ -27,7 +27,7 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error('Claw AI OS Error:', error, errorInfo);
+    console.error('8gent OS Error:', error, errorInfo);
     this.setState({ errorInfo });
   }
 
@@ -54,7 +54,7 @@ export class ErrorBoundary extends Component<Props, State> {
               </h1>
 
               <p className="text-neutral-400 mb-6">
-                Claw AI OS encountered an unexpected error. This is likely a prototype feature that isn&apos;t fully implemented yet.
+                8gent OS encountered an unexpected error. This is likely a prototype feature that isn&apos;t fully implemented yet.
               </p>
 
               {this.state.error && (
@@ -89,7 +89,7 @@ export class ErrorBoundary extends Component<Props, State> {
             </div>
 
             <p className="text-center text-neutral-500 text-sm mt-4">
-              Claw AI OS is a personal operating system prototype
+              8gent OS is a personal operating system prototype
             </p>
           </div>
         </div>

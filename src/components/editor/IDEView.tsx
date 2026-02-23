@@ -53,7 +53,7 @@ const SAMPLE_FILES: FileItem[] = [
             content: `export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-4xl font-bold">Welcome to Claw AI</h1>
+      <h1 className="text-4xl font-bold">Welcome to 8gent</h1>
       <p className="mt-4 text-lg text-gray-600">
         Your AI-powered coding assistant
       </p>
@@ -74,7 +74,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Claw AI',
+  title: '8gent',
   description: 'AI-powered coding assistant',
 };
 
@@ -204,7 +204,7 @@ Button.displayName = 'Button';`,
     id: 'README.md',
     name: 'README.md',
     type: 'file',
-    content: `# Claw AI App
+    content: `# 8gent App
 
 An AI-powered coding assistant built with Next.js.
 
@@ -314,7 +314,7 @@ export function IDEView({ className }: IDEViewProps) {
     if (!selectedFile) return;
 
     // Require auth for save action
-    if (!requireAuth({ name: 'Claw AI App', description: 'Your AI-powered project' })) {
+    if (!requireAuth({ name: '8gent App', description: 'Your AI-powered project' })) {
       return;
     }
 
@@ -328,17 +328,17 @@ export function IDEView({ className }: IDEViewProps) {
 
   // Auth-gated actions
   const handleRun = useCallback(() => {
-    if (!requireAuth({ name: 'Claw AI App' })) return;
+    if (!requireAuth({ name: '8gent App' })) return;
     // Run project implementation
   }, [requireAuth]);
 
   const handleGit = useCallback(() => {
-    if (!requireAuth({ name: 'Claw AI App' })) return;
+    if (!requireAuth({ name: '8gent App' })) return;
     // Open git implementation
   }, [requireAuth]);
 
   const handleTerminal = useCallback(() => {
-    if (!requireAuth({ name: 'Claw AI App' })) return;
+    if (!requireAuth({ name: '8gent App' })) return;
     // Open terminal implementation
   }, [requireAuth]);
 
@@ -367,7 +367,7 @@ export function IDEView({ className }: IDEViewProps) {
               files={files}
               selectedFile={selectedFile?.id}
               onSelectFile={handleSelectFile}
-              projectName="Claw AI App"
+              projectName="8gent App"
             />
           </motion.div>
         )}

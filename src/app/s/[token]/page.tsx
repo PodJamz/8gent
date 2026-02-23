@@ -169,7 +169,7 @@ export default function SavedSessionPage() {
                 className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium py-3 px-6 rounded-full hover:opacity-90 transition-opacity"
               >
                 <Home className="w-4 h-4" />
-                Go to OpenClaw-OS
+                Go to 8gent
               </button>
             </div>
           )}

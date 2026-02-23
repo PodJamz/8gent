@@ -345,14 +345,14 @@ export function ClawAISheet({ isOpen, onClose }: ClawAISheetProps) {
                 <div className="flex items-center gap-3">
                   <ClawAIAvatar size={40} isActive={false} />
                   <div>
-                    <h2 className="text-white font-semibold">Claw AI</h2>
+                    <h2 className="text-white font-semibold">8gent</h2>
                     <p className="text-white/50 text-xs">Free Sprint Preview</p>
                   </div>
                 </div>
                 <button
                   onClick={onClose}
                   className="p-2 text-white/40 hover:text-white/80 transition-colors rounded-full hover:bg-white/5"
-                  aria-label="Close Claw AI"
+                  aria-label="Close 8gent"
                 >
                   <X className="w-5 h-5" aria-hidden="true" />
                 </button>

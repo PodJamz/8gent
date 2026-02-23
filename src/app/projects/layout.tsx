@@ -1,44 +1,44 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projects - OpenClaw-OS | AI & Product Development Portfolio",
+  title: "Projects - 8gent | AI & System Development",
   description:
-    "Explore OpenClaw-OS's project portfolio including AI applications, RAG systems, WebGPU experiences, and product roadmaps. See the work behind OpenClaw-OS - a professional AI operating system.",
+    "Explore the ecosystem of 8gent including AI applications, agentic tools, and system roadmaps. See the development of a professional AI operating system.",
   keywords: [
-    "OpenClaw-OS projects",
-    "AI portfolio",
-    "Product development portfolio",
-    "Way AI project",
+    "8gent projects",
+    "AI development",
+    "Agentic system showcases",
+    "8gent",
     "IAMAI Research",
     "RAG applications",
     "WebGPU projects",
-    "React portfolio",
+    "React architecture",
     "Next.js projects",
-    "AI consulting work",
-    "Dublin developer portfolio",
+    "AI consulting",
+    "Dublin tech ecosystem",
     "LLM applications",
-    "Creative Technologist work",
-    "OpenClaw-OS",
+    "Creative Technology",
+    "8gent",
     "Personal AI operating system",
   ],
   openGraph: {
-    title: "Projects - OpenClaw-OS | AI & Product Portfolio",
+    title: "Projects - 8gent | AI & System Development",
     description:
-      "AI applications, RAG systems, WebGPU experiences, and more. Explore the work of a Creative Technologist.",
+      "AI applications, agentic tools, and more. Explore the architecture of 8gent.",
     url: "https://openclaw.io/projects",
     type: "website",
     images: [
       {
-        url: "https://openclaw.io/openclaw-logo.png",
+        url: "https://openclaw.io/8gent-logo.png",
         width: 1200,
         height: 630,
-        alt: "OpenClaw-OS - Project Portfolio",
+        alt: "8gent - Projects",
       },
     ],
   },
   twitter: {
-    title: "OpenClaw-OS's Projects",
-    description: "AI applications, RAG systems, and more. Creative Technologist portfolio.",
+    title: "8gent Projects",
+    description: "AI applications, agentic tools, and more. System architecture showcase.",
     card: "summary_large_image",
   },
   alternates: {

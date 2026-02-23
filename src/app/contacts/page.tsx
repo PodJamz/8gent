@@ -1,7 +1,7 @@
 import { ContactsApp } from '@/components/contacts';
 
 export const metadata = {
-  title: 'Contacts | OpenClaw-OS',
+  title: 'Contacts | 8gent',
   description: 'James contact card with vCard export and QR code',
 };
 

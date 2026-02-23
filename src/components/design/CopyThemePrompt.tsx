@@ -268,7 +268,7 @@ export const themePromptData: Record<string, ThemePromptData> = {
     colors: { background: '#0D0D1A', foreground: '#E8E8F0', primary: '#8B5CF6', secondary: '#1A1A2E', muted: '#252540', accent: '#06B6D4', border: '#2D2D4A' },
     fonts: { body: 'Inter, system-ui, sans-serif', heading: 'Inter, system-ui, sans-serif' },
     characteristics: ['Deep dark backgrounds', 'Purple and cyan accents', 'Glowing elements', 'Space aesthetic', 'Modern sci-fi'],
-    useCases: ['Gaming platforms', 'Space/astronomy apps', 'Music platforms', 'Night mode experiences', 'Creative portfolios'],
+    useCases: ['Gaming platforms', 'Space/astronomy apps', 'Music platforms', 'Night mode experiences', 'Creative workspaces'],
   },
   cyberpunk: {
     name: 'cyberpunk',
@@ -313,7 +313,7 @@ export const themePromptData: Record<string, ThemePromptData> = {
     colors: { background: '#FFF5F8', foreground: '#4A3F52', primary: '#FFB6C1', secondary: '#E6F3FF', muted: '#FFF0F3', accent: '#DDA0DD', border: '#FFE4E8' },
     fonts: { body: 'Quicksand, system-ui, sans-serif', heading: 'Quicksand, system-ui, sans-serif' },
     characteristics: ['Soft pastels', 'Dreamy aesthetic', 'Light and airy', 'Playful', 'Feminine'],
-    useCases: ['Beauty brands', 'Children\'s apps', 'Wedding sites', 'Lifestyle blogs', 'Creative portfolios'],
+    useCases: ['Beauty brands', 'Children\'s apps', 'Wedding sites', 'Lifestyle blogs', 'Creative sites'],
   },
   'ocean-breeze': {
     name: 'ocean-breeze',
@@ -448,7 +448,7 @@ export const themePromptData: Record<string, ThemePromptData> = {
     colors: { background: '#0F172A', foreground: '#FDE047', primary: '#3B82F6', secondary: '#1E293B', muted: '#334155', accent: '#60A5FA', border: '#334155' },
     fonts: { body: 'Inter, system-ui, sans-serif', heading: 'Inter, system-ui, sans-serif' },
     characteristics: ['Deep blue sky', 'Golden stars', 'Artistic feel', 'Van Gogh inspired', 'Dreamy'],
-    useCases: ['Art galleries', 'Creative portfolios', 'Night apps', 'Astronomy', 'Museums'],
+    useCases: ['Art galleries', 'Creative workspaces', 'Night apps', 'Astronomy', 'Museums'],
   },
   'soft-pop': {
     name: 'soft-pop',
@@ -493,7 +493,7 @@ export const themePromptData: Record<string, ThemePromptData> = {
     colors: { background: '#FFFFFF', foreground: '#171717', primary: '#171717', secondary: '#F5F5F5', muted: '#FAFAFA', accent: '#171717', border: '#E5E5E5' },
     fonts: { body: 'Manrope, Inter, system-ui, sans-serif', heading: 'Manrope, Inter, system-ui, sans-serif' },
     characteristics: ['Maximum whitespace', 'Pure neutrals', 'Essential only', 'Zero decoration', 'Absolute clarity'],
-    useCases: ['Portfolios', 'Minimal blogs', 'Product showcases', 'Art galleries', 'Clean landing pages'],
+    useCases: ['Workspaces', 'Minimal blogs', 'Product showcases', 'Art galleries', 'Clean landing pages'],
   },
   'clean-slate': {
     name: 'clean-slate',
@@ -511,7 +511,7 @@ export const themePromptData: Record<string, ThemePromptData> = {
     colors: { background: '#0A0A0A', foreground: '#E5E5E5', primary: '#B8860B', secondary: '#171717', muted: '#262626', accent: '#DAA520', border: '#333333' },
     fonts: { body: 'Inter, system-ui, sans-serif', heading: 'Cinzel, Georgia, serif' },
     characteristics: ['Deep black', 'Gold accents', 'Timeless', 'Sophisticated', 'Premium'],
-    useCases: ['Luxury brands', 'Premium memberships', 'High-end portfolios', 'Exclusive services', 'VIP experiences'],
+    useCases: ['Luxury brands', 'Premium memberships', 'High-end workspaces', 'Exclusive services', 'VIP experiences'],
   },
   nature: {
     name: 'nature',

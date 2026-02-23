@@ -4,9 +4,9 @@ import Image from "next/image";
 import * as React from "react";
 
 export default function ProfileHeroButton({
-  name = "OpenClaw-OS",
+  name = "8gent",
   title = "Professional Profile Page",
-  headshotSrc = "/openclaw-logo.png",
+  headshotSrc = "/8gent-logo.png",
   headshotPosition = "center 38%",
   blurb = "View detailed experience, strengths, and links.",
 }: {

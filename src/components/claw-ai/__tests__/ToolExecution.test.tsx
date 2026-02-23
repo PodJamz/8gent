@@ -7,7 +7,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { ToolExecution } from '../ToolExecution';
-import { ClawAIJsonRenderProvider } from '@/lib/claw-ai/json-render-provider';
+import { ClawAIJsonRenderProvider } from '@/lib/8gent/json-render-provider';
 
 // Wrapper component for json-render context
 function TestWrapper({ children }: { children: React.ReactNode }) {

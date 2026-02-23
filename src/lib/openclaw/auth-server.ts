@@ -13,8 +13,8 @@ export const auth = () => {
 export const currentUser = async () => {
     return {
         id: "mock-user-id",
-        firstName: "James",
-        lastName: "Spalding",
+        firstName: "OpenClaw",
+        lastName: "AI",
         emailAddresses: [{ emailAddress: "james@example.com" }]
     };
 };

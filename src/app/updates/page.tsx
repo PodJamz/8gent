@@ -43,21 +43,21 @@ const SCREENS = [
   {
     id: 'hook',
     type: 'hook',
-    line1: 'What if your portfolio',
+    line1: 'What if your workspace',
     line2: 'could think for itself?',
     delay: 4000,
   },
   {
     id: 'context',
     type: 'context',
-    quote: '"Make my portfolio better."',
+    quote: '"Make the system better."',
     subtext: 'A simple request. An unusual approach. December 31, 2025.',
     delay: 4500,
   },
   {
     id: 'intro',
     type: 'intro',
-    title: 'OpenClaw-OS',
+    title: '8gent',
     stats: '1200+ commits · 600+ PRs · 35 days of development',
     tagline: 'Building an AI-native operating system, one conversation at a time.',
     delay: 4000,
@@ -135,7 +135,7 @@ const SCREENS = [
     number: '04',
     title: 'Conversational Core',
     date: 'Jan 10-11, 2026',
-    description: 'Claw AI awakens. Chat becomes the control plane.',
+    description: '8gent awakens. Chat becomes the control plane.',
     highlights: [
       'Liquid glass chat overlay with personality',
       'Voice input with speech recognition',
@@ -322,9 +322,9 @@ const SCREENS = [
     number: '14',
     title: 'The Coding Agent',
     date: 'Jan 27, 2026',
-    description: 'Claw AI gets hands. The sandbox opens. Three agents collaborate flawlessly.',
+    description: '8gent gets hands. The sandbox opens. Three agents collaborate flawlessly.',
     highlights: [
-      'Infinity Agent with sandbox execution',
+      'Open8gent with sandbox execution',
       'Working memory and task management',
       'Multi-agent parallel development',
       'Natural language booking flow',
@@ -394,7 +394,7 @@ const SCREENS = [
     number: '18',
     title: 'Guardian',
     date: 'Jan 30, 2026',
-    description: 'Some features need protection. Claw AI learns to say no gracefully.',
+    description: 'Some features need protection. 8gent learns to say no gracefully.',
     highlights: [
       'Owner-only feature protection',
       'Voice-enabled access denial messages',
@@ -412,7 +412,7 @@ const SCREENS = [
     number: '19',
     title: 'Code Hands',
     date: 'Jan 31, 2026',
-    description: 'The moment Claw AI could write, run, and deploy code.',
+    description: 'The moment 8gent could write, run, and deploy code.',
     highlights: [
       'Full sandbox integration operational',
       'Authenticated repository cloning',
@@ -518,13 +518,13 @@ const SCREENS = [
     id: 'reflection',
     type: 'reflection',
     lines: [
-      'Started with a portfolio request.',
+      'Started with a specific use-case.',
       'Built an operating system.',
       '',
       'Started with static pages.',
       'Built conversational intelligence.',
       '',
-      'Started with a resume.',
+      'Started with a vision.',
       'Built a platform.',
     ],
     delay: 6000,
@@ -898,7 +898,7 @@ function OutroScreen({ screen, onAdvance, autoPlay }: { screen: typeof SCREENS[0
         transition={{ delay: isExiting ? 0 : 2.5, duration: 0.4 }}
       >
         <Home className="w-4 h-4" />
-        Enter OpenClaw-OS
+        Enter 8gent
       </motion.button>
     </motion.div>
   );

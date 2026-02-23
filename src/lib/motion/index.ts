@@ -1,5 +1,5 @@
 /**
- * Claw AI OS - Motion Library
+ * 8gent OS - Motion Library
  *
  * Unified animation configuration for consistent motion feel.
  */

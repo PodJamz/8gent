@@ -1,5 +1,5 @@
-// Claw AI Skills System
-// Skills are specialized capabilities that Claw AI can invoke
+// 8gent Skills System
+// Skills are specialized capabilities that 8gent can invoke
 
 export interface Skill {
   id: string;
@@ -181,7 +181,7 @@ export const fileSystemSkill: Skill = {
 };
 
 // Product Lifecycle Skill (BMAD-METHOD + CCPM)
-// Enables Claw AI to orchestrate the full product development workflow
+// Enables 8gent to orchestrate the full product development workflow
 export const productLifecycleSkill: Skill = {
   id: 'product-lifecycle',
   name: 'Product Lifecycle',

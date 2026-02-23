@@ -89,6 +89,7 @@ function PlantWisdomGenerator() {
               <motion.div key="loading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-center">
                 <motion.div animate={{ rotate: [0, 10, -10, 0] }} transition={{ duration: 2, repeat: Infinity }}>
                   <Leaf className="w-8 h-8 mx-auto mb-3" style={{ color: 'hsl(var(--theme-primary))' }} />
+                  Open8gent
                 </motion.div>
                 <p className="text-sm" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>Listening to the garden...</p>
               </motion.div>
@@ -207,7 +208,7 @@ export default function SageGardenPage() {
       <footer className="py-8 border-t" style={{ borderColor: 'hsl(var(--theme-border))' }}>
         <div className="max-w-4xl mx-auto px-8 flex justify-between items-center">
           <p className="text-xs" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>Sage Garden</p>
-          <p className="text-xs" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>OpenClaw-OS</p>
+          <p className="text-xs" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>8gent</p>
         </div>
       </footer>
     </div>

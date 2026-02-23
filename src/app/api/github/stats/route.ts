@@ -22,7 +22,7 @@ let cacheTimestamp = 0;
 async function fetchGitHubStats(): Promise<GitHubStats> {
   const headers: HeadersInit = {
     'Accept': 'application/vnd.github.v3+json',
-    'User-Agent': 'OpenClaw-OS',
+    'User-Agent': '8gent',
   };
 
   // Add auth token if available (increases rate limit from 60 to 5000/hour)

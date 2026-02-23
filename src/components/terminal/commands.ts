@@ -37,39 +37,40 @@ export interface CommandContext {
 
 // Virtual filesystem structure
 export const FILESYSTEM: Record<string, string[] | string> = {
-  '/home/james': ['about.txt', 'resume.txt', 'portfolio/', 'blog/', '.secrets/', '.bashrc'],
-  '/home/owner/portfolio': ['openclaw-os.md', 'claw-ai.md', 'music-studio.md', 'prototyping.md'],
-  '/home/james/blog': ['experience-philosophy.md', 'building-ai-agents.md', 'design-systems.md'],
-  '/home/james/.secrets': ['themes.txt', 'konami.txt'],
+  '/home/openclaw': ['about.txt', 'evolution.txt', 'systems/', 'blog/', '.secrets/', '.bashrc'],
+  '/home/openclaw/systems': ['8gent.md', 'claw-ai.md', 'music-studio.md', 'prototyping.md'],
+  '/home/openclaw/blog': ['experience-philosophy.md', 'building-ai-agents.md', 'design-systems.md'],
+  '/home/openclaw/.secrets': ['themes.txt', 'konami.txt'],
 };
 
 export const FILE_CONTENTS: Record<string, string> = {
-  '/home/james/about.txt': `
+  '/home/openclaw/about.txt': `
 ┌─────────────────────────────────────────────────────┐
-│                   ABOUT JAMES                       │
+│                   ABOUT OPENCLAW                    │
+│                 SYSTEMS ARCHITECTURE                │
 ├─────────────────────────────────────────────────────┤
 │                                                     │
-│  Hey! I'm James Murphy, a full-stack engineer       │
-│  passionate about building beautiful, intelligent   │
-│  software experiences.                              │
+│  Welcome to 8gent, an AI-native workspace     │
+│  designed for high-performance productivity and     │
+│  agentic orchestration.                            │
 │                                                     │
-│  I believe AI should augment human creativity,      │
-│  not replace it. OpenClaw-OS is a vision of what   │
+│  We believe AI should augment human creativity,      │
+│  not replace it. This system is a vision of what   │
 │  personal computing could become.                   │
 │                                                     │
-│  When I'm not coding, you'll find me:               │
-│  → Making music in my home studio                   │
-│  → Exploring San Francisco                          │
-│  → Reading about AI and consciousness               │
+│  CORE CAPABILITIES:                                 │
+│  → Multi-agent orchestration                        │
+│  → Context-aware workspace management               │
+│  → High-craft minimal design system                 │
 │                                                     │
 │  Let's build something amazing together!            │
 │                                                     │
 └─────────────────────────────────────────────────────┘`,
 
-  '/home/james/resume.txt': RESUME_ASCII,
+  '/home/openclaw/evolution.txt': RESUME_ASCII,
 
-  '/home/james/.bashrc': `
-# OpenClaw-OS Terminal Configuration
+  '/home/openclaw/.bashrc': `
+# 8gent Terminal Configuration
 # ─────────────────────────────
 
 export PS1="guest@openclaw ~ $ "
@@ -88,7 +89,7 @@ fortune | cowsay
 # Welcome message
 echo "Welcome back! Type 'neofetch' for system info."`,
 
-  '/home/james/.secrets/themes.txt': `
+  '/home/openclaw/.secrets/themes.txt': `
 ╔═══════════════════════════════════════════════════════╗
 ║              🎨 SECRET THEMES UNLOCKED 🎨             ║
 ╠═══════════════════════════════════════════════════════╣
@@ -104,30 +105,30 @@ echo "Welcome back! Type 'neofetch' for system info."`,
 ║                                                       ║
 ╚═══════════════════════════════════════════════════════╝`,
 
-  '/home/james/.secrets/konami.txt': `
+  '/home/openclaw/.secrets/konami.txt': `
 ↑ ↑ ↓ ↓ ← → ← → B A
 
 You know the code. But can you enter it?`,
 
-  '/home/openclaw/portfolio/openclaw.md': `
-# OpenClaw-OS
+  '/home/openclaw/systems/openclaw.md': `
+# 8gent
 
 A personal operating system experience for the web.
 
 Features:
 - iOS-style home screen with drag-and-drop
 - 25+ beautiful themes
-- AI-powered assistant (Claw AI)
+- AI-powered assistant (8gent)
 - Full-featured prototyping environment
 - Music studio with stem separation
 
 Status: In active development
 Tech: Next.js 14, TypeScript, Tailwind, Convex`,
 
-  '/home/james/portfolio/claw-ai.md': `
-# Claw AI
+  '/home/openclaw/systems/claw-ai.md': `
+# 8gent
 
-Your personal AI assistant that lives in OpenClaw-OS.
+Your personal AI assistant that lives in 8gent.
 
 Features:
 - Natural conversation interface
@@ -145,9 +146,9 @@ const resolvePath = (currentPath: string, targetPath: string): string => {
   if (targetPath === '..') {
     const parts = currentPath.split('/').filter(Boolean);
     parts.pop();
-    return '/' + parts.join('/') || '/home/james';
+    return '/' + parts.join('/') || '/home/openclaw';
   }
-  if (targetPath === '~') return '/home/james';
+  if (targetPath === '~') return '/home/openclaw';
   return currentPath + '/' + targetPath;
 };
 
@@ -169,11 +170,11 @@ export const commands: Record<string, TerminalCommand> = {
 ║  pwd                Print working directory                        ║
 ║  cat <file>         Display file contents                          ║
 ║                                                                    ║
-║  PORTFOLIO                                                         ║
-║  ─────────                                                        ║
-║  skills             Show skill bars                                ║
+║  SYSTEM & WORKSPACE                                                ║
+║  ──────────────────                                               ║
+║  skills             Show technical capabilities                    ║
 ║  open <app>         Open an app (design, projects, music, etc.)    ║
-║  whoami             Display current user                           ║
+║  whoami             Display current context                        ║
 ║                                                                    ║
 ║  SYSTEM                                                            ║
 ║  ──────                                                            ║
@@ -228,13 +229,13 @@ export const commands: Record<string, TerminalCommand> = {
     usage: 'cd <path>',
     action: (args, context) => {
       if (!args[0]) {
-        context.setCurrentPath('/home/james');
+        context.setCurrentPath('/home/openclaw');
         return { output: '' };
       }
 
       const targetPath = resolvePath(context.currentPath, args[0]);
 
-      if (FILESYSTEM[targetPath] || targetPath === '/home/james') {
+      if (FILESYSTEM[targetPath] || targetPath === '/home/openclaw') {
         context.setCurrentPath(targetPath);
         return { output: '' };
       }
@@ -357,7 +358,7 @@ export const commands: Record<string, TerminalCommand> = {
         music: '/music',
         studio: '/studio',
         blog: '/blog',
-        resume: '/resume',
+        evolution: '/story',
         photos: '/photos',
         humans: '/humans',
         story: '/story',
@@ -389,8 +390,8 @@ export const commands: Record<string, TerminalCommand> = {
     description: 'Display system info',
     action: (_, context) => ({
       output: NEOFETCH_TEMPLATE({
-        os: 'OpenClaw-OS v1.0.0',
-        host: 'portfolio.dev',
+        os: '8gent v1.0.0',
+        host: 'openclaw.io',
         kernel: 'React 18.2.0',
         uptime: '∞ days',
         shell: '/bin/zsh',

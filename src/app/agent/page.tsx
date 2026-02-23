@@ -46,8 +46,8 @@ const SAMPLE_MEMORY_STATS = {
 };
 
 const SAMPLE_MENTIONS: MentionSuggestion[] = [
-  { id: 'proj-1', type: 'project', name: 'OpenClaw-OS', description: 'Professional agentic operating system' },
-  { id: 'proj-2', type: 'project', name: '8gent', description: 'Next-gen agent platform' },
+  { id: 'proj-1', type: 'project', name: '8gent', description: 'Professional agentic operating system' },
+  { id: 'proj-2', type: 'project', name: 'OpenClaw', description: 'Next-gen agent platform' },
   { id: 'prd-1', type: 'prd', name: 'infinity-agent', description: 'PRD for coding agent integration' },
   { id: 'ticket-1', type: 'ticket', name: 'ARC-001', description: 'Implement context bar component' },
   { id: 'ticket-2', type: 'ticket', name: 'ARC-002', description: 'Add code panel with monaco editor' },
@@ -509,7 +509,7 @@ function AgentPageContent() {
                 className="text-lg font-semibold"
                 style={{ color: 'hsl(var(--theme-foreground))' }}
               >
-                ∞gent
+                Open8gent
               </h1>
 
               {/* Spacer */}

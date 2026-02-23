@@ -30,7 +30,7 @@ export function ArrivalScreen({ onAdvance }: ArrivalScreenProps) {
         transition={{ delay: 0.22, ...springs.gentle }}
       >
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-white tracking-tight mb-4">
-          Welcome to <span className="text-emerald-400">OpenClaw-OS</span>
+          Welcome to <span className="text-emerald-400">8gent</span>
         </h1>
         <motion.p
           className="mt-6 text-xl sm:text-2xl text-slate-300 font-light"
@@ -46,9 +46,9 @@ export function ArrivalScreen({ onAdvance }: ArrivalScreenProps) {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1 }}
         >
-          "Hello! I'm your AI guide. I'll help you get settled into your new
+          "Hello! Let's get you settled into your new
           <br />
-          OpenClaw-OS workspace. Let's make it yours."
+          8gent workspace. Let's make it yours."
         </motion.div>
       </motion.div>
 

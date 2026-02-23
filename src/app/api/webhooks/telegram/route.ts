@@ -2,7 +2,7 @@
  * Telegram Webhook Handler
  *
  * Handles incoming messages from Telegram Bot API.
- * Processes messages with Claw AI and sends responses.
+ * Processes messages with 8gent and sends responses.
  *
  * Setup:
  * 1. Create bot with @BotFather
@@ -253,7 +253,7 @@ function isAllowedMediaDomain(url: string): boolean {
 // =============================================================================
 
 /**
- * Process message with Claw AI
+ * Process message with 8gent
  */
 async function processWithClawAI(
   userId: string,
@@ -275,7 +275,7 @@ async function processWithClawAI(
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Claw AI error:", errorText);
+      console.error("8gent error:", errorText);
       return "I'm having trouble processing that right now. Please try again.";
     }
 
@@ -376,7 +376,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       // Optionally send a message to unregistered users
       await sendTelegramMessage(
         msg.chat.id,
-        "Hi! I'm Claw AI. To chat with me, please connect your Telegram account at openclaw.io/settings/channels"
+        "Hi! I'm 8gent. To chat with me, please connect your Telegram account at openclaw.io/settings/channels"
       );
       return NextResponse.json({
         ok: true,
@@ -495,7 +495,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       integration.settings.contextLimit
     );
 
-    // Process with Claw AI
+    // Process with 8gent
     const aiResponse = await processWithClawAI(
       integration.userId,
       content,

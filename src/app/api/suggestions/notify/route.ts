@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
 
     // Send email notification
     const { data, error } = await resend.emails.send({
-      from: 'OpenClaw-OS Suggestions <noreply@ai.openclaw.io>',
+      from: '8gent Suggestions <noreply@ai.openclaw.io>',
       to: [ADMIN_EMAIL],
       subject: `New Suggestion: ${safeTitle}`,
       html: `

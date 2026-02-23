@@ -1036,7 +1036,7 @@ export default function MockitApp() {
       <footer className={`px-4 py-2 ${colors.bgSecondary} border-t ${colors.border} text-center`}>
         <p className={`text-xs ${colors.textFaint}`}>
           Mockit by{' '}
-          <a href="/" className="text-cyan-400 hover:text-cyan-300">OpenClaw-OS</a>
+          <a href="/" className="text-cyan-400 hover:text-cyan-300">8gent</a>
           {' '} • Inspired by{' '}
           <a
             href="https://shots.so"

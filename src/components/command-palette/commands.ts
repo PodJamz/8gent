@@ -5,13 +5,18 @@ import { themes } from '@/lib/themes';
 // ALL APPS - Synced with HomeScreenContext
 // =============================================================================
 const apps = [
-  // Core/Entry apps
+  // Hub/Main apps
+  { id: 'control', name: 'Control', href: '/control', keywords: ['overview', 'channels', 'instances', 'sessions', 'usage', 'cron'] },
+  { id: 'agents', name: 'Agents', href: '/agents', keywords: ['agent', 'skills', 'nodes'] },
+  { id: 'settings', name: 'Settings', href: '/settings', keywords: ['config', 'debug', 'logs'] },
+  { id: 'resources', name: 'Resources', href: 'https://docs.openclaw.io', external: true, keywords: ['docs', 'help', 'documentation'] },
+  { id: 'chat', name: 'Chat', href: '/chat', keywords: ['ai', 'james', 'assistant', 'talk'] },
+
+  // Individual apps (relegated or existing)
   { id: 'story', name: 'Story', href: '/story', keywords: ['about', 'james', 'intro'] },
   { id: 'blog', name: 'Blog', href: '/blog', keywords: ['posts', 'writing', 'articles'] },
   { id: 'design', name: 'Design', href: '/design', keywords: ['themes', 'ui', 'styles'] },
   { id: 'resume', name: 'Resume', href: '/resume', keywords: ['cv', 'experience', 'work'] },
-
-  // Action/Create apps
   { id: 'music', name: 'Music', href: '/music', keywords: ['songs', 'audio', 'player'] },
   { id: 'jamz', name: 'Jamz', href: '/studio', keywords: ['studio', 'production', 'beats'] },
   { id: 'prototyping', name: 'Prototyping', href: '/prototyping', keywords: ['ide', 'code', 'editor'] },
@@ -21,68 +26,32 @@ const apps = [
   { id: 'product', name: 'Product', href: '/product', keywords: ['prd', 'management', 'planning'] },
   { id: 'projects', name: 'Projects', href: '/projects', keywords: ['kanban', 'board', 'tasks'] },
   { id: 'mockit', name: 'Mockit', href: '/mockit', keywords: ['mockup', 'prototype', 'design'] },
-
-  // Work/Hire apps
   { id: 'humans', name: 'Humans', href: '/humans', keywords: ['people', 'contacts', 'search', 'entities'] },
   { id: 'activity', name: 'Activity', href: '/activity', keywords: ['log', 'history', 'events'] },
   { id: 'calendar', name: 'Calendar', href: '/calendar', keywords: ['schedule', 'events', 'booking'] },
   { id: 'contacts', name: 'Contacts', href: '/contacts', keywords: ['people', 'address', 'book'] },
-
-  // Explore/Depth apps
   { id: 'photos', name: 'Photos', href: '/photos', keywords: ['images', 'gallery', 'pictures'] },
   { id: 'inspirations', name: 'Inspirations', href: '/inspirations', keywords: ['ideas', 'references', 'mood'] },
   { id: '3d-gallery', name: '3-D Gallery', href: '/gallery-3d', keywords: ['three', 'dimensional', 'webgl'] },
   { id: 'avatar', name: 'Avatar', href: '/avatar', keywords: ['3d', 'profile', 'character', 'interactive'] },
-  { id: 'way', name: 'Way', href: 'https://way-lovat.vercel.app/', external: true, keywords: ['navigation', 'path'] },
-
-  // Theme showcases
-  { id: 'claude', name: 'Claude Theme', href: '/design/claude', keywords: ['anthropic', 'ai', 'orange'] },
-  { id: 'chatgpt', name: 'ChatGPT Theme', href: '/design/chatgpt', keywords: ['openai', 'green'] },
-  { id: 'utilitarian', name: 'Utilitarian', href: '/design/utilitarian', keywords: ['orange', 'minimal'] },
-  { id: 'vercel', name: 'Vercel Theme', href: '/design/vercel', keywords: ['black', 'dark'] },
-  { id: 'neo-brutalism', name: 'Neo Brutalism', href: '/design/neo-brutalism', keywords: ['yellow', 'bold'] },
-  { id: 'notebook', name: 'Notebook', href: '/design/notebook', keywords: ['paper', 'handwritten'] },
-  { id: 'tao', name: 'Tao', href: '/design/tao', keywords: ['zen', 'calm', 'blue'] },
-  { id: 'research', name: 'Research', href: '/design/research', keywords: ['academic', 'paper'] },
-  { id: 'field-guide', name: 'Field Guide', href: '/design/field-guide', keywords: ['nature', 'red'] },
-  { id: 'google', name: 'Google Theme', href: '/design/google', keywords: ['material', 'colorful'] },
-  { id: 'apple', name: 'Apple Theme', href: '/design/apple', keywords: ['ios', 'clean'] },
-  { id: 'microsoft', name: 'Microsoft Theme', href: '/design/microsoft', keywords: ['fluent', 'windows'] },
-  { id: 'notion', name: 'Notion Theme', href: '/design/notion', keywords: ['productivity', 'minimal'] },
-  { id: 'cursor', name: 'Cursor Theme', href: '/design/cursor', keywords: ['ide', 'code', 'purple'] },
-  { id: 'miro', name: 'Miro Theme', href: '/design/miro', keywords: ['collaboration', 'yellow'] },
-
-  // Social/Connect apps
-  { id: 'github', name: 'GitHub', href: 'https://github.com/PodJamz', external: true, keywords: ['code', 'repos'] },
-  { id: 'linkedin', name: 'LinkedIn', href: 'https://www.linkedin.com/in/jameslawrencespalding/', external: true, keywords: ['professional', 'network'] },
-  { id: 'x', name: 'X (Twitter)', href: 'https://x.com/James__Spalding', external: true, keywords: ['twitter', 'social'] },
-
-  // Vibes/Fun apps
   { id: 'weather', name: 'Weather', href: '/weather', keywords: ['forecast', 'temperature'] },
   { id: 'games', name: 'Games', href: '/games', keywords: ['play', 'fun', 'memory'] },
   { id: 'terminal', name: 'Terminal', href: '/terminal', keywords: ['cli', 'command', 'shell'] },
   { id: 'reels', name: 'Reels', href: '/reels', keywords: ['videos', 'clips', 'shorts'] },
-
-  // Neurodiversity apps
   { id: 'regulation', name: 'Regulate', href: '/regulate', keywords: ['calm', 'breathing', 'adhd', 'neuro'] },
   { id: 'journal', name: 'Journal', href: '/journal', keywords: ['diary', 'writing', 'reflection', 'neuro'] },
   { id: 'food', name: 'Food', href: '/food', keywords: ['meals', 'nutrition', 'eating', 'neuro'] },
   { id: 'sidequests', name: 'Side Quests', href: '/sidequests', keywords: ['tasks', 'adhd', 'dopamine', 'neuro'] },
   { id: 'hyperfocus', name: 'Hyperfocus', href: '/hyperfocus', keywords: ['focus', 'flow', 'adhd', 'neuro'] },
   { id: 'bubble-timer', name: 'Bubble Timer', href: '/neuro/bubble-timer', keywords: ['timer', 'visual', 'countdown', 'neuro', 'adhd'] },
-
-  // System apps
   { id: 'skills', name: 'Skills', href: '/skills', keywords: ['abilities', 'expertise'] },
   { id: 'system', name: 'System', href: '/system', keywords: ['info', 'status', 'about'] },
   { id: 'security', name: 'Security', href: '/security', keywords: ['admin', 'monitoring', 'fortress', 'logs'] },
   { id: 'vault', name: 'Vault', href: '/vault', keywords: ['private', 'protected', 'secret'] },
   { id: 'threads', name: 'Threads', href: '/threads', keywords: ['conversations', 'chat', 'history'] },
-  { id: 'settings', name: 'Settings', href: '/settings', keywords: ['preferences', 'config', 'options'] },
   { id: 'search', name: 'Search', href: '/search', keywords: ['find', 'lookup', 'query'] },
   { id: 'reminders', name: 'Reminders', href: '/reminders', keywords: ['todos', 'alerts', 'notifications'] },
   { id: 'memory', name: 'Memory', href: '/memory', keywords: ['brain', 'recall', 'ai', 'learning'] },
-
-  // Wiki/Docs
   { id: 'wiki', name: 'Wiki', href: '/wiki', keywords: ['docs', 'documentation', 'help'] },
   { id: 'watch', name: 'Watch', href: '/watch', keywords: ['video', 'stream', 'media'] },
 
@@ -133,7 +102,7 @@ export const actionCommands: Command[] = [
     id: 'action-open-settings',
     type: 'action',
     name: 'Open Settings',
-    description: 'Open OpenClaw-OS settings',
+    description: 'Open 8gent settings',
     keywords: ['settings', 'preferences', 'config'],
     href: '/settings',
     shortcut: 'S',
@@ -159,7 +128,7 @@ export const actionCommands: Command[] = [
   {
     id: 'action-open-chat',
     type: 'action',
-    name: 'Chat with Claw AI',
+    name: 'Chat with 8gent',
     description: 'Open the AI assistant',
     keywords: ['ai', 'james', 'chat', 'assistant', 'help', 'ask'],
     href: '/chat',

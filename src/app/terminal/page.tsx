@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import TerminalApp from '@/components/terminal/TerminalApp';
 
 export const metadata: Metadata = {
-  title: 'Terminal | OpenClaw-OS',
+  title: 'Terminal | 8gent',
   description: 'Retro terminal easter egg with fun commands, ASCII art, and secret features',
 };
 

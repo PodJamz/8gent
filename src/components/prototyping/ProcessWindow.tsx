@@ -83,7 +83,7 @@ export default function App() {
 
   const handleCommand = async (cmd: string) => {
     setIsProcessing(true);
-    // Claw AI processes the command
+    // 8gent processes the command
     await processWithAI(cmd);
     setIsProcessing(false);
   };
@@ -131,7 +131,7 @@ export function ClawAIOrb({ isActive, theme }: ClawAIOrbProps) {
     </motion.div>
   );
 }`,
-  'styles.css': `/* Claw AI Theme System */
+  'styles.css': `/* 8gent Theme System */
 :root {
   --theme-primary: #f97316;
   --theme-accent: #fb923c;
@@ -255,7 +255,7 @@ function CodeEditor({
             animate={{ opacity: 1 }}
           >
             <Loader2 className="w-3 h-3 animate-spin" />
-            Claw AI is editing...
+            8gent is editing...
           </motion.div>
         )}
         <pre className="text-white/90 leading-relaxed">
@@ -305,7 +305,7 @@ function ChatInterface({
           <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-500 rounded-full border-2 border-[#161b22]" />
         </div>
         <div className="min-w-0">
-          <div className="text-xs sm:text-sm font-medium text-white truncate">Claw AI</div>
+          <div className="text-xs sm:text-sm font-medium text-white truncate">8gent</div>
           <div className="text-[10px] sm:text-xs text-green-400 truncate">Online • Ready to code</div>
         </div>
       </div>
@@ -377,7 +377,7 @@ function ChatInterface({
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask Claw AI..."
+            placeholder="Ask 8gent..."
             className="flex-1 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 rounded-xl text-xs sm:text-sm text-white placeholder-white/30 outline-none focus:ring-2 focus:ring-orange-500/50 transition-all"
           />
           <button
@@ -450,13 +450,13 @@ function TerminalView({ output }: { output: string[] }) {
 
 const SIMULATED_PAGES: Record<string, { title: string; content: React.ReactNode }> = {
   'https://localhost:3000': {
-    title: 'Claw AI OS • localhost',
+    title: '8gent OS • localhost',
     content: (
       <div className="p-6 text-center">
         <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
           <Bot className="w-8 h-8 text-white" />
         </div>
-        <h1 className="text-xl font-bold text-white mb-2">Claw AI OS</h1>
+        <h1 className="text-xl font-bold text-white mb-2">8gent OS</h1>
         <p className="text-white/60 text-sm">Development server running</p>
         <div className="mt-4 flex items-center justify-center gap-2">
           <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -664,7 +664,7 @@ function BrowserView({
 
 const PREVIEW_COMPONENTS: Record<string, { name: string; preview: React.ReactNode }> = {
   'ClawAIOrb': {
-    name: 'Claw AI Orb',
+    name: '8gent Orb',
     preview: (
       <div className="flex items-center justify-center h-full bg-gradient-to-b from-gray-900 to-black">
         <motion.div
@@ -855,7 +855,7 @@ export function ProcessWindow({ state, onStateChange, className = '' }: ProcessW
 
   const tabs = [
     { id: 'code' as const, label: 'Code', icon: Code2 },
-    { id: 'chat' as const, label: 'Claw AI', icon: Sparkles },
+    { id: 'chat' as const, label: '8gent', icon: Sparkles },
     { id: 'terminal' as const, label: 'Terminal', icon: Terminal },
     { id: 'browser' as const, label: 'Browser', icon: Globe },
     { id: 'preview' as const, label: 'Preview', icon: Eye },
@@ -1106,7 +1106,7 @@ export function createInitialProcessState(): ProcessState {
       {
         id: '1',
         role: 'assistant',
-        content: "Hey! I'm Claw AI, your coding companion. I can help you build, refactor, and debug your code. What would you like to work on today?",
+        content: "Hey! I'm 8gent, your coding companion. I can help you build, refactor, and debug your code. What would you like to work on today?",
         timestamp: new Date(),
       },
     ],

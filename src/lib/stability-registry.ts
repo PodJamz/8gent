@@ -113,7 +113,7 @@ export const STABILITY_REGISTRY: StabilityRegistry = {
       notes: "App dock with context-aware visibility",
     },
 
-    // Claw AI Components
+    // 8gent Components
     "claw-ai/ChatInterface": {
       level: "stable",
       since: "2026-01-10",
@@ -169,7 +169,7 @@ export const STABILITY_REGISTRY: StabilityRegistry = {
     "agent/AgentSidebar": {
       level: "exploratory",
       since: "2026-01-28",
-      notes: "∞gent sidebar with job tracking",
+      notes: "OpenClaw sidebar with job tracking",
       dependsOn: ["agent/ContextBar"],
     },
     "agent/ContextBar": {
@@ -180,7 +180,7 @@ export const STABILITY_REGISTRY: StabilityRegistry = {
     "agent/CodePanel": {
       level: "exploratory",
       since: "2026-01-28",
-      notes: "Code editor panel for ∞gent",
+      notes: "Code editor panel for OpenClaw",
     },
   },
 
@@ -214,7 +214,7 @@ export const STABILITY_REGISTRY: StabilityRegistry = {
     "recursive-memory-layer": {
       level: "stable",
       since: "2026-01-15",
-      notes: "Episodic + semantic memory for Claw AI",
+      notes: "Episodic + semantic memory for 8gent",
     },
     "bmad-product-lifecycle": {
       level: "stable",
@@ -224,7 +224,7 @@ export const STABILITY_REGISTRY: StabilityRegistry = {
     "voice-interaction": {
       level: "experimental",
       since: "2026-01-15",
-      notes: "Two-way voice chat with Claw AI",
+      notes: "Two-way voice chat with 8gent",
     },
     "sandbox-integration": {
       level: "experimental",
@@ -254,7 +254,7 @@ export const STABILITY_REGISTRY: StabilityRegistry = {
     "omnichannel-messaging": {
       level: "experimental",
       since: "2026-01-27",
-      notes: "WhatsApp, SMS integration with Claw AI",
+      notes: "WhatsApp, SMS integration with 8gent",
     },
     "security-dashboard": {
       level: "stable",
@@ -351,7 +351,7 @@ export const STABILITY_REGISTRY: StabilityRegistry = {
     "useWorkingContext": {
       level: "exploratory",
       since: "2026-01-28",
-      notes: "∞gent working context state",
+      notes: "OpenClaw working context state",
     },
     "useCodingTask": {
       level: "exploratory",

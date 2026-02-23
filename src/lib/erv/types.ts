@@ -2,7 +2,7 @@
  * ERV Architecture Type Definitions
  *
  * Entity-Relationship-View types for infinite dimensional rendering.
- * The ∞gent composes primitives to generate ANY dimension from description.
+ * The OpenClaw composes primitives to generate ANY dimension from description.
  */
 
 // =============================================================================

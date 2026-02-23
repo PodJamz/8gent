@@ -2,7 +2,7 @@
  * Slack Webhook Handler
  *
  * Handles incoming messages from Slack Events API.
- * Processes messages with Claw AI and sends responses.
+ * Processes messages with 8gent and sends responses.
  *
  * Setup:
  * 1. Create Slack App at api.slack.com/apps
@@ -298,7 +298,7 @@ function isAllowedMediaDomain(url: string): boolean {
 // =============================================================================
 
 /**
- * Process message with Claw AI
+ * Process message with 8gent
  */
 async function processWithClawAI(
   userId: string,
@@ -320,7 +320,7 @@ async function processWithClawAI(
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Claw AI error:", errorText);
+      console.error("8gent error:", errorText);
       return "I'm having trouble processing that right now. Please try again.";
     }
 
@@ -436,7 +436,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
         await sendSlackMessage(
           event.channel,
-          `Hey ${greeting}! I'm Claw AI. To chat with me, please connect your Slack account at openclaw.io/settings/channels`,
+          `Hey ${greeting}! I'm 8gent. To chat with me, please connect your Slack account at openclaw.io/settings/channels`,
           event.thread_ts || event.ts
         );
 
@@ -545,7 +545,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         integration.settings.contextLimit
       );
 
-      // Process with Claw AI
+      // Process with 8gent
       const aiResponse = await processWithClawAI(
         integration.userId,
         content,

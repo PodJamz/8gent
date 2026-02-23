@@ -140,7 +140,7 @@ export class OpenClawClientImpl {
                 role: 'operator',
                 client: {
                     id: 'webchat', // Bypass Control UI secure context check
-                    displayName: 'OpenClaw OS',
+                    displayName: '8gent',
                     version: '0.1.0',
                     platform: 'web',
                     mode: 'ui',

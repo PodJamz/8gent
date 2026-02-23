@@ -34,7 +34,7 @@ const GALLERY_CONFIGS: GalleryConfig[] = [
     name: 'Sphere Gallery',
     description: 'Orbital 3D gallery with images distributed across a sphere surface using Fibonacci distribution',
     icon: '🌐',
-    useCase: 'Portfolio showcases, art collections, product catalogs',
+    useCase: 'System showcases, content collections, product catalogs',
     features: ['Fibonacci sphere distribution', 'Auto-rotation', 'Interactive orbit controls', 'Hover effects'],
   },
   {
@@ -58,7 +58,7 @@ const GALLERY_CONFIGS: GalleryConfig[] = [
     name: 'Cube Gallery',
     description: 'Interactive 3D cube with images on each face, rotatable and zoomable',
     icon: '📦',
-    useCase: 'Product views, category navigation, interactive portfolios',
+    useCase: 'Product views, category navigation, interactive interfaces',
     features: ['6-sided display', 'Face navigation buttons', 'Corner particles', 'Pop-out effect'],
   },
   {
@@ -66,7 +66,7 @@ const GALLERY_CONFIGS: GalleryConfig[] = [
     name: 'Particle Gallery',
     description: 'Images floating as particles in 3D space with organic movement',
     icon: '✨',
-    useCase: 'Creative portfolios, artistic displays, mood boards',
+    useCase: 'Creative displays, technical visualizations, mood boards',
     features: ['Organic floating motion', 'Particle trails', 'Golden ratio distribution', 'Ambient particles'],
   },
   {
@@ -82,7 +82,7 @@ const GALLERY_CONFIGS: GalleryConfig[] = [
     name: 'Room Gallery',
     description: 'Virtual museum experience with first-person navigation',
     icon: '🏛️',
-    useCase: 'Art exhibitions, virtual tours, immersive showcases',
+    useCase: 'Technical exhibitions, virtual tours, immersive showcases',
     features: ['First-person controls', 'Realistic lighting', 'Museum frames', 'Pointer lock navigation'],
   },
 ];
@@ -113,11 +113,10 @@ function GallerySelector({
         <button
           key={config.id}
           onClick={() => onSelect(config.id)}
-          className={`p-3 rounded-xl text-left transition-all duration-200 ${
-            selected === config.id
+          className={`p-3 rounded-xl text-left transition-all duration-200 ${selected === config.id
               ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30 scale-105'
               : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 hover:scale-102'
-          }`}
+            }`}
         >
           <span className="text-2xl block mb-1">{config.icon}</span>
           <span className="text-sm font-medium block truncate">{config.name}</span>

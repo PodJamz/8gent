@@ -409,7 +409,7 @@ export default function VioletBloomPage() {
       <footer className="py-8 border-t" style={{ borderColor: 'hsl(var(--theme-border))' }}>
         <div className="max-w-4xl mx-auto px-8 flex justify-between items-center">
           <p className="text-xs font-medium" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>Violet Bloom</p>
-          <p className="text-xs font-medium" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>OpenClaw-OS</p>
+          <p className="text-xs font-medium" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>8gent</p>
         </div>
       </footer>
     </div>

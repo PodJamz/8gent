@@ -89,7 +89,7 @@ class SandboxErrorBoundary extends Component<{ children: ReactNode }, ErrorBound
 }
 
 // ============================================================================
-// Claw AI Response Simulator
+// 8gent Response Simulator
 // ============================================================================
 
 const AI_RESPONSES: Record<string, string[]> = {
@@ -199,7 +199,7 @@ function PrototypingContent() {
   // Sandbox context
   const sandbox = useSandboxContext();
 
-  // Simulate Claw AI response
+  // Simulate 8gent response
   const simulateAIResponse = useCallback((action: string, customMessage?: string) => {
     // Clear any pending response
     if (responseTimeoutRef.current) {
@@ -416,7 +416,7 @@ function PrototypingContent() {
             style={{ color: 'hsl(var(--theme-muted-foreground))' }}
           >
             <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm font-medium">OpenClaw-OS</span>
+            <span className="text-sm font-medium">8gent</span>
           </Link>
 
           {/* Panel toggles */}
@@ -586,7 +586,7 @@ function PrototypingContent() {
                   color: 'hsl(var(--theme-muted-foreground))',
                 }}
               >
-                Claw AI • {processState.currentTask || 'Ready'}
+                8gent • {processState.currentTask || 'Ready'}
               </div>
             </div>
             <div className="w-8 sm:w-12 flex justify-end">

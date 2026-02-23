@@ -1,14 +1,14 @@
 /**
  * ElevenLabs Voice Generation Service
  *
- * Uses James's cloned voice to generate audio from script text
+ * Uses the admin's cloned voice to generate audio from script text
  */
 
 import type { ElevenLabsRequest, ElevenLabsResponse, ElevenLabsVoice } from './types';
 
 const ELEVENLABS_API_URL = 'https://api.elevenlabs.io/v1';
 
-// James's cloned voice ID - set via env or use default
+// The admin's cloned voice ID - set via env or use default
 const DEFAULT_VOICE_ID = process.env.ELEVENLABS_VOICE_ID || '';
 
 export async function generateVoice(request: ElevenLabsRequest): Promise<ElevenLabsResponse> {

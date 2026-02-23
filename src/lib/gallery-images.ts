@@ -1,9 +1,9 @@
-// Shared gallery images used across OpenClaw-OS
+// Shared gallery images used across 8gent
 // Used by: Photos app, Desktop screensaver
 
 export const GALLERY_IMAGES = [
-  { src: 'https://2oczblkb3byymav8.public.blob.vercel-storage.com/FB394334-6F13-446C-8B43-57C993D05E01.png', alt: 'OpenClaw-OS Vision' },
-  { src: 'https://2oczblkb3byymav8.public.blob.vercel-storage.com/0505D0AD-9EBF-4675-B3AC-ABF92501F024.png', alt: 'OpenClaw-OS Workspace' },
+  { src: 'https://2oczblkb3byymav8.public.blob.vercel-storage.com/FB394334-6F13-446C-8B43-57C993D05E01.png', alt: '8gent Vision' },
+  { src: 'https://2oczblkb3byymav8.public.blob.vercel-storage.com/0505D0AD-9EBF-4675-B3AC-ABF92501F024.png', alt: '8gent Workspace' },
   { src: '/photos/aurora.jpeg', alt: 'Aurora' },
   { src: '/photos/Corballis.jpeg', alt: 'Corballis' },
   { src: '/photos/Donabatebeach.jpeg', alt: 'Donabate Beach' },

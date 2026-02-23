@@ -9,3 +9,5 @@ export { HonestyScreen } from './HonestyScreen';
 export { EntryScreen } from './EntryScreen';
 export { IntegrationsScreen } from './IntegrationsScreen';
 export { ReturnVisitorScreen } from './ReturnVisitorScreen';
+export { WhoAmIScreen } from './WhoAmIScreen';
+export { GatewayScreen } from './GatewayScreen';

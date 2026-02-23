@@ -126,8 +126,8 @@ const BOOKMARK_FOLDERS = ['All', 'Work', 'Research', 'Social', 'Tools'];
 // Sites that use JavaScript frame-busting and can't be embedded
 // These sites check window.self !== window.top and break when proxied
 const FRAME_BUSTING_SITES = [
-  { domain: 'x.com', name: 'X (Twitter)', suggestion: 'Use the X API for Claw AI posting' },
-  { domain: 'twitter.com', name: 'Twitter', suggestion: 'Use the X API for Claw AI posting' },
+  { domain: 'x.com', name: 'X (Twitter)', suggestion: 'Use the X API for 8gent posting' },
+  { domain: 'twitter.com', name: 'Twitter', suggestion: 'Use the X API for 8gent posting' },
   { domain: 'youtube.com', name: 'YouTube', suggestion: 'Use youtube.com/embed/VIDEO_ID for embeds' },
   { domain: 'facebook.com', name: 'Facebook', suggestion: null },
   { domain: 'instagram.com', name: 'Instagram', suggestion: null },
@@ -742,7 +742,7 @@ export function EmbeddedBrowser() {
   // AI action handler
   const handleAIAction = useCallback((action: string) => {
     console.log('AI Action:', action);
-    // This would integrate with Claw AI
+    // This would integrate with 8gent
   }, []);
 
   // Filter bookmarks by folder

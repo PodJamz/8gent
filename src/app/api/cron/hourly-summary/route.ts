@@ -171,7 +171,7 @@ function textToHtml(text: string): string {
         ${html}
       </div>
       <p style="text-align: center; color: #9ca3af; font-size: 12px; margin-top: 16px;">
-        Sent from OpenClaw-OS AI Summary System
+        Sent from 8gent AI Summary System
       </p>
     </div>
   `;

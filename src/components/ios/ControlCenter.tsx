@@ -483,7 +483,7 @@ export function ControlCenter({ className }: ControlCenterProps) {
                 <div className="space-y-2">
                   <NotificationCard
                     icon={<Zap size={14} className="text-emerald-400" />}
-                    title="Claw AI OS"
+                    title="8gent OS"
                     message="New Control Center deployed"
                     time="Just now"
                   />

@@ -1,7 +1,7 @@
 /**
  * Sandbox Video Renderer
  *
- * Renders videos using ffmpeg.wasm directly in Claw AI's sandbox.
+ * Renders videos using ffmpeg.wasm directly in 8gent's sandbox.
  * No cloud infrastructure needed - runs entirely in the sandbox environment.
  */
 

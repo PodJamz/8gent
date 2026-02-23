@@ -6,7 +6,7 @@
  * - Navigation history (back/forward)
  * - Project context
  * - Swipe navigation support
- * - Claw AI context updates
+ * - 8gent context updates
  *
  * Phase 3: Navigation infrastructure for ERV
  */
@@ -69,9 +69,9 @@ export interface DimensionNavigationContextValue {
   canGoForward: boolean;
   /** Set active project context */
   setProject: (projectId: string | undefined, projectName?: string) => void;
-  /** Get context string for Claw AI */
+  /** Get context string for 8gent */
   getAIContext: () => string;
-  /** Subscribe to navigation changes (for Claw AI updates) */
+  /** Subscribe to navigation changes (for 8gent updates) */
   onNavigate: (callback: (location: NavigationLocation) => void) => () => void;
 }
 
@@ -123,7 +123,7 @@ export function DimensionNavigationProvider({
     projectId: initialProjectId,
   }));
 
-  // Subscribers for navigation events (Claw AI listens here)
+  // Subscribers for navigation events (8gent listens here)
   const subscribersRef = useRef<Set<(location: NavigationLocation) => void>>(new Set());
 
   // Notify subscribers of navigation
@@ -214,7 +214,7 @@ export function DimensionNavigationProvider({
     }));
   }, []);
 
-  // Generate context string for Claw AI
+  // Generate context string for 8gent
   const getAIContext = useCallback((): string => {
     const parts: string[] = [];
 
@@ -352,11 +352,11 @@ export function useSwipeNavigation(options: UseSwipeNavigationOptions = {}) {
 }
 
 // =============================================================================
-// Claw AI Integration Hook
+// 8gent Integration Hook
 // =============================================================================
 
 /**
- * Hook for Claw AI to stay informed about navigation context.
+ * Hook for 8gent to stay informed about navigation context.
  * Returns current context and subscribes to changes.
  */
 export function useAINavigationContext(

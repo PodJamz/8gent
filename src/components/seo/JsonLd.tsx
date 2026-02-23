@@ -30,7 +30,7 @@ export function WebSiteJsonLd() {
     },
     copyrightYear: 2025,
     keywords: [
-      "OpenClaw-OS",
+      "8gent",
       "AI Operating System",
       "AI-native OS",
       "Agentic AI Orchestration",
@@ -58,11 +58,11 @@ export function OrganizationJsonLd() {
     url: DATA.url,
     logo: {
       "@type": "ImageObject",
-      url: "https://openclaw.io/openclaw-logo.png",
+      url: "https://openclaw.io/8gent-logo.png",
       width: 1200,
       height: 630,
     },
-    image: "https://openclaw.io/openclaw-logo.png",
+    image: "https://openclaw.io/8gent-logo.png",
     description: DATA.description,
     address: {
       "@type": "PostalAddress",

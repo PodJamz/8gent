@@ -394,7 +394,7 @@ export default function ProductPage() {
                     Complete the Problem tab and build your Workflow first
                   </p>
                   <p className="text-sm text-[hsl(var(--theme-muted-foreground))] opacity-60">
-                    Claw AI will help generate your PRD based on your inputs
+                    8gent will help generate your PRD based on your inputs
                   </p>
                 </div>
               </div>

@@ -35,14 +35,14 @@ export async function generateMetadata({
   const { title, summary, publishedAt, image, authors } = post.metadata;
   const ogImage = image
     ? (image.startsWith("http") ? image : `https://openclaw.io${image}`)
-    : "https://openclaw.io/openclaw-logo.png";
+    : "https://openclaw.io/8gent-logo.png";
 
   return {
-    title: `${title} | OpenClaw-OS Blog`,
+    title: `${title} | 8gent Blog`,
     description: summary,
     keywords: [
-      "OpenClaw-OS",
-      "OpenClaw-OS blog",
+      "8gent",
+      "8gent blog",
       title,
       "AI",
       "Product Strategy",
@@ -52,7 +52,7 @@ export async function generateMetadata({
       ...(authors?.map((a) => a.name) || []),
     ],
     authors: authors?.map((a) => ({ name: a.name })) || [
-      { name: "OpenClaw-OS", url: "https://openclaw.io" },
+      { name: "8gent", url: "https://openclaw.io" },
     ],
     openGraph: {
       title: title,
@@ -60,7 +60,7 @@ export async function generateMetadata({
       url: `https://openclaw.io/blog/${slug}`,
       type: "article",
       publishedTime: publishedAt,
-      authors: authors?.map((a) => a.name) || ["OpenClaw-OS"],
+      authors: authors?.map((a) => a.name) || ["8gent"],
       images: [
         {
           url: ogImage,

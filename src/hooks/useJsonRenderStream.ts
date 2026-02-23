@@ -1,8 +1,8 @@
 /**
- * useJsonRenderStream - Streaming UI Generation for Claw AI
+ * useJsonRenderStream - Streaming UI Generation for 8gent
  *
  * Enables real-time progressive rendering of AI-generated UI components.
- * The "Generative Dimension" - Claw AI conjures custom UI in chat flow.
+ * The "Generative Dimension" - 8gent conjures custom UI in chat flow.
  *
  * Provides progressive rendering as the AI model streams JSON structure.
  *
@@ -13,7 +13,7 @@
 'use client';
 
 import { useState, useCallback, useRef } from 'react';
-import type { UITree } from '@/lib/claw-ai/json-render-provider';
+import type { UITree } from '@/lib/8gent/json-render-provider';
 
 // =============================================================================
 // Types

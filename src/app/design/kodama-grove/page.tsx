@@ -592,7 +592,7 @@ export default function KodamaGrovePage() {
             className="text-xs"
             style={{ color: 'hsl(var(--theme-muted-foreground))' }}
           >
-            OpenClaw-OS
+            8gent
           </p>
         </div>
       </footer>

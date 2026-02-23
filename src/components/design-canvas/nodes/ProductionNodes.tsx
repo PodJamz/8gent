@@ -333,7 +333,7 @@ export const IMAGE_EFFECTS = [
   { value: "vintage", label: "Vintage", category: "preset" },
   { value: "cyberpunk", label: "Cyberpunk", category: "preset" },
   { value: "noir", label: "Noir", category: "preset" },
-  { value: "signature", label: "OpenClaw-OS Signature", category: "preset" },
+  { value: "signature", label: "8gent Signature", category: "preset" },
 ];
 
 export const BLEND_MODES = [

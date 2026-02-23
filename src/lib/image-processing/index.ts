@@ -1,7 +1,7 @@
 /**
  * Image Processing Library
  *
- * Professional image manipulation and effects for OpenClaw-OS.
+ * Professional image manipulation and effects for 8gent.
  * Enables consistent branded looks, unique app icons, and artistic transformations.
  */
 

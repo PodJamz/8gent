@@ -1,12 +1,12 @@
 # Episode 1: "Worries Into Love"
 # Series: Unbreakable
 # Setting: Ireland, early 2024 - before the trip to Brazil
-# Context: The calm before the storm. James and Nick (age 6) living their
+# Context: The calm before the storm. the creator and Nick (age 6) living their
 #          normal happy life. School routine, park visits, cozy evenings.
 #          The audience knows what's coming but they don't. Pure innocence.
 #
-# Song: "Worries Into Love" by Salvador James
-# Source: https://2oczblkb3byymav8.public.blob.vercel-storage.com/Unbreakable/Worries%20into%20love-SalvadorJames.wav
+# Song: "Worries Into Love" by OpenClaw AI
+# Source: https://2oczblkb3byymav8.public.blob.vercel-storage.com/Unbreakable/Worries%20into%20love-Salvadorthe creator.wav
 
 # SERIES METADATA
 series:
@@ -19,7 +19,7 @@ series:
   creator: "OpenClaw-OS"
   characters:
     dad:
-      name: "Dad (James)"
+      name: "Dad"
       age: "Late-30s/40"
       features:
         - messy tousled brown hair
@@ -43,8 +43,8 @@ series:
 # SONG STRUCTURE (from lyrics analysis)
 song:
   title: "Worries Into Love"
-  artist: "Salvador James"
-  url: "https://2oczblkb3byymav8.public.blob.vercel-storage.com/Unbreakable/Worries%20into%20love-SalvadorJames.wav"
+  artist: "OpenClaw AI"
+  url: "https://2oczblkb3byymav8.public.blob.vercel-storage.com/Unbreakable/Worries%20into%20love-Salvadorthe creator.wav"
   album: "Unbreakable"
   estimated_bpm: ~95  # To be confirmed by beat analyzer
   structure:
@@ -257,17 +257,17 @@ episode:
     - id: "sw1-opening"
       text: "Ireland. Early twenty-twenty-four. Before everything changed."
       placement: "Over the intro, before verse 1"
-      voice: "James, natural, quiet"
+      voice: "Male, natural, quiet"
       notes: "Brief. Sets the time and place. The audience should feel the weight of 'before everything changed' without it being heavy-handed."
 
     - id: "sw2-closing"
       text: "We didn't know it then. But these were the last normal days."
       placement: "Over the outro, as the door closes"
-      voice: "James, natural, reflective"
-      notes: "Optional. Might be more powerful without it. Let the image and music carry it. Discuss with James."
+      voice: "Male, natural, reflective"
+      notes: "Optional. Might be more powerful without it. Let the image and music carry it. Discuss with the owner."
 
   emotional_arc:
-    # The audience knows the story. James and Nick don't (in the episode).
+    # The audience knows the story. The creator and Nick don't (in the episode).
     # The tension is dramatic irony - everything is beautiful precisely
     # because we know it's about to be shattered.
     intro: "warmth, morning calm"

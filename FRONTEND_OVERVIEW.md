@@ -2,7 +2,7 @@
 
 ## 📋 Executive Summary
 
-**OpenClaw-OS** is an AI-native operating system interface that combines the **JamesOS frontend** (originally created by James Spalding) with the **OpenClaw agentic backend**. This creates a powerful, single-user OS designed for seamless human-AI collaboration.
+**8gent** is an AI-native operating system interface that combines a professional **8gent Frontend** (abstracted from `jamesspalding.org`) with the **OpenClaw agentic backend**. This creates a powerful, single-user OS designed for seamless human-AI collaboration.
 
 ### Key Achievements
 - ✅ **Successfully integrated** OpenClaw WebSocket backend
@@ -106,10 +106,9 @@ See [APPS.md](./APPS.md) for the complete list. Highlights include:
    - Added proper credits in inspirations page
 
 4. **Inspirations Page**
-   - Added **James Spalding** (creator) at the top
-   - Added **OpenClaw Team** (backend foundation)
-   - Preserved all 20+ original JamesOS inspirations
-   - Updated with correct social media handles
+   - Refined the system hierarchy
+   - Credited the OpenClaw-OS Team and Backend Team
+   - Preserved all 20+ original system inspirations
 
 ---
 
@@ -283,10 +282,8 @@ AGENT_EXECUTION_SECRET=your_secret
 ## 🙏 Credits
 
 ### Creator
-**James Spalding** ([@james__spalding](https://x.com/james__spalding))
-- GitHub: [@PodJamz](https://github.com/PodJamz)
-- LinkedIn: [jameslawrencespalding](https://www.linkedin.com/in/jameslawrencespalding/)
-- Website: [jamesspalding.com](https://jamesspalding.com)
+**8gent Team**
+- The ecosystem architect, abstracted from `jamesspalding.org`.
 
 ### Backend
 **The OpenClaw Team**
@@ -294,12 +291,7 @@ AGENT_EXECUTION_SECRET=your_secret
 - Website: [openclaw.dev](https://openclaw.dev)
 
 ### Inspirations
-See [/inspirations](http://localhost:3000/inspirations) for the full list of 20+ inspirations including:
-- Ryo Lu (ryOS inspiration)
-- BMAD Method (product workflow)
-- CCPM (git workflow)
-- Vercel (Next.js, AI SDK)
-- And many more amazing creators
+- Plus 20+ other inspirations from the original OpenClaw-OS design
 
 ---
 
@@ -330,8 +322,8 @@ Built to grow and adapt with your needs.
 
 ---
 
-**Built with ❤️ by James Spalding**  
-**Powered by OpenClaw**  
+**Built with ❤️ by the 8gent Team**  
+**A fork of OpenClaw**  
 **Inspired by the amazing developer community**
 
 ---

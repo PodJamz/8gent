@@ -400,10 +400,10 @@ export function Desktop({ isVisible }: DesktopProps) {
           transition={prefersReducedMotion ? { duration: 0.15 } : { delay: 0.15 }}
         >
           <h1 className="text-white text-3xl sm:text-4xl font-bold mb-2">
-            Welcome to OpenClaw-OS
+            Welcome to 8gent
           </h1>
           <p className="text-white/50 text-sm sm:text-base">
-            {isEditMode ? 'Long press and drag to rearrange • Drag icon onto another to create folder' : 'Explore my world'}
+            {isEditMode ? 'Long press and drag to rearrange • Drag icon onto another to create folder' : 'Your agentic workspace'}
           </p>
         </motion.div>
 

@@ -522,7 +522,7 @@ function IdleContent() {
         <div className="w-7 h-7 rounded-full overflow-hidden flex-shrink-0 border border-white/20">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/openclaw-logo.png"
+            src="/8gent-logo.png"
             alt="James"
             className="w-full h-full object-cover"
           />

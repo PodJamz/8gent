@@ -29,7 +29,7 @@ interface ThemeToolbarProps {
   themeName: ThemeName;
   themeLabel: string;
   className?: string;
-  /** Callback when theme is referenced to Claw AI */
+  /** Callback when theme is referenced to 8gent */
   onReferenceToAI?: (prompt: string) => void;
 }
 
@@ -262,7 +262,7 @@ export function ThemeToolbar({
                 style={{ borderColor: 'hsl(var(--theme-border))' }}
               />
 
-              {/* Reference to Claw AI */}
+              {/* Reference to 8gent */}
               <div className="p-2">
                 <button
                   onClick={handleReferenceToAI}
@@ -277,7 +277,7 @@ export function ThemeToolbar({
                       className="text-sm font-medium"
                       style={{ color: 'hsl(var(--theme-foreground))' }}
                     >
-                      Reference to Claw AI
+                      Reference to 8gent
                     </p>
                     <p
                       className="text-xs"

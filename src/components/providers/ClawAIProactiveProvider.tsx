@@ -9,7 +9,7 @@ import {
   determineProactiveAction,
   getDefaultEngagementState,
   type EngagementState,
-} from '@/lib/claw-ai/proactive-engine';
+} from '@/lib/8gent/proactive-engine';
 
 interface ClawAIProactiveProviderProps {
   children: React.ReactNode;
@@ -50,12 +50,12 @@ const MIN_NOTIFICATION_INTERVAL = 120000; // 2 minutes
 /**
  * ClawAIProactiveProvider
  *
- * This provider initializes and runs the Claw AI proactive engagement system.
+ * This provider initializes and runs the 8gent proactive engagement system.
  * It tracks user behavior and triggers notifications to hook users into
  * collaborating with James.
  *
  * Based on EXPERIENCE_PHILOSOPHY.md:
- * - "Claw AI is an operator, not a chatbot"
+ * - "8gent is an operator, not a chatbot"
  * - James proactively engages to demonstrate the OS philosophy
  */
 export function ClawAIProactiveProvider({ children }: ClawAIProactiveProviderProps) {

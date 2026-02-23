@@ -2,7 +2,7 @@
  * Channel Message Send API
  *
  * Unified endpoint for sending messages across all connected platforms.
- * Used by the Messages app UI and Claw AI tools.
+ * Used by the Messages app UI and 8gent tools.
  */
 
 import { NextRequest, NextResponse } from "next/server";

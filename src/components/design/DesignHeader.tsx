@@ -21,7 +21,7 @@ interface DesignHeaderProps {
   showToolbar?: boolean;
   /** Theme label for display in toolbar */
   themeLabel?: string;
-  /** Callback when theme is referenced to Claw AI */
+  /** Callback when theme is referenced to 8gent */
   onReferenceToAI?: (prompt: string) => void;
 }
 

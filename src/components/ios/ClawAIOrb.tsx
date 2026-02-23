@@ -66,7 +66,7 @@ export function ClawAIOrb({ onClick, isActive = false, hasNotification = false, 
       }}
       whileTap={prefersReducedMotion ? {} : { scale: 0.92 }}
       transition={springs.snappy}
-      aria-label="Open Claw AI chat"
+      aria-label="Open 8gent chat"
     >
       {/* Outer glow rings - animated - uses theme primary */}
       {/* When notifications present, glow is more intense and faster */}
@@ -217,7 +217,7 @@ export function ClawAIOrb({ onClick, isActive = false, hasNotification = false, 
           />
         </motion.div>
 
-        {/* Claw AI icon/avatar */}
+        {/* 8gent icon/avatar */}
         <div className="absolute inset-0 flex items-center justify-center">
           <motion.div
             className="w-6 h-6 rounded-full overflow-hidden border border-white/40"
@@ -239,8 +239,8 @@ export function ClawAIOrb({ onClick, isActive = false, hasNotification = false, 
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/openclaw-logo.png"
-              alt="Claw AI"
+              src="/8gent-logo.png"
+              alt="8gent"
               className="w-full h-full object-cover"
             />
           </motion.div>

@@ -124,14 +124,14 @@ async function processWithAI(
     // Build conversation context
     const conversationContext = recentMessages
       .map((m: { direction: string; content: string }) =>
-        `${m.direction === 'inbound' ? 'User' : 'Claw AI'}: ${m.content}`
+        `${m.direction === 'inbound' ? 'User' : '8gent'}: ${m.content}`
       )
       .join('\n');
 
     // Sanitize message content for prompt injection prevention
     const sanitizedContent = sanitizeForPrompt(message.text);
 
-    // Call Claw AI chat API
+    // Call 8gent chat API
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/chat`,
       {
@@ -143,7 +143,7 @@ async function processWithAI(
           messages: [
             {
               role: 'system',
-              content: `You are Claw AI responding via iMessage. Keep responses concise and conversational, suitable for mobile messaging. Previous context:\n${conversationContext}`,
+              content: `You are 8gent responding via iMessage. Keep responses concise and conversational, suitable for mobile messaging. Previous context:\n${conversationContext}`,
             },
             {
               role: 'user',

@@ -6,7 +6,7 @@ import { Metadata } from "next";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Humans - People Search | OpenClaw-OS",
+  title: "Humans - People Search | 8gent",
   description:
     "Search for professionals and talent. AI-powered people search to find the right collaborators for your projects.",
 };

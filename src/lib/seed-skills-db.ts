@@ -151,7 +151,7 @@ export function getSeedingSummary(): {
     byCategory[skill.category] = (byCategory[skill.category] || 0) + 1;
     byRarity[skill.rarity] = (byRarity[skill.rarity] || 0) + 1;
 
-    const source = skill.source?.author || "Claw AI (Original)";
+    const source = skill.source?.author || "8gent (Original)";
     bySources[source] = (bySources[source] || 0) + 1;
   }
 

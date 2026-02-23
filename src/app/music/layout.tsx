@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Music - OpenClaw-OS | Creative Technologist & Music Producer",
+  title: "Music - 8gent | Creative Technologist & Music Producer",
   description:
-    "Explore OpenClaw-OS's music production work and audio creations. From ReLOVEution band days in Brazil to vibe coding tracks. A creative technologist who bridges music and technology.",
+    "Explore 8gent's music production work and audio creations. From ReLOVEution band days in Brazil to vibe coding tracks. A creative technologist who bridges music and technology.",
   keywords: [
-    "OpenClaw-OS music",
+    "8gent music",
     "Music producer Dublin",
     "Creative Technologist music",
     "ReLOVEution band",
@@ -17,21 +17,21 @@ export const metadata: Metadata = {
     "Audio production",
   ],
   openGraph: {
-    title: "Music - OpenClaw-OS",
+    title: "Music - 8gent",
     description: "Music production and audio creations from a Creative Technologist.",
     url: "https://openclaw.io/music",
     type: "website",
     images: [
       {
-        url: "https://openclaw.io/openclaw-logo.png",
+        url: "https://openclaw.io/8gent-logo.png",
         width: 1200,
         height: 630,
-        alt: "OpenClaw-OS - Music",
+        alt: "8gent - Music",
       },
     ],
   },
   twitter: {
-    title: "OpenClaw-OS's Music",
+    title: "8gent's Music",
     description: "Music production from a Creative Technologist.",
     card: "summary_large_image",
   },

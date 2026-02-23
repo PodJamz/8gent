@@ -330,14 +330,14 @@ describe('ChatComponents', () => {
 
   describe('ProjectCard', () => {
     const project = {
-      title: 'Claw AI',
+      title: '8gent',
       description: 'An AI assistant for the portfolio',
       technologies: ['React', 'TypeScript', 'Next.js'],
     };
 
     it('should render project title', () => {
       render(<ProjectCard project={project} />);
-      expect(screen.getByText('Claw AI')).toBeInTheDocument();
+      expect(screen.getByText('8gent')).toBeInTheDocument();
     });
 
     it('should render project description', () => {

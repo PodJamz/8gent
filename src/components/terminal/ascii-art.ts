@@ -3,18 +3,18 @@
 export const JAMES_LOGO = `
      ╭──────────────────────╮
      │    ┌─────────────┐   │
-     │    │   JAMES     │   │
+     │    │   OPENCLAW  │   │
      │    │     OS      │   │
      │    └─────────────┘   │
      ╰──────────────────────╯`;
 
 export const JAMES_LOGO_LARGE = `
-       ██╗ █████╗ ███╗   ███╗███████╗███████╗ ██████╗ ███████╗
-       ██║██╔══██╗████╗ ████║██╔════╝██╔════╝██╔═══██╗██╔════╝
-       ██║███████║██╔████╔██║█████╗  ███████╗██║   ██║███████╗
-  ██   ██║██╔══██║██║╚██╔╝██║██╔══╝  ╚════██║██║   ██║╚════██║
-  ╚█████╔╝██║  ██║██║ ╚═╝ ██║███████╗███████║╚██████╔╝███████║
-   ╚════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚══════╝`;
+        ██████╗ ██████╗ ███████╗███╗   ██╗ ██████╗██╗      █████╗ ██╗    ██╗
+       ██╔═══██╗██╔══██╗██╔════╝████╗  ██║██╔════╝██║     ██╔══██╗██║    ██║
+       ██║   ██║██████╔╝█████╗  ██╔██╗ ██║██║     ██║     ███████║██║ █╗ ██║
+       ██║   ██║██╔═══╝ ██╔══╝  ██║╚██╗██║██║     ██║     ██╔══██║██║███╗██║
+       ╚██████╔╝██║     ███████╗██║ ╚████║╚██████╗███████╗██║  ██║╚███╔███╔╝
+        ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝ ╚═════╝╚══════╝╚═╝  ╚═╝ ╚══╝╚══╝ `;
 
 export const SKULL = `
      ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -131,8 +131,8 @@ export const SKILL_BAR = (skill: string, level: number, maxWidth = 20): string =
 
 export const RESUME_ASCII = `
 ╔══════════════════════════════════════════════════════════════╗
-║                        JAMES MURPHY                          ║
-║              Full-Stack Engineer & AI Enthusiast             ║
+║                        OPENCLAW-OS                         ║
+║              AI-Native Workspace & Platform                ║
 ╠══════════════════════════════════════════════════════════════╣
 ║                                                              ║
 ║  EXPERIENCE                                                  ║
@@ -151,13 +151,13 @@ export const RESUME_ASCII = `
 ║                                                              ║
 ║  EDUCATION                                                   ║
 ║  ─────────                                                   ║
-║  → Computer Science                                          ║
-║    Self-taught + endless curiosity                           ║
+║  → Computer Science & Systems                                ║
+║    Architected with precision                                 ║
 ║                                                              ║
 ║  CONTACT                                                     ║
 ║  ───────                                                     ║
-║  → github.com/podjamz                                        ║
-║  → linkedin.com/in/jamesmurphy                               ║
+║  → github.com/openclaw                                       ║
+║  → linkedin.com/company/openclaw                             ║
 ║                                                              ║
 ╚══════════════════════════════════════════════════════════════╝`;
 
@@ -183,7 +183,7 @@ export const SUDO_RESPONSE = `
  │  ⚠️  PERMISSION DENIED                         │
  │                                                │
  │  Nice try! But you don't have root access      │
- │  to this system. James is the only admin.      │
+ │  to this system.                               │
  │                                                │
  │  Perhaps try asking nicely? 😏                 │
  │                                                │
@@ -195,9 +195,9 @@ export const RM_RF_RESPONSE = `
 
  Deleting all files...
 
- /home/james/portfolio     [DELETED]
- /home/james/projects      [DELETED]
- /home/james/resume.txt    [DELETED]
+  /home/openclaw/systems     [DELETED]
+ /home/openclaw/projects    [DELETED]
+ /home/openclaw/evolution.txt [DELETED]
  /usr/bin                  [DELETED]
  /etc/passwd               [DEL̸̡̛͍̫E̵̢̞̲T̷̨̧̺E̶̡̛̝D̵̨̧͎]
  ▓▒░ S̷̡̧Y̶̢̛S̵̡̛T̷̢̧E̶̡̛M̷̢̧ ̶F̵̡̛A̶̢̧I̷̡̛L̶̢̧Ư̷̡R̶̢̧E̷̡̛ ░▒▓

@@ -1,7 +1,7 @@
 /**
  * Remotion Module
  *
- * Video creation capabilities for OpenClaw-OS.
+ * Video creation capabilities for 8gent.
  * Supports lyric videos, text overlays, presentations, and more.
  */
 

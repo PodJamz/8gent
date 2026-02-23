@@ -531,7 +531,7 @@ export default function ClaymorphismPage() {
       <footer className="py-8 border-t relative" style={{ borderColor: 'hsl(var(--theme-border))' }}>
         <div className="max-w-5xl mx-auto px-8 flex justify-between items-center">
           <p className="text-sm font-medium" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>Claymorphism</p>
-          <p className="text-sm font-medium" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>OpenClaw-OS</p>
+          <p className="text-sm font-medium" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>8gent</p>
         </div>
       </footer>
     </div>

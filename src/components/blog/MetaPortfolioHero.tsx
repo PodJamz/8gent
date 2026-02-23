@@ -7,10 +7,10 @@ interface MetaPortfolioHeroProps {
   className?: string
 }
 
-const SIMPLE_PORTFOLIO = [
-  "About",
-  "Work",
-  "Contact",
+const SIMPLE_INTERFACE = [
+  "Layers",
+  "Nodes",
+  "Signals",
 ]
 
 const LIVING_SYSTEM = [
@@ -73,7 +73,7 @@ export default function MetaPortfolioHero({ className = "" }: MetaPortfolioHeroP
                 <div className="w-12 h-12 rounded-full bg-white/10 mx-auto mb-4" />
                 <div className="h-3 w-24 bg-white/20 rounded mx-auto mb-6" />
                 <div className="flex justify-center gap-4">
-                  {SIMPLE_PORTFOLIO.map((item) => (
+                  {SIMPLE_INTERFACE.map((item) => (
                     <span key={item} className="text-xs sm:text-sm text-white/40 font-mono">
                       {item}
                     </span>
@@ -81,7 +81,7 @@ export default function MetaPortfolioHero({ className = "" }: MetaPortfolioHeroP
                 </div>
               </div>
               <p className="mt-6 text-white/30 text-sm font-mono">
-                A simple portfolio.
+                A static interface.
               </p>
             </motion.div>
           )}
@@ -96,7 +96,7 @@ export default function MetaPortfolioHero({ className = "" }: MetaPortfolioHeroP
               className="text-center px-4"
             >
               <p className="text-white/60 text-lg sm:text-xl md:text-2xl font-light italic max-w-md">
-                &ldquo;What would I build if I were asked to build the best possible product today?&rdquo;
+                &ldquo;How can we orchestrate intelligence into a cohesive digital environment?&rdquo;
               </p>
             </motion.div>
           )}

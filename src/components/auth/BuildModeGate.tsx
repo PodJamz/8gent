@@ -18,7 +18,7 @@ interface BuildModeGateProps {
 }
 
 /**
- * BuildModeGate - Claw AI prompts the user to sign in before building
+ * BuildModeGate - 8gent prompts the user to sign in before building
  *
  * This appears when a user tries to:
  * - Create a new project
@@ -114,7 +114,7 @@ export function BuildModeGate({
                 <X className="w-5 h-5" />
               </button>
 
-              {/* Claw AI Header */}
+              {/* 8gent Header */}
               <div className="px-6 pt-8 pb-6 text-center">
                 {/* Orb */}
                 <motion.div

@@ -233,7 +233,7 @@ export default function ResearchDesignPage() {
       <footer className="py-8 border-t" style={{ borderColor: 'hsl(var(--theme-border))' }}>
         <div className="max-w-4xl mx-auto px-8 flex justify-between items-center">
           <p className="text-xs" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>Research Design System</p>
-          <p className="text-xs" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>OpenClaw-OS</p>
+          <p className="text-xs" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>8gent</p>
         </div>
       </footer>
     </div>

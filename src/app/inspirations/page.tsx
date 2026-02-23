@@ -45,18 +45,14 @@ interface Inspiration {
 const inspirations: Inspiration[] = [
   {
     id: 'james-spalding',
-    name: 'OpenClaw-OS',
+    name: '8gent',
     handle: '@james__spalding',
     xUsername: 'james__spalding',
-    contribution: 'The Visionary Creator',
-    description: 'The architect and creator of OpenClaw-OS. Transformed a vision of an AI-native operating system into reality through relentless iteration, creative problem-solving, and unwavering commitment to building the future of human-AI collaboration.',
+    contribution: 'System Architect',
+    description: 'The primary architect of 8gent. Transformed the vision of an AI-native operating system into a working reality through agentic orchestration and design-led engineering.',
     links: {
-      twitter: 'https://x.com/james__spalding',
-      github: 'https://github.com/PodJamz',
-      linkedin: 'https://www.linkedin.com/in/jameslawrencespalding/',
-      website: 'https://jamesspalding.com',
-      youtube: 'https://youtube.com/@jamesspalding',
-      instagram: 'https://instagram.com/jamesspalding',
+      github: 'https://github.com/openclaw',
+      website: 'https://openclaw.io',
     },
     gradient: 'from-violet-500/20 via-fuchsia-500/10 to-transparent',
     accentColor: 'text-violet-400',
@@ -96,7 +92,7 @@ const inspirations: Inspiration[] = [
     handle: '@ctatedev',
     xUsername: 'ctatedev',
     contribution: 'Browser Automation',
-    description: 'Inspired the agent-browser CLI tool that powers Claw AI browser automation capabilities. Clean, elegant approach to headless browser control.',
+    description: 'Inspired the agent-browser CLI tool that powers 8gent browser automation capabilities. Clean, elegant approach to headless browser control.',
     links: {
       twitter: 'https://x.com/ctatedev',
       github: 'https://github.com/ctate',
@@ -152,7 +148,7 @@ const inspirations: Inspiration[] = [
     handle: '@kyleanthony',
     xUsername: 'kyleanthony',
     contribution: 'Utilitarian Design Theme',
-    description: 'The clean, utilitarian design philosophy that shapes the core aesthetic of OpenClaw-OS. Claude Code powered design excellence.',
+    description: 'The clean, utilitarian design philosophy that shapes the core aesthetic of 8gent. Claude Code powered design excellence.',
     links: {
       twitter: 'https://x.com/kyleanthony',
       website: 'https://brasshands.com/contact',
@@ -166,7 +162,7 @@ const inspirations: Inspiration[] = [
     handle: '@thebuggeddev',
     xUsername: 'thebuggeddev',
     contribution: '3D Lock Screen Effect',
-    description: 'The stunning 3D visual effect on the OpenClaw-OS lock screen was inspired by their creative approach to immersive web experiences.',
+    description: 'The stunning 3D visual effect on the 8gent lock screen was inspired by their creative approach to immersive web experiences.',
     links: {
       twitter: 'https://x.com/thebuggeddev',
       github: 'https://github.com/thebuggeddev',
@@ -341,7 +337,7 @@ const inspirations: Inspiration[] = [
     handle: '@vercel',
     xUsername: 'vercel',
     contribution: 'The Foundation of Everything',
-    description: 'Next.js powers the entire stack. AI SDK enables streaming chat. AI Elements provide the beautiful task execution UI. Vercel Sandbox runs the ∞gent coding environment. Deployed on Vercel. The list goes on.',
+    description: 'Next.js powers the entire stack. AI SDK enables streaming chat. AI Elements provide the beautiful task execution UI. Vercel Sandbox runs the OpenClaw coding environment. Deployed on Vercel. The list goes on.',
     links: {
       twitter: 'https://x.com/vercel',
       github: 'https://github.com/vercel',
@@ -627,7 +623,7 @@ export default function InspirationsPage() {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl text-white/40 max-w-2xl mx-auto leading-relaxed">
-                Standing on the shoulders of giants. These incredible creators inspired different aspects of OpenClaw-OS.
+                Standing on the shoulders of giants. These incredible creators inspired different aspects of 8gent.
               </p>
             </motion.div>
           </div>
@@ -672,7 +668,7 @@ export default function InspirationsPage() {
             href="/"
             className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white/10 text-white text-sm sm:text-base hover:bg-white/20 transition-colors backdrop-blur-xl border border-white/10"
           >
-            ← Back to OpenClaw-OS
+            ← Back to 8gent
           </Link>
         </div>
       </div>

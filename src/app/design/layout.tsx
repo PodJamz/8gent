@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Design System Gallery - OpenClaw-OS | 35+ UI Themes & Design Tokens",
+  title: "Design System Gallery - 8gent | 35+ UI Themes & Design Tokens",
   description:
-    "Explore 35+ beautiful UI themes and design systems created by OpenClaw-OS. Copy-ready prompts for AI design, dark/light mode support, and comprehensive design tokens. Perfect for developers and designers.",
+    "Explore 35+ beautiful UI themes and design systems created by 8gent. Copy-ready prompts for AI design, dark/light mode support, and comprehensive design tokens. Perfect for developers and designers.",
   keywords: [
-    "OpenClaw-OS design",
+    "8gent design",
     "UI themes",
     "Design system",
     "Design tokens",
@@ -32,15 +32,15 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://openclaw.io/openclaw-logo.png",
+        url: "https://openclaw.io/8gent-logo.png",
         width: 1200,
         height: 630,
-        alt: "OpenClaw-OS - Design System Gallery",
+        alt: "8gent - Design System Gallery",
       },
     ],
   },
   twitter: {
-    title: "Design System Gallery - OpenClaw-OS",
+    title: "Design System Gallery - 8gent",
     description: "35+ beautiful UI themes with AI-ready prompts. Perfect for developers.",
     card: "summary_large_image",
   },

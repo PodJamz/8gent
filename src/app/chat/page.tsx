@@ -13,7 +13,7 @@ import { VoiceRecordingIndicator } from '@/components/claw-ai/VoiceRecordingIndi
 import { ChatThreadsSidebar } from '@/components/claw-ai/ChatThreadsSidebar';
 import { ContextReferenceInput } from '@/components/ui/ContextReferenceInput';
 import { ArtifactRenderer } from '@/components/claw-ai/ArtifactRenderer';
-import { ClawAIUIRenderer, parseUITree } from '@/lib/claw-ai/json-render-provider';
+import { ClawAIUIRenderer, parseUITree } from '@/lib/8gent/json-render-provider';
 import { useAppContext, formatAppContextForAI } from '@/context/AppContext';
 import { usePauseMusicForVoice } from '@/hooks/usePauseMusicForVoice';
 import { ToolProviderSelector, SelectedToolsChips, type SelectedTool } from '@/components/claw-ai/ToolProviderSelector';
@@ -38,7 +38,7 @@ interface Message {
 const INITIAL_MESSAGE: Message = {
   id: 'initial',
   role: 'assistant',
-  content: "Hey! I'm Claw AI. I can help you explore the site, learn about my work, or just chat. What's on your mind?",
+  content: "Ready to assist. What's on your mind?",
   timestamp: Date.now(),
 };
 
@@ -162,26 +162,26 @@ export default function ChatPage() {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            messages: [
-              ...messages.map((m) => ({ role: m.role, content: m.content })),
-              { role: 'user', content: userContent },
-            ],
-            model: 'default',
-            // Pass app context to Claw AI
-            appContext: currentApp ? {
-              appId: currentApp.id,
-              appName: currentApp.name,
-              route: currentApp.route,
-              description: currentApp.description,
-              contextHints,
-            } : null,
-            // Pass selected tools to filter available tools
-            selectedTools: selectedTools.length > 0 ? selectedTools.map((t) => ({
-              name: t.name,
-              provider: t.provider,
-            })) : undefined,
-          }),
+        body: JSON.stringify({
+          messages: [
+            ...messages.map((m) => ({ role: m.role, content: m.content })),
+            { role: 'user', content: userContent },
+          ],
+          model: 'default',
+          // Pass app context to 8gent
+          appContext: currentApp ? {
+            appId: currentApp.id,
+            appName: currentApp.name,
+            route: currentApp.route,
+            description: currentApp.description,
+            contextHints,
+          } : null,
+          // Pass selected tools to filter available tools
+          selectedTools: selectedTools.length > 0 ? selectedTools.map((t) => ({
+            name: t.name,
+            provider: t.provider,
+          })) : undefined,
+        }),
       });
 
       let assistantContent = "I'm having trouble connecting right now. Please try again in a moment.";
@@ -383,17 +383,17 @@ export default function ChatPage() {
                   className="font-semibold"
                   style={{ color: 'hsl(var(--theme-foreground))' }}
                 >
-                  Claw AI
+                  8gent
                 </h1>
                 <p
                   className="text-xs"
                   style={{ color: 'hsl(var(--theme-muted-foreground))' }}
                 >
                   {voiceRecorder.isRecording ? 'Recording...' :
-                   isTranscribing ? 'Transcribing...' :
-                   voiceChat.mode === 'speaking' ? 'Speaking...' :
-                   isTyping ? 'Thinking...' :
-                   'Online'}
+                    isTranscribing ? 'Transcribing...' :
+                      voiceChat.mode === 'speaking' ? 'Speaking...' :
+                        isTyping ? 'Thinking...' :
+                          'Online'}
                 </p>
               </div>
             </div>
@@ -463,8 +463,7 @@ export default function ChatPage() {
                 className="max-w-md mx-auto"
                 style={{ color: 'hsl(var(--theme-muted-foreground))' }}
               >
-                I&apos;m Claw AI, your creative technologist guide. Ask me about projects,
-                explore design themes, or just have a conversation.
+                Welcome back. How can I help you today?
               </p>
 
               {/* Suggested Prompts */}
@@ -514,9 +513,8 @@ export default function ChatPage() {
                 className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[85%] md:max-w-[75%] ${
-                    message.role === 'user' ? '' : 'flex gap-3'
-                  }`}
+                  className={`max-w-[85%] md:max-w-[75%] ${message.role === 'user' ? '' : 'flex gap-3'
+                    }`}
                 >
                   {message.role === 'assistant' && (
                     <ClawAIAvatar size={32} isActive={false} className="mt-1" />
@@ -618,46 +616,46 @@ export default function ChatPage() {
         }}
       >
         <div className="max-w-4xl mx-auto px-4 py-4">
-            {/* Selected Tools Chips */}
-            <SelectedToolsChips
-              tools={selectedTools}
-              onRemove={(tool) => setSelectedTools(selectedTools.filter((t) => !(t.name === tool.name && t.provider === tool.provider)))}
-            />
+          {/* Selected Tools Chips */}
+          <SelectedToolsChips
+            tools={selectedTools}
+            onRemove={(tool) => setSelectedTools(selectedTools.filter((t) => !(t.name === tool.name && t.provider === tool.provider)))}
+          />
 
-            {/* Transcribing indicator */}
-            <AnimatePresence>
-              {isTranscribing && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="mb-3"
+          {/* Transcribing indicator */}
+          <AnimatePresence>
+            {isTranscribing && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="mb-3"
+              >
+                <div
+                  className="rounded-xl px-4 py-3"
+                  style={{
+                    background: 'hsl(var(--theme-card))',
+                    border: '1px solid hsl(var(--theme-border))',
+                  }}
                 >
-                  <div
-                    className="rounded-xl px-4 py-3"
-                    style={{
-                      background: 'hsl(var(--theme-card))',
-                      border: '1px solid hsl(var(--theme-border))',
-                    }}
-                  >
-                    <div className="flex items-center gap-2">
-                      <Loader2
-                        className="w-4 h-4 animate-spin"
-                        style={{ color: 'hsl(var(--theme-primary))' }}
-                      />
-                      <span
-                        className="text-sm"
-                        style={{ color: 'hsl(var(--theme-muted-foreground))' }}
-                      >
-                        Transcribing your message...
-                      </span>
-                    </div>
+                  <div className="flex items-center gap-2">
+                    <Loader2
+                      className="w-4 h-4 animate-spin"
+                      style={{ color: 'hsl(var(--theme-primary))' }}
+                    />
+                    <span
+                      className="text-sm"
+                      style={{ color: 'hsl(var(--theme-muted-foreground))' }}
+                    >
+                      Transcribing your message...
+                    </span>
                   </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-            <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3">
             {/* Tool Provider Selector */}
             <ToolProviderSelector
               selectedTools={selectedTools}
@@ -676,13 +674,13 @@ export default function ChatPage() {
                   background: voiceRecorder.isRecording
                     ? 'hsl(0 84% 60%)'
                     : isTranscribing
-                    ? 'hsl(var(--theme-primary) / 0.2)'
-                    : 'hsl(var(--theme-chat-input-bg, var(--theme-muted)))',
+                      ? 'hsl(var(--theme-primary) / 0.2)'
+                      : 'hsl(var(--theme-chat-input-bg, var(--theme-muted)))',
                   color: voiceRecorder.isRecording
                     ? 'white'
                     : isTranscribing
-                    ? 'hsl(var(--theme-primary))'
-                    : 'hsl(var(--theme-chat-input-fg, var(--theme-muted-foreground)))',
+                      ? 'hsl(var(--theme-primary))'
+                      : 'hsl(var(--theme-chat-input-fg, var(--theme-muted-foreground)))',
                 }}
                 aria-label={voiceRecorder.isRecording ? 'Stop recording' : 'Start voice message'}
               >
@@ -724,7 +722,7 @@ export default function ChatPage() {
                     value={inputValue}
                     onChange={setInputValue}
                     onKeyDown={handleKeyPress}
-                    placeholder="Message Claw AI... Use @ to reference data"
+                    placeholder="Message 8gent... Use @ to reference data"
                     disabled={isTranscribing}
                     className="w-full rounded-full px-4 py-3 text-base transition-all focus:outline-none focus:ring-2"
                     style={{

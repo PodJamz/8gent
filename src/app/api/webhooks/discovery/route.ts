@@ -9,8 +9,8 @@
  */
 
 import { NextResponse } from 'next/server';
-import { handleCallEndWebhook } from '@/lib/claw-ai/discovery-orchestrator';
-import type { TranscriptEntry } from '@/lib/claw-ai/discovery-types';
+import { handleCallEndWebhook } from '@/lib/8gent/discovery-orchestrator';
+import type { TranscriptEntry } from '@/lib/8gent/discovery-types';
 
 const WEBHOOK_SECRET = process.env.DISCOVERY_WEBHOOK_SECRET;
 

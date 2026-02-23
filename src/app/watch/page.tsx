@@ -21,18 +21,18 @@ const THEME_SOUNDTRACKS: Partial<Record<ThemeName, { trackId: string; title: str
   'caffeine': { trackId: '1', title: 'Claudebusters' },
   'mocha-mousse': { trackId: '1', title: 'Claudebusters' },
 
-  // 8gent.app Remix - energetic, tech
-  'cyberpunk': { trackId: '2', title: '8gent.app (Remix)' },
-  'retro-arcade': { trackId: '2', title: '8gent.app (Remix)' },
-  'bold-tech': { trackId: '2', title: '8gent.app (Remix)' },
-  't3-chat': { trackId: '2', title: '8gent.app (Remix)' },
+  // OpenClaw Remix - energetic, tech
+  'cyberpunk': { trackId: '2', title: 'OpenClaw (Remix)' },
+  'retro-arcade': { trackId: '2', title: 'OpenClaw (Remix)' },
+  'bold-tech': { trackId: '2', title: 'OpenClaw (Remix)' },
+  't3-chat': { trackId: '2', title: 'OpenClaw (Remix)' },
 
-  // 8gent.app - clean, modern
-  'base': { trackId: '3', title: '8gent.app' },
-  'vercel': { trackId: '3', title: '8gent.app' },
-  'modern-minimal': { trackId: '3', title: '8gent.app' },
-  'clean-slate': { trackId: '3', title: '8gent.app' },
-  'research': { trackId: '3', title: '8gent.app' },
+  // OpenClaw - clean, modern
+  'base': { trackId: '3', title: 'OpenClaw' },
+  'vercel': { trackId: '3', title: 'OpenClaw' },
+  'modern-minimal': { trackId: '3', title: 'OpenClaw' },
+  'clean-slate': { trackId: '3', title: 'OpenClaw' },
+  'research': { trackId: '3', title: 'OpenClaw' },
 
   // Humans Are Optional - darker, moody
   'doom-64': { trackId: '4', title: 'Humans Are Optional' },
@@ -127,22 +127,20 @@ export default function WatchPage() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setViewMode('gallery')}
-                  className={`p-2 rounded-lg transition-colors ${
-                    viewMode === 'gallery'
+                  className={`p-2 rounded-lg transition-colors ${viewMode === 'gallery'
                       ? 'bg-primary text-primary-foreground'
                       : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                  }`}
+                    }`}
                   aria-label="Gallery view"
                 >
                   <Grid3X3 className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => setViewMode('showcase')}
-                  className={`p-2 rounded-lg transition-colors ${
-                    viewMode === 'showcase'
+                  className={`p-2 rounded-lg transition-colors ${viewMode === 'showcase'
                       ? 'bg-primary text-primary-foreground'
                       : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                  }`}
+                    }`}
                   aria-label="Showcase view"
                 >
                   <LayoutGrid className="w-5 h-5" />
@@ -178,11 +176,10 @@ export default function WatchPage() {
                   <button
                     key={filter.value}
                     onClick={() => setStyleFilter(filter.value)}
-                    className={`px-3 py-1.5 rounded-full text-sm whitespace-nowrap transition-colors ${
-                      styleFilter === filter.value
+                    className={`px-3 py-1.5 rounded-full text-sm whitespace-nowrap transition-colors ${styleFilter === filter.value
                         ? 'bg-primary text-primary-foreground'
                         : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                    }`}
+                      }`}
                   >
                     {filter.label}
                   </button>
@@ -275,11 +272,10 @@ function WatchCard({
   return (
     <motion.button
       onClick={onClick}
-      className={`group relative flex flex-col items-center p-4 rounded-2xl transition-all ${
-        isSelected
+      className={`group relative flex flex-col items-center p-4 rounded-2xl transition-all ${isSelected
           ? 'bg-primary/10 ring-2 ring-primary'
           : 'bg-card hover:bg-muted/50'
-      }`}
+        }`}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       data-design-theme={theme}
@@ -414,11 +410,10 @@ function ShowcaseView({
             <button
               onClick={onApplyTheme}
               disabled={isCurrentTheme}
-              className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-colors ${
-                isCurrentTheme
+              className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium transition-colors ${isCurrentTheme
                   ? 'bg-muted text-muted-foreground cursor-not-allowed'
                   : 'bg-primary text-primary-foreground hover:bg-primary/90'
-              }`}
+                }`}
             >
               <Palette className="w-5 h-5" />
               {isCurrentTheme ? 'Current Theme' : 'Apply Theme'}

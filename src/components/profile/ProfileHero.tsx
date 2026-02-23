@@ -9,7 +9,7 @@ type Props = {
   title: string;              // e.g., "Systems Analyst & Developer; Product Builder (AI Platforms)"
   location?: string;          // e.g., "Dublin, IE"
   bio?: string;               // one-sentence/short paragraph
-  headshotSrc?: string;       // default: "/openclaw-logo.png"
+  headshotSrc?: string;       // default: "/8gent-logo.png"
   headshotPosition?: string;  // CSS object-position value, default: "center 38%"
   email?: string;             // "mailto:" will be added automatically
   linkedinHref?: string;      // full URL
@@ -20,7 +20,7 @@ export default function ProfileHero({
   title,
   location,
   bio,
-  headshotSrc = "/openclaw-logo.png",
+  headshotSrc = "/8gent-logo.png",
   headshotPosition = "center 38%",
   email,
   linkedinHref,

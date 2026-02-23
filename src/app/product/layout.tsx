@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Product Strategy - OpenClaw-OS | CPO & Product Leadership",
+  title: "Product Strategy - 8gent | CPO & Product Leadership",
   description:
-    "Product strategy expertise from OpenClaw-OS. Jobs-to-be-Done framework, workshop facilitation, roadmap development, and product-led growth. Dublin-based CPO consultant.",
+    "Product strategy expertise from 8gent. Jobs-to-be-Done framework, workshop facilitation, roadmap development, and product-led growth. Dublin-based CPO consultant.",
   keywords: [
-    "OpenClaw-OS product",
+    "8gent product",
     "Product strategy Dublin",
     "CPO consultant Ireland",
     "Jobs-to-be-Done",
@@ -19,21 +19,21 @@ export const metadata: Metadata = {
     "Startup product strategy",
   ],
   openGraph: {
-    title: "Product Strategy - OpenClaw-OS",
+    title: "Product Strategy - 8gent",
     description: "Product leadership and strategy consulting. Dublin-based CPO.",
     url: "https://openclaw.io/product",
     type: "website",
     images: [
       {
-        url: "https://openclaw.io/openclaw-logo.png",
+        url: "https://openclaw.io/8gent-logo.png",
         width: 1200,
         height: 630,
-        alt: "OpenClaw-OS - Product Strategy",
+        alt: "8gent - Product Strategy",
       },
     ],
   },
   twitter: {
-    title: "Product Strategy - OpenClaw-OS",
+    title: "Product Strategy - 8gent",
     description: "CPO & Product leadership consulting.",
     card: "summary_large_image",
   },

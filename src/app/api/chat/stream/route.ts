@@ -1,14 +1,14 @@
 import { NextRequest } from 'next/server';
 import { cookies } from 'next/headers';
-import { OPENCLAW_SYSTEM_PROMPT, THEME_CONTEXTS } from '@/lib/claw-ai/system-prompt';
-import { toOpenAITools } from '@/lib/claw-ai/tools';
-import { executeTool } from '@/lib/claw-ai/tool-executor';
+import { OPENCLAW_SYSTEM_PROMPT, THEME_CONTEXTS } from '@/lib/8gent/system-prompt';
+import { toOpenAITools } from '@/lib/8gent/tools';
+import { executeTool } from '@/lib/8gent/tool-executor';
 import { checkRateLimit, getClientIp } from '@/lib/security';
 import {
   getOwnerIdentity,
   checkFeatureAccess,
   OWNER_ROLES
-} from '@/lib/claw-ai/access-control';
+} from '@/lib/8gent/access-control';
 import { auth } from '@/lib/openclaw/auth-server';
 import { getLynkrClient, type LynkrMessage } from '@/lib/lynkr';
 import { getMemoryManager } from '@/lib/memory/manager';
@@ -69,7 +69,7 @@ async function getUserIdentity(): Promise<{ accessLevel: AccessLevel; userId: st
     const { userId: clerkUserId } = await auth();
 
     if (clerkUserId) {
-      // Assume owner for OpenClaw OS
+      // Assume owner for 8gent
       return { accessLevel: 'owner', userId: clerkUserId };
     }
 
@@ -92,7 +92,7 @@ async function getUserIdentity(): Promise<{ accessLevel: AccessLevel; userId: st
 }
 
 /**
- * Fetch AI provider settings (using defaults/env for OpenClaw OS)
+ * Fetch AI provider settings (using defaults/env for 8gent)
  */
 async function getAIProviderSettings(accessLevel: AccessLevel): Promise<AIProviderSettings> {
   if (accessLevel !== 'owner') {

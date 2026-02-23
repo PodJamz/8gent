@@ -3,7 +3,7 @@
 /**
  * ProjectContext - Multi-Project Support
  *
- * Manages projects as contexts within Claw AI OS.
+ * Manages projects as contexts within 8gent OS.
  * Each project contains its own:
  * - Kanban board
  * - Threads
@@ -84,8 +84,8 @@ export interface ProjectState {
 // ============================================================================
 
 const OPENCLAW_OS_PROJECT: Project = {
-  id: 'openclaw-os',
-  name: 'OpenClaw-OS',
+  id: '8gent',
+  name: '8gent',
   description: 'The AI-Native Operating System ecosystem.',
   status: 'active',
   color: '#8b5cf6',
@@ -102,7 +102,7 @@ const OPENCLAW_OS_PROJECT: Project = {
 
 const createDefaultState = (): ProjectState => ({
   projects: [OPENCLAW_OS_PROJECT],
-  activeProjectId: 'openclaw-os',
+  activeProjectId: '8gent',
   isLoaded: false,
 });
 
@@ -192,8 +192,8 @@ function projectReducer(state: ProjectState, action: ProjectAction): ProjectStat
       };
 
     case 'DELETE_PROJECT':
-      // Prevent deleting Claw AI OS
-      if (action.payload === 'openclaw-os') return state;
+      // Prevent deleting 8gent OS
+      if (action.payload === '8gent') return state;
       return {
         ...state,
         projects: state.projects.filter((p) => p.id !== action.payload),
@@ -401,9 +401,9 @@ export function ProjectProvider({ children }: ProjectProviderProps) {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
-        // Ensure Claw AI OS project exists
+        // Ensure 8gent OS project exists
         const currentProjects = parsed.projects || [];
-        const hasOpenClawOS = currentProjects.some((p: Project) => p.id === 'openclaw-os');
+        const hasOpenClawOS = currentProjects.some((p: Project) => p.id === '8gent');
 
         if (!hasOpenClawOS) {
           parsed.projects = [OPENCLAW_OS_PROJECT, ...currentProjects];

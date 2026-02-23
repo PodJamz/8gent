@@ -9,7 +9,7 @@ import { type ThemeName } from '@/lib/themes/definitions';
 import { tracks, type Track } from '@/data/tracks';
 
 // Theme to track ID mapping
-// Tracks: 1=Claudebusters, 2=8gent.app (Remix), 3=8gent.app, 4=Humans Are Optional
+// Tracks: 1=Claudebusters, 2=OpenClaw (Remix), 3=OpenClaw, 4=Humans Are Optional
 const THEME_SOUNDTRACK_MAP: Partial<Record<ThemeName, string>> = {
   // Claudebusters - warm, AI-themed, upbeat
   'claude': '1',
@@ -18,13 +18,13 @@ const THEME_SOUNDTRACK_MAP: Partial<Record<ThemeName, string>> = {
   'caffeine': '1',
   'mocha-mousse': '1',
 
-  // 8gent.app (Remix) - energetic, tech, futuristic
+  // OpenClaw (Remix) - energetic, tech, futuristic
   'cyberpunk': '2',
   'retro-arcade': '2',
   'bold-tech': '2',
   't3-chat': '2',
 
-  // 8gent.app - clean, modern, tech
+  // OpenClaw - clean, modern, tech
   'base': '3',
   'vercel': '3',
   'modern-minimal': '3',

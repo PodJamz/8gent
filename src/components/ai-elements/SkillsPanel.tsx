@@ -228,7 +228,7 @@ export function SkillsPanel({ className, onExecuteCommand }: SkillsPanelProps) {
       <div className="flex items-center justify-between px-3 py-2 border-b border-white/5">
         <div className="flex items-center gap-2">
           <Zap className="w-4 h-4 text-orange-400" />
-          <span className="text-sm font-medium text-white">Claw AI Skills</span>
+          <span className="text-sm font-medium text-white">8gent Skills</span>
         </div>
         <span className="text-xs text-white/40">
           {enabledCount}/{skillRegistry.length} enabled

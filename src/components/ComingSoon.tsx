@@ -88,7 +88,7 @@ export function ComingSoon({
         transition={{ duration: 0.5 }}
         className="relative z-10 flex flex-col items-center max-w-md w-full"
       >
-        {/* Claw AI Avatar */}
+        {/* 8gent Avatar */}
         <motion.div
           className="relative mb-6"
           animate={{
@@ -117,8 +117,8 @@ export function ComingSoon({
             >
               <div className="w-24 h-24 rounded-full overflow-hidden relative">
                 <Image
-                  src="/openclaw-logo.png"
-                  alt="Claw AI"
+                  src="/8gent-logo.png"
+                  alt="8gent"
                   fill
                   className="object-cover"
                 />

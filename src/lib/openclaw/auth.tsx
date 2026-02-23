@@ -5,8 +5,8 @@ export const useUser = () => {
     return {
         user: {
             id: "mock-user-id",
-            firstName: "James",
-            fullName: "OpenClaw-OS",
+            firstName: "OpenClaw",
+            fullName: "8gent",
             imageUrl: "https://github.com/shadcn.png",
             emailAddresses: [{ emailAddress: "james@example.com" }]
         },

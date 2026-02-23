@@ -1,5 +1,5 @@
 /**
- * Canvas Grid System - Provides coordinate-based spatial awareness for Claw AI
+ * Canvas Grid System - Provides coordinate-based spatial awareness for 8gent
  *
  * Converts pixel positions to grid coordinates (like A1, B2, C3 or row,col)
  * Allows AI to understand and manipulate canvas through a matrix system
@@ -150,7 +150,7 @@ export interface CanvasDescription {
 }
 
 /**
- * Generate a description of the canvas state for Claw AI
+ * Generate a description of the canvas state for 8gent
  */
 export function describeCanvas(
   nodes: CanvasNode[],

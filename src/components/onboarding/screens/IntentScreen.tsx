@@ -41,9 +41,10 @@ const intentOptions: {
 export function IntentScreen({ onSelect, onAdvance, aesthetic }: IntentScreenProps) {
   const [selected, setSelected] = useState<IntentChoice | null>(null);
 
+  const isDark = aesthetic === 'dark' || aesthetic === 'vivid' || !aesthetic;
   const bgClass = 'bg-transparent';
-  const textClass = 'text-white';
-  const mutedClass = 'text-white/40';
+  const textClass = isDark ? 'text-white' : 'text-slate-900';
+  const mutedClass = isDark ? 'text-white/40' : 'text-slate-400';
 
   const handleSelect = (choice: IntentChoice) => {
     setSelected(choice);
@@ -101,7 +102,7 @@ export function IntentScreen({ onSelect, onAdvance, aesthetic }: IntentScreenPro
             >
               {/* Background */}
               <div
-                className={`absolute inset-0 rounded-xl transition-opacity bg-white/5 group-hover:bg-white/10 ${selected === option.id ? 'ring-2 ring-current' : ''}`}
+                className={`absolute inset-0 rounded-xl transition-opacity ${isDark ? 'bg-white/5 group-hover:bg-white/10' : 'bg-slate-100 group-hover:bg-slate-200'} ${selected === option.id ? 'ring-2 ring-current' : ''}`}
               />
 
               <div className="relative">

@@ -186,8 +186,8 @@ export function LockScreen({ onUnlock, onBackgroundReady, backgroundReady = fals
                 <div className="relative">
                   <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-white/20 shadow-2xl">
                     <img
-                      src="/openclaw-logo.png"
-                      alt="OpenClaw-OS"
+                      src="/8gent-logo.png"
+                      alt="8gent"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -203,7 +203,7 @@ export function LockScreen({ onUnlock, onBackgroundReady, backgroundReady = fals
                 className="text-center mb-8"
               >
                 <div className="text-white/40 text-xs uppercase tracking-widest mb-2">Welcome to</div>
-                <div className="text-white text-2xl sm:text-3xl font-bold tracking-tight">OpenClaw-OS</div>
+                <div className="text-white text-2xl sm:text-3xl font-bold tracking-tight">8gent</div>
                 <div className="text-white/50 text-sm mt-2 max-w-[280px] leading-relaxed">
                   Your AI-native operating system
                 </div>

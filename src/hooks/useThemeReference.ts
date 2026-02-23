@@ -4,7 +4,7 @@ import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 
 /**
- * Hook to handle theme reference to Claw AI
+ * Hook to handle theme reference to 8gent
  *
  * This provides functionality to send theme context to the AI assistant,
  * either by navigating to the prototyping page with the theme context,

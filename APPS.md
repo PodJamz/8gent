@@ -1,6 +1,6 @@
-# 📱 OpenClaw-OS Default Apps
+# 📱 8gent Default Apps
 
-This document lists all the default applications included in OpenClaw-OS out of the box.
+This document lists all the default applications included in 8gent out of the box.
 
 ## 🎯 Core System Apps
 
@@ -277,9 +277,9 @@ Side project and hobby tracker
 
 ### 56. **Inspirations** (`/inspirations`)
 Credits and acknowledgments:
-- **James Spalding** - The Visionary Creator
+- **8gent Team** - Strategic Vision & Design
 - **The OpenClaw Team** - Agentic Backend Foundation
-- Plus 20+ other inspirations from the original JamesOS
+- Plus 20+ other inspirations from the original 8gent design
 
 ### 57. **Onboarding** (`/onboarding`)
 New user onboarding flow:
@@ -330,4 +330,4 @@ System invite management
 
 **Total Apps: 59+** (including special pages and system utilities)
 
-*Built with ❤️ by James Spalding & powered by OpenClaw*
+*Built with ❤️ by 8gent Team & powered by OpenClaw*

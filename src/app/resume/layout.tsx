@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Resume - OpenClaw-OS | Creative Technologist & AI Product Leader",
+  title: "Resume - 8gent | Creative Technologist & AI Product Leader",
   description:
-    "OpenClaw-OS's professional resume. 12+ years experience in product strategy, AI development, and full-stack engineering. Based in Dublin, Ireland. Available for CPO, Product Lead, and AI consulting roles.",
+    "8gent's professional resume. 12+ years experience in product strategy, AI development, and full-stack engineering. Based in Dublin, Ireland. Available for CPO, Product Lead, and AI consulting roles.",
   keywords: [
-    "OpenClaw-OS resume",
-    "OpenClaw-OS CV",
+    "8gent resume",
+    "8gent CV",
     "Creative Technologist resume",
     "AI Product Leader CV",
     "CPO resume",
@@ -23,22 +23,22 @@ export const metadata: Metadata = {
     "Hire AI consultant Ireland",
   ],
   openGraph: {
-    title: "Resume - OpenClaw-OS | Creative Technologist",
+    title: "Resume - 8gent | Creative Technologist",
     description:
       "12+ years in product strategy, AI development, and full-stack engineering. Dublin, Ireland. Available for consulting.",
     url: "https://openclaw.io/resume",
     type: "profile",
     images: [
       {
-        url: "https://openclaw.io/openclaw-logo.png",
+        url: "https://openclaw.io/8gent-logo.png",
         width: 1200,
         height: 630,
-        alt: "OpenClaw-OS - Resume & Professional Background",
+        alt: "8gent - Resume & Professional Background",
       },
     ],
   },
   twitter: {
-    title: "OpenClaw-OS's Resume",
+    title: "8gent's Resume",
     description: "Creative Technologist & AI Product Leader. 12+ years experience. Dublin, Ireland.",
     card: "summary_large_image",
   },

@@ -42,7 +42,7 @@ export const EXAMPLE_DAD_AND_LAD_STYLE: StyleBible = {
 
   characters: [
     {
-      name: 'Dad (James)',
+      name: 'Dad',
       description:
         'Mid-30s man with warm, expressive face. Messy tousled brown hair. Light stubble. Big genuine smile with visible teeth. Athletic but approachable build.',
       distinguishingFeatures: [
@@ -206,7 +206,7 @@ export function buildCharacterPrompt(
 
 /**
  * Create a new style bible from a description.
- * Can be used by Claw AI to set up a new series.
+ * Can be used by 8gent to set up a new series.
  */
 export function createStyleBible(params: {
   name: string;

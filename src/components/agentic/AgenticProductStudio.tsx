@@ -5,7 +5,7 @@
  *
  * This replaces manual form filling with a conversational interface:
  * - User speaks/types naturally about their product idea
- * - Claw AI extracts PRD fields in real-time
+ * - 8gent extracts PRD fields in real-time
  * - Live canvas panel shows visual diagrams as conversation progresses
  * - PRDs can be visually sharded to tickets on canvas
  *
@@ -1111,7 +1111,7 @@ What's on your mind?`,
         <div className="flex items-center justify-between px-6 py-4 border-t border-white/10">
           <div className="flex items-center gap-2 text-xs text-white/40">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Claw AI is extracting PRD fields as you speak</span>
+            <span>8gent is extracting PRD fields as you speak</span>
           </div>
 
           <div className="flex items-center gap-3">

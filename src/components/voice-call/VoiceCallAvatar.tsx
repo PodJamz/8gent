@@ -159,8 +159,8 @@ export function VoiceCallAvatar({
           }}
         >
           <motion.img
-            src="/openclaw-logo.png"
-            alt="Claw AI"
+            src="/8gent-logo.png"
+            alt="8gent"
             className="w-full h-full object-cover"
             animate={
               prefersReducedMotion

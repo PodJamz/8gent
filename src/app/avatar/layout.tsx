@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Avatar - OpenClaw-OS | Interactive 3D Avatar Generator",
+  title: "Avatar - 8gent | Interactive 3D Avatar Generator",
   description:
     "Generate interactive 3D avatars from photos using AI. Cursor-tracking rotation and 3D model export capabilities. Inspired by 0xGF's avatar-3d project.",
   keywords: [
@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/openclaw-logo.png",
+        url: "/8gent-logo.png",
         width: 1200,
         height: 630,
-        alt: "OpenClaw-OS - Avatar Generator",
+        alt: "8gent - Avatar Generator",
       },
     ],
   },

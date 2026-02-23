@@ -41,34 +41,34 @@ export function generateReelsFromTracks(trackList: Track[] = tracks): VideoReel[
 export const manualReels: VideoReel[] = [
   {
     id: '1',
-    title: '8gent.app (Remix)',
-    description: 'Singles • James Spalding',
+    title: 'OpenClaw (Remix)',
+    description: 'Singles • 8gent',
     videoSrc: '', // Visualizer fallback
     thumbnail: 'https://2oczblkb3byymav8.public.blob.vercel-storage.com/employeeoftheyear.jpeg',
     track: tracks[0],
-    creator: "James Spalding",
+    creator: "8gent",
     likes: 42,
     views: 1337,
   },
   {
     id: '2',
-    title: '8gent.app',
-    description: 'Singles • James Spalding',
+    title: 'OpenClaw',
+    description: 'Singles • Open8gent',
     videoSrc: '', // Visualizer fallback
     thumbnail: 'https://2oczblkb3byymav8.public.blob.vercel-storage.com/IMG_1312.jpeg',
     track: tracks[1],
-    creator: "James Spalding",
+    creator: "Open8gent",
     likes: 28,
     views: 892,
   },
   {
     id: '3',
     title: 'Humans Are Optional (Remastered)',
-    description: 'Singles • James Spalding',
+    description: 'Singles • Open8gent',
     videoSrc: '', // Visualizer fallback
     thumbnail: 'https://2oczblkb3byymav8.public.blob.vercel-storage.com/Humans%20are%20optional.png',
     track: tracks[2],
-    creator: "James Spalding",
+    creator: "Open8gent",
     likes: 64,
     views: 2048,
   },

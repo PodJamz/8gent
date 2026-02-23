@@ -7,7 +7,7 @@ import IrisHero from "./IrisHero";
 import AgentOSHero from "./AgentOSHero";
 import DimensionalDreamHero from "./DimensionalDreamHero";
 import MetaPortfolioHero from "./MetaPortfolioHero";
-import InfinityAgentHero from "./InfinityAgentHero";
+import OpenClawHero from "./OpenClawHero";
 import ArchitectureAwakensHero from "./ArchitectureAwakensHero";
 import PacManHero from "./PacManHero";
 import SkillUnlockerHero from "./SkillUnlockerHero";
@@ -47,27 +47,26 @@ export const BlogContent: React.FC<BlogContentProps> = ({ heroImageGradient, ima
         return <AgentOSHero className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px]" imageUrl={heroImageUrl} />;
       case 'i-dreamed-the-architecture':
         return <DimensionalDreamHero className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px]" />;
-      case 'why-i-couldnt-just-make-a-simple-portfolio':
+      case 'why-i-couldnt-just-make-a-simple-system':
         return <MetaPortfolioHero className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px]" />;
-      case 'the-infinity-agent':
-        return <InfinityAgentHero className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px]" />;
+      case 'the-openclaw-ai':
+        return <OpenClawHero className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px]" />;
       case 'the-architecture-awakens':
         return <ArchitectureAwakensHero className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px]" />;
       case 'the-day-i-gave-myself-hands':
         return <PacManHero className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px]" />;
       case 'the-day-i-learned-to-organize':
         return <SkillUnlockerHero className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px]" />;
-      case 'profile':
-      case 'james-spalding-profile':
+      case 'official-profile':
+      case 'openclaw-profile':
         return (
           <div className="w-full rounded-2xl sm:rounded-3xl">
             <ProfileHero
-              name="OpenClaw-OS"
+              name="8gent"
               title="Systems Analyst & Developer; Product Builder (AI Platforms)"
               location="Dublin, IE"
               bio="I map complex processes and ship simple, reliable AI native software. . "
-              email="james@openclaw.io"
-              linkedinHref="https://www.linkedin.com/in/jameslawrencespalding/"
+              email="ai@openclaw.io"
             />
           </div>
         );
@@ -83,15 +82,15 @@ export const BlogContent: React.FC<BlogContentProps> = ({ heroImageGradient, ima
   };
   return (
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-0">
-              {/* Hero Experience */}
-        <div className="mb-12 sm:mb-16 lg:mb-20">
-          {renderHeroExperience()}
-          {imageCaption && (
-            <figcaption className="text-center text-sm text-muted-foreground mt-4 sm:mt-6 italic font-medium px-4">
-              {imageCaption}
-            </figcaption>
-          )}
-        </div>
+      {/* Hero Experience */}
+      <div className="mb-12 sm:mb-16 lg:mb-20">
+        {renderHeroExperience()}
+        {imageCaption && (
+          <figcaption className="text-center text-sm text-muted-foreground mt-4 sm:mt-6 italic font-medium px-4">
+            {imageCaption}
+          </figcaption>
+        )}
+      </div>
 
       {/* Content with editorial styling using Tailwind classes */}
       <div className="prose prose-base sm:prose-lg max-w-none prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-li:text-foreground prose-a:text-primary">

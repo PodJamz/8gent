@@ -9,7 +9,7 @@ import {
   PhotoGallery,
   ThemePreviewCard,
 } from './ChatComponents';
-import { ClawAIUIRenderer, parseUITree } from '@/lib/claw-ai/json-render-provider';
+import { ClawAIUIRenderer, parseUITree } from '@/lib/8gent/json-render-provider';
 import { StreamingUIRenderer } from './StreamingUIRenderer';
 
 // Tool execution status
@@ -28,10 +28,10 @@ interface ToolExecutionProps {
 
 // Map tool names to icons and labels
 const TOOL_CONFIG: Record<string, { icon: typeof Search; label: string; activeLabel: string }> = {
-  search_portfolio: {
+  search_system: {
     icon: Search,
-    label: 'Search Portfolio',
-    activeLabel: 'Searching portfolio...',
+    label: 'Search System',
+    activeLabel: 'Searching system...',
   },
   navigate_to: {
     icon: Navigation,
@@ -134,7 +134,7 @@ function ToolResultDisplay({ toolName, data, onNavigate }: ToolResultDisplayProp
   if (!data) return null;
 
   switch (toolName) {
-    case 'search_portfolio':
+    case 'search_system':
       return <SearchResults data={data} />;
 
     case 'navigate_to':

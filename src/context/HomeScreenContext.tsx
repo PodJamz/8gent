@@ -70,81 +70,45 @@ interface HomeScreenContextValue {
 
 const HomeScreenContext = createContext<HomeScreenContextValue | null>(null);
 
-const STORAGE_KEY = 'openclaw_homeScreen_v16'; // v16: Curated for OpenClaw-OS
+const STORAGE_KEY = 'openclaw_homeScreen_v17'; // v17: Hub-based restructure
 
 // ============================================================================
 // ALL APPS - Complete registry of available apps
 // ============================================================================
 // ============================================================================
-// ALL APPS - Curated for OpenClaw OS
+// ALL APPS - Curated for 8gent
 // ============================================================================
 export const defaultApps: AppItem[] = [
-  // Core/Entry apps
-  // { id: 'story', name: 'Story', href: '/story', gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }, // Personal
-  // { id: 'blog', name: 'Blog', href: '/blog', gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)' }, // Personal
-  // { id: 'resume', name: 'Resume', href: '/resume', gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)' }, // Personal
+  // Hub/Main apps
+  { id: 'control', name: 'Control', href: '/control', gradient: 'linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)' },
+  { id: 'agents', name: 'Agents', href: '/agents', gradient: 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)' },
+  { id: 'settings', name: 'Settings', href: '/settings', gradient: 'linear-gradient(135deg, #f43f5e 0%, #fbbf24 100%)' },
+  { id: 'resources', name: 'Resources', href: 'https://docs.openclaw.io', gradient: 'linear-gradient(135deg, #10b981 0%, #14b8a6 100%)', external: true },
+  { id: 'chat', name: 'Chat', href: '/chat', gradient: 'linear-gradient(135deg, #38bdf8 0%, #818cf8 100%)', isChat: true },
 
-  // Action/Create apps
-  // { id: 'music', name: 'Music', href: '/music', gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)' }, // Personal
-  { id: 'jamz', name: 'Studio', href: '/studio', gradient: 'linear-gradient(135deg, hsl(var(--theme-primary, 262 83% 58%)) 0%, hsl(var(--theme-accent, 187 94% 43%)) 100%)' }, // Renamed from Jamz
-  { id: 'prototyping', name: 'Prototyping', href: '/prototyping', gradient: 'linear-gradient(135deg, #f97316 0%, #eab308 100%)' },
-  { id: 'agent', name: 'OpenClaw', href: '/agent', gradient: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)' }, // Renamed
-  { id: 'notes', name: 'Notes', href: '/notes', gradient: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)' },
-  { id: 'cowrite', name: 'Cowrite', href: '/cowrite', gradient: 'linear-gradient(135deg, hsl(var(--theme-primary, 180 70% 45%)) 0%, hsl(var(--theme-accent, 190 80% 50%)) 100%)' },
-  { id: 'canvas', name: 'Canvas', href: '/canvas', gradient: 'linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%)' },
-  { id: 'product', name: 'Product', href: '/product', gradient: 'linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)' },
-  { id: 'projects', name: 'Projects', href: '/projects', gradient: 'linear-gradient(135deg, #10b981 0%, #14b8a6 100%)' },
-  { id: 'mockit', name: 'Mockit', href: '/mockit', gradient: 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)' },
-
-  // Work/Hire apps
-  { id: 'humans', name: 'Humans', href: '/humans', gradient: 'linear-gradient(135deg, #38bdf8 0%, #818cf8 100%)' }, // Keep as generic contacts?
-  // { id: 'activity', name: 'Activity', href: '/activity', gradient: 'linear-gradient(135deg, #f97316 0%, #f59e0b 100%)' }, // Personal activity?
-  { id: 'calendar', name: 'Calendar', href: '/calendar', gradient: 'linear-gradient(135deg, #ef4444 0%, #f97316 100%)' },
-  { id: 'contacts', name: 'Contacts', href: '/contacts', gradient: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)' },
-  { id: 'messages', name: 'Messages', href: '/messages', gradient: 'linear-gradient(135deg, #34C759 0%, #30D158 100%)' },
-
-  // Explore/Depth apps
-  { id: 'photos', name: 'Photos', href: '/photos', gradient: 'linear-gradient(135deg, #f43f5e 0%, #ec4899 100%)' },
-  // { id: 'inspirations', name: 'Inspirations', href: '/inspirations', gradient: 'linear-gradient(135deg, #d946ef 0%, #a855f7 100%)' }, // Personal
-  { id: '3d-gallery', name: '3-D', href: '/gallery-3d', gradient: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)' },
-  // { id: 'avatar', name: 'Avatar', href: '/avatar', gradient: 'linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%)' }, // Personal avatar
-  // { id: 'way', name: 'Way', href: 'https://way-lovat.vercel.app/', gradient: 'linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%)', external: true }, // Personal project
-
-  // Theme showcases - Optional, keeping for "OS" feel
-  { id: 'claude', name: 'Claude', href: '/design/claude', imageUrl: '/claudeapp.svg', gradient: 'linear-gradient(135deg, #D97757 0%, #B8523A 100%)' },
-  // ... (Other themes can stay hidden in All Apps if needed, or removed)
-
-  // Social/Connect apps - REMOVED PERSONAL LINKS
-  // { id: 'github', name: 'GitHub', href: 'https://github.com/PodJamz', gradient: 'linear-gradient(135deg, #333 0%, #1a1a1a 100%)', external: true },
-
-  // Vibes/Fun apps
-  { id: 'weather', name: 'Weather', href: '/weather', gradient: 'linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%)' },
-  { id: 'games', name: 'Games', href: '/games', gradient: 'linear-gradient(135deg, #a855f7 0%, #ec4899 100%)' },
+  // Secondary apps
+  { id: 'browser', name: 'Browser', href: '/browser', gradient: 'linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%)' },
   { id: 'terminal', name: 'Terminal', href: '/terminal', gradient: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)' },
-
-  // Neurodiversity apps - Removed purely personal ones
-  // { id: 'regulation', name: 'Regulate', href: '/regulate', gradient: 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)' },
-  // { id: 'journal', name: 'Journal', href: '/journal', gradient: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)' },
-
-  // System apps
-  { id: 'skills', name: 'Skills', href: '/skills', gradient: 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)' },
-  { id: 'system', name: 'System', href: '/system', gradient: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)' },
-  { id: 'security', name: 'Security', href: '/security', gradient: 'linear-gradient(135deg, #ef4444 0%, #991b1b 100%)' },
+  { id: 'canvas', name: 'Canvas', href: '/canvas', gradient: 'linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%)' },
+  { id: 'notes', name: 'Notes', href: '/notes', gradient: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)' },
+  { id: 'calendar', name: 'Calendar', href: '/calendar', gradient: 'linear-gradient(135deg, #ef4444 0%, #f97316 100%)' },
   { id: 'vault', name: 'Vault', href: '/vault', gradient: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)' },
-  { id: 'settings', name: 'Settings', href: '/settings', gradient: 'linear-gradient(135deg, hsl(var(--theme-primary, 0 0% 50%)) 0%, hsl(var(--theme-accent, 0 0% 40%)) 100%)' },
-  { id: 'search', name: 'Search', href: '/search', gradient: 'linear-gradient(135deg, #f97316 0%, #ea580c 100%)' },
-
-  // Wiki & Watch apps
   { id: 'wiki', name: 'Wiki', href: '/wiki', gradient: 'linear-gradient(135deg, #0d9488 0%, #0f766e 100%)' },
 
-  // Updates/Progress
+  // Groups/Folders contents
+  { id: 'projects', name: 'Projects', href: '/projects', gradient: 'linear-gradient(135deg, #10b981 0%, #14b8a6 100%)' },
+  { id: 'product', name: 'Product', href: '/product', gradient: 'linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)' },
+  { id: 'prototyping', name: 'Prototyping', href: '/prototyping', gradient: 'linear-gradient(135deg, #f97316 0%, #eab308 100%)' },
+  { id: 'mockit', name: 'Mockit', href: '/mockit', gradient: 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)' },
+  { id: 'photos', name: 'Photos', href: '/photos', gradient: 'linear-gradient(135deg, #f43f5e 0%, #ec4899 100%)' },
+  { id: '3d-gallery', name: '3-D', href: '/gallery-3d', gradient: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)' },
+  { id: 'games', name: 'Games', href: '/games', gradient: 'linear-gradient(135deg, #a855f7 0%, #ec4899 100%)' },
+  { id: 'weather', name: 'Weather', href: '/weather', gradient: 'linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%)' },
+  { id: 'security', name: 'Security', href: '/security', gradient: 'linear-gradient(135deg, #ef4444 0%, #991b1b 100%)' },
+  { id: 'skills', name: 'Skills', href: '/skills', gradient: 'linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)' },
   { id: 'updates', name: 'Updates', href: '/updates', gradient: 'linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%)' },
-
-  // Research & Knowledge apps
-  { id: 'research-app', name: 'Research', href: '/research', gradient: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)' },
-
-  // Browser app
-  { id: 'browser', name: 'Browser', href: '/browser', gradient: 'linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%)' },
+  { id: 'humans', name: 'Humans', href: '/humans', gradient: 'linear-gradient(135deg, #38bdf8 0%, #818cf8 100%)' },
+  { id: 'contacts', name: 'Contacts', href: '/contacts', gradient: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)' },
 ];
 
 const getAppById = (id: string): AppItem | undefined => defaultApps.find(app => app.id === id);
@@ -163,25 +127,26 @@ const createAppGridItem = (id: string): GridItem | null => {
   return app ? { type: 'app', item: app } : null;
 };
 
-// Default grid with cleaner layout - reduced folders (5 from 7), cohesive colors
+// Default grid with Hub-based layout
 const createDefaultGridItems = (): GridItem[] => {
   const items: (GridItem | null)[] = [
-    // ========== ROW 1: CORE WORK ==========
-    createAppGridItem('agent'),           // OpenClaw (The Heart)
-    createAppGridItem('browser'),         // Web
-    createAppGridItem('terminal'),        // Command
-    createAppGridItem('settings'),        // Config
+    // ========== ROW 1: HUBS ==========
+    createAppGridItem('control'),         // Control Hub
+    createAppGridItem('agents'),          // Agents Hub
+    createAppGridItem('settings'),        // Settings Hub
+    createAppGridItem('resources'),       // Resources Hub
 
-    // ========== ROW 2: CREATION ==========
-    createAppGridItem('canvas'),          // Infinite canvas
+    // ========== ROW 2: CORE TOOLS ==========
+    createAppGridItem('chat'),            // Chat Hub
+    createAppGridItem('browser'),         // Web Browser
+    createAppGridItem('terminal'),        // CLI
+    createAppGridItem('canvas'),          // Design
+
+    // ========== ROW 3: UTILITIES & FOLDERS ==========
     createAppGridItem('notes'),           // Text
     createAppGridItem('calendar'),        // Time
-    createAppGridItem('files'),           // Files (using vault if map exists)
-
-    // ========== ROW 3: FOLDERS ==========
     createFolderGridItem('folder-dev', 'Dev', ['projects', 'product', 'prototyping', 'mockit']),
-    createFolderGridItem('folder-explore', 'Explore', ['photos', '3d-gallery', 'games', 'weather']),
-    createFolderGridItem('folder-system', 'System', ['security', 'vault', 'wiki', 'skills', 'updates']),
+    createFolderGridItem('folder-more', 'More', ['photos', '3d-gallery', 'games', 'weather', 'security', 'vault', 'wiki', 'skills', 'updates', 'humans', 'contacts']),
   ];
 
   return items.filter((item): item is GridItem => item !== null);

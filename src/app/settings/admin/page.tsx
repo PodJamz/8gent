@@ -199,7 +199,7 @@ export default function AdminSettingsPage() {
 
           {/* Version info */}
           <div className="mt-8 text-center">
-            <p className="text-xs text-white/30">OpenClaw-OS Admin Panel v1.0</p>
+            <p className="text-xs text-white/30">8gent Admin Panel v1.0</p>
             <p className="text-xs text-white/20 mt-1">Passcode Authentication System</p>
           </div>
         </main>

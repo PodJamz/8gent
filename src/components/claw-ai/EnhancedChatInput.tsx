@@ -23,7 +23,7 @@ import { AnimatePresence } from 'framer-motion';
 import { SlashCommandPicker } from './SlashCommandPicker';
 import { ContextReferencePicker } from '@/components/design-canvas/ContextReferencePicker';
 import type { ContextReference, ReferenceType } from '@/lib/canvas/artifacts';
-import type { SlashCommand } from '@/lib/claw-ai/slash-command-registry';
+import type { SlashCommand } from '@/lib/8gent/slash-command-registry';
 
 // ============================================================================
 // Types
@@ -69,7 +69,7 @@ export const EnhancedChatInput = forwardRef<
     onKeyDown,
     onCommandSelect,
     onReferenceInserted,
-    placeholder = 'Message Claw AI... Use / for commands, @ for context',
+    placeholder = 'Message 8gent... Use / for commands, @ for context',
     disabled,
     className,
     multiline = false,

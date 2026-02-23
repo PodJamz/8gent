@@ -41,7 +41,7 @@ function IOSHomeContent() {
 
     // Preload home screen backgrounds in parallel
     const imagesToPreload = [
-      '/openclaw-logo.png',
+      '/8gent-logo.png',
       ...GALLERY_IMAGES.slice(0, 3).map((img) => img.src),
     ];
     preloadImages(imagesToPreload);

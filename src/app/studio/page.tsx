@@ -191,7 +191,7 @@ const comingSoonFeatures: Feature[] = [
 const features = [...availableFeatures, ...comingSoonFeatures];
 
 // ============================================================================
-// Claw AI Actions
+// 8gent Actions
 // ============================================================================
 
 const CLAW_AI_ACTIONS = {
@@ -596,10 +596,10 @@ const LandingPage = memo(function LandingPage({
             <Link
               href="/"
               className={`flex items-center gap-2 px-3 py-2 rounded-xl ${colors.card} border ${colors.border} hover:border-cyan-500/50 transition-all group focus:outline-none focus:ring-2 focus:ring-cyan-500`}
-              aria-label="Return to OpenClaw-OS home"
+              aria-label="Return to 8gent home"
             >
               <Home className={`w-4 h-4 ${colors.textMuted} group-hover:text-cyan-400 transition-colors`} />
-              <span className={`text-sm font-medium ${colors.textSecondary} group-hover:text-cyan-400 transition-colors hidden sm:inline`}>OpenClaw-OS</span>
+              <span className={`text-sm font-medium ${colors.textSecondary} group-hover:text-cyan-400 transition-colors hidden sm:inline`}>8gent</span>
             </Link>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center">
@@ -835,7 +835,7 @@ const LandingPage = memo(function LandingPage({
                   href="/"
                   className={`inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full ${colors.card} ${colors.text} font-medium hover:opacity-80 transition-colors border ${colors.border} focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 min-h-[44px] touch-manipulation`}
                 >
-                  ← Back to OpenClaw-OS
+                  ← Back to 8gent
                 </Link>
               </div>
             </div>

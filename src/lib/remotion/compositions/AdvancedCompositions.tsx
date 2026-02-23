@@ -2,7 +2,7 @@
  * Advanced Video Compositions
  *
  * Professional-grade video templates for film directors and multimedia producers.
- * Integrates remotion-bits patterns with OpenClaw-OS infrastructure.
+ * Integrates remotion-bits patterns with 8gent infrastructure.
  */
 
 import React from "react";

@@ -1,8 +1,9 @@
-# 🦞 OpenClaw-OS
+# ♾️ 8gent (Infinity Agent)
 
-**OpenClaw-OS** is a next-generation, AI-native operating system interface built on the **JamesOS frontend** (created by OpenClaw-OS) and powered by the **OpenClaw** agentic backend.
+**8gent** (Infinity Agent) is a next-generation, AI-native operating system interface. It is a highly modular frontend fork of the **OpenClaw** ecosystem, featuring a specialized workspace abstracted from [jamesspalding.org](https://jamesspalding.org).
 
-It is designed for a **Single User (Owner)** model, providing a verified, secure, and highly integrated environment for personal computing, AI collaboration, and system management.
+> [!IMPORTANT]
+> **Agent-Ready Modularity**: This repository is designed to be easily "latched" onto any existing OpenClaw agentic backend. Whether you are a human developer or a coding agent, you can integrate this frontend by simply pointing your backend to this source.
 
 ## ✨ What You Get
 
@@ -12,6 +13,18 @@ It is designed for a **Single User (Owner)** model, providing a verified, secure
 - **Beautiful iOS-Style UI** - Draggable windows, smooth animations, premium design
 - **Local-First Architecture** - Your data stays on your machine
 - **Agentic Workflows** - BMAD Method + CCPM integration
+
+## 🔗 Modular Integration (For Agents & Humans)
+
+**8gent** is built to be backend-agnostic within the OpenClaw ecosystem. To "latch" this frontend onto your own instance:
+
+1.  **Clone the Repo**: `git clone https://github.com/PodJamz/8gent`
+2.  **Attach to Backend**: Point your `NEXT_PUBLIC_OPENCLAW_GATEWAY_URL` to your existing OpenClaw Gateway.
+3.  **Prompt-Based Setup**: If you are using a coding agent (like Claude, GPT-4, or an OpenClaw Agent), simply feed it this prompt:
+    > "I want to use the 8gent frontend for my OpenClaw instance. Clone [this repo](https://github.com/PodJamz/8gent), connect it to my local gateway at `ws://localhost:3000`, and initialize the workspace."
+
+### Customization
+During installation, you can rename the workspace. While the default is **8gent**, you are free to customize the identity in `package.json` and `system-prompt.ts` to suit your specific agentic needs.
 
 ## 🚀 Quick Start
 
@@ -104,10 +117,9 @@ Prioritizes local models (Ollama, Lynkr) with cloud fallback. Your data stays on
 ## 🙏 Credits
 
 ### Creator
-**OpenClaw-OS** - The Visionary Creator
-- X: [@james__spalding](https://x.com/james__spalding)
-- GitHub: [@PodJamz](https://github.com/PodJamz)
-- LinkedIn: [jameslawrencespalding](https://www.linkedin.com/in/jameslawrencespalding/)
+**8gent Team**
+- The primary architect and maintainer of the 8gent ecosystem.
+- Abstracted from the [jamesspalding.org](https://jamesspalding.org) personal workspace.
 
 ### Backend
 **The OpenClaw Team** - Agentic Backend Foundation
@@ -119,4 +131,4 @@ See [/inspirations](http://localhost:3000/inspirations) for 20+ amazing creators
 
 ---
 
-*Built with ❤️ by OpenClaw-OS & powered by OpenClaw*
+*Built with ❤️ by the 8gent Team — A fork of OpenClaw*

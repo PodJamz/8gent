@@ -51,7 +51,7 @@ export default function Navbar() {
   const isUpdatesPage = pathname === '/updates';
   const isAgentPage = pathname === '/agent';
 
-  // Get notification count for Claw AI (including total as admin is the aggregator)
+  // Get notification count for 8gent (including total as admin is the aggregator)
   const clawNotificationCount = getUnreadCountForApp('claw-ai') + getTotalUnreadCount();
 
   // Check for fresh onboarding completion on mount
@@ -153,8 +153,8 @@ export default function Navbar() {
                   );
                 })}
 
-                {/* Claw AI Orb - Center of dock */}
-                <DockIcon className="relative" ariaLabel="Open Claw AI chat">
+                {/* 8gent Orb - Center of dock */}
+                <DockIcon className="relative" ariaLabel="Open 8gent chat">
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <div className="size-12 flex items-center justify-center">
@@ -163,13 +163,13 @@ export default function Navbar() {
                           isActive={showChat}
                           notificationCount={clawNotificationCount}
                           hasNotification={clawNotificationCount > 0}
-                          aria-label={showChat ? "Close Claw AI chat" : `Open Claw AI chat${clawNotificationCount > 0 ? `, ${clawNotificationCount} notifications` : ''}`}
+                          aria-label={showChat ? "Close 8gent chat" : `Open 8gent chat${clawNotificationCount > 0 ? `, ${clawNotificationCount} notifications` : ''}`}
                           aria-expanded={showChat}
                         />
                       </div>
                     </TooltipTrigger>
                     <TooltipContent side="top" style={{ backgroundColor: 'hsl(var(--theme-card) / 0.95)', color: 'hsl(var(--theme-foreground))', borderColor: 'hsl(var(--theme-border))' }}>
-                      {showChat ? 'Close Claw AI' : clawNotificationCount > 0 ? `Claw AI (${clawNotificationCount})` : 'Chat with Claw AI'}
+                      {showChat ? 'Close 8gent' : clawNotificationCount > 0 ? `8gent (${clawNotificationCount})` : 'Chat with 8gent'}
                     </TooltipContent>
                   </Tooltip>
                 </DockIcon>

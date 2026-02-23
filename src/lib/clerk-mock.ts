@@ -18,7 +18,7 @@ export const useUser = () => {
             primaryEmailAddress: {
                 emailAddress: 'hello@openclaw.io',
             },
-            imageUrl: '/openclaw-logo.png',
+            imageUrl: '/8gent-logo.png',
         },
     };
 };

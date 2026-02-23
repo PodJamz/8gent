@@ -11,28 +11,35 @@ export interface OnboardingData {
   voiceGreeting: Blob | null;
   onboardingCompleted: boolean;
   firstVisit: string | null;
+  userName?: string;
+  gatewayUrl?: string;
+  gatewayToken?: string;
 }
 
 export type ScreenName =
   | 'arrival'
+  | 'gateway'
   | 'thesis'
   | 'why'
   | 'aesthetic'
   | 'capabilities'
   | 'intent'
   | 'integrations'
+  | 'whoami'
   | 'voice'
   | 'honesty'
   | 'entry';
 
 const SCREEN_ORDER: ScreenName[] = [
   'arrival',
+  'gateway',
   'thesis',
   'why',
   'aesthetic',
   'capabilities',
   'intent',
   'integrations',
+  'whoami',
   'voice',
   'honesty',
   'entry',
@@ -50,6 +57,8 @@ interface UseOnboardingStateReturn {
   skip: () => void;
   setAesthetic: (choice: AestheticChoice) => void;
   setIntent: (choice: IntentChoice) => void;
+  setUserName: (name: string) => void;
+  setGateway: (url: string, token: string) => void;
   setVoiceGreeting: (blob: Blob | null) => void;
   complete: () => void;
   reset: () => void;
@@ -74,9 +83,12 @@ export function useOnboardingState(): UseOnboardingStateReturn {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
       try {
-        const parsed = JSON.parse(stored) as Partial<OnboardingData>;
+        const parsed = JSON.parse(stored) as Partial<OnboardingData & { screenIndex: number }>;
         if (parsed.onboardingCompleted) {
           setIsReturningVisitor(true);
+        }
+        if (typeof parsed.screenIndex === 'number') {
+          setScreenIndex(parsed.screenIndex);
         }
         setData((prev) => ({
           ...prev,
@@ -90,7 +102,7 @@ export function useOnboardingState(): UseOnboardingStateReturn {
     setIsHydrated(true);
   }, []);
 
-  // Persist to localStorage when data changes (after hydration)
+  // Persist to localStorage when data or screenIndex changes (after hydration)
   useEffect(() => {
     if (!isHydrated) return;
 
@@ -99,9 +111,13 @@ export function useOnboardingState(): UseOnboardingStateReturn {
       intent: data.intent,
       onboardingCompleted: data.onboardingCompleted,
       firstVisit: data.firstVisit,
+      userName: data.userName,
+      gatewayUrl: data.gatewayUrl,
+      gatewayToken: data.gatewayToken,
+      screenIndex,
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(toStore));
-  }, [data, isHydrated]);
+  }, [data, screenIndex, isHydrated]);
 
   const advance = useCallback(() => {
     setScreenIndex((prev) => Math.min(prev + 1, SCREEN_ORDER.length - 1));
@@ -118,6 +134,14 @@ export function useOnboardingState(): UseOnboardingStateReturn {
 
   const setIntent = useCallback((choice: IntentChoice) => {
     setData((prev) => ({ ...prev, intent: choice }));
+  }, []);
+
+  const setUserName = useCallback((name: string) => {
+    setData((prev) => ({ ...prev, userName: name }));
+  }, []);
+
+  const setGateway = useCallback((url: string, token: string) => {
+    setData((prev) => ({ ...prev, gatewayUrl: url, gatewayToken: token }));
   }, []);
 
   const setVoiceGreeting = useCallback((blob: Blob | null) => {
@@ -149,6 +173,8 @@ export function useOnboardingState(): UseOnboardingStateReturn {
     skip,
     setAesthetic,
     setIntent,
+    setUserName,
+    setGateway,
     setVoiceGreeting,
     complete,
     reset,

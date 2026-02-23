@@ -344,7 +344,7 @@ export default function TaoDesignPage() {
             <span>OpenAI</span>
           </div>
           <p className="text-slate-600 text-sm">
-            OpenClaw-OS
+            8gent
           </p>
         </div>
       </footer>

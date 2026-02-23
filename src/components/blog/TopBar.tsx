@@ -271,7 +271,7 @@ export const TopBar: React.FC<TopBarProps> = ({ onSearch }) => {
         {/* Avatar - links to story page */}
         <Link href="/story" className="flex-shrink-0">
           <Avatar className="w-8 h-8 sm:w-9 sm:h-9 ring-2 ring-border hover:ring-primary/40 transition-all duration-200 cursor-pointer">
-            <AvatarImage src="/openclaw-logo.png" alt="OpenClaw-OS" className="object-cover" />
+            <AvatarImage src="/8gent-logo.png" alt="8gent" className="object-cover" />
             <AvatarFallback className="bg-primary text-primary-foreground font-semibold text-sm">
               JS
             </AvatarFallback>

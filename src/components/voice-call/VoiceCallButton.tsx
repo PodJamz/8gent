@@ -31,7 +31,7 @@ export function VoiceCallButton({
       whileHover={disabled ? {} : { scale: 1.1 }}
       whileTap={disabled ? {} : { scale: 0.95 }}
       transition={springs.snappy}
-      aria-label="Start voice call with Claw AI"
+      aria-label="Start voice call with 8gent"
     >
       <Phone size={size} />
     </motion.button>

@@ -1,7 +1,7 @@
 # Style Brainstorm Session - Unbreakable Series
 # UPDATED: Multi-modal style system with dynamic color shifts
 #
-# Key Insight from James:
+# Key Insight from the creator:
 # The style isn't one thing. It's a LIVING visual language that shifts
 # based on perspective, mood, and narrative moment.
 #
@@ -145,7 +145,7 @@ style_system:
         retain full color (the one constant, the thing that connects them).
         Harsher lines. More angular manga influence. Shadows deeper.
         But always - ALWAYS - a thread of warm light somewhere. Because
-        James never stopped fighting.
+        the creator never stopped fighting.
       prompt_fragment: >
         Desaturated illustration with deep shadows, angular manga-influenced
         composition, harsh ink lines, color drained from the world except
@@ -293,7 +293,7 @@ signature_elements:
       Nick's bright green headphones are ALWAYS present and ALWAYS retain
       their green color, even when the rest of the image desaturates.
       They are the visual throughline of the entire series. When Nick
-      and James are separated, the headphones are what connects them
+      and the creator are separated, the headphones are what connects them
       across episodes. In the darkest moments, that green is the only
       color that survives.
     color: "#6BBF59"
@@ -303,7 +303,7 @@ signature_elements:
     description: >
       In every single frame, no matter how dark the story gets, there
       is always a thread of warm light. A crack under a door. A distant
-      sunrise. A lamp left on. A phone screen glowing. James never
+      sunrise. A lamp left on. A phone screen glowing. the creator never
       gave up, and the visual language reflects that.
     rule: "Even in Mode 5 (The Dark), warm light is always present somewhere."
 

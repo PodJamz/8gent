@@ -369,7 +369,7 @@ export default function DimensionsPage() {
                   Create Custom Dimensions
                 </h3>
                 <p className="text-[hsl(var(--theme-muted-foreground))]">
-                  Describe your ideal view in natural language and let Claw AI
+                  Describe your ideal view in natural language and let 8gent
                   conjure a custom dimension just for you.
                 </p>
               </div>
@@ -385,7 +385,7 @@ export default function DimensionsPage() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Ask Claw AI
+                Ask 8gent
               </motion.button>
             </div>
           </motion.section>

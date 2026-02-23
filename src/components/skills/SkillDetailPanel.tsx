@@ -257,7 +257,7 @@ export function SkillDetailPanel({
                   <p className="text-xs text-white/40 mt-2 text-center">
                     {mode === 'on' && 'Skill is always active and available'}
                     {mode === 'off' && 'Skill is disabled and will not be used'}
-                    {mode === 'auto' && 'Claw AI decides when to use this skill'}
+                    {mode === 'auto' && '8gent decides when to use this skill'}
                   </p>
                 </div>
 

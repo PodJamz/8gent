@@ -56,7 +56,7 @@ const LEGACY_TOOL_GROUPS: ToolGroup[] = [
     icon: Search,
     tools: [
       { name: 'search_portfolio', label: 'Search Portfolio', description: 'Search projects, skills, and experience' },
-      { name: 'navigate_to', label: 'Navigate', description: 'Route to any page in OpenClaw-OS' },
+      { name: 'navigate_to', label: 'Navigate', description: 'Route to any page in 8gent' },
       { name: 'list_themes', label: 'List Themes', description: 'Browse 50+ design themes' },
       { name: 'open_search_app', label: 'Open Search', description: 'Full-text search interface' },
     ],

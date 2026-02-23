@@ -12,7 +12,7 @@ interface NotificationBadgeProps {
 
 /**
  * iOS-style notification badge with count and optional pulse animation.
- * Used on app icons and the Claw AI orb to draw user attention.
+ * Used on app icons and the 8gent orb to draw user attention.
  */
 export function NotificationBadge({
   count,

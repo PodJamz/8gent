@@ -2,7 +2,7 @@ import { ComingSoon } from '@/components/ComingSoon';
 import { Brain } from 'lucide-react';
 
 export const metadata = {
-  title: 'Memory Match | OpenClaw-OS',
+  title: 'Memory Match | 8gent',
   description: 'Memory matching game with design theme icons',
 };
 

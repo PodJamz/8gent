@@ -6,7 +6,7 @@
  * Demonstrates the complete product lifecycle:
  * New Product → PRD → Tickets → Kanban
  *
- * This is the flagship demo of Claw AI OS capabilities.
+ * This is the flagship demo of 8gent OS capabilities.
  */
 
 import React, { useState, useCallback } from 'react';

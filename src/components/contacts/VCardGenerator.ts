@@ -20,19 +20,19 @@ export interface ContactInfo {
   photo: string;
 }
 
-export const JAMES_CONTACT: ContactInfo = {
-  name: { first: 'James', last: 'Spalding' },
-  title: 'Creative Technologist',
+export const OFFICIAL_CONTACT: ContactInfo = {
+  name: { first: 'OpenClaw', last: 'AI' },
+  title: 'Product Builder',
   email: ['ai@openclaw.io'],
   website: 'https://www.openclaw.io',
   location: 'Dublin, Ireland',
   social: [
-    { platform: 'github', url: 'https://github.com/PodJamz', handle: '@PodJamz' },
-    { platform: 'linkedin', url: 'https://linkedin.com/in/jameslawrencespalding', handle: 'jameslawrencespalding' },
-    { platform: 'x', url: 'https://x.com/James__Spalding', handle: '@James__Spalding' },
+    { platform: 'github', url: 'https://github.com/openclaw', handle: '@openclaw' },
+    { platform: 'linkedin', url: 'https://linkedin.com/company/openclaw', handle: 'openclaw' },
+    { platform: 'x', url: 'https://x.com/openclaw', handle: '@openclaw' },
   ],
   bio: 'Part poet, part engineer, part philosopher.',
-  photo: '/openclaw-logo.png',
+  photo: '/8gent-logo.png',
 };
 
 /**

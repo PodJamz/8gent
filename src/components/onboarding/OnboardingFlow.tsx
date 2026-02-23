@@ -17,6 +17,7 @@ import {
   EntryScreen,
   ReturnVisitorScreen,
   IntegrationsScreen,
+  WhoAmIScreen,
 } from './screens';
 import dynamic from 'next/dynamic';
 
@@ -44,6 +45,7 @@ export function OnboardingFlow() {
     skip,
     setAesthetic,
     setIntent,
+    setUserName,
     setVoiceGreeting,
     complete,
     reset,
@@ -176,6 +178,18 @@ export function OnboardingFlow() {
             <IntegrationsScreen
               key="integrations"
               onAdvance={advance}
+              aesthetic={data.aesthetic}
+            />
+          )}
+
+          {currentScreen === 'whoami' && (
+            <WhoAmIScreen
+              key="whoami"
+              onAdvance={(userName: string) => {
+                setUserName(userName);
+                advance();
+              }}
+              aesthetic={data.aesthetic}
             />
           )}
 

@@ -7,9 +7,9 @@ import { Metadata } from "next";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Search - OpenClaw-OS Portfolio",
+  title: "Search - 8gent Portfolio",
   description:
-    "Search through OpenClaw-OS's portfolio, projects, and expertise.",
+    "Search through 8gent's portfolio, projects, and expertise.",
 };
 
 export default function SearchLayout({

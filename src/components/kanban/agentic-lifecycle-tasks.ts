@@ -69,7 +69,7 @@ export const AGENTIC_LIFECYCLE_TASKS: Task[] = [
   {
     id: 't1-1',
     title: '[T1] Product Thesis',
-    description: 'Define and display product thesis: "Claw AI OS is a personal, agentic operating system..."',
+    description: 'Define and display product thesis: "8gent OS is a personal, agentic operating system..."',
     priority: 'high',
     status: 'done',
     tags: ['tier-1', 'clarity', 'documentation'],

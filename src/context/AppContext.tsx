@@ -4,7 +4,7 @@ import React, { createContext, useContext, useState, useEffect, useCallback, Rea
 import { usePathname } from 'next/navigation';
 
 // ============================================================================
-// App Definitions - All apps in OpenClaw-OS
+// App Definitions - All apps in 8gent
 // ============================================================================
 
 export interface AppDefinition {
@@ -14,7 +14,7 @@ export interface AppDefinition {
   icon: string;
   description: string;
   suggestedPrompts: SuggestedPrompt[];
-  contextHints: string[]; // Hints for Claw AI about what the user might want
+  contextHints: string[]; // Hints for 8gent about what the user might want
 }
 
 export interface SuggestedPrompt {
@@ -30,16 +30,45 @@ export const APP_DEFINITIONS: Record<string, AppDefinition> = {
     name: 'Home',
     route: '/',
     icon: 'Home',
-    description: 'OpenClaw-OS Home Screen',
+    description: '8gent Home Screen',
     suggestedPrompts: [
       { label: 'Show me around', prompt: 'Give me a tour of what I can do here' },
-      { label: 'About James', prompt: 'Tell me about James and his work' },
       { label: 'Recent projects', prompt: 'What are some recent projects you\'ve worked on?' },
     ],
     contextHints: [
       'User is on the home screen',
-      'They may want to explore apps or learn about James',
+      'They may want to explore apps',
       'Good opportunity to suggest navigation or highlight features',
+    ],
+  },
+  control: {
+    id: 'control',
+    name: 'Control Center',
+    route: '/control',
+    icon: 'Cpu',
+    description: 'System management and orchestration hub',
+    suggestedPrompts: [
+      { label: 'System status', prompt: 'Show me the current system status' },
+      { label: 'Manage channels', prompt: 'How do I connect new integrations?' },
+    ],
+    contextHints: [
+      'User is in the Control Center',
+      'They want to manage infrastructure or integrations',
+    ],
+  },
+  agents: {
+    id: 'agents',
+    name: 'Agents Hub',
+    route: '/agents',
+    icon: 'Cpu',
+    description: 'Agent configuration and logic workflows',
+    suggestedPrompts: [
+      { label: 'Agent status', prompt: 'Which agents are currently active?' },
+      { label: 'New skill', prompt: 'How do I add a new skill to an agent?' },
+    ],
+    contextHints: [
+      'User is in the Agents Hub',
+      'They want to configure agent behavior or logic',
     ],
   },
   chat: {
@@ -47,11 +76,10 @@ export const APP_DEFINITIONS: Record<string, AppDefinition> = {
     name: 'Chat',
     route: '/chat',
     icon: 'MessageSquare',
-    description: 'Claw AI Chat Interface',
+    description: '8gent Chat Interface',
     suggestedPrompts: [
       { label: 'What can you do?', prompt: 'What are all the things you can help me with?' },
       { label: 'Portfolio tour', prompt: 'Walk me through the portfolio' },
-      { label: 'Schedule a call', prompt: 'I\'d like to schedule a call with James' },
     ],
     contextHints: [
       'User is in the chat app',
@@ -59,210 +87,19 @@ export const APP_DEFINITIONS: Record<string, AppDefinition> = {
       'Can help with navigation, information, or scheduling',
     ],
   },
-  canvas: {
-    id: 'canvas',
-    name: 'Design Canvas',
-    route: '/canvas',
-    icon: 'Palette',
-    description: 'Infinite design canvas for visual creation',
+  settings: {
+    id: 'settings',
+    name: 'Settings',
+    route: '/settings',
+    icon: 'Settings',
+    description: 'OS preferences and developer tools',
     suggestedPrompts: [
-      { label: 'Create storyboard', prompt: 'Help me create a storyboard for a new feature' },
-      { label: 'Generate UI mockup', prompt: 'Generate a UI mockup for a mobile app' },
-      { label: 'Brainstorm layout', prompt: 'Help me brainstorm layout ideas for this canvas' },
-      { label: 'Import images', prompt: 'How do I add images to this canvas?' },
+      { label: 'Change theme', prompt: 'How do I change the system theme?' },
+      { label: 'View logs', prompt: 'Show me the recent system logs' },
     ],
     contextHints: [
-      'User is in the design canvas',
-      'They may want to create visual content',
-      'Can help with storyboards, mockups, brainstorming',
-      'Can generate images and help organize visual ideas',
-    ],
-  },
-  design: {
-    id: 'design',
-    name: 'Design Themes',
-    route: '/design',
-    icon: 'Brush',
-    description: 'Theme playground with 50+ themes',
-    suggestedPrompts: [
-      { label: 'Recommend a theme', prompt: 'What theme would you recommend for a professional portfolio?' },
-      { label: 'Theme comparison', prompt: 'Compare the cyberpunk and minimal themes' },
-      { label: 'Custom theme', prompt: 'Help me create a custom theme' },
-    ],
-    contextHints: [
-      'User is exploring design themes',
-      'They want to customize their experience',
-      'Can help compare or recommend themes',
-    ],
-  },
-  projects: {
-    id: 'projects',
-    name: 'Projects',
-    route: '/projects',
-    icon: 'Folder',
-    description: 'Project portfolio and case studies',
-    suggestedPrompts: [
-      { label: 'Featured project', prompt: 'Tell me about your most impressive project' },
-      { label: 'Tech stack', prompt: 'What technologies do you use most?' },
-      { label: 'Project details', prompt: 'Can you walk me through a project in detail?' },
-    ],
-    contextHints: [
-      'User is viewing projects',
-      'They want to learn about specific work',
-      'Good time to discuss case studies and technologies',
-    ],
-  },
-  product: {
-    id: 'product',
-    name: 'Product',
-    route: '/product',
-    icon: 'Package',
-    description: 'Product management and BMAD workflow',
-    suggestedPrompts: [
-      { label: 'Create PRD', prompt: 'Help me create a PRD for a new product idea' },
-      { label: 'BMAD workflow', prompt: 'Explain the BMAD product lifecycle' },
-      { label: 'Generate tickets', prompt: 'Break down this feature into user stories' },
-    ],
-    contextHints: [
-      'User is in product management',
-      'They may want to create PRDs, tickets, or manage projects',
-      'BMAD workflow is available',
-    ],
-  },
-  studio: {
-    id: 'studio',
-    name: 'Jamz Studio',
-    route: '/studio',
-    icon: 'Music',
-    description: 'Music production studio',
-    suggestedPrompts: [
-      { label: 'Create beat', prompt: 'Help me create a lo-fi hip hop beat' },
-      { label: 'Music theory', prompt: 'Explain chord progressions for ambient music' },
-      { label: 'Mix advice', prompt: 'How should I mix these tracks together?' },
-    ],
-    contextHints: [
-      'User is in the music studio',
-      'They want to create or understand music',
-      'Can help with production, theory, and mixing',
-    ],
-  },
-  music: {
-    id: 'music',
-    name: 'Music Player',
-    route: '/music',
-    icon: 'Headphones',
-    description: 'Music library and player',
-    suggestedPrompts: [
-      { label: 'Song recommendations', prompt: 'What music would you recommend for focus?' },
-      { label: 'Create playlist', prompt: 'Help me create a coding playlist' },
-      { label: 'Music taste', prompt: 'What kind of music does James like?' },
-    ],
-    contextHints: [
-      'User is in the music player',
-      'They want to discover or organize music',
-      'Can help with recommendations and playlists',
-    ],
-  },
-  resume: {
-    id: 'resume',
-    name: 'Resume',
-    route: '/resume',
-    icon: 'FileText',
-    description: 'Professional resume and experience',
-    suggestedPrompts: [
-      { label: 'Work history', prompt: 'Tell me about James\'s work experience' },
-      { label: 'Skills overview', prompt: 'What are James\'s core skills?' },
-      { label: 'Contact info', prompt: 'How can I get in touch with James?' },
-    ],
-    contextHints: [
-      'User is viewing the resume',
-      'They want professional information',
-      'Good time to discuss experience, skills, and contact',
-    ],
-  },
-  'gallery-3d': {
-    id: 'gallery-3d',
-    name: '3D Gallery',
-    route: '/gallery-3d',
-    icon: 'Box',
-    description: 'Interactive 3D image galleries',
-    suggestedPrompts: [
-      { label: 'Gallery types', prompt: 'What different gallery layouts are available?' },
-      { label: 'Add images', prompt: 'How do I add my own images to a gallery?' },
-      { label: '3D controls', prompt: 'How do I navigate the 3D view?' },
-    ],
-    contextHints: [
-      'User is in the 3D gallery',
-      'They want to view or create visual galleries',
-      'Can explain controls and customization options',
-    ],
-  },
-  avatar: {
-    id: 'avatar',
-    name: '3D Avatar',
-    route: '/avatar',
-    icon: 'User',
-    description: 'Interactive 3D avatar experience',
-    suggestedPrompts: [
-      { label: 'Customize avatar', prompt: 'How can I customize the avatar?' },
-      { label: 'Avatar tech', prompt: 'What technology powers the 3D avatar?' },
-      { label: 'Interactions', prompt: 'What interactions are available?' },
-    ],
-    contextHints: [
-      'User is viewing the 3D avatar',
-      'They may want to interact or learn about it',
-      'Can explain the technology and interactions',
-    ],
-  },
-  games: {
-    id: 'games',
-    name: 'Games',
-    route: '/games',
-    icon: 'Gamepad2',
-    description: 'Memory and intuition games',
-    suggestedPrompts: [
-      { label: 'Play memory', prompt: 'Let\'s play the memory game!' },
-      { label: 'Game rules', prompt: 'How do the games work?' },
-      { label: 'High scores', prompt: 'What are the high scores?' },
-    ],
-    contextHints: [
-      'User is in the games section',
-      'They want to play or learn about games',
-      'Fun, casual interaction mode',
-    ],
-  },
-  security: {
-    id: 'security',
-    name: 'Security',
-    route: '/security',
-    icon: 'Shield',
-    description: 'Security monitoring dashboard',
-    suggestedPrompts: [
-      { label: 'Security status', prompt: 'What\'s the current security status?' },
-      { label: 'Recent threats', prompt: 'Have there been any security threats?' },
-      { label: 'Security features', prompt: 'What security features are in place?' },
-    ],
-    contextHints: [
-      'User is in the security dashboard',
-      'Admin/owner context likely',
-      'Can discuss security monitoring and threats',
-    ],
-  },
-  humans: {
-    id: 'humans',
-    name: 'Humans',
-    route: '/humans',
-    icon: 'Users',
-    description: 'People search and connections',
-    suggestedPrompts: [
-      { label: 'Search people', prompt: 'Help me search for someone' },
-      { label: 'Network', prompt: 'Who is in the professional network?' },
-      { label: 'Connections', prompt: 'How do I add connections?' },
-    ],
-    contextHints: [
-      'User is in the people/humans app',
-      'They want to search or learn about connections',
-      'Can help with search and networking',
+      'User is in Settings',
+      'They want to customize or debug the OS',
     ],
   },
 };
@@ -372,7 +209,7 @@ export function useAppContext() {
 }
 
 // ============================================================================
-// Utility: Format context for Claw AI
+// Utility: Format context for 8gent
 // ============================================================================
 
 export function formatAppContextForAI(appContext: AppContextValue): string {

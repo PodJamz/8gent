@@ -689,7 +689,7 @@ export function beatTimestamps(beatMap: BeatMap, type?: BeatType): number[] {
 
 /**
  * Merge a manual annotation into an existing beat map.
- * Used when James corrects beat classifications.
+ * Used when the user corrects beat classifications.
  */
 export function annotateBeat(
   beatMap: BeatMap,

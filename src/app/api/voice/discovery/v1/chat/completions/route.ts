@@ -13,7 +13,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { ConvexHttpClient } from '@/lib/convex-shim';
 import { api } from '@/lib/convex-shim';
-import { getDiscoveryPrompt, type DiscoveryTopic } from '@/lib/claw-ai/discovery-call-prompt';
+import { getDiscoveryPrompt, type DiscoveryTopic } from '@/lib/8gent/discovery-call-prompt';
 
 // ─── Provider Configuration ─────────────────────────────────
 
@@ -259,7 +259,7 @@ export async function GET() {
   return NextResponse.json({
     status: 'ok',
     service: 'discovery-voice',
-    description: 'Claw AI Discovery Call Voice API',
+    description: '8gent Discovery Call Voice API',
     usage: 'Configure deepclaw to use /api/voice/discovery for discovery calls',
   });
 }

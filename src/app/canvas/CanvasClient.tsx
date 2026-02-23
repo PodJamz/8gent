@@ -36,7 +36,7 @@ function CanvasPageContent() {
   const searchParams = useSearchParams();
   const { user, isLoaded } = useUser();
 
-  // Canvas context for Claw AI control
+  // Canvas context for 8gent control
   const { registerCanvas, unregisterCanvas, setCanvasState } = useCanvasContext();
 
   // URL params
@@ -86,13 +86,13 @@ function CanvasPageContent() {
   const createCanvasMutation = useMutation(api.designCanvas.createCanvas);
   const updateCanvasDataMutation = useMutation(api.designCanvas.updateCanvasData);
 
-  // Voice chat for Claw AI to speak responses
+  // Voice chat for 8gent to speak responses
   const voiceChat = useVoiceChat({
     voice: 'nova',
     autoSpeak: true,
   });
 
-  // Register canvas with CanvasContext when canvas loads (for Claw AI control)
+  // Register canvas with CanvasContext when canvas loads (for 8gent control)
   useEffect(() => {
     if (selectedCanvasId && canvasData.nodes.length >= 0) {
       registerCanvas(selectedCanvasId, {
@@ -107,7 +107,7 @@ function CanvasPageContent() {
     };
   }, [selectedCanvasId, registerCanvas, unregisterCanvas]);
 
-  // Sync canvas state to CanvasContext when it changes (for Claw AI real-time control)
+  // Sync canvas state to CanvasContext when it changes (for 8gent real-time control)
   useEffect(() => {
     if (selectedCanvasId) {
       setCanvasState({
@@ -131,7 +131,7 @@ function CanvasPageContent() {
     }
   }, [selectedCanvas]);
 
-  // Handle voice prompts - send to Claw AI and speak the response
+  // Handle voice prompts - send to 8gent and speak the response
   const handleVoicePrompt = useCallback(async (transcript: string) => {
     if (!transcript.trim() || isProcessingVoice.current) return;
     isProcessingVoice.current = true;
@@ -144,7 +144,7 @@ function CanvasPageContent() {
           messages: [
             {
               role: 'system',
-              content: 'You are Claw AI on the design canvas. Keep responses brief (1-2 sentences). The user is speaking to you while designing. Help them with canvas actions, design suggestions, or answer questions quickly. You can use canvas tools to manipulate the canvas directly.'
+              content: 'You are 8gent on the design canvas. Keep responses brief (1-2 sentences). The user is speaking to you while designing. Help them with canvas actions, design suggestions, or answer questions quickly. You can use canvas tools to manipulate the canvas directly.'
             },
             { role: 'user', content: transcript }
           ],
@@ -503,7 +503,7 @@ function CanvasPageContent() {
           </div>
         </header>
 
-        {/* Claw AI Voice Response Indicator */}
+        {/* 8gent Voice Response Indicator */}
         <AnimatePresence>
           {(voiceChat.mode === 'speaking' || voiceResponse) && view === 'editor' && (
             <motion.div

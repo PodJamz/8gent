@@ -22,8 +22,10 @@ export function CapabilitiesScreen({ onAdvance, aesthetic }: CapabilitiesScreenP
     onAdvance,
   });
 
+  const isDark = aesthetic === 'dark' || aesthetic === 'vivid' || !aesthetic;
   const bgClass = 'bg-transparent';
-  const textClass = 'text-white';
+  const textClass = isDark ? 'text-white' : 'text-slate-900';
+  const mutedClass = isDark ? 'text-white/40' : 'text-slate-400';
 
   return (
     <motion.div

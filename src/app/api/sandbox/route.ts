@@ -19,7 +19,7 @@ import {
   getDangerousCommandRefusal,
   createAuditEntry,
   type AuditLogEntry,
-} from '@/lib/claw-ai/ethical-core';
+} from '@/lib/8gent/ethical-core';
 
 // Project directory in sandbox - use relative path from sandbox's working directory
 // Vercel Sandbox starts in a writable home directory, so ./project works
@@ -667,7 +667,7 @@ export async function POST(request: NextRequest) {
           // Configure git user for commits
           await sandbox.runCommand({
             cmd: 'git',
-            args: ['config', 'user.name', user.firstName || 'Claw AI'],
+            args: ['config', 'user.name', user.firstName || '8gent'],
             cwd: projectDir,
           });
           await sandbox.runCommand({

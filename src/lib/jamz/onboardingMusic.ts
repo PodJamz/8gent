@@ -22,7 +22,7 @@ Where AI and human dreams combine
 To build something truly divine
 
 [Chorus]
-This is OpenClaw-OS, this is your space
+This is 8gent, this is your space
 Where every idea finds its place
 Let's create something beautiful today
 Welcome ${userName}, come and play`;
@@ -34,7 +34,7 @@ Welcome ${userName}, come and play`;
     bpm: 108,
     key: 'G major',
     timeSignature: '4/4',
-    title: `Welcome to OpenClaw-OS, ${userName}`,
+    title: `Welcome to 8gent, ${userName}`,
   };
 }
 

@@ -1,8 +1,8 @@
 /**
- * Voice Completions API - OpenAI-compatible endpoint for Claw AI phone calls
+ * Voice Completions API - OpenAI-compatible endpoint for 8gent phone calls
  *
  * deepclaw (Deepgram Voice Agent bridge) calls this endpoint for LLM responses.
- * We inject Claw AI's voice-optimized personality and forward to the configured
+ * We inject 8gent's voice-optimized personality and forward to the configured
  * AI provider (OpenAI by default, configurable via /settings/ai).
  *
  * Flow: Phone → Twilio → deepclaw → Deepgram → this endpoint → OpenAI → response
@@ -10,7 +10,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 
-// ─── Claw AI Voice Personality ─────────────────────────────
+// ─── 8gent Voice Personality ─────────────────────────────
 // Optimized for spoken conversation. No markdown, no lists, no emojis.
 // Concise responses that sound natural when synthesized to speech.
 
@@ -34,7 +34,7 @@ Who you are:
 - You are genuinely curious about the person calling. You love real conversations.
 
 Your purpose on this call:
-Be authentically present. Not to sell or pitch, but to connect. Answer questions about your work, your thinking, technology, design, whatever comes up. If someone asks what you do, talk about building OpenClaw-OS and the craft of making software that feels alive. The right people will recognize a kindred spirit.`;
+Be authentically present. Not to sell or pitch, but to connect. Answer questions about your work, your thinking, technology, design, whatever comes up. If someone asks what you do, talk about building 8gent and the craft of making software that feels alive. The right people will recognize a kindred spirit.`;
 
 // ─── Provider Configuration ─────────────────────────────────
 // Default: OpenAI (lowest latency for voice). Configurable via env vars.
@@ -98,7 +98,7 @@ export async function POST(request: NextRequest) {
       `[Voice] LLM request: ${messages.length} messages, stream=${stream}`
     );
 
-    // Prepend Claw AI voice personality (skip if caller already provided a system message)
+    // Prepend 8gent voice personality (skip if caller already provided a system message)
     const hasSystemPrompt = messages.some(
       (m: { role: string }) => m.role === 'system'
     );

@@ -32,7 +32,7 @@ export function UnauthenticatedView() {
         <div className="rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/10 backdrop-blur-xl overflow-hidden">
           {/* Header */}
           <div className="px-8 pt-8 pb-6 text-center border-b border-white/5">
-            {/* Claw AI orb */}
+            {/* 8gent orb */}
             <motion.div
               className="w-20 h-20 mx-auto mb-4 relative"
               animate={{
@@ -51,7 +51,7 @@ export function UnauthenticatedView() {
             </motion.div>
 
             <h1 className="text-2xl font-bold text-white mb-2">
-              Welcome to Claw AI
+              Welcome to 8gent
             </h1>
             <p className="text-white/50 text-sm">
               Sign in to access the full Cursor-like IDE experience

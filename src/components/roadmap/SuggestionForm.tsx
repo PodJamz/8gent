@@ -123,7 +123,7 @@ export function SuggestionForm({ onClose, isModal = false }: SuggestionFormProps
             Suggest a Feature
           </h3>
           <p className="text-sm text-[hsl(var(--theme-muted-foreground))]">
-            What should OpenClaw-OS do next?
+            What should 8gent do next?
           </p>
         </div>
         {isModal && onClose && (

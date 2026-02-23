@@ -1,8 +1,8 @@
 /**
- * Claw AI OS Video Presentation Page
+ * 8gent OS Video Presentation Page
  *
- * Preview and render the Claw AI OS presentation video.
- * THEME-AWARE: Users can select any OpenClaw-OS design theme before rendering.
+ * Preview and render the 8gent OS presentation video.
+ * THEME-AWARE: Users can select any 8gent design theme before rendering.
  */
 
 "use client";
@@ -56,7 +56,7 @@ export default function ClawAIPresentationPage() {
               <ArrowLeft className="w-5 h-5" />
             </Link>
             <div>
-              <h1 className="text-lg font-semibold">Claw AI OS Presentation</h1>
+              <h1 className="text-lg font-semibold">8gent OS Presentation</h1>
               <p className="text-xs text-white/50">
                 {Math.floor(durationInSeconds / 60)}:
                 {String(Math.floor(durationInSeconds % 60)).padStart(2, "0")} •{" "}
@@ -188,7 +188,7 @@ export default function ClawAIPresentationPage() {
           <div className="bg-white/5 rounded-xl p-6 border border-white/10">
             <h2 className="text-lg font-semibold mb-4">About This Video</h2>
             <p className="text-white/70 leading-relaxed mb-4">
-              The story of Claw AI OS told through 12 scenes. From the day Claw AI gained memory,
+              The story of 8gent OS told through 12 scenes. From the day 8gent gained memory,
               to getting hands (coding ability), to achieving voice sovereignty through local inference.
             </p>
             <p className="text-white/50 text-sm italic">

@@ -48,7 +48,7 @@ export const PostHeader: React.FC<PostHeaderProps> = ({ title, summary, publishe
                 <div key={author.name} className="group relative flex items-center gap-3">
                   {/* Avatar */}
                   <Avatar className="w-10 h-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 ring-2 ring-white/20">
-                    <AvatarImage src="/openclaw-logo.png" alt={author.name} className="object-cover" />
+                    <AvatarImage src="/8gent-logo.png" alt={author.name} className="object-cover" />
                     <AvatarFallback className={`bg-gradient-to-br ${author.gradientClass} text-white font-semibold text-sm`}>
                       {getInitials(author.name)}
                     </AvatarFallback>

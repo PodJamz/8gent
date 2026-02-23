@@ -37,7 +37,7 @@ interface Message {
 
 // Dynamic initial message based on context
 function getInitialMessage(appName?: string, appDescription?: string): Message {
-  let content = "Hey! I'm Claw AI. Tell me what you're building or what brings you here today.";
+  let content = "Hey! I'm 8gent. Tell me what you're building or what brings you here today.";
 
   if (appName && appName !== 'Home') {
     content = `Hey! I see you're in ${appName}. ${appDescription ? `That's the ${appDescription.toLowerCase()}. ` : ''}How can I help you here?`;
@@ -550,7 +550,7 @@ export function LiquidGlassChatOverlay({ isOpen, onClose }: LiquidGlassChatOverl
                     isActive={isTyping || voiceChat.mode === 'speaking'}
                   />
                   <div>
-                    <h3 id="chat-dialog-title" className="text-foreground font-semibold text-base">Claw AI</h3>
+                    <h3 id="chat-dialog-title" className="text-foreground font-semibold text-base">8gent</h3>
                     <div className="flex items-center gap-1.5">
                       <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" aria-hidden="true" />
                       <p id="chat-dialog-description" className="text-muted-foreground text-xs">Online</p>
@@ -566,7 +566,7 @@ export function LiquidGlassChatOverlay({ isOpen, onClose }: LiquidGlassChatOverl
                     className="p-2 rounded-full hover:bg-muted transition-colors group text-muted-foreground hover:text-primary disabled:opacity-50"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    aria-label="Start voice mode with Claw AI"
+                    aria-label="Start voice mode with 8gent"
                   >
                     <Phone className="w-4 h-4" />
                   </motion.button>
@@ -860,7 +860,7 @@ export function LiquidGlassChatOverlay({ isOpen, onClose }: LiquidGlassChatOverl
                           value={inputValue}
                           onChange={(e) => setInputValue(e.target.value)}
                           onKeyDown={handleKeyPress}
-                          placeholder="Message Claw AI..."
+                          placeholder="Message 8gent..."
                           disabled={isTranscribing}
                           className="w-full bg-muted rounded-full px-4 py-3 text-foreground text-base placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all border border-border/50"
                           style={{

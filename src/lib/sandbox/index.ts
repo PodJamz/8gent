@@ -1,5 +1,5 @@
 /**
- * Vercel Sandbox Integration for OpenClaw-OS Prototyping
+ * Vercel Sandbox Integration for 8gent Prototyping
  *
  * This provides real code execution capabilities using Vercel's cloud sandbox infrastructure.
  * The sandbox runs in a secure cloud container with full Node.js environment.

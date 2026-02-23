@@ -32,14 +32,14 @@ function ProjectsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  // Seed OpenClaw-OS project on first load
+  // Seed 8gent project on first load
   const seedOpenClawOS = useMutation(api.agentic.seedOpenClawOS); // Updated to OpenClawOS in API
   const hasSeeded = useRef(false);
 
   useEffect(() => {
     if (!hasSeeded.current) {
       hasSeeded.current = true;
-      // Seed the OpenClaw-OS project with 'demo' owner (public view)
+      // Seed the 8gent project with 'demo' owner (public view)
       seedOpenClawOS({ ownerId: 'demo' }).catch(console.error);
     }
   }, [seedOpenClawOS]);
@@ -113,7 +113,7 @@ function ProjectsContent() {
                 className="inline-flex items-center gap-2 text-sm text-[hsl(var(--theme-muted-foreground))] hover:text-[hsl(var(--theme-foreground))] transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
-                <span className="hidden sm:inline">Back to OpenClaw-OS</span>
+                <span className="hidden sm:inline">Back to 8gent</span>
               </Link>
 
               <div className="hidden sm:block w-px h-6 bg-[hsl(var(--theme-border))]" />
@@ -284,7 +284,7 @@ function ProjectsContent() {
                   className="text-2xl sm:text-3xl font-bold text-[hsl(var(--theme-foreground))] mb-3"
                   style={{ fontFamily: 'var(--theme-font-heading)' }}
                 >
-                  Building OpenClaw-OS
+                  Building 8gent
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 10 }}

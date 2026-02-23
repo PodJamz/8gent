@@ -109,7 +109,7 @@ const AREAS = [
 const FEATURE_PERMISSIONS = [
   { key: 'privateMusic', label: 'Private Music', description: 'Access unreleased tracks', icon: Music },
   { key: 'designCanvas', label: 'Design Canvas', description: 'Use infinite canvas', icon: Palette },
-  { key: 'clawAI', label: 'Claw AI', description: 'Chat with AI assistant', icon: Sparkles },
+  { key: 'clawAI', label: '8gent', description: 'Chat with AI assistant', icon: Sparkles },
   { key: 'security', label: 'Security Dashboard', description: 'View security events', icon: Shield },
   { key: 'analytics', label: 'Analytics', description: 'View usage stats', icon: BarChart },
 ] as const;
@@ -273,7 +273,7 @@ export default function UserManagementPage() {
     try {
       await seedOwner({
         email: 'admin@openclaw.io',
-        displayName: 'OpenClaw-OS',
+        displayName: '8gent',
       });
       setSuccess('Owner account created');
     } catch (err) {
@@ -400,7 +400,7 @@ export default function UserManagementPage() {
               <Shield className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="text-sm text-white/70">
-                  Manage who has access to your OpenClaw-OS instance. Add collaborators, assign roles, and control
+                  Manage who has access to your 8gent instance. Add collaborators, assign roles, and control
                   exactly what features and areas each user can access.
                 </p>
               </div>

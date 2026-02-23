@@ -87,7 +87,7 @@ function ActivityPageContent() {
                   </div>
                   <p className="text-sm text-white/70 leading-relaxed">
                     The Activity center provides visibility into all background operations running in
-                    OpenClaw-OS. Jobs are durable - they continue server-side even if you close your
+                    8gent. Jobs are durable - they continue server-side even if you close your
                     browser or lose connection. When you return, you can see the progress and results
                     of all your jobs.
                   </p>

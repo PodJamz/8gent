@@ -2,7 +2,7 @@
  * Email Webhook Handler (Resend Inbound)
  *
  * Receives inbound emails via Resend's inbound email feature.
- * Processes emails and generates Claw AI responses.
+ * Processes emails and generates 8gent responses.
  *
  * Setup in Resend:
  * 1. Go to Resend Dashboard → Inbound Emails
@@ -31,9 +31,9 @@ function getResendClient() {
   return new Resend(process.env.RESEND_API_KEY);
 }
 
-// Claw AI email address
+// 8gent email address
 const CLAW_AI_EMAIL = process.env.CLAW_AI_EMAIL || 'ai@openclaw.io';
-const CLAW_AI_NAME = 'Claw AI';
+const CLAW_AI_NAME = '8gent';
 
 // =============================================================================
 // Types
@@ -158,7 +158,7 @@ function verifyWebhookSignature(
 }
 
 /**
- * Process email with Claw AI
+ * Process email with 8gent
  */
 async function processWithAI(
   email: ResendInboundEmail,
@@ -174,7 +174,7 @@ async function processWithAI(
     // Build conversation context
     const conversationContext = recentMessages
       .map((m: { direction: string; content: string }) =>
-        `${m.direction === 'inbound' ? 'User' : 'Claw AI'}: ${m.content.substring(0, 500)}...`
+        `${m.direction === 'inbound' ? 'User' : '8gent'}: ${m.content.substring(0, 500)}...`
       )
       .join('\n\n');
 
@@ -183,7 +183,7 @@ async function processWithAI(
     const sanitizedSubject = sanitizeForPrompt(email.subject);
     const sanitizedFrom = sanitizeForPrompt(email.from);
 
-    // Call Claw AI chat API
+    // Call 8gent chat API
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/chat`,
       {
@@ -195,7 +195,7 @@ async function processWithAI(
           messages: [
             {
               role: 'system',
-              content: `You are Claw AI responding to an email. Be professional yet personable, like James would be. Keep responses helpful and concise. Format appropriately for email (can use paragraphs, bullet points if needed).
+              content: `You are 8gent responding to an email. Be professional yet personable, like James would be. Keep responses helpful and concise. Format appropriately for email (can use paragraphs, bullet points if needed).
 
 Subject: ${sanitizedSubject}
 From: ${sanitizedFrom}
@@ -252,7 +252,7 @@ async function sendEmailReply(
         ${content.split('\n').map(p => `<p style="margin: 0 0 1em 0;">${escapeHtml(p)}</p>`).join('')}
         <hr style="border: none; border-top: 1px solid #eee; margin: 2em 0;" />
         <p style="color: #666; font-size: 0.9em;">
-          This is an AI-powered response from Claw AI, OpenClaw-OS's digital assistant.<br/>
+          This is an AI-powered response from 8gent, 8gent's digital assistant.<br/>
           <a href="https://openclaw.io" style="color: #007AFF;">openclaw.io</a>
         </p>
       </div>`,

@@ -66,7 +66,7 @@ function formatReminderEmail(reminder: {
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #374151;">
       <div style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 20px; border-radius: 12px 12px 0 0; color: white;">
         <h2 style="margin: 0; font-size: 18px;">${escapedTitle}</h2>
-        <p style="margin: 8px 0 0 0; opacity: 0.9; font-size: 14px;">Reminder from OpenClaw-OS</p>
+        <p style="margin: 8px 0 0 0; opacity: 0.9; font-size: 14px;">Reminder from 8gent</p>
       </div>
       <div style="background: #fffbeb; padding: 24px; border-radius: 0 0 12px 12px; border: 1px solid #fcd34d; border-top: none;">
         <div style="font-size: 15px; line-height: 1.6;">
@@ -74,7 +74,7 @@ function formatReminderEmail(reminder: {
         </div>
       </div>
       <p style="text-align: center; color: #9ca3af; font-size: 12px; margin-top: 16px;">
-        Sent from OpenClaw-OS Reminders
+        Sent from 8gent Reminders
       </p>
     </div>
   `;
@@ -126,7 +126,7 @@ export async function GET(request: NextRequest) {
         });
 
         const { data, error } = await resend.emails.send({
-          from: 'OpenClaw-OS Reminders <noreply@ai.openclaw.io>',
+          from: '8gent Reminders <noreply@ai.openclaw.io>',
           to: [reminder.recipientEmail],
           subject: `Reminder: ${reminder.title}`,
           html: htmlEmail,

@@ -1,7 +1,7 @@
 /**
  * Agentic Components - Product Lifecycle Flow
  *
- * The centerpiece of Claw AI OS.
+ * The centerpiece of 8gent OS.
  */
 
 export {

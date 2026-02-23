@@ -137,7 +137,7 @@ export type ReferenceType =
   | 'file'          // @file:path/to/file
   | 'skill'         // @skill:design-excellence
   | 'dimension'     // @dimension:kanban
-  | 'tool';         // @tool:search_portfolio
+  | 'tool';         // @tool:search_system
 
 export interface ContextReference {
   type: ReferenceType;

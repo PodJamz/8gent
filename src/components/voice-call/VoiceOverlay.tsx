@@ -167,7 +167,7 @@ export function VoiceOverlay({
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              Claw AI
+              8gent
             </motion.h2>
 
             {/* Status text */}
@@ -288,7 +288,7 @@ export function VoiceOverlay({
           <div role="status" aria-live="polite" className="sr-only">
             {state === 'listening' && 'Listening for your voice'}
             {state === 'processing' && 'Processing your message'}
-            {state === 'speaking' && 'Claw AI is speaking. Tap to interrupt.'}
+            {state === 'speaking' && '8gent is speaking. Tap to interrupt.'}
           </div>
         </motion.div>
       )}

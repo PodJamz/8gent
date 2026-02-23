@@ -3,7 +3,7 @@
 /**
  * CanvasContext - Provides global access to canvas state and AI control
  *
- * Allows Claw AI to control the canvas from:
+ * Allows 8gent to control the canvas from:
  * - Voice input on the canvas page
  * - Chat popup from the dock
  * - Main chat page
@@ -15,7 +15,7 @@ import {
   generateCanvasContext,
   type CanvasState,
   type CanvasToolResult,
-} from '@/lib/claw-ai/canvas-tools';
+} from '@/lib/8gent/canvas-tools';
 import { describeCanvas } from '@/lib/canvas/grid-system';
 
 // ============================================================================

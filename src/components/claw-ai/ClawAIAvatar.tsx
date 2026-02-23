@@ -7,7 +7,7 @@ import '@/lib/themes/themes.css';
 // =============================================================================
 // ClawAIAvatar
 // =============================================================================
-// A unified avatar component for Claw AI used across all chat surfaces.
+// A unified avatar component for 8gent used across all chat surfaces.
 // Uses the same James profile PNG as the Dock Doc Center orb.
 //
 // Props:
@@ -169,8 +169,8 @@ export function ClawAIAvatar({ size = 32, isActive = false, className }: ClawAIA
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/openclaw-logo.png"
-            alt="Claw AI"
+            src="/8gent-logo.png"
+            alt="8gent"
             className="w-full h-full object-cover"
           />
         </motion.div>

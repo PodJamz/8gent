@@ -30,8 +30,8 @@ import type { MutationPermissionsContract } from "./view-contract";
  * Every mutation must declare its origin.
  */
 export type MutationSource =
-  | "chat"           // Claw AI chat tool
-  | "agent"          // ∞gent autonomous action
+  | "chat"           // 8gent chat tool
+  | "agent"          // OpenClaw autonomous action
   | "ui"             // Direct UI interaction
   | "canvas"         // Design canvas action
   | "api"            // External API call

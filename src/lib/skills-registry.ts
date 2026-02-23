@@ -1,4 +1,4 @@
-// Skills Registry - Complete catalog of all Claw AI capabilities
+// Skills Registry - Complete catalog of all 8gent capabilities
 // Each skill is represented as a collectible game card
 
 export type SkillMode = 'on' | 'off' | 'auto';
@@ -61,7 +61,7 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
     name: 'Browser Automation',
     shortName: 'Browser',
     description: 'Control headless browsers to navigate, interact, and extract data from web pages',
-    longDescription: 'Powered by Vercel Labs agent-browser, this skill enables Claw AI to control Chromium browsers programmatically. Navigate to any URL, interact with elements using accessibility tree refs, fill forms, take screenshots, and extract data. Perfect for web scraping, testing, and automated workflows.',
+    longDescription: 'Powered by Vercel Labs agent-browser, this skill enables 8gent to control Chromium browsers programmatically. Navigate to any URL, interact with elements using accessibility tree refs, fill forms, take screenshots, and extract data. Perfect for web scraping, testing, and automated workflows.',
     category: 'automation',
     rarity: 'epic',
     icon: 'Globe',
@@ -172,7 +172,7 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
       { name: 'convex', type: 'npm', url: 'https://convex.dev' },
     ],
     source: {
-      author: 'Claw AI',
+      author: '8gent',
       license: 'Proprietary',
     },
   },
@@ -222,7 +222,7 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
     ],
     dependencies: [],
     source: {
-      author: 'Claw AI',
+      author: '8gent',
       license: 'Proprietary',
     },
   },
@@ -1532,7 +1532,7 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
 
   // ==========================================================================
   // GENERATIVE ARTIFACT SYSTEM
-  // Claw AI's ability to create blurred-line content artifacts
+  // 8gent's ability to create blurred-line content artifacts
   // ==========================================================================
   {
     id: 'artifact-generation',
@@ -1551,7 +1551,7 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
     commands: [],
     dependencies: [],
     source: {
-      author: 'Claw AI',
+      author: '8gent',
       license: 'Proprietary',
     },
   },
@@ -1572,7 +1572,7 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
     commands: [],
     dependencies: [],
     source: {
-      author: 'Claw AI',
+      author: '8gent',
       license: 'Proprietary',
     },
   },
@@ -1960,14 +1960,14 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
   // HUGGING FACE SKILLS
   // Source: https://github.com/huggingface/skills (via community)
   // Forked for reference: github.com/PodJamz/Huggingface-skills
-  // For Claw AI to interact with HuggingFace models, tools, and APIs
+  // For 8gent to interact with HuggingFace models, tools, and APIs
   // ==========================================================================
   {
     id: 'hf-cli',
     name: 'Hugging Face CLI',
     shortName: 'HF CLI',
     description: 'Execute Hugging Face Hub operations using the hf CLI',
-    longDescription: 'Full access to Hugging Face Hub via CLI. Manage models, datasets, spaces. Upload, download, configure. Connect Claw AI to the world\'s largest ML model repository.',
+    longDescription: 'Full access to Hugging Face Hub via CLI. Manage models, datasets, spaces. Upload, download, configure. Connect 8gent to the world\'s largest ML model repository.',
     category: 'ml',
     rarity: 'epic',
     icon: 'Terminal',
@@ -2041,7 +2041,7 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
     name: 'Hugging Face Jobs',
     shortName: 'HF Jobs',
     description: 'Execute compute jobs on HF infrastructure',
-    longDescription: 'Run Python scripts on Hugging Face\'s compute infrastructure. Schedule jobs, manage execution, and leverage HF\'s GPU resources. Serverless ML compute for Claw AI.',
+    longDescription: 'Run Python scripts on Hugging Face\'s compute infrastructure. Schedule jobs, manage execution, and leverage HF\'s GPU resources. Serverless ML compute for 8gent.',
     category: 'ml',
     rarity: 'epic',
     icon: 'Zap',
@@ -2062,7 +2062,7 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
     name: 'Hugging Face Model Trainer',
     shortName: 'HF Train',
     description: 'Fine-tune language models using TRL framework',
-    longDescription: 'Fine-tune LLMs using the TRL (Transformers Reinforcement Learning) library. SFT, DPO, GRPO training methods. Convert to GGUF format. Track experiments with Trackio. Train custom models for Claw AI.',
+    longDescription: 'Fine-tune LLMs using the TRL (Transformers Reinforcement Learning) library. SFT, DPO, GRPO training methods. Convert to GGUF format. Track experiments with Trackio. Train custom models for 8gent.',
     category: 'ml',
     rarity: 'legendary',
     icon: 'Sparkles',
@@ -2107,7 +2107,7 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
     name: 'Hugging Face Tool Builder',
     shortName: 'HF Tools',
     description: 'Create reusable automation scripts for HF',
-    longDescription: 'Build reusable automation tools that chain HF APIs. Create custom workflows, batch operations, and task automation. Extend Claw AI\'s capabilities with custom HF integrations.',
+    longDescription: 'Build reusable automation tools that chain HF APIs. Create custom workflows, batch operations, and task automation. Extend 8gent\'s capabilities with custom HF integrations.',
     category: 'ml',
     rarity: 'rare',
     icon: 'Code',
@@ -2130,7 +2130,7 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
     name: 'Hugging Face Trackio',
     shortName: 'Trackio',
     description: 'Experiment tracking and visualization',
-    longDescription: 'Track ML experiments with Trackio. Log metrics, visualize training runs, create dashboards on HF Spaces. Full experiment lifecycle management for Claw AI\'s ML work.',
+    longDescription: 'Track ML experiments with Trackio. Log metrics, visualize training runs, create dashboards on HF Spaces. Full experiment lifecycle management for 8gent\'s ML work.',
     category: 'ml',
     rarity: 'rare',
     icon: 'Layout',
@@ -3395,7 +3395,7 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
       { name: 'three', type: 'npm', url: 'https://threejs.org' },
     ],
     source: {
-      author: 'Claw AI',
+      author: '8gent',
       license: 'Proprietary',
     },
   },
@@ -3478,7 +3478,7 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
       { name: 'git', type: 'cli' },
     ],
     source: {
-      author: 'Claw AI',
+      author: '8gent',
       license: 'Proprietary',
     },
   },
@@ -3532,7 +3532,7 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
     ],
     dependencies: [],
     source: {
-      author: 'Claw AI',
+      author: '8gent',
       license: 'Proprietary',
     },
   },
@@ -3560,7 +3560,7 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
     ],
     dependencies: [],
     source: {
-      author: 'Claw AI',
+      author: '8gent',
       license: 'Proprietary',
     },
   },
@@ -3588,7 +3588,7 @@ export const SKILLS_REGISTRY: SkillDefinition[] = [
       { name: 'convex', type: 'npm', url: 'https://convex.dev' },
     ],
     source: {
-      author: 'Claw AI',
+      author: '8gent',
       license: 'Proprietary',
     },
   },

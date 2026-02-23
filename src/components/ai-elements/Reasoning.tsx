@@ -15,7 +15,7 @@ export interface ReasoningProps {
 }
 
 /**
- * Reasoning component - Shows Claw AI thinking process
+ * Reasoning component - Shows 8gent thinking process
  * Inspired by Polaris AI reasoning component
  */
 function ReasoningComponent({

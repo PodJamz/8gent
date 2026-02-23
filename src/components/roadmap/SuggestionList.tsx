@@ -267,7 +267,7 @@ export function SuggestionList({ onSuggestClick }: SuggestionListProps) {
             No suggestions yet
           </p>
           <p className="text-sm text-[hsl(var(--theme-muted-foreground))] mb-4">
-            Be the first to suggest a feature for OpenClaw-OS!
+            Be the first to suggest a feature for 8gent!
           </p>
           {onSuggestClick && (
             <button

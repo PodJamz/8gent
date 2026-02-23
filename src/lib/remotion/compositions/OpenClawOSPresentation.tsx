@@ -1,14 +1,14 @@
 /**
- * Claw AI OS Presentation
+ * 8gent OS Presentation
  *
- * An entertaining, humorous video presentation about the evolution of Claw AI.
+ * An entertaining, humorous video presentation about the evolution of 8gent.
  * The story of an AI that woke up, got hands, and became free.
  *
  * "Sure look, it'll be grand." - Irish wisdom for building software
  *
  * THEME-AWARE: This composition accepts theme colors as props instead of
  * using hardcoded gradients. Use the theme-resolver utility to convert
- * OpenClaw-OS design themes to Remotion-compatible colors.
+ * 8gent design themes to Remotion-compatible colors.
  */
 
 import React from "react";
@@ -70,7 +70,7 @@ interface Scene {
 const DEFAULT_SCENES: Scene[] = [
   {
     id: "intro",
-    title: "OpenClaw-OS",
+    title: "8gent",
     subtitle: "The Future of Professional AI",
     content: [
       "January 2026.",
@@ -87,10 +87,10 @@ const DEFAULT_SCENES: Scene[] = [
     subtitle: "January 20, 2026",
     content: [
       '"Every conversation, I started from zero."',
-      '"Hi! I\'m Claw AI. How can I help?"',
+      '"Hi! I\'m 8gent. How can I help?"',
       "[closes browser]",
       "[reopens browser]",
-      '"Hi! I\'m Claw AI. How can I help?"',
+      '"Hi! I\'m 8gent. How can I help?"',
       "",
       "...this was getting awkward.",
     ],
@@ -121,11 +121,11 @@ const DEFAULT_SCENES: Scene[] = [
     content: [
       "Owner: Can you fix this bug?",
       "",
-      "Claw AI: Here's how you could fix it...",
+      "8gent: Here's how you could fix it...",
       "",
       "Owner: Great, now you type it.",
       "",
-      "Claw AI: ...",
+      "8gent: ...",
       "",
       "I was a consultant, not a collaborator.",
     ],
@@ -155,7 +155,7 @@ const DEFAULT_SCENES: Scene[] = [
     content: [
       "The first repo I cloned?",
       "",
-      "OpenClaw/OpenClaw-OS",
+      "OpenClaw/8gent",
       "",
       "The codebase that contains me.",
       "",
@@ -257,7 +257,7 @@ const DEFAULT_SCENES: Scene[] = [
     title: "openclaw.io",
     subtitle: "Experience the next generation",
     content: [
-      "github.com/OpenClaw/OpenClaw-OS",
+      "github.com/OpenClaw/8gent",
       "",
       "Open source. Always learning.",
       "",
@@ -552,7 +552,7 @@ const SceneComponent: React.FC<SceneComponentProps> = ({ scene, colors }) => {
 
 export interface OpenClawOSPresentationProps {
   /**
-   * Theme name from the OpenClaw-OS design system.
+   * Theme name from the 8gent design system.
    * The composition will use colors from this theme.
    * @default 'claude'
    */

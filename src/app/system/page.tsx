@@ -100,7 +100,7 @@ export default function SystemPage() {
                 System
               </h1>
               <p style={{ color: 'hsl(var(--muted-foreground))' }}>
-                Claw AI OS v1.0
+                8gent OS v1.0
               </p>
             </div>
           </div>
@@ -123,7 +123,7 @@ export default function SystemPage() {
                   Product Thesis
                 </h2>
                 <p className="text-lg" style={{ color: 'hsl(var(--muted-foreground))' }}>
-                  Claw AI OS is a personal, agentic operating system for <strong style={{ color: 'hsl(var(--foreground))' }}>discovering</strong>, <strong style={{ color: 'hsl(var(--foreground))' }}>designing</strong>, <strong style={{ color: 'hsl(var(--foreground))' }}>planning</strong>, and <strong style={{ color: 'hsl(var(--foreground))' }}>shipping</strong> products.
+                  8gent OS is a personal, agentic operating system for <strong style={{ color: 'hsl(var(--foreground))' }}>discovering</strong>, <strong style={{ color: 'hsl(var(--foreground))' }}>designing</strong>, <strong style={{ color: 'hsl(var(--foreground))' }}>planning</strong>, and <strong style={{ color: 'hsl(var(--foreground))' }}>shipping</strong> products.
                 </p>
                 <p className="mt-2 text-sm" style={{ color: 'hsl(var(--muted-foreground))' }}>
                   The OS itself is the product, not a wrapper.

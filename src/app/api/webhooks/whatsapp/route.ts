@@ -2,12 +2,12 @@
  * WhatsApp Webhook Handler
  *
  * Handles incoming messages from WhatsApp via Baileys.
- * Processes messages with Claw AI and sends responses.
+ * Processes messages with 8gent and sends responses.
  *
  * Flow:
  * 1. Receive message from WhatsApp (via Baileys bridge)
  * 2. Look up user integration by phone number
- * 3. Process message with Claw AI
+ * 3. Process message with 8gent
  * 4. Send response back via Baileys
  *
  * Note: This is the webhook endpoint for a Baileys bridge service.
@@ -154,7 +154,7 @@ function sanitizeForPrompt(input: string, maxLength: number = 5000): string {
  * Build system context based on access level
  */
 function buildSystemContext(accessLevel: string, senderPhone?: string): string {
-  const baseContext = `You are Claw AI, responding via WhatsApp. Keep responses concise and mobile-friendly. Use WhatsApp formatting: *bold*, _italic_, ~strikethrough~, \`\`\`code\`\`\`.`;
+  const baseContext = `You are 8gent, responding via WhatsApp. Keep responses concise and mobile-friendly. Use WhatsApp formatting: *bold*, _italic_, ~strikethrough~, \`\`\`code\`\`\`.`;
 
   if (accessLevel === 'owner') {
     return `${baseContext}
@@ -212,7 +212,7 @@ You CANNOT:
 }
 
 /**
- * Process message with Claw AI
+ * Process message with 8gent
  */
 async function processWithClawAI(
   userId: string,
@@ -247,7 +247,7 @@ async function processWithClawAI(
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Claw AI error:", errorText);
+      console.error("8gent error:", errorText);
       return "I'm having trouble processing that right now. Please try again.";
     }
 
@@ -336,7 +336,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         // Extract phone number from remoteJid
         const phoneNumber = msg.remoteJid.replace("@s.whatsapp.net", "");
 
-        // Handle outbound messages (from Claw AI) - log them
+        // Handle outbound messages (from 8gent) - log them
         if (msg.fromMe) {
           // For outbound messages, the integration is the owner's, not the recipient's
           // Look up integration for the owner
@@ -420,7 +420,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
           return NextResponse.json({
             success: true,
             skipped: "no integration",
-            message: "To use Claw AI on WhatsApp, connect your account at 8gent.app/settings/channels",
+            message: "To use 8gent on WhatsApp, connect your account at 8gent.app/settings/channels",
           });
         }
 
@@ -499,7 +499,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
           integration.settings.contextLimit
         );
 
-        // Process with Claw AI
+        // Process with 8gent
         const aiResponse = await processWithClawAI(
           integration.userId,
           content,
@@ -553,7 +553,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         await convex.mutation(api.channels.updateConnectionStatus, {
           integrationId: payload.integrationId,
           status: payload.connection.status === "connected" ? "connected" :
-                  payload.connection.status === "error" ? "error" : "disconnected",
+            payload.connection.status === "error" ? "error" : "disconnected",
           error: payload.connection.error,
         });
 

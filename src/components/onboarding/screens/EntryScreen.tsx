@@ -12,8 +12,9 @@ interface EntryScreenProps {
 export function EntryScreen({ onComplete, aesthetic }: EntryScreenProps) {
   const [phase, setPhase] = useState<'text' | 'transition' | 'complete'>('text');
 
+  const isDark = aesthetic === 'dark' || aesthetic === 'vivid' || !aesthetic;
   const bgClass = 'bg-transparent';
-  const textClass = 'text-white';
+  const textClass = isDark ? 'text-white' : 'text-slate-900';
 
   useEffect(() => {
     // Text visible for 1.65s

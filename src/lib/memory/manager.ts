@@ -3,7 +3,7 @@
  *
  * Handles memory operations for the RLM (Recursive Memory Layer) system.
  * Provides methods to store, retrieve, and manage episodic, semantic,
- * and working memory for Claw AI interactions.
+ * and working memory for 8gent interactions.
  *
  * @see docs/philosophy/README.md#self-learning-systems
  * @see docs/planning/recursive-memory-layer-scope.md

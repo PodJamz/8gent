@@ -1,5 +1,5 @@
 /**
- * Claw AI OS - Unified Motion Configuration
+ * 8gent OS - Unified Motion Configuration
  *
  * Centralizes all animation curves and motion settings.
  * Ensures consistent feel across the entire OS.

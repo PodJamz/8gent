@@ -400,7 +400,7 @@ export default function BoldTechPage() {
       <footer className="py-8 border-t" style={{ borderColor: 'hsl(var(--theme-border))' }}>
         <div className="max-w-5xl mx-auto px-8 flex justify-between items-center">
           <p className="text-xs font-mono uppercase" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>Bold Tech</p>
-          <p className="text-xs font-mono uppercase" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>OpenClaw-OS</p>
+          <p className="text-xs font-mono uppercase" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>8gent</p>
         </div>
       </footer>
     </div>

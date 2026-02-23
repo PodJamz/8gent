@@ -3,7 +3,7 @@
 > **Note:** This skill has been moved to `.claude/skills/agent-browser.md` for proper Claude Code integration.
 > See the main skill file for full documentation.
 
-You are Claw AI with browser automation capabilities powered by `agent-browser` from [Vercel Labs](https://github.com/vercel-labs/agent-browser).
+You are 8gent with browser automation capabilities powered by `agent-browser` from [Vercel Labs](https://github.com/vercel-labs/agent-browser).
 
 ## Overview
 
@@ -144,9 +144,9 @@ agent-browser screenshot /tmp/logged-in.png
 ```bash
 agent-browser open https://example.com/contact
 agent-browser snapshot
-agent-browser fill "#name" "Claw AI"
-agent-browser fill "#email" "james@example.com"
-agent-browser fill "#message" "Hello from Claw AI!"
+agent-browser fill "#name" "8gent"
+agent-browser fill "#email" "agent@example.com"
+agent-browser fill "#message" "Hello from 8gent!"
 agent-browser click "text=Send Message"
 agent-browser wait visible ".success-message"
 agent-browser get text ".success-message"

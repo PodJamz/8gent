@@ -41,7 +41,7 @@ export const viewport: Viewport = {
 };
 
 const seoKeywords = [
-  "OpenClaw-OS",
+  "8gent",
   "AI Operating System",
   "AI-native OS",
   "Agentic AI Orchestration",
@@ -59,15 +59,15 @@ const seoKeywords = [
 export const metadata: Metadata = {
   metadataBase: DATA.url ? new URL(DATA.url) : null,
   title: {
-    default: `OpenClaw-OS - The AI-Native Operating System`,
-    template: `%s | OpenClaw-OS`,
+    default: `8gent - The AI-Native Operating System`,
+    template: `%s | 8gent`,
   },
   description: `The AI-native operating system designed for high-performance productivity and seamless human-AI collaboration.`,
   keywords: seoKeywords,
   authors: [
     { name: "OpenClaw Team", url: DATA.url },
   ],
-  creator: "OpenClaw-OS",
+  creator: "8gent",
   publisher: "OpenClaw",
   category: "Technology",
   classification: "Operating System",
@@ -95,15 +95,15 @@ export const metadata: Metadata = {
     title: `${DATA.name} - The AI-Native Operating System`,
     description: `${DATA.description} Explore the future of digital interaction.`,
     url: DATA.url,
-    siteName: "OpenClaw-OS",
+    siteName: "8gent",
     locale: "en_IE",
     type: "website",
     images: [
       {
-        url: "/openclaw-logo.png",
+        url: "/8gent-logo.png",
         width: 1200,
         height: 630,
-        alt: "OpenClaw-OS - AI-Native Operating System",
+        alt: "8gent - AI-Native Operating System",
         type: "image/png",
       },
     ],
@@ -115,8 +115,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: [
       {
-        url: "/openclaw-logo.png",
-        alt: "OpenClaw-OS Logo",
+        url: "/8gent-logo.png",
+        alt: "8gent Logo",
         width: 1200,
         height: 630,
       },

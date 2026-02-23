@@ -86,7 +86,7 @@ export const GLOW_PULSE = `
 
 // Boot sequence messages
 export const BOOT_SEQUENCE = [
-  'Initializing OpenClaw-OS kernel...',
+  'Initializing 8gent kernel...',
   'Loading system modules...',
   'Mounting virtual filesystem...',
   'Starting display manager...',
@@ -94,12 +94,12 @@ export const BOOT_SEQUENCE = [
   'Loading user preferences...',
   'Starting terminal emulator...',
   '',
-  'OpenClaw-OS v1.0.0 (tty1)',
+  '8gent v1.0.0 (tty1)',
   '',
   'Login: guest',
   'Password: ********',
   '',
-  'Welcome to OpenClaw-OS!',
+  'Welcome to 8gent!',
   'Type "help" for a list of commands.',
   '',
 ];

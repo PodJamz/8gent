@@ -330,7 +330,7 @@ export default function ThreadsPage() {
             className="flex items-center gap-2 text-white/60 hover:text-white transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm font-medium">OpenClaw-OS</span>
+            <span className="text-sm font-medium">8gent</span>
           </Link>
           <div className="w-px h-5 bg-white/10" />
           <div className="flex items-center gap-2">

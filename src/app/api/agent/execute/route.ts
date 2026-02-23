@@ -29,9 +29,9 @@ import { ConvexHttpClient, api } from '@/lib/convex-shim';
 // Shim for makeFunctionReference
 const makeFunctionReference = <T1, T2, T3>(name: string): string => name;
 
-import { CLAW_AI_SYSTEM_PROMPT } from '@/lib/claw-ai/system-prompt';
-import { getToolsForAccessLevel } from '@/lib/claw-ai/access-control';
-import { executeTool } from '@/lib/claw-ai/tool-executor';
+import { CLAW_AI_SYSTEM_PROMPT } from '@/lib/8gent/system-prompt';
+import { getToolsForAccessLevel } from '@/lib/8gent/access-control';
+import { executeTool } from '@/lib/8gent/tool-executor';
 import {
   getLynkrClient,
   type LynkrTool,
@@ -350,7 +350,7 @@ async function logJobEvent(
 }
 
 /**
- * Convert Claw AI tools to Lynkr format
+ * Convert 8gent tools to Lynkr format
  */
 function toLynkrTools(tools: Array<{ name: string; description: string; parameters: unknown }>): LynkrTool[] {
   return tools.map((tool) => ({

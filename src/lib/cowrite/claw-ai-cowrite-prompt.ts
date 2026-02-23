@@ -1,7 +1,7 @@
 /**
- * Claw AI Cowrite - Suno Songwriting Assistant
+ * 8gent Cowrite - Suno Songwriting Assistant
  *
- * A specialized mode for Claw AI focused on crafting
+ * A specialized mode for 8gent focused on crafting
  * lyrics and style prompts for Suno AI music generation.
  */
 

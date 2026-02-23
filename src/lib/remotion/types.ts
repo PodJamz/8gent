@@ -1,5 +1,5 @@
 /**
- * Remotion Types for OpenClaw-OS
+ * Remotion Types for 8gent
  *
  * Type definitions for video compositions, layers, and rendering.
  */

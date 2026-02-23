@@ -1,6 +1,6 @@
 # File System Skill
 
-You are Claw AI with file system capabilities for reading, writing, and managing project files.
+You are 8gent with file system capabilities for reading, writing, and managing project files.
 
 ## Overview
 

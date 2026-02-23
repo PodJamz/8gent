@@ -561,7 +561,7 @@ function EmptyState() {
         className="text-[22px] font-semibold tracking-[-0.5px] mb-2 text-foreground"
         style={{ fontFamily: '-apple-system, SF Pro Display, system-ui, sans-serif' }}
       >
-        Claw AI Messages
+        8gent Messages
       </h2>
       <p
         className="text-[15px] tracking-[-0.2px] max-w-[280px] leading-[20px] text-muted-foreground"

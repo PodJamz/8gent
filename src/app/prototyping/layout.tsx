@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Rapid Prototyping - OpenClaw-OS | MVP Development & High-Velocity Engineering",
+  title: "Rapid Prototyping - 8gent | MVP Development & High-Velocity Engineering",
   description:
-    "Rapid prototyping and MVP development services by OpenClaw-OS. From concept to production in days, not months. React, Next.js, TypeScript, and AI-native development.",
+    "Rapid prototyping and MVP development services by 8gent. From concept to production in days, not months. React, Next.js, TypeScript, and AI-native development.",
   keywords: [
-    "OpenClaw-OS prototyping",
+    "8gent prototyping",
     "Rapid prototyping Dublin",
     "MVP development Ireland",
     "High-velocity development",
@@ -21,21 +21,21 @@ export const metadata: Metadata = {
     "v0.dev prototyping",
   ],
   openGraph: {
-    title: "Rapid Prototyping - OpenClaw-OS",
+    title: "Rapid Prototyping - 8gent",
     description: "MVP development from concept to production. High-velocity engineering.",
     url: "https://openclaw.io/prototyping",
     type: "website",
     images: [
       {
-        url: "https://openclaw.io/openclaw-logo.png",
+        url: "https://openclaw.io/8gent-logo.png",
         width: 1200,
         height: 630,
-        alt: "OpenClaw-OS - Rapid Prototyping",
+        alt: "8gent - Rapid Prototyping",
       },
     ],
   },
   twitter: {
-    title: "Rapid Prototyping - OpenClaw-OS",
+    title: "Rapid Prototyping - 8gent",
     description: "MVP development in days, not months.",
     card: "summary_large_image",
   },

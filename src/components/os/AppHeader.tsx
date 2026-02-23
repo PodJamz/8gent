@@ -355,7 +355,7 @@ export function AppHeader({
                   '--tw-ring-color': 'hsl(var(--theme-border))',
                 } as React.CSSProperties}
               >
-                <AvatarImage src="/openclaw-logo.png" alt="OpenClaw-OS" className="object-cover" />
+                <AvatarImage src="/8gent-logo.png" alt="8gent" className="object-cover" />
                 <AvatarFallback
                   className="font-semibold text-sm"
                   style={{

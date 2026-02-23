@@ -292,7 +292,7 @@ export function CommandPaletteProvider({ children }: CommandPaletteProviderProps
               resetHomeScreen();
               break;
             case 'action-claw-ai':
-              // Could trigger Claw AI overlay here
+              // Could trigger 8gent overlay here
               router.push('/');
               break;
             default:

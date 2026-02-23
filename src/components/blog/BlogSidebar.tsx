@@ -39,7 +39,7 @@ export const BlogSidebar: React.FC<BlogSidebarProps> = ({ items }) => {
             onClick={() => setIsCollapsed(!isCollapsed)}
           >
             <FolderCard 
-              title={!isCollapsed ? "Claw AI" : undefined}
+              title={!isCollapsed ? "8gent" : undefined}
               isOpen={!isCollapsed}
             />
           </div>

@@ -63,7 +63,7 @@ const FOLDER_NAMES: Record<string, string> = {
   'reference': 'Reference',
   'planning': 'Planning',
   'personal': 'Personal',
-  'claw-ai': 'Claw AI',
+  'claw-ai': '8gent',
   'apps': 'Apps',
   'design-system': 'Design System',
   'integrations': 'Integrations',

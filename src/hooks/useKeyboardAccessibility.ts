@@ -11,7 +11,7 @@ interface KeyboardAccessibilityOptions {
 }
 
 /**
- * Global keyboard accessibility hook for OpenClaw-OS
+ * Global keyboard accessibility hook for 8gent
  * Handles Escape key navigation, focus management, and keyboard shortcuts
  */
 export function useKeyboardAccessibility(options: KeyboardAccessibilityOptions = {}) {

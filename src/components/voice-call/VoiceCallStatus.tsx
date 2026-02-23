@@ -26,7 +26,7 @@ function getStatusText(status: CallStatus): string {
     case 'listening':
       return 'Listening...';
     case 'speaking':
-      return 'Claw AI';
+      return '8gent';
     case 'thinking':
       return 'Thinking...';
     case 'ending':

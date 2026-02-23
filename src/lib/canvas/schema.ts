@@ -1,7 +1,7 @@
 /**
  * Canvas Schema for AI Collaboration
  *
- * Standardized JSON schema that Claw AI can read and write to create
+ * Standardized JSON schema that 8gent can read and write to create
  * UI mockups, user flows, architecture diagrams, and more.
  */
 

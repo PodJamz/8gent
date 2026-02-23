@@ -2,21 +2,21 @@ import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon, BookOpen, Palette, Music, PencilRuler } from "lucide-react";
 
 export const DATA = {
-  name: "OpenClaw-OS",
+  name: "8gent",
   initials: "OC",
   url: "https://openclaw.io/",
   location: "Dublin, Ireland",
   locationLink: "https://www.google.com/maps/place/dublin+ireland",
   description:
     "An AI-native operating system designed for high-performance productivity, agentic orchestration, and seamless human-AI collaboration.",
-  summary: `OpenClaw-OS is a next-generation operating environment built for the AI age. It bridges design, engineering, and product strategy into a single, cohesive experience.
+  summary: `8gent is a next-generation operating environment built for the AI age. It bridges design, engineering, and product strategy into a single, cohesive experience.
 
 **AI-Native Architecture** - Designed from the ground up to support multi-agent collaboration, context management, and intelligent automation.
 
 **High-Craft UI/UX** - A professional, iOS-style interface with 50+ beautiful themes, liquid animations, and glassmorphic aesthetics.
 
 **Agentic Control Plane** - Use the integrated AI assistant to orchestrate complex workflows, manage projects, and build functional prototypes directly through conversation.`,
-  avatarUrl: "/openclaw-logo.png",
+  avatarUrl: "/8gent-logo.png",
   skills: [
     "Agentic AI Orchestration",
     "Product-Led Development",
@@ -78,10 +78,10 @@ export const DATA = {
       badges: ["Active"],
       location: "Remote",
       title: "Core System Development",
-      logoUrl: "/openclaw-logo.png",
+      logoUrl: "/8gent-logo.png",
       start: "2024",
       end: "Present",
-      description: "Leading the development of the OpenClaw-OS ecosystem, focusing on AI-native interaction models and design-led system architecture."
+      description: "Leading the development of the 8gent ecosystem, focusing on AI-native interaction models and design-led system architecture."
     },
     {
       company: "The Creative Engine",
@@ -97,7 +97,7 @@ export const DATA = {
   ],
   education: [
     {
-      school: "OpenClaw OS Institute",
+      school: "8gent Institute",
       href: "",
       degree: "Systems Architecture",
       logoUrl: "",
@@ -107,7 +107,7 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "OpenClaw-OS",
+      title: "8gent",
       href: "https://openclaw.io",
       dates: "2025",
       active: true,

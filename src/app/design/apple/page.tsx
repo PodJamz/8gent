@@ -114,7 +114,7 @@ function IOSSettings() {
             JS
           </div>
           <div className="flex-1">
-            <div className="font-semibold" style={{ color: 'hsl(var(--theme-foreground))' }}>OpenClaw-OS</div>
+            <div className="font-semibold" style={{ color: 'hsl(var(--theme-foreground))' }}>8gent</div>
             <div className="text-xs" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>
               Apple ID, iCloud, Media & Purchases
             </div>

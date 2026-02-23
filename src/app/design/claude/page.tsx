@@ -243,7 +243,7 @@ The best color choices feel inevitable. They should enhance understanding, not c
         showToolbar={true}
         themeLabel="Claude"
         onReferenceToAI={(prompt) => {
-          // Store for Claw AI and optionally navigate
+          // Store for 8gent and optionally navigate
           if (typeof window !== 'undefined') {
             sessionStorage.setItem('openclaw_theme_reference', prompt);
             sessionStorage.setItem('openclaw_theme_reference_timestamp', Date.now().toString());
@@ -385,7 +385,7 @@ The best color choices feel inevitable. They should enhance understanding, not c
               fontFamily: 'var(--theme-font-heading)',
             }}
           >
-            Chat with Claw AI
+            Chat with 8gent
           </h2>
 
           {/* Chat container */}
@@ -418,7 +418,7 @@ The best color choices feel inevitable. They should enhance understanding, not c
                   <div className={message.role === 'user' ? 'max-w-[80%]' : 'max-w-[85%]'}>
                     {message.role === 'assistant' && (
                       <p className="text-xs font-medium mb-1" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>
-                        Claw AI
+                        8gent
                       </p>
                     )}
                     <div
@@ -462,7 +462,7 @@ The best color choices feel inevitable. They should enhance understanding, not c
                     </div>
                     <div>
                       <p className="text-xs font-medium mb-1" style={{ color: 'hsl(var(--theme-muted-foreground))' }}>
-                        Claw AI {isGeneratingImage && '- Creating image...'}
+                        8gent {isGeneratingImage && '- Creating image...'}
                       </p>
                       <div className="flex gap-1 py-2">
                         <motion.div
@@ -1563,7 +1563,7 @@ The best color choices feel inevitable. They should enhance understanding, not c
             className="text-sm"
             style={{ color: 'hsl(var(--theme-muted-foreground))' }}
           >
-            OpenClaw-OS
+            8gent
           </p>
         </div>
       </footer>

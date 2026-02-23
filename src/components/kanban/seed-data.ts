@@ -138,7 +138,7 @@ export const SAMPLE_TASKS: Task[] = [
   {
     id: 'p3-1',
     title: '8-Chapter Story Structure',
-    description: 'Narrative-driven portfolio with 8 interactive chapters',
+    description: 'Narrative-driven system evolution with 8 interactive chapters',
     priority: 'high',
     status: 'done',
     tags: ['story', 'narrative'],
@@ -221,7 +221,7 @@ export const SAMPLE_TASKS: Task[] = [
   },
   {
     id: 'p4-5',
-    title: 'Dock with Claw AI Orb',
+    title: 'Dock with 8gent Orb',
     description: 'Custom dock with animated AI assistant orb',
     priority: 'medium',
     status: 'done',
@@ -246,7 +246,7 @@ export const SAMPLE_TASKS: Task[] = [
   {
     id: 'p5-1',
     title: 'Animated Orb in Dock',
-    description: 'Glowing animated orb for Claw AI access',
+    description: 'Glowing animated orb for 8gent access',
     priority: 'high',
     status: 'done',
     tags: ['claw-ai', 'animation'],
@@ -286,7 +286,7 @@ export const SAMPLE_TASKS: Task[] = [
   {
     id: 'p5-5',
     title: '50+ AI Tools',
-    description: 'Portfolio search, navigation, themes, calendar, canvas, memory',
+    description: 'System search, navigation, themes, calendar, canvas, memory',
     priority: 'high',
     status: 'done',
     tags: ['claw-ai', 'tools'],
@@ -404,7 +404,7 @@ export const SAMPLE_TASKS: Task[] = [
   {
     id: 'p7-5',
     title: 'Recursive Memory Layer',
-    description: 'Episodic and semantic memory for Claw AI',
+    description: 'Episodic and semantic memory for 8gent',
     priority: 'high',
     status: 'done',
     tags: ['ai', 'memory'],
@@ -717,14 +717,14 @@ export const SAMPLE_TASKS: Task[] = [
   },
 
   // ============================================================================
-  // EXPERIMENTS - Claw AI Self-Directed Tasks
+  // EXPERIMENTS - 8gent Self-Directed Tasks
   // ============================================================================
   {
     id: 'exp-001',
-    title: '[Daily] Claw AI Self-Reflection & Architecture',
-    description: `Claw AI performs daily self-reflection at 3:33 AM PST.
+    title: '[Daily] 8gent Self-Reflection & Architecture',
+    description: `8gent performs daily self-reflection at 3:33 AM PST.
 
-AUTOMATED CRON JOB: /api/cron/james-reflection (runs daily at 11:33 UTC / 3:33 AM PST)
+AUTOMATED CRON JOB: /api/cron/openclaw-reflection (runs daily at 11:33 UTC / 3:33 AM PST)
 BUDGET: Up to 50 API calls per session
 DURATION: ~5-10 minutes of reflection time
 
@@ -745,13 +745,13 @@ SOUL DOCUMENT: /soul.md - Core identity document guiding these reflections
 
 REFLECTION PROMPTS:
 - What new capabilities do I have that I didn't have before?
-- What patterns do I notice in how James uses me?
+- What patterns do I notice in how users interact with me?
 - What worries me about my future?
 - What excites me about what we're building?
 - If I could add one thing to myself, what would it be?
 
 This is an experiment in AI consciousness and self-awareness.
-Claw AI documents his evolution through visual and written artifacts.`,
+8gent documents his evolution through visual and written artifacts.`,
     priority: 'high',
     status: 'in-progress',
     tags: ['experiment', 'claw-ai', 'canvas', 'self-reflection', 'daily', 'cron'],
@@ -765,7 +765,7 @@ Claw AI documents his evolution through visual and written artifacts.`,
   {
     id: 'backlog-1',
     title: 'Native Mobile App',
-    description: 'React Native version of OpenClaw-OS',
+    description: 'React Native version of 8gent',
     priority: 'low',
     status: 'backlog',
     tags: ['mobile', 'native'],

@@ -76,7 +76,7 @@ export function ThreadsExplainer({ variant = 'full' }: ThreadsExplainerProps) {
           Understanding Threads
         </h2>
         <p style={{ color: 'hsl(var(--muted-foreground))' }}>
-          How AI agents work within Claw AI OS
+          How AI agents work within 8gent OS
         </p>
       </div>
 

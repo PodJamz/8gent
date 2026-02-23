@@ -20,7 +20,7 @@ export default function Error({
 }) {
   useEffect(() => {
     // Log error to console for debugging
-    console.error('Claw AI OS Route Error:', error);
+    console.error('8gent OS Route Error:', error);
   }, [error]);
 
   return (
@@ -36,7 +36,7 @@ export default function Error({
           </h1>
 
           <p className="text-neutral-400 mb-6">
-            Claw AI OS encountered an unexpected error. This might be a prototype feature that isn&apos;t fully implemented yet.
+            8gent OS encountered an unexpected error. This might be a prototype feature that isn&apos;t fully implemented yet.
           </p>
 
           {error.message && (
@@ -76,7 +76,7 @@ export default function Error({
         </div>
 
         <p className="text-center text-neutral-500 text-sm mt-4">
-          Claw AI OS is a personal operating system prototype
+          8gent OS is a personal operating system prototype
         </p>
       </div>
     </div>

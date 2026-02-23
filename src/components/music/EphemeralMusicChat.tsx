@@ -16,7 +16,7 @@ interface EphemeralMusicChatProps {
 }
 
 /**
- * Ephemeral Claw AI chat for the music player.
+ * Ephemeral 8gent chat for the music player.
  * Subtle, iOS-inspired design that doesn't take over the experience.
  * Can help with track annotation, metadata questions, and music discovery.
  */
@@ -32,7 +32,7 @@ export function EphemeralMusicChat({
   const inputRef = useRef<HTMLInputElement>(null);
   const responseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Build context for Claw AI
+  // Build context for 8gent
   const trackContext = currentTrack
     ? `Current track: "${currentTrack.title}" by ${currentTrack.artist} from album "${currentTrack.album}".`
     : '';
@@ -241,7 +241,7 @@ export function EphemeralMusicChat({
           >
             <Sparkles className="w-4 h-4 text-yellow-500" />
             <span className="flex-1 text-left text-sm text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
-              Ask Claw AI...
+              Ask 8gent...
             </span>
             <Mic className="w-3.5 h-3.5 text-zinc-400 dark:text-zinc-500 opacity-0 group-hover:opacity-100 transition-opacity" />
           </motion.button>

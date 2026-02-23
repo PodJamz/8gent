@@ -346,7 +346,7 @@ function CreateMessageModal({
             <textarea
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              placeholder="What would you like Claw AI to send?"
+              placeholder="What would you like 8gent to send?"
               rows={3}
               required
               className="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-white/30 transition-colors resize-none"

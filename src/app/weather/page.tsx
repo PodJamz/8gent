@@ -1,7 +1,7 @@
 import { WeatherWidget } from '@/components/weather/WeatherWidget';
 
 export const metadata = {
-  title: 'Weather | OpenClaw-OS',
+  title: 'Weather | 8gent',
   description: 'SF and Dublin weather with Irish sayings',
 };
 

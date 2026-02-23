@@ -1088,7 +1088,7 @@ function ChatPanel({
           >
             <Music4 className="w-4 h-4 text-white" />
           </div>
-          <span className="text-sm font-medium text-foreground">Claw AI</span>
+          <span className="text-sm font-medium text-foreground">8gent</span>
           {messages.length > 1 && (
             <span className="text-xs text-muted-foreground">
               {messages.length - 1} messages
@@ -1117,7 +1117,7 @@ function ChatPanel({
             <Music4 className="w-4 h-4 text-white" />
           </div>
           <div>
-            <h2 className="text-foreground font-semibold text-sm">Claw AI</h2>
+            <h2 className="text-foreground font-semibold text-sm">8gent</h2>
             <p className="text-muted-foreground text-xs">Suno Architect</p>
           </div>
         </div>

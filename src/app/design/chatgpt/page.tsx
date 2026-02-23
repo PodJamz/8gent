@@ -627,7 +627,7 @@ Try asking me about color theory, typography choices, or how we balance simplici
                       )}
                       <div className="flex-1 pt-1">
                         <p className="text-sm font-medium mb-1" style={{ color: 'hsl(var(--theme-foreground))' }}>
-                          {message.role === 'user' ? 'You' : 'Claw AI'}
+                          {message.role === 'user' ? 'You' : '8gent'}
                         </p>
                         <div
                           className="text-sm leading-relaxed whitespace-pre-wrap"
@@ -666,7 +666,7 @@ Try asking me about color theory, typography choices, or how we balance simplici
                       </div>
                       <div className="flex-1 pt-1">
                         <p className="text-sm font-medium mb-2" style={{ color: 'hsl(var(--theme-foreground))' }}>
-                          Claw AI {isGeneratingImage && '- Creating image...'}
+                          8gent {isGeneratingImage && '- Creating image...'}
                         </p>
                         <div className="flex gap-1">
                           {[0, 1, 2].map((i) => (
@@ -1745,7 +1745,7 @@ Try asking me about color theory, typography choices, or how we balance simplici
             className="text-sm"
             style={{ color: 'hsl(var(--theme-muted-foreground))' }}
           >
-            OpenClaw-OS
+            8gent
           </p>
         </div>
       </footer>

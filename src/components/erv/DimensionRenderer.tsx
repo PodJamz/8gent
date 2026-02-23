@@ -960,7 +960,7 @@ export const DimensionRenderer = memo(function DimensionRenderer({
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerSize, setContainerSize] = useState({ width: 800, height: 600 });
 
-  // Get navigation context for Claw AI updates
+  // Get navigation context for 8gent updates
   const navigation = useDimensionNavigation();
 
   // Track container size

@@ -105,7 +105,7 @@ export function DraggableAppIcon({
       onAppOpen(app.id);
     }
 
-    // Custom onClick handler (e.g., for Claw AI chat)
+    // Custom onClick handler (e.g., for 8gent chat)
     if (onClick) {
       onClick();
       return;

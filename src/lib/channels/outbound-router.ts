@@ -355,18 +355,18 @@ async function sendEmail(
     const { Resend } = await import("resend");
     const resend = new Resend(apiKey);
 
-    const subject = message.emailSubject || "Message from Claw AI";
+    const subject = message.emailSubject || "Message from 8gent";
     const htmlContent = `<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333;">
       ${message.content.split("\n").map((p) => `<p style="margin: 0 0 1em 0;">${p}</p>`).join("")}
       <hr style="border: none; border-top: 1px solid #eee; margin: 2em 0;" />
       <p style="color: #666; font-size: 0.9em;">
-        This message was sent by Claw AI, OpenClaw-OS's digital assistant.<br/>
+        This message was sent by 8gent, 8gent's digital assistant.<br/>
         <a href="https://openclaw.io" style="color: #007AFF;">openclaw.io</a>
       </p>
     </div>`;
 
     const { data, error } = await resend.emails.send({
-      from: `Claw AI <${fromEmail}>`,
+      from: `8gent <${fromEmail}>`,
       to: [message.recipientId],
       subject,
       text: message.content,

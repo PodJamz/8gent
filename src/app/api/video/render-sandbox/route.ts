@@ -8,7 +8,7 @@
  * Body: { frames: string[], fps: number, format: string, audioSrc?: string }
  *
  * Note: This endpoint is designed to be called from the client-side
- * or from Claw AI's sandbox. The actual rendering happens client-side
+ * or from 8gent's sandbox. The actual rendering happens client-side
  * using the sandbox-renderer module.
  */
 

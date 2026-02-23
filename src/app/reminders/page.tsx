@@ -616,7 +616,7 @@ function AISettingsForm({
 }) {
   const [form, setForm] = useState({
     recipientEmail: settings.recipientEmail || '',
-    aiName: settings.aiName || 'Claw AI',
+    aiName: settings.aiName || '8gent',
     aiTone: settings.aiTone || 'witty',
     frequency: settings.frequency || 'hourly',
     includeKanban: settings.includeKanban ?? true,

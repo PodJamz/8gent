@@ -6,7 +6,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { LiquidGlass } from '@/components/ui/liquid-glass';
 import { Search, X, ArrowLeft, ExternalLink, Briefcase, Code, GraduationCap, Palette, User } from 'lucide-react';
 import Link from 'next/link';
-import { searchPortfolio, SearchResult } from '@/lib/claw-ai/search';
+import { searchPortfolio, SearchResult } from '@/lib/8gent/search';
 
 // Category icons
 const categoryIcons: Record<string, React.ReactNode> = {
@@ -36,7 +36,7 @@ export default function SearchPage() {
   const [isSearching, setIsSearching] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
 
-  // Handle URL query param (for Claw AI handoff)
+  // Handle URL query param (for 8gent handoff)
   useEffect(() => {
     const q = searchParams.get('q');
     if (q) {

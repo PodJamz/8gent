@@ -1,7 +1,7 @@
-// Claw AI AI Elements
+// 8gent AI Elements
 // Custom components + Vercel AI Elements
 
-// Custom Claw AI components
+// Custom 8gent components
 export { Shimmer, type ShimmerProps } from './Shimmer';
 export { Loader, type LoaderProps } from './Loader';
 export { ToolExecution, type ToolExecutionProps, type ToolState } from './ToolExecution';

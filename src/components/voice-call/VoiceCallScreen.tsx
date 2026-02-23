@@ -263,9 +263,9 @@ export function VoiceCallScreen({
           <div role="status" aria-live="polite" className="sr-only">
             {status === 'connecting' && <span key="connecting">Call connecting</span>}
             {status === 'connected' && <span key="connected">Call connected. Duration: {duration} seconds</span>}
-            {status === 'speaking' && <span key="speaking">Claw AI is speaking</span>}
-            {status === 'listening' && <span key="listening">Claw AI is listening</span>}
-            {status === 'thinking' && <span key="thinking">Claw AI is thinking</span>}
+            {status === 'speaking' && <span key="speaking">8gent is speaking</span>}
+            {status === 'listening' && <span key="listening">8gent is listening</span>}
+            {status === 'thinking' && <span key="thinking">8gent is thinking</span>}
             {status === 'ending' && <span key="ending">Call ended. Duration: {Math.floor(duration / 60)} minutes {duration % 60} seconds</span>}
           </div>
         </motion.div>

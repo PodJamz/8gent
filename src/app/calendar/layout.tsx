@@ -6,12 +6,12 @@ import { Metadata } from "next";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Calendar - Book Time with OpenClaw-OS | AI & Product Consulting",
+  title: "Calendar - Book Time with 8gent | AI & Product Consulting",
   description:
-    "Book a meeting with OpenClaw-OS. Schedule AI consulting, product strategy sessions, or discovery calls. Dublin-based Creative Technologist available for projects.",
+    "Book a meeting with 8gent. Schedule AI consulting, product strategy sessions, or discovery calls. Dublin-based Creative Technologist available for projects.",
   keywords: [
-    "Book OpenClaw-OS",
-    "OpenClaw-OS calendar",
+    "Book 8gent",
+    "8gent calendar",
     "AI consulting appointment",
     "Product strategy meeting",
     "Dublin tech consultant",
@@ -20,21 +20,21 @@ export const metadata: Metadata = {
     "Hire AI developer",
   ],
   openGraph: {
-    title: "Book Time - OpenClaw-OS",
+    title: "Book Time - 8gent",
     description: "Schedule a meeting for AI consulting or product strategy.",
     url: "https://openclaw.io/calendar",
     type: "website",
     images: [
       {
-        url: "https://openclaw.io/openclaw-logo.png",
+        url: "https://openclaw.io/8gent-logo.png",
         width: 1200,
         height: 630,
-        alt: "Book Time with OpenClaw-OS",
+        alt: "Book Time with 8gent",
       },
     ],
   },
   twitter: {
-    title: "Book OpenClaw-OS",
+    title: "Book 8gent",
     description: "Schedule AI consulting or product strategy meetings.",
     card: "summary_large_image",
   },

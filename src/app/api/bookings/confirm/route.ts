@@ -113,7 +113,7 @@ function formatGuestEmail(booking: BookingConfirmationRequest): string {
 
       <div style="background: #f9fafb; padding: 16px; border-radius: 0 0 12px 12px; border: 1px solid #e5e7eb; border-top: none; text-align: center;">
         <p style="margin: 0; color: #9ca3af; font-size: 12px;">
-          Sent from OpenClaw-OS Calendar
+          Sent from 8gent Calendar
         </p>
       </div>
     </div>
@@ -156,7 +156,7 @@ function formatHostEmail(booking: BookingConfirmationRequest): string {
 
       <div style="background: #f9fafb; padding: 16px; border-radius: 0 0 12px 12px; border: 1px solid #e5e7eb; border-top: none; text-align: center;">
         <p style="margin: 0; color: #9ca3af; font-size: 12px;">
-          OpenClaw-OS Calendar Notification
+          8gent Calendar Notification
         </p>
       </div>
     </div>
@@ -187,7 +187,7 @@ export async function POST(request: NextRequest) {
     // Send confirmation to guest
     try {
       await resendClient.emails.send({
-        from: 'OpenClaw-OS Calendar <calendar@openclaw.io>',
+        from: '8gent Calendar <calendar@openclaw.io>',
         to: booking.guestEmail,
         subject: `Confirmed: ${booking.eventTitle}`,
         html: formatGuestEmail(booking),
@@ -201,7 +201,7 @@ export async function POST(request: NextRequest) {
     // Send notification to host
     try {
       await resendClient.emails.send({
-        from: 'OpenClaw-OS Calendar <calendar@openclaw.io>',
+        from: '8gent Calendar <calendar@openclaw.io>',
         to: HOST_EMAIL,
         subject: `New Booking: ${booking.guestName} - ${booking.eventTitle}`,
         html: formatHostEmail(booking),

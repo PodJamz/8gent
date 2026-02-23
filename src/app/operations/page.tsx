@@ -252,7 +252,7 @@ export default function OperationsPage() {
         {/* Footer */}
         <footer className="border-t border-white/10 py-4 mt-12">
           <div className="max-w-7xl mx-auto px-4 text-center text-xs text-white/30">
-            Operations Center v1.0 | OpenClaw-OS Observability System
+            Operations Center v1.0 | 8gent Observability System
           </div>
         </footer>
       </div>

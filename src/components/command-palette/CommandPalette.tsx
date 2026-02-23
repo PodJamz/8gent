@@ -182,7 +182,7 @@ export function CommandPalette() {
                     <div className="flex items-center gap-3 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
                       <Sparkles className="w-5 h-5 text-emerald-400" />
                       <div className="flex-1">
-                        <p className="text-foreground font-medium">Ask Claw AI</p>
+                        <p className="text-foreground font-medium">Ask 8gent</p>
                         <p className="text-muted-foreground text-sm">
                           {state.query.slice(6).trim() || 'Type your question...'}
                         </p>
@@ -287,7 +287,7 @@ export function CommandPalette() {
                         <kbd className="px-1.5 py-0.5 rounded bg-muted text-muted-foreground text-xs font-mono">
                           @james
                         </kbd>
-                        <span>Ask Claw AI anything</span>
+                        <span>Ask 8gent anything</span>
                       </div>
                       <div className="flex items-center gap-2 px-2">
                         <kbd className="px-1.5 py-0.5 rounded bg-muted text-muted-foreground text-xs font-mono">

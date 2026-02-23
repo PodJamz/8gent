@@ -1,0 +1,44 @@
+{
+  "sorted_middleware": [
+    "/api/tts/route"
+  ],
+  "middleware": {},
+  "instrumentation": null,
+  "functions": {
+    "/api/tts/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "server/server-reference-manifest.js",
+        "server/app/api/tts/route_client-reference-manifest.js",
+        "server/edge/chunks/_next-internal_server_app_api_tts_route_actions_6656a4e4.js",
+        "server/edge/chunks/5d253_next_dist_esm_shared_lib_4942a2b8._.js",
+        "server/edge/chunks/5d253_next_dist_esm_server_bae18426._.js",
+        "server/edge/chunks/5d253_next_dist_esm_ff60cf87._.js",
+        "server/edge/chunks/5d253_next_dist_compiled_64e49282._.js",
+        "server/edge/chunks/5d253_next_dist_f6e741b8._.js",
+        "server/edge/chunks/4b6e4_@opentelemetry_api_build_esm_df5f8bb8._.js",
+        "server/edge/chunks/node_modules__pnpm_287f0a82._.js",
+        "server/edge/chunks/[root-of-the-server]__4ef7c237._.js",
+        "server/edge/chunks/74b35_next_dist_esm_build_templates_edge-wrapper_75b2312b.js"
+      ],
+      "name": "app/api/tts/route",
+      "page": "/api/tts/route",
+      "matchers": [
+        {
+          "regexp": "^/api/tts(?:/)?$",
+          "originalSource": "/api/tts"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "development",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "UgK13AOC19i0zZluHh00jVAU5vTyx/MWxpMRYBJs4jc=",
+        "__NEXT_PREVIEW_MODE_ID": "d73a0f70e3cc2163d7808d219df46bfc",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "f49a7471ed71a316d1422d1d93273e1da7063a07884478bb1b0a711877a1700c",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "49618f11cb149a69cbf95d327a73f79363883881589bac6aab0541a7e9e408c5"
+      }
+    }
+  }
+}

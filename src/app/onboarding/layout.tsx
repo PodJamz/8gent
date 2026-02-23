@@ -1,8 +1,8 @@
 import { DesignThemeProvider } from '@/context/DesignThemeContext';
 
 export const metadata = {
-  title: 'Welcome | OpenClaw-OS',
-  description: 'Get started with OpenClaw-OS',
+  title: 'Welcome | 8gent',
+  description: 'Get started with 8gent',
 };
 
 export default function OnboardingLayout({
