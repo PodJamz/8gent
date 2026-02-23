@@ -7,7 +7,7 @@ import { ArrowLeft, Download, QrCode, CheckCircle } from 'lucide-react';
 import { LiquidGlass } from '@/components/ui/liquid-glass';
 import { ContactCard } from './ContactCard';
 import { QRCodeDisplay } from './QRCodeDisplay';
-import { JAMES_CONTACT, downloadVCard } from './VCardGenerator';
+import { OFFICIAL_CONTACT, downloadVCard } from './VCardGenerator';
 import { Toast, ToastContainer } from '@/components/superdesign/feedback/Toast';
 
 export function ContactsApp() {
@@ -16,7 +16,7 @@ export function ContactsApp() {
   const [toastMessage, setToastMessage] = useState('');
 
   const handleDownloadVCard = () => {
-    downloadVCard(JAMES_CONTACT);
+    downloadVCard(OFFICIAL_CONTACT);
     setToastMessage('Contact saved to downloads');
     setShowToast(true);
   };
@@ -68,7 +68,7 @@ export function ContactsApp() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <ContactCard contact={JAMES_CONTACT} />
+          <ContactCard contact={OFFICIAL_CONTACT} />
         </motion.div>
       </main>
 
@@ -124,7 +124,7 @@ export function ContactsApp() {
 
       {/* QR Code Modal */}
       <QRCodeDisplay
-        contact={JAMES_CONTACT}
+        contact={OFFICIAL_CONTACT}
         isOpen={showQR}
         onClose={() => setShowQR(false)}
       />

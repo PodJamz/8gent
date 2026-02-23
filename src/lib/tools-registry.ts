@@ -5,7 +5,7 @@
  * the complete set of 121 8gent tools on the /skills page.
  */
 
-import { CLAW_AI_TOOLS, ToolDefinition } from './claw-ai/tools';
+import { CLAW_AI_TOOLS, ToolDefinition } from './8gent/tools';
 
 // ============================================================================
 // Types

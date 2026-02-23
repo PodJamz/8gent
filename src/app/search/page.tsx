@@ -6,7 +6,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { LiquidGlass } from '@/components/ui/liquid-glass';
 import { Search, X, ArrowLeft, ExternalLink, Briefcase, Code, GraduationCap, Palette, User } from 'lucide-react';
 import Link from 'next/link';
-import { searchPortfolio, SearchResult } from '@/lib/8gent/search';
+import { searchSystem, SearchResult } from '@/lib/8gent/search';
 
 // Category icons
 const categoryIcons: Record<string, React.ReactNode> = {
@@ -57,7 +57,7 @@ export default function SearchPage() {
 
     // Small delay for UX feel
     setTimeout(() => {
-      const searchResults = searchPortfolio(searchQuery, { limit: 20 });
+      const searchResults = searchSystem(searchQuery, { limit: 20 });
       setResults(searchResults);
       setIsSearching(false);
     }, 200);

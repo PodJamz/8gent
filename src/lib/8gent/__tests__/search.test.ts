@@ -3,33 +3,33 @@
  */
 
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { searchPortfolio, getAllThemes, formatSearchResults, SearchResult } from '../search';
+import { searchSystem, getAllThemes, formatSearchResults, SearchResult } from '../search';
 
 describe('search module', () => {
-  describe('searchPortfolio', () => {
+  describe('searchSystem', () => {
     describe('basic search functionality', () => {
       it('should return results for matching queries', () => {
-        const results = searchPortfolio('React');
+        const results = searchSystem('React');
         expect(results.length).toBeGreaterThan(0);
       });
 
       it('should return empty array for non-matching queries', () => {
-        const results = searchPortfolio('xyznonexistentquery123');
+        const results = searchSystem('xyznonexistentquery123');
         expect(results).toEqual([]);
       });
 
       it('should be case insensitive', () => {
-        const resultsLower = searchPortfolio('react');
-        const resultsUpper = searchPortfolio('REACT');
-        const resultsMixed = searchPortfolio('ReAcT');
+        const resultsLower = searchSystem('react');
+        const resultsUpper = searchSystem('REACT');
+        const resultsMixed = searchSystem('ReAcT');
 
         expect(resultsLower.length).toBe(resultsUpper.length);
         expect(resultsLower.length).toBe(resultsMixed.length);
       });
 
       it('should trim whitespace from queries', () => {
-        const resultsNormal = searchPortfolio('React');
-        const resultsWithSpace = searchPortfolio('  React  ');
+        const resultsNormal = searchSystem('React');
+        const resultsWithSpace = searchSystem('  React  ');
 
         expect(resultsNormal.length).toBe(resultsWithSpace.length);
       });
@@ -37,7 +37,7 @@ describe('search module', () => {
 
     describe('relevance scoring', () => {
       it('should score exact matches higher than partial matches', () => {
-        const results = searchPortfolio('TypeScript');
+        const results = searchSystem('TypeScript');
         const exactMatch = results.find(r =>
           r.title.toLowerCase().includes('typescript') ||
           r.description.toLowerCase().includes('typescript')
@@ -48,7 +48,7 @@ describe('search module', () => {
       });
 
       it('should sort results by relevance descending', () => {
-        const results = searchPortfolio('AI');
+        const results = searchSystem('AI');
 
         for (let i = 0; i < results.length - 1; i++) {
           expect(results[i].relevance).toBeGreaterThanOrEqual(results[i + 1].relevance);
@@ -56,13 +56,13 @@ describe('search module', () => {
       });
 
       it('should handle multi-word queries', () => {
-        const results = searchPortfolio('AI development');
+        const results = searchSystem('AI development');
         expect(results.length).toBeGreaterThan(0);
       });
 
       it('should skip single character words in scoring', () => {
-        const resultsWithShort = searchPortfolio('a React');
-        const resultsWithoutShort = searchPortfolio('React');
+        const resultsWithShort = searchSystem('a React');
+        const resultsWithoutShort = searchSystem('React');
 
         // Both should find React-related results
         expect(resultsWithShort.length).toBeGreaterThan(0);
@@ -72,7 +72,7 @@ describe('search module', () => {
 
     describe('category filtering', () => {
       it('should filter by projects category', () => {
-        const results = searchPortfolio('project', { category: 'projects' });
+        const results = searchSystem('project', { category: 'projects' });
 
         results.forEach(result => {
           expect(result.type).toBe('project');
@@ -80,7 +80,7 @@ describe('search module', () => {
       });
 
       it('should filter by skills category', () => {
-        const results = searchPortfolio('React', { category: 'skills' });
+        const results = searchSystem('React', { category: 'skills' });
 
         results.forEach(result => {
           expect(result.type).toBe('skill');
@@ -88,7 +88,7 @@ describe('search module', () => {
       });
 
       it('should filter by work category', () => {
-        const results = searchPortfolio('engineer', { category: 'work' });
+        const results = searchSystem('engineer', { category: 'work' });
 
         results.forEach(result => {
           expect(result.type).toBe('work');
@@ -96,7 +96,7 @@ describe('search module', () => {
       });
 
       it('should filter by education category', () => {
-        const results = searchPortfolio('university', { category: 'education' });
+        const results = searchSystem('university', { category: 'education' });
 
         results.forEach(result => {
           expect(result.type).toBe('education');
@@ -104,7 +104,7 @@ describe('search module', () => {
       });
 
       it('should filter by themes category', () => {
-        const results = searchPortfolio('claude', { category: 'themes' });
+        const results = searchSystem('claude', { category: 'themes' });
 
         results.forEach(result => {
           expect(result.type).toBe('theme');
@@ -112,7 +112,7 @@ describe('search module', () => {
       });
 
       it('should search all categories by default', () => {
-        const results = searchPortfolio('James');
+        const results = searchSystem('James');
         const types = new Set(results.map(r => r.type));
 
         // Should include results from multiple categories
@@ -120,8 +120,8 @@ describe('search module', () => {
       });
 
       it('should include about results only when category is all', () => {
-        const resultsAll = searchPortfolio('James', { category: 'all' });
-        const resultsProjects = searchPortfolio('James', { category: 'projects' });
+        const resultsAll = searchSystem('James', { category: 'all' });
+        const resultsProjects = searchSystem('James', { category: 'projects' });
 
         const aboutInAll = resultsAll.some(r => r.type === 'about');
         const aboutInProjects = resultsProjects.some(r => r.type === 'about');
@@ -133,17 +133,17 @@ describe('search module', () => {
 
     describe('result limiting', () => {
       it('should limit results to default of 10', () => {
-        const results = searchPortfolio('a');  // Broad query
+        const results = searchSystem('a');  // Broad query
         expect(results.length).toBeLessThanOrEqual(10);
       });
 
       it('should respect custom limit', () => {
-        const results = searchPortfolio('React', { limit: 3 });
+        const results = searchSystem('React', { limit: 3 });
         expect(results.length).toBeLessThanOrEqual(3);
       });
 
       it('should return fewer results if not enough matches', () => {
-        const results = searchPortfolio('TypeScript', { limit: 100 });
+        const results = searchSystem('TypeScript', { limit: 100 });
         // Should return all matches even if less than limit
         expect(results.length).toBeLessThanOrEqual(100);
       });
@@ -151,7 +151,7 @@ describe('search module', () => {
 
     describe('result structure', () => {
       it('should return results with required fields', () => {
-        const results = searchPortfolio('React');
+        const results = searchSystem('React');
 
         results.forEach(result => {
           expect(result).toHaveProperty('id');
@@ -167,7 +167,7 @@ describe('search module', () => {
       });
 
       it('should generate valid IDs for projects', () => {
-        const results = searchPortfolio('project', { category: 'projects' });
+        const results = searchSystem('project', { category: 'projects' });
 
         results.forEach(result => {
           expect(result.id).toMatch(/^project-/);
@@ -175,7 +175,7 @@ describe('search module', () => {
       });
 
       it('should generate valid IDs for skills', () => {
-        const results = searchPortfolio('React', { category: 'skills' });
+        const results = searchSystem('React', { category: 'skills' });
 
         results.forEach(result => {
           expect(result.id).toMatch(/^skill-/);
@@ -183,7 +183,7 @@ describe('search module', () => {
       });
 
       it('should include metadata for projects', () => {
-        const results = searchPortfolio('project', { category: 'projects' });
+        const results = searchSystem('project', { category: 'projects' });
 
         results.forEach(result => {
           if (result.type === 'project') {
@@ -194,7 +194,7 @@ describe('search module', () => {
       });
 
       it('should include metadata for work experience', () => {
-        const results = searchPortfolio('engineer', { category: 'work' });
+        const results = searchSystem('engineer', { category: 'work' });
 
         results.forEach(result => {
           if (result.type === 'work') {
@@ -208,7 +208,7 @@ describe('search module', () => {
 
     describe('specific content searches', () => {
       it('should find skills by name', () => {
-        const results = searchPortfolio('TypeScript', { category: 'skills' });
+        const results = searchSystem('TypeScript', { category: 'skills' });
         const hasTypeScript = results.some(r =>
           r.title.toLowerCase().includes('typescript')
         );
@@ -216,7 +216,7 @@ describe('search module', () => {
       });
 
       it('should find themes by name', () => {
-        const results = searchPortfolio('cyberpunk', { category: 'themes' });
+        const results = searchSystem('cyberpunk', { category: 'themes' });
         const hasCyberpunk = results.some(r =>
           r.title.toLowerCase().includes('cyberpunk')
         );
@@ -224,7 +224,7 @@ describe('search module', () => {
       });
 
       it('should find about information', () => {
-        const results = searchPortfolio('Dublin', { category: 'all' });
+        const results = searchSystem('Dublin', { category: 'all' });
         const hasAbout = results.some(r => r.type === 'about');
         expect(hasAbout).toBe(true);
       });

@@ -263,7 +263,7 @@ ${c.suggestedFollowUps.slice(0,3).map(e=>`- ${e}`).join("\n")}
               <p style="margin: 0; color: #9ca3af; font-size: 12px; text-align: center;">
                 This brief was generated from our discovery call using AI-assisted analysis.
                 <br>
-                OpenClaw-OS • Creative Technologist • San Francisco
+                8gent • Product Builder • San Francisco
               </p>
             </td>
           </tr>

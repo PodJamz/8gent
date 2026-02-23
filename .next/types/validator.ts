@@ -1235,6 +1235,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/api/8gent/search/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/8gent/search">> = Specific
+  const handler = {} as typeof import("../../src/app/api/8gent/search/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/api/agent/execute/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/agent/execute">> = Specific
@@ -1379,15 +1388,6 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
-// Validate ../../src/app/api/claw-ai/search/route.ts
-{
-  type __IsExpected<Specific extends RouteHandlerConfig<"/api/claw-ai/search">> = Specific
-  const handler = {} as typeof import("../../src/app/api/claw-ai/search/route.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
 // Validate ../../src/app/api/content-images/file/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/content-images/file">> = Specific
@@ -1415,10 +1415,10 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
-// Validate ../../src/app/api/cron/james-reflection/route.ts
+// Validate ../../src/app/api/cron/openclaw-reflection/route.ts
 {
-  type __IsExpected<Specific extends RouteHandlerConfig<"/api/cron/james-reflection">> = Specific
-  const handler = {} as typeof import("../../src/app/api/cron/james-reflection/route.js")
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/cron/openclaw-reflection">> = Specific
+  const handler = {} as typeof import("../../src/app/api/cron/openclaw-reflection/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

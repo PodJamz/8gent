@@ -1,16 +1,16 @@
 module.exports=[501772,a=>{"use strict";var b=a.i(499969),c=a.i(729856),d=a.i(863050),e=a.i(925440),f=a.i(567031),g=a.i(278739);let h=`
      ╭──────────────────────╮
      │    ┌─────────────┐   │
-     │    │   JAMES     │   │
+     │    │   OPENCLAW  │   │
      │    │     OS      │   │
      │    └─────────────┘   │
      ╰──────────────────────╯`,i=`
-       ██╗ █████╗ ███╗   ███╗███████╗███████╗ ██████╗ ███████╗
-       ██║██╔══██╗████╗ ████║██╔════╝██╔════╝██╔═══██╗██╔════╝
-       ██║███████║██╔████╔██║█████╗  ███████╗██║   ██║███████╗
-  ██   ██║██╔══██║██║╚██╔╝██║██╔══╝  ╚════██║██║   ██║╚════██║
-  ╚█████╔╝██║  ██║██║ ╚═╝ ██║███████╗███████║╚██████╔╝███████║
-   ╚════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚══════╝`,j=`
+        ██████╗ ██████╗ ███████╗███╗   ██╗ ██████╗██╗      █████╗ ██╗    ██╗
+       ██╔═══██╗██╔══██╗██╔════╝████╗  ██║██╔════╝██║     ██╔══██╗██║    ██║
+       ██║   ██║██████╔╝█████╗  ██╔██╗ ██║██║     ██║     ███████║██║ █╗ ██║
+       ██║   ██║██╔═══╝ ██╔══╝  ██║╚██╗██║██║     ██║     ██╔══██║██║███╗██║
+       ╚██████╔╝██║     ███████╗██║ ╚████║╚██████╗███████╗██║  ██║╚███╔███╔╝
+        ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝ ╚═════╝╚══════╝╚═╝  ╚═╝ ╚══╝╚══╝ `,j=`
 ╔══════════════════════════════════════════════════════════════════════╗
 ║                                                                      ║
 ║     ▄▄▄██▀▀▀▄▄▄       ███▄ ▄███▓▓█████   ██████  ▒█████    ██████   ║
@@ -31,7 +31,7 @@ module.exports=[501772,a=>{"use strict";var b=a.i(499969),c=a.i(729856),d=a.i(86
  │  ⚠️  PERMISSION DENIED                         │
  │                                                │
  │  Nice try! But you don't have root access      │
- │  to this system. James is the only admin.      │
+ │  to this system.                               │
  │                                                │
  │  Perhaps try asking nicely? 😏                 │
  │                                                │
@@ -41,9 +41,9 @@ module.exports=[501772,a=>{"use strict";var b=a.i(499969),c=a.i(729856),d=a.i(86
 
  Deleting all files...
 
- /home/james/portfolio     [DELETED]
- /home/james/projects      [DELETED]
- /home/james/resume.txt    [DELETED]
+  /home/openclaw/systems     [DELETED]
+ /home/openclaw/projects    [DELETED]
+ /home/openclaw/evolution.txt [DELETED]
  /usr/bin                  [DELETED]
  /etc/passwd               [DEL̸̡̛͍̫E̵̢̞̲T̷̨̧̺E̶̡̛̝D̵̨̧͎]
  ▓▒░ S̷̡̧Y̶̢̛S̵̡̛T̷̢̧E̶̡̛M̷̢̧ ̶F̵̡̛A̶̢̧I̷̡̛L̶̢̧Ư̷̡R̶̢̧E̷̡̛ ░▒▓
@@ -51,30 +51,31 @@ module.exports=[501772,a=>{"use strict";var b=a.i(499969),c=a.i(729856),d=a.i(86
  ...
 
  Just kidding! 😄 Your files are safe.
- This is a simulated terminal after all.`,n=["The best code is no code at all.","There are only two hard things in CS: cache invalidation and naming things.","It works on my machine!","// TODO: fix this later (written 3 years ago)","A bug is never just a mistake. It represents a missed test.","First, solve the problem. Then, write the code.","Talk is cheap. Show me the code. - Linus Torvalds","Any fool can write code that a computer can understand. Good programmers write code that humans can understand.","The only way to go fast is to go well.","Simplicity is prerequisite for reliability.","Make it work, make it right, make it fast.","Code is like humor. When you have to explain it, it's bad."],o="アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",p=["Initializing OpenClaw-OS kernel...","Loading system modules...","Mounting virtual filesystem...","Starting display manager...","Initializing network stack...","Loading user preferences...","Starting terminal emulator...","","OpenClaw-OS v1.0.0 (tty1)","","Login: guest","Password: ********","","Welcome to OpenClaw-OS!",'Type "help" for a list of commands.',""],q=["> Initiating hack sequence...","> Bypassing firewall [████████████████████] 100%","> Decrypting mainframe access codes...","> Injecting payload...","> Establishing backdoor connection...","> Accessing classified files...","","⚠️  ACCESS GRANTED ⚠️","","Just kidding! This is just a fun easter egg.","No actual hacking occurred. You're safe! 🔐"],r={"/home/james":["about.txt","resume.txt","portfolio/","blog/",".secrets/",".bashrc"],"/home/owner/portfolio":["openclaw-os.md","claw-ai.md","music-studio.md","prototyping.md"],"/home/james/blog":["experience-philosophy.md","building-ai-agents.md","design-systems.md"],"/home/james/.secrets":["themes.txt","konami.txt"]},s={"/home/james/about.txt":`
+ This is a simulated terminal after all.`,n=["The best code is no code at all.","There are only two hard things in CS: cache invalidation and naming things.","It works on my machine!","// TODO: fix this later (written 3 years ago)","A bug is never just a mistake. It represents a missed test.","First, solve the problem. Then, write the code.","Talk is cheap. Show me the code. - Linus Torvalds","Any fool can write code that a computer can understand. Good programmers write code that humans can understand.","The only way to go fast is to go well.","Simplicity is prerequisite for reliability.","Make it work, make it right, make it fast.","Code is like humor. When you have to explain it, it's bad."],o="アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",p=["Initializing 8gent kernel...","Loading system modules...","Mounting virtual filesystem...","Starting display manager...","Initializing network stack...","Loading user preferences...","Starting terminal emulator...","","8gent v1.0.0 (tty1)","","Login: guest","Password: ********","","Welcome to 8gent!",'Type "help" for a list of commands.',""],q=["> Initiating hack sequence...","> Bypassing firewall [████████████████████] 100%","> Decrypting mainframe access codes...","> Injecting payload...","> Establishing backdoor connection...","> Accessing classified files...","","⚠️  ACCESS GRANTED ⚠️","","Just kidding! This is just a fun easter egg.","No actual hacking occurred. You're safe! 🔐"],r={"/home/openclaw":["about.txt","evolution.txt","systems/","blog/",".secrets/",".bashrc"],"/home/openclaw/systems":["8gent.md","claw-ai.md","music-studio.md","prototyping.md"],"/home/openclaw/blog":["experience-philosophy.md","building-ai-agents.md","design-systems.md"],"/home/openclaw/.secrets":["themes.txt","konami.txt"]},s={"/home/openclaw/about.txt":`
 ┌─────────────────────────────────────────────────────┐
-│                   ABOUT JAMES                       │
+│                   ABOUT OPENCLAW                    │
+│                 SYSTEMS ARCHITECTURE                │
 ├─────────────────────────────────────────────────────┤
 │                                                     │
-│  Hey! I'm James Murphy, a full-stack engineer       │
-│  passionate about building beautiful, intelligent   │
-│  software experiences.                              │
+│  Welcome to 8gent, an AI-native workspace     │
+│  designed for high-performance productivity and     │
+│  agentic orchestration.                            │
 │                                                     │
-│  I believe AI should augment human creativity,      │
-│  not replace it. OpenClaw-OS is a vision of what   │
+│  We believe AI should augment human creativity,      │
+│  not replace it. This system is a vision of what   │
 │  personal computing could become.                   │
 │                                                     │
-│  When I'm not coding, you'll find me:               │
-│  → Making music in my home studio                   │
-│  → Exploring San Francisco                          │
-│  → Reading about AI and consciousness               │
+│  CORE CAPABILITIES:                                 │
+│  → Multi-agent orchestration                        │
+│  → Context-aware workspace management               │
+│  → High-craft minimal design system                 │
 │                                                     │
 │  Let's build something amazing together!            │
 │                                                     │
-└─────────────────────────────────────────────────────┘`,"/home/james/resume.txt":`
+└─────────────────────────────────────────────────────┘`,"/home/openclaw/evolution.txt":`
 ╔══════════════════════════════════════════════════════════════╗
-║                        JAMES MURPHY                          ║
-║              Full-Stack Engineer & AI Enthusiast             ║
+║                        OPENCLAW-OS                         ║
+║              AI-Native Workspace & Platform                ║
 ╠══════════════════════════════════════════════════════════════╣
 ║                                                              ║
 ║  EXPERIENCE                                                  ║
@@ -93,16 +94,16 @@ module.exports=[501772,a=>{"use strict";var b=a.i(499969),c=a.i(729856),d=a.i(86
 ║                                                              ║
 ║  EDUCATION                                                   ║
 ║  ─────────                                                   ║
-║  → Computer Science                                          ║
-║    Self-taught + endless curiosity                           ║
+║  → Computer Science & Systems                                ║
+║    Architected with precision                                 ║
 ║                                                              ║
 ║  CONTACT                                                     ║
 ║  ───────                                                     ║
-║  → github.com/podjamz                                        ║
-║  → linkedin.com/in/jamesmurphy                               ║
+║  → github.com/openclaw                                       ║
+║  → linkedin.com/company/openclaw                             ║
 ║                                                              ║
-╚══════════════════════════════════════════════════════════════╝`,"/home/james/.bashrc":`
-# OpenClaw-OS Terminal Configuration
+╚══════════════════════════════════════════════════════════════╝`,"/home/openclaw/.bashrc":`
+# 8gent Terminal Configuration
 # ─────────────────────────────
 
 export PS1="guest@openclaw ~ $ "
@@ -119,7 +120,7 @@ alias hack='echo "Nice try 😏"'
 fortune | cowsay
 
 # Welcome message
-echo "Welcome back! Type 'neofetch' for system info."`,"/home/james/.secrets/themes.txt":`
+echo "Welcome back! Type 'neofetch' for system info."`,"/home/openclaw/.secrets/themes.txt":`
 ╔═══════════════════════════════════════════════════════╗
 ║              🎨 SECRET THEMES UNLOCKED 🎨             ║
 ╠═══════════════════════════════════════════════════════╣
@@ -133,26 +134,26 @@ echo "Welcome back! Type 'neofetch' for system info."`,"/home/james/.secrets/the
 ║                                                       ║
 ║  Visit /design to see all available themes.           ║
 ║                                                       ║
-╚═══════════════════════════════════════════════════════╝`,"/home/james/.secrets/konami.txt":`
+╚═══════════════════════════════════════════════════════╝`,"/home/openclaw/.secrets/konami.txt":`
 ↑ ↑ ↓ ↓ ← → ← → B A
 
-You know the code. But can you enter it?`,"/home/openclaw/portfolio/openclaw.md":`
-# OpenClaw-OS
+You know the code. But can you enter it?`,"/home/openclaw/systems/openclaw.md":`
+# 8gent
 
 A personal operating system experience for the web.
 
 Features:
 - iOS-style home screen with drag-and-drop
 - 25+ beautiful themes
-- AI-powered assistant (Claw AI)
+- AI-powered assistant (8gent)
 - Full-featured prototyping environment
 - Music studio with stem separation
 
 Status: In active development
-Tech: Next.js 14, TypeScript, Tailwind, Convex`,"/home/james/portfolio/claw-ai.md":`
-# Claw AI
+Tech: Next.js 14, TypeScript, Tailwind, Convex`,"/home/openclaw/systems/claw-ai.md":`
+# 8gent
 
-Your personal AI assistant that lives in OpenClaw-OS.
+Your personal AI assistant that lives in 8gent.
 
 Features:
 - Natural conversation interface
@@ -161,7 +162,7 @@ Features:
 - Voice input/output
 - Persistent chat history
 
-Powered by: Claude (Anthropic)`},t=(a,b)=>{if(b.startsWith("/"))return b;if(".."===b){let b=a.split("/").filter(Boolean);return b.pop(),"/"+b.join("/")}return"~"===b?"/home/james":a+"/"+b},u={help:{name:"help",description:"Show available commands",action:()=>({output:`
+Powered by: Claude (Anthropic)`},t=(a,b)=>{if(b.startsWith("/"))return b;if(".."===b){let b=a.split("/").filter(Boolean);return b.pop(),"/"+b.join("/")}return"~"===b?"/home/openclaw":a+"/"+b},u={help:{name:"help",description:"Show available commands",action:()=>({output:`
 ╔════════════════════════════════════════════════════════════════════╗
 ║                      AVAILABLE COMMANDS                            ║
 ╠════════════════════════════════════════════════════════════════════╣
@@ -173,11 +174,11 @@ Powered by: Claude (Anthropic)`},t=(a,b)=>{if(b.startsWith("/"))return b;if(".."
 ║  pwd                Print working directory                        ║
 ║  cat <file>         Display file contents                          ║
 ║                                                                    ║
-║  PORTFOLIO                                                         ║
-║  ─────────                                                        ║
-║  skills             Show skill bars                                ║
+║  SYSTEM & WORKSPACE                                                ║
+║  ──────────────────                                               ║
+║  skills             Show technical capabilities                    ║
 ║  open <app>         Open an app (design, projects, music, etc.)    ║
-║  whoami             Display current user                           ║
+║  whoami             Display current context                        ║
 ║                                                                    ║
 ║  SYSTEM                                                            ║
 ║  ──────                                                            ║
@@ -190,7 +191,7 @@ Powered by: Claude (Anthropic)`},t=(a,b)=>{if(b.startsWith("/"))return b;if(".."
 ║  Type a command to get started!                                    ║
 ║  Hint: There might be some hidden commands... 🤫                   ║
 ║                                                                    ║
-╚════════════════════════════════════════════════════════════════════╝`})},ls:{name:"ls",description:"List directory contents",usage:"ls [path]",action:(a,b)=>{let c=a[0]?t(b.currentPath,a[0]):b.currentPath,d=r[c];return d?"string"==typeof d?{output:d}:{output:d.map(a=>a.endsWith("/")?`\x1b[34m${a}\x1b[0m`:a.startsWith(".")?`\x1b[90m${a}\x1b[0m`:a).join("  ")}:{output:`ls: cannot access '${a[0]||c}': No such file or directory`}}},cd:{name:"cd",description:"Change directory",usage:"cd <path>",action:(a,b)=>{if(!a[0])return b.setCurrentPath("/home/james"),{output:""};let c=t(b.currentPath,a[0]);return r[c]||"/home/james"===c?(b.setCurrentPath(c),{output:""}):{output:`cd: ${a[0]}: No such file or directory`}}},pwd:{name:"pwd",description:"Print working directory",action:(a,b)=>({output:b.currentPath})},cat:{name:"cat",description:"Display file contents",usage:"cat <file>",action:(a,b)=>{if(!a[0])return{output:"cat: missing operand"};let c=t(b.currentPath,a[0]),d=s[c];return d?{output:d}:r[c]?{output:`cat: ${a[0]}: Is a directory`}:{output:`cat: ${a[0]}: No such file or directory`}}},clear:{name:"clear",description:"Clear terminal screen",action:()=>({output:"",clear:!0})},whoami:{name:"whoami",description:"Display current user",action:()=>({output:"guest"})},history:{name:"history",description:"Show command history",action:(a,b)=>({output:b.history.slice(-20).map((a,b)=>`  ${(b+1).toString().padStart(3)}  ${a}`).join("\n")||"  (no history)"})},echo:{name:"echo",description:"Print text to terminal",usage:"echo <text>",action:a=>({output:a.join(" ")})},date:{name:"date",description:"Show current date/time",action:()=>({output:new Date().toString()})},skills:{name:"skills",description:"Show skill bars",action:()=>({output:`
+╚════════════════════════════════════════════════════════════════════╝`})},ls:{name:"ls",description:"List directory contents",usage:"ls [path]",action:(a,b)=>{let c=a[0]?t(b.currentPath,a[0]):b.currentPath,d=r[c];return d?"string"==typeof d?{output:d}:{output:d.map(a=>a.endsWith("/")?`\x1b[34m${a}\x1b[0m`:a.startsWith(".")?`\x1b[90m${a}\x1b[0m`:a).join("  ")}:{output:`ls: cannot access '${a[0]||c}': No such file or directory`}}},cd:{name:"cd",description:"Change directory",usage:"cd <path>",action:(a,b)=>{if(!a[0])return b.setCurrentPath("/home/openclaw"),{output:""};let c=t(b.currentPath,a[0]);return r[c]||"/home/openclaw"===c?(b.setCurrentPath(c),{output:""}):{output:`cd: ${a[0]}: No such file or directory`}}},pwd:{name:"pwd",description:"Print working directory",action:(a,b)=>({output:b.currentPath})},cat:{name:"cat",description:"Display file contents",usage:"cat <file>",action:(a,b)=>{if(!a[0])return{output:"cat: missing operand"};let c=t(b.currentPath,a[0]),d=s[c];return d?{output:d}:r[c]?{output:`cat: ${a[0]}: Is a directory`}:{output:`cat: ${a[0]}: No such file or directory`}}},clear:{name:"clear",description:"Clear terminal screen",action:()=>({output:"",clear:!0})},whoami:{name:"whoami",description:"Display current user",action:()=>({output:"guest"})},history:{name:"history",description:"Show command history",action:(a,b)=>({output:b.history.slice(-20).map((a,b)=>`  ${(b+1).toString().padStart(3)}  ${a}`).join("\n")||"  (no history)"})},echo:{name:"echo",description:"Print text to terminal",usage:"echo <text>",action:a=>({output:a.join(" ")})},date:{name:"date",description:"Show current date/time",action:()=>({output:new Date().toString()})},skills:{name:"skills",description:"Show skill bars",action:()=>({output:`
 ╔══════════════════════════════════════════════════════════╗
 ║                    TECHNICAL SKILLS                      ║
 ╠══════════════════════════════════════════════════════════╣
@@ -206,10 +207,10 @@ Powered by: Claude (Anthropic)`},t=(a,b)=>{if(b.startsWith("/"))return b;if(".."
 ║  ${k("PostgreSQL",80)}     ║
 ║  ${k("GraphQL",85)}     ║
 ║                                                          ║
-╚══════════════════════════════════════════════════════════╝`})},open:{name:"open",description:"Open an app",usage:"open <app>",action:a=>{let b={design:"/design",projects:"/projects",music:"/music",studio:"/studio",blog:"/blog",resume:"/resume",photos:"/photos",humans:"/humans",story:"/story",prototyping:"/prototyping",settings:"/settings",home:"/"};if(!a[0])return{output:`Usage: open <app>
+╚══════════════════════════════════════════════════════════╝`})},open:{name:"open",description:"Open an app",usage:"open <app>",action:a=>{let b={design:"/design",projects:"/projects",music:"/music",studio:"/studio",blog:"/blog",evolution:"/story",photos:"/photos",humans:"/humans",story:"/story",prototyping:"/prototyping",settings:"/settings",home:"/"};if(!a[0])return{output:`Usage: open <app>
 
 Available apps:
-${Object.keys(b).map(a=>`  → ${a}`).join("\n")}`};let c=a[0].toLowerCase();return b[c]?{output:`Opening ${c}...`,navigate:b[c]}:{output:`open: ${a[0]}: Application not found`}}},neofetch:{name:"neofetch",description:"Display system info",action:(a,b)=>{let c;return{output:(c={os:"OpenClaw-OS v1.0.0",host:"portfolio.dev",kernel:"React 18.2.0",uptime:"∞ days",shell:"/bin/zsh",theme:b.theme||"claude",terminal:"OpenClaw Terminal",cpu:"Apple Silicon (simulated)",memory:"∞ GB available"},`
+${Object.keys(b).map(a=>`  → ${a}`).join("\n")}`};let c=a[0].toLowerCase();return b[c]?{output:`Opening ${c}...`,navigate:b[c]}:{output:`open: ${a[0]}: Application not found`}}},neofetch:{name:"neofetch",description:"Display system info",action:(a,b)=>{let c;return{output:(c={os:"8gent v1.0.0",host:"openclaw.io",kernel:"React 18.2.0",uptime:"∞ days",shell:"/bin/zsh",theme:b.theme||"claude",terminal:"OpenClaw Terminal",cpu:"Apple Silicon (simulated)",memory:"∞ GB available"},`
 ${h}
                         ${c.os}
                         ─────────────────

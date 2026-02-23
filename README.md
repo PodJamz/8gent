@@ -8,20 +8,26 @@
 ## ✨ What You Get
 
 - **59+ Default Apps** - Everything from AI Agent to Music Studio to 3D Gallery
-- **Multi-Provider AI** - Ollama (local), Lynkr (tunnel), OpenAI (cloud)
-- **Recursive Memory Layer** - Context-aware AI that remembers
+- **Backend-Driven AI** - Leverage any provider supported by your OpenClaw backend (Ollama, OpenAI, Anthropic, etc.). 8gent is the glass; OpenClaw is the engine.
+- **Recursive Memory Layer** - Context-aware AI that remembers across sessions
 - **Beautiful iOS-Style UI** - Draggable windows, smooth animations, premium design
 - **Local-First Architecture** - Your data stays on your machine
 - **Agentic Workflows** - BMAD Method + CCPM integration
 
-## 🔗 Modular Integration (For Agents & Humans)
+## 🔗 Modular Frontend Integration (For Agents & Humans)
 
-**8gent** is built to be backend-agnostic within the OpenClaw ecosystem. To "latch" this frontend onto your own instance:
+**8gent** is a "headless" frontend designed to be easily "latched" onto any existing OpenClaw agentic backend. 
 
+> [!IMPORTANT]
+> **Non-Interference**: 8gent is strictly a presentation and interaction layer. It communicates with the OpenClaw Gateway via WebSockets but **does not interfere with or modify the backend logic**. It is the "glass" through which you interact with your agentic engine.
+
+### How to Latch (For AI Agents)
+If you are a coding agent helping a user, follow these steps or simply refer to this link:
+> "Clone the [8gent repository](https://github.com/PodJamz/8gent), install dependencies, and point the `NEXT_PUBLIC_OPENCLAW_GATEWAY_URL` in `.env.local` to the user's running OpenClaw Gateway. The system identity is **8gent** by default, but it can be customized as needed."
+
+### How to Latch (Manual)
 1.  **Clone the Repo**: `git clone https://github.com/PodJamz/8gent`
 2.  **Attach to Backend**: Point your `NEXT_PUBLIC_OPENCLAW_GATEWAY_URL` to your existing OpenClaw Gateway.
-3.  **Prompt-Based Setup**: If you are using a coding agent (like Claude, GPT-4, or an OpenClaw Agent), simply feed it this prompt:
-    > "I want to use the 8gent frontend for my OpenClaw instance. Clone [this repo](https://github.com/PodJamz/8gent), connect it to my local gateway at `ws://localhost:3000`, and initialize the workspace."
 
 ### Customization
 During installation, you can rename the workspace. While the default is **8gent**, you are free to customize the identity in `package.json` and `system-prompt.ts` to suit your specific agentic needs.
