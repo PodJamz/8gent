@@ -19,9 +19,10 @@ interface DockItem {
 const DOCK_ITEMS: DockItem[] = [
   { id: 'talk', label: 'Talk', emoji: '💬', href: '/app' },
   { id: 'draw', label: 'Draw', emoji: '🎨', href: '/draw' },
+  { id: 'intuition', label: 'Intuition', emoji: '🧠', href: '/intuition' },
   { id: 'music', label: 'Music', emoji: '🎵', href: '/music' },
   { id: 'timer', label: 'Timer', emoji: '⏱️', href: '/timer' },
-  { id: 'settings', label: 'Settings', emoji: '⚙️', href: '/settings' },
+  { id: 'schooltube', label: 'SchoolTube', emoji: '📺', href: '/schooltube' },
 ];
 
 interface DockProps {
