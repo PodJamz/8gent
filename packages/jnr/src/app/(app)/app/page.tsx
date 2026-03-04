@@ -12,6 +12,8 @@ import {
 } from '@/lib/aac/vocabulary';
 import { useApp } from '@/context/AppContext';
 import { Dock } from '@/components/dock/Dock';
+import { MagicButton } from '@/components/aac/MagicButton';
+import { CardSuggestion } from '@/components/ai/CardSuggestion';
 
 /**
  * Main AAC App Page - Mobile-First iOS Style
@@ -20,11 +22,18 @@ import { Dock } from '@/components/dock/Dock';
  * Mobile responsive with bottom dock navigation.
  */
 
+interface MissingVocabulary {
+  word: string;
+  category: string;
+  reason: string;
+}
+
 export default function AACAppPage() {
   const router = useRouter();
   const { settings, isLoaded } = useApp();
   const [sentence, setSentence] = useState<string[]>([]);
   const [activeCategory, setActiveCategory] = useState<AACCategory | null>(null);
+  const [missingVocabulary, setMissingVocabulary] = useState<MissingVocabulary[]>([]);
 
   // Redirect to onboarding if not completed
   useEffect(() => {
@@ -202,6 +211,14 @@ export default function AACAppPage() {
             <span className="text-lg sm:text-xl">🔊</span>
             <span>Speak</span>
           </button>
+          {/* Magic Button - AI Grammar Improvement */}
+          <MagicButton
+            cards={sentence}
+            voiceId={settings.selectedVoiceId ?? undefined}
+            ttsRate={settings.ttsRate}
+            onMissingVocabulary={setMissingVocabulary}
+            disabled={sentence.length === 0}
+          />
           <button
             onClick={handleBackspace}
             disabled={sentence.length === 0}
@@ -221,6 +238,19 @@ export default function AACAppPage() {
             Clear
           </button>
         </div>
+
+        {/* Card Suggestions from AI */}
+        {missingVocabulary.length > 0 && (
+          <CardSuggestion
+            suggestions={missingVocabulary}
+            onDismiss={() => setMissingVocabulary([])}
+            onCreateCard={(word) => {
+              // TODO: Navigate to card creator or show card generation modal
+              console.log('Create card for:', word);
+              setMissingVocabulary([]);
+            }}
+          />
+        )}
       </div>
 
       {/* Card Grid - Responsive */}
