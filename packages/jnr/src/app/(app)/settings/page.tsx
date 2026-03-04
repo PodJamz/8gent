@@ -1,75 +1,77 @@
 'use client';
 
 import Link from 'next/link';
-import { useVoiceSettings, useTTS } from '@/lib/voice/hooks';
+import { useApp } from '@/context/AppContext';
+import { Dock } from '@/components/dock/Dock';
 import { ELEVENLABS_VOICES } from '@/lib/voice/types';
 
 /**
- * Settings Page - iOS Style
- *
- * User preferences, mode toggle (kid/adult), voice selection, and account settings.
+ * Settings Page - iOS Style with Dock
  */
 
+const GRID_OPTIONS = [2, 3, 4, 5];
+
 export default function SettingsPage() {
-  const { settings, updateSettings, isLoaded } = useVoiceSettings();
-  const { availableVoices } = useTTS(settings);
+  const { settings, updateSettings, isLoaded } = useApp();
 
   if (!isLoaded) {
     return (
       <div className="min-h-screen bg-[#f2f2f7] flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
+        <div
+          className="w-8 h-8 border-4 border-t-transparent rounded-full animate-spin"
+          style={{ borderColor: settings.primaryColor, borderTopColor: 'transparent' }}
+        />
       </div>
     );
   }
 
-  const selectedVoice = [...availableVoices, ...ELEVENLABS_VOICES].find(
-    (v) => v.id === settings.selectedVoiceId
-  );
+  const primaryColor = settings.primaryColor || '#4CAF50';
+  const selectedVoice = ELEVENLABS_VOICES.find((v) => v.id === settings.selectedVoiceId);
 
   return (
     <div className="min-h-screen bg-[#f2f2f7] flex flex-col">
-      {/* iOS Style Header */}
-      <header className="sticky top-0 z-50 bg-[#f2f2f7]/80 backdrop-blur-xl border-b border-gray-200/50">
-        <div className="flex items-center justify-between px-4 py-3">
-          <Link
-            href="/app"
-            className="text-blue-500 text-[17px] flex items-center gap-1"
-          >
-            <span className="text-xl">‹</span>
-            <span>Back</span>
-          </Link>
-          <h1 className="text-[17px] font-semibold text-black">Settings</h1>
-          <div className="w-12" /> {/* Spacer */}
+      {/* Header */}
+      <header
+        className="sticky top-0 z-40 backdrop-blur-xl safe-top"
+        style={{ backgroundColor: `${primaryColor}F2` }}
+      >
+        <div className="flex items-center justify-center px-4 py-3">
+          <h1 className="text-[18px] font-semibold text-white">
+            {settings.childName ? `${settings.childName}'s Settings` : 'Settings'}
+          </h1>
         </div>
       </header>
 
-      <div className="flex-1 overflow-y-auto pb-safe">
-        {/* Display Mode */}
+      <div className="flex-1 overflow-y-auto pb-24">
+        {/* Personalization */}
         <div className="px-4 pt-6">
           <p className="text-[13px] text-gray-500 uppercase tracking-wide px-4 mb-2">
-            Display
+            Personalization
           </p>
           <div className="bg-white rounded-xl overflow-hidden">
-            <div className="flex items-center justify-between px-4 py-3">
-              <span className="text-[17px] text-black">Interface Mode</span>
-              <select
-                className="text-[17px] text-gray-500 bg-transparent appearance-none
-                         cursor-pointer pr-6 focus:outline-none"
-                style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239CA3AF'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'right 0 center',
-                  backgroundSize: '20px',
-                }}
-              >
-                <option value="kid">Kid Mode</option>
-                <option value="adult">Adult Mode</option>
-              </select>
+            {/* Name */}
+            <div className="px-4 py-3 border-b border-gray-100">
+              <div className="flex items-center justify-between">
+                <span className="text-[17px] text-black">Name</span>
+                <input
+                  type="text"
+                  value={settings.childName}
+                  onChange={(e) => updateSettings({ childName: e.target.value })}
+                  placeholder="Enter name"
+                  className="text-[17px] text-right text-gray-500 bg-transparent focus:outline-none"
+                />
+              </div>
             </div>
+            {/* Restart onboarding */}
+            <Link
+              href="/onboarding"
+              onClick={() => updateSettings({ hasCompletedOnboarding: false })}
+              className="flex items-center justify-between px-4 py-3 active:bg-gray-50"
+            >
+              <span className="text-[17px] text-black">Restart Setup</span>
+              <span className="text-gray-300">›</span>
+            </Link>
           </div>
-          <p className="text-[13px] text-gray-500 px-4 mt-2">
-            Kid Mode shows larger cards and simpler navigation.
-          </p>
         </div>
 
         {/* Voice Settings */}
@@ -96,21 +98,22 @@ export default function SettingsPage() {
             <div className="px-4 py-3 border-b border-gray-100">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[17px] text-black">Speech Rate</span>
-                <span className="text-[15px] text-gray-500">{settings.rate.toFixed(1)}x</span>
+                <span className="text-[15px] text-gray-500">{settings.ttsRate.toFixed(1)}x</span>
               </div>
               <input
                 type="range"
                 min="0.5"
                 max="2"
                 step="0.1"
-                value={settings.rate}
-                onChange={(e) => updateSettings({ rate: parseFloat(e.target.value) })}
-                className="w-full h-1 bg-gray-200 rounded-full appearance-none accent-blue-500
+                value={settings.ttsRate}
+                onChange={(e) => updateSettings({ ttsRate: parseFloat(e.target.value) })}
+                className="w-full h-1 bg-gray-200 rounded-full appearance-none
                          [&::-webkit-slider-thumb]:appearance-none
                          [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6
                          [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full
                          [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:border
                          [&::-webkit-slider-thumb]:border-gray-200"
+                style={{ accentColor: primaryColor }}
               />
             </div>
 
@@ -118,92 +121,76 @@ export default function SettingsPage() {
             <div className="px-4 py-3">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[17px] text-black">Volume</span>
-                <span className="text-[15px] text-gray-500">{Math.round(settings.volume * 100)}%</span>
+                <span className="text-[15px] text-gray-500">{Math.round(settings.ttsVolume * 100)}%</span>
               </div>
               <input
                 type="range"
                 min="0"
                 max="1"
                 step="0.1"
-                value={settings.volume}
-                onChange={(e) => updateSettings({ volume: parseFloat(e.target.value) })}
-                className="w-full h-1 bg-gray-200 rounded-full appearance-none accent-blue-500
+                value={settings.ttsVolume}
+                onChange={(e) => updateSettings({ ttsVolume: parseFloat(e.target.value) })}
+                className="w-full h-1 bg-gray-200 rounded-full appearance-none
                          [&::-webkit-slider-thumb]:appearance-none
                          [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6
                          [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full
                          [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:border
                          [&::-webkit-slider-thumb]:border-gray-200"
+                style={{ accentColor: primaryColor }}
               />
             </div>
           </div>
         </div>
 
-        {/* AAC Settings */}
+        {/* Communication Board */}
         <div className="px-4 pt-6">
           <p className="text-[13px] text-gray-500 uppercase tracking-wide px-4 mb-2">
             Communication Board
           </p>
           <div className="bg-white rounded-xl overflow-hidden">
-            <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
-              <span className="text-[17px] text-black">Card Size</span>
-              <select
-                className="text-[17px] text-gray-500 bg-transparent appearance-none
-                         cursor-pointer pr-6 focus:outline-none"
-                style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239CA3AF'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'right 0 center',
-                  backgroundSize: '20px',
-                }}
-              >
-                <option value="medium">Medium</option>
-                <option value="small">Small</option>
-                <option value="large">Large</option>
-              </select>
-            </div>
-            <div className="flex items-center justify-between px-4 py-3">
-              <span className="text-[17px] text-black">Show Labels</span>
-              <div className="relative">
-                <input
-                  type="checkbox"
-                  defaultChecked
-                  className="sr-only peer"
-                  id="showLabels"
-                />
-                <label
-                  htmlFor="showLabels"
-                  className="block w-[51px] h-[31px] bg-gray-200 rounded-full cursor-pointer
-                           peer-checked:bg-[#34C759] transition-colors"
-                >
-                  <span className="absolute left-[2px] top-[2px] w-[27px] h-[27px] bg-white rounded-full
-                                 shadow-sm transition-transform peer-checked:translate-x-5" />
-                </label>
+            {/* Grid Columns */}
+            <div className="px-4 py-3">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[17px] text-black">Grid Size</span>
+                <span className="text-[15px] text-gray-500">{settings.gridColumns} columns</span>
+              </div>
+              <div className="flex gap-2">
+                {GRID_OPTIONS.map((cols) => (
+                  <button
+                    key={cols}
+                    onClick={() => updateSettings({ gridColumns: cols })}
+                    className="flex-1 py-2.5 rounded-xl font-medium text-[15px] transition-colors"
+                    style={{
+                      backgroundColor: settings.gridColumns === cols ? primaryColor : '#f2f2f7',
+                      color: settings.gridColumns === cols ? 'white' : '#374151',
+                    }}
+                  >
+                    {cols}
+                  </button>
+                ))}
               </div>
             </div>
           </div>
         </div>
 
-        {/* Account */}
+        {/* About */}
         <div className="px-4 pt-6 pb-8">
           <p className="text-[13px] text-gray-500 uppercase tracking-wide px-4 mb-2">
-            Account
+            About
           </p>
-          <div className="bg-white rounded-xl overflow-hidden">
-            <button
-              onClick={() => (window.location.href = '/')}
-              className="w-full px-4 py-3 text-left text-red-500 text-[17px] active:bg-gray-50"
-            >
-              Sign Out
-            </button>
+          <div className="bg-white rounded-xl overflow-hidden px-4 py-3">
+            <p className="text-gray-600 text-[15px] mb-2">
+              <strong>8gent</strong> - Your Voice, Your Way
+            </p>
+            <p className="text-gray-400 text-[13px]">
+              Version 1.0.0 · Symbols © ARASAAC
+            </p>
           </div>
         </div>
-
-        {/* Version Info */}
-        <div className="px-4 pb-8 text-center">
-          <p className="text-[13px] text-gray-400">8gent v1.0.0</p>
-          <p className="text-[13px] text-gray-400">Symbols © ARASAAC</p>
-        </div>
       </div>
+
+      {/* Dock */}
+      <Dock primaryColor={primaryColor} />
     </div>
   );
 }

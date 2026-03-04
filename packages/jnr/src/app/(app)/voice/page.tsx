@@ -1,27 +1,34 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { useVoiceSettings, useAudioRecording, useTTS } from '@/lib/voice/hooks';
+import { useState, useRef } from 'react';
+import { useApp } from '@/context/AppContext';
+import { Dock } from '@/components/dock/Dock';
 import { ELEVENLABS_VOICES } from '@/lib/voice/types';
 
 /**
- * Voice Designer Page - iOS Style
- *
- * Create and customize your voice with ElevenLabs.
+ * Voice Designer Page - iOS Style with Dock
  */
 
 type Step = 'select' | 'record' | 'preview' | 'creating' | 'done';
 
 export default function VoicePage() {
-  const { settings, updateSettings, isLoaded } = useVoiceSettings();
-  const { isRecording, duration, audioUrl, startRecording, stopRecording, clearRecording } = useAudioRecording();
-  const { speak, isSpeaking, availableVoices } = useTTS(settings);
+  const { settings, updateSettings, isLoaded } = useApp();
 
+  // Voice creation state
   const [step, setStep] = useState<Step>('select');
+  const [isRecording, setIsRecording] = useState(false);
+  const [duration, setDuration] = useState(0);
+  const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
+  const [audioUrl, setAudioUrl] = useState<string | null>(null);
   const [voiceName, setVoiceName] = useState('');
   const [isCreating, setIsCreating] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const chunksRef = useRef<Blob[]>([]);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const primaryColor = settings.primaryColor || '#4CAF50';
 
   const formatDuration = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -29,142 +36,240 @@ export default function VoicePage() {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
-  const handleCreateVoice = async () => {
-    if (!audioUrl || !voiceName.trim()) return;
+  const handleSelectVoice = (voiceId: string | null) => {
+    updateSettings({ selectedVoiceId: voiceId });
+  };
+
+  const testVoice = async (voiceId: string | null) => {
+    const text = `Hello ${settings.childName || 'there'}! This is how I sound.`;
+
+    if (voiceId) {
+      try {
+        const response = await fetch('/api/voice/speak', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text, voiceId }),
+        });
+        if (response.ok) {
+          const blob = await response.blob();
+          const url = URL.createObjectURL(blob);
+          const audio = new Audio(url);
+          audio.play();
+          return;
+        }
+      } catch {
+        // Fallback
+      }
+    }
+
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = settings.ttsRate;
+      speechSynthesis.speak(utterance);
+    }
+  };
+
+  const startRecording = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mediaRecorder = new MediaRecorder(stream);
+      mediaRecorderRef.current = mediaRecorder;
+      chunksRef.current = [];
+
+      mediaRecorder.ondataavailable = (e) => {
+        if (e.data.size > 0) chunksRef.current.push(e.data);
+      };
+
+      mediaRecorder.onstop = () => {
+        const blob = new Blob(chunksRef.current, { type: 'audio/webm' });
+        setAudioBlob(blob);
+        setAudioUrl(URL.createObjectURL(blob));
+        stream.getTracks().forEach((track) => track.stop());
+      };
+
+      mediaRecorder.start();
+      setIsRecording(true);
+      setDuration(0);
+
+      timerRef.current = setInterval(() => {
+        setDuration((prev) => prev + 1);
+      }, 1000);
+    } catch {
+      setError('Could not access microphone');
+    }
+  };
+
+  const stopRecording = () => {
+    if (mediaRecorderRef.current && isRecording) {
+      mediaRecorderRef.current.stop();
+      setIsRecording(false);
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+      setStep('preview');
+    }
+  };
+
+  const clearRecording = () => {
+    if (audioUrl) URL.revokeObjectURL(audioUrl);
+    setAudioBlob(null);
+    setAudioUrl(null);
+    setDuration(0);
+    setVoiceName('');
+    setStep('record');
+    setError(null);
+  };
+
+  const createVoice = async () => {
+    if (!audioBlob || !voiceName.trim()) return;
 
     setIsCreating(true);
-    setError(null);
     setStep('creating');
+    setError(null);
 
     try {
-      // Convert audio URL to blob
-      const response = await fetch(audioUrl);
-      const audioBlob = await response.blob();
-
-      // Create FormData
       const formData = new FormData();
       formData.append('audio', audioBlob, 'recording.webm');
       formData.append('name', voiceName.trim());
 
-      // Upload to API
-      const result = await fetch('/api/voice/create', {
+      const response = await fetch('/api/voice/create', {
         method: 'POST',
         body: formData,
       });
 
-      if (!result.ok) {
-        throw new Error('Failed to create voice');
-      }
+      if (!response.ok) throw new Error('Failed to create voice');
 
-      const data = await result.json();
-
-      // Save the new voice
+      const data = await response.json();
       updateSettings({ selectedVoiceId: data.voiceId });
       setStep('done');
-    } catch (err) {
-      console.error(err);
+    } catch {
       setError('Failed to create voice. Please try again.');
-      setStep('record');
+      setStep('preview');
     } finally {
       setIsCreating(false);
     }
   };
 
-  const handleSelectPreset = (voiceId: string) => {
-    updateSettings({ selectedVoiceId: voiceId });
-  };
-
-  const handleTestVoice = () => {
-    speak('Hello! This is what I sound like. Nice to meet you!');
-  };
-
   if (!isLoaded) {
     return (
       <div className="min-h-screen bg-[#f2f2f7] flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
+        <div
+          className="w-8 h-8 border-4 border-t-transparent rounded-full animate-spin"
+          style={{ borderColor: primaryColor, borderTopColor: 'transparent' }}
+        />
       </div>
     );
   }
 
   return (
     <div className="min-h-screen bg-[#f2f2f7] flex flex-col">
-      {/* iOS Style Header */}
-      <header className="sticky top-0 z-50 bg-[#f2f2f7]/80 backdrop-blur-xl border-b border-gray-200/50">
-        <div className="flex items-center justify-between px-4 py-3">
-          <Link
-            href="/app"
-            className="text-blue-500 text-[17px] flex items-center gap-1"
-          >
-            <span className="text-xl">‹</span>
-            <span>Back</span>
-          </Link>
-          <h1 className="text-[17px] font-semibold text-black">Voice</h1>
-          <div className="w-12" /> {/* Spacer */}
+      {/* Header */}
+      <header
+        className="sticky top-0 z-40 backdrop-blur-xl safe-top"
+        style={{ backgroundColor: `${primaryColor}F2` }}
+      >
+        <div className="flex items-center justify-center px-4 py-3">
+          <h1 className="text-[18px] font-semibold text-white">Voice</h1>
         </div>
       </header>
 
-      <div className="flex-1 overflow-y-auto pb-safe">
-        {/* Voice Selection Section */}
+      <div className="flex-1 overflow-y-auto pb-24">
+        {/* Voice Selection */}
         <div className="px-4 pt-6">
           <p className="text-[13px] text-gray-500 uppercase tracking-wide px-4 mb-2">
             Select a Voice
           </p>
           <div className="bg-white rounded-xl overflow-hidden">
-            {/* Preset Voices */}
+            {/* System Default */}
+            <button
+              onClick={() => handleSelectVoice(null)}
+              className="w-full flex items-center justify-between px-4 py-3 border-b border-gray-100 active:bg-gray-50"
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">🔊</span>
+                <div className="text-left">
+                  <p className="text-[17px] text-black">System Default</p>
+                  <p className="text-[13px] text-gray-500">Device voice</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    testVoice(null);
+                  }}
+                  className="px-3 py-1 rounded-full text-[13px]"
+                  style={{ backgroundColor: `${primaryColor}20`, color: primaryColor }}
+                >
+                  Test
+                </button>
+                {!settings.selectedVoiceId && (
+                  <span style={{ color: primaryColor }} className="text-xl">✓</span>
+                )}
+              </div>
+            </button>
+
+            {/* ElevenLabs Voices */}
             {ELEVENLABS_VOICES.map((voice, index) => (
               <button
                 key={voice.id}
-                onClick={() => handleSelectPreset(voice.id)}
-                className={`w-full flex items-center justify-between px-4 py-3 text-left
-                          ${index !== ELEVENLABS_VOICES.length - 1 ? 'border-b border-gray-100' : ''}`}
+                onClick={() => handleSelectVoice(voice.id)}
+                className={`w-full flex items-center justify-between px-4 py-3 active:bg-gray-50 ${
+                  index !== ELEVENLABS_VOICES.length - 1 ? 'border-b border-gray-100' : ''
+                }`}
               >
-                <div>
-                  <p className="text-[17px] text-black">{voice.name}</p>
-                  {voice.description && (
-                    <p className="text-[13px] text-gray-500">{voice.description}</p>
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">🎤</span>
+                  <div className="text-left">
+                    <p className="text-[17px] text-black">{voice.name}</p>
+                    {voice.description && (
+                      <p className="text-[13px] text-gray-500">{voice.description}</p>
+                    )}
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      testVoice(voice.id);
+                    }}
+                    className="px-3 py-1 rounded-full text-[13px]"
+                    style={{ backgroundColor: `${primaryColor}20`, color: primaryColor }}
+                  >
+                    Test
+                  </button>
+                  {settings.selectedVoiceId === voice.id && (
+                    <span style={{ color: primaryColor }} className="text-xl">✓</span>
                   )}
                 </div>
-                {settings.selectedVoiceId === voice.id && (
-                  <span className="text-blue-500 text-xl">✓</span>
-                )}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Test Voice Button */}
-        <div className="px-4 py-4">
-          <button
-            onClick={handleTestVoice}
-            disabled={isSpeaking}
-            className="w-full py-3 bg-white rounded-xl text-blue-500 text-[17px] font-medium
-                     disabled:opacity-50 active:bg-gray-50"
-          >
-            {isSpeaking ? 'Speaking...' : '🔊 Test Voice'}
-          </button>
-        </div>
-
-        {/* Create Custom Voice Section */}
-        <div className="px-4 pt-2">
+        {/* Create Custom Voice */}
+        <div className="px-4 pt-6">
           <p className="text-[13px] text-gray-500 uppercase tracking-wide px-4 mb-2">
             Create Custom Voice
           </p>
           <div className="bg-white rounded-xl p-4">
             {step === 'select' && (
               <div className="text-center py-4">
-                <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div
+                  className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
+                  style={{ backgroundColor: `${primaryColor}20` }}
+                >
                   <span className="text-4xl">🎤</span>
                 </div>
-                <h3 className="text-[17px] font-semibold text-black mb-2">
-                  Clone Your Voice
-                </h3>
+                <h3 className="text-[17px] font-semibold text-black mb-2">Clone Your Voice</h3>
                 <p className="text-[15px] text-gray-500 mb-4">
-                  Record 30+ seconds of speech to create a voice that sounds like you.
+                  Record 30+ seconds to create a voice that sounds like you
                 </p>
                 <button
                   onClick={() => setStep('record')}
-                  className="w-full py-3 bg-blue-500 text-white rounded-xl text-[17px] font-medium
-                           active:bg-blue-600"
+                  className="w-full py-3 text-white rounded-xl text-[17px] font-medium active:opacity-80"
+                  style={{ backgroundColor: primaryColor }}
                 >
                   Start Recording
                 </button>
@@ -173,101 +278,89 @@ export default function VoicePage() {
 
             {step === 'record' && (
               <div className="text-center py-4">
-                {/* Recording Indicator */}
-                <div className={`w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4
-                              ${isRecording ? 'bg-red-500 animate-pulse' : 'bg-gray-200'}`}>
-                  <span className="text-4xl">
-                    {isRecording ? '🔴' : '🎤'}
-                  </span>
+                <div
+                  className={`w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4 ${
+                    isRecording ? 'animate-pulse' : ''
+                  }`}
+                  style={{ backgroundColor: isRecording ? '#ef4444' : `${primaryColor}20` }}
+                >
+                  <span className="text-4xl">{isRecording ? '🔴' : '🎤'}</span>
                 </div>
-
-                {/* Duration */}
-                <p className="text-3xl font-light text-black mb-2">
-                  {formatDuration(duration)}
-                </p>
+                <p className="text-3xl font-light text-black mb-2">{formatDuration(duration)}</p>
                 <p className="text-[15px] text-gray-500 mb-4">
-                  {isRecording
-                    ? 'Recording... Read aloud or talk naturally'
-                    : audioUrl
-                      ? 'Recording complete!'
-                      : 'Tap to start recording'}
+                  {isRecording ? 'Recording... Speak clearly' : 'Tap to start'}
                 </p>
+                {error && <p className="text-red-500 text-[15px] mb-4">{error}</p>}
+                <button
+                  onClick={isRecording ? stopRecording : startRecording}
+                  className="w-full py-3 text-white rounded-xl text-[17px] font-medium"
+                  style={{ backgroundColor: isRecording ? '#ef4444' : primaryColor }}
+                >
+                  {isRecording ? 'Stop Recording' : 'Start Recording'}
+                </button>
+              </div>
+            )}
 
-                {/* Error */}
-                {error && (
-                  <p className="text-red-500 text-[15px] mb-4">{error}</p>
-                )}
-
-                {/* Controls */}
-                {!audioUrl ? (
+            {step === 'preview' && (
+              <div className="space-y-3">
+                <div className="text-center py-2">
+                  <p className="text-[17px] text-black mb-1">Recording ready!</p>
+                  <p className="text-gray-500 text-[15px]">{formatDuration(duration)}</p>
+                </div>
+                {error && <p className="text-red-500 text-[15px] text-center">{error}</p>}
+                <input
+                  type="text"
+                  value={voiceName}
+                  onChange={(e) => setVoiceName(e.target.value)}
+                  placeholder={`${settings.childName || 'My'}'s Voice`}
+                  className="w-full px-4 py-3 bg-[#f2f2f7] rounded-xl text-[17px] focus:outline-none"
+                  style={{ borderColor: primaryColor }}
+                />
+                <div className="flex gap-3">
                   <button
-                    onClick={isRecording ? stopRecording : startRecording}
-                    className={`w-full py-3 rounded-xl text-[17px] font-medium
-                              ${isRecording
-                        ? 'bg-red-500 text-white'
-                        : 'bg-blue-500 text-white'}`}
+                    onClick={clearRecording}
+                    className="flex-1 py-3 bg-gray-200 text-gray-700 rounded-xl text-[17px] font-medium"
                   >
-                    {isRecording ? 'Stop Recording' : 'Start Recording'}
+                    Re-record
                   </button>
-                ) : (
-                  <div className="space-y-3">
-                    {/* Voice Name Input */}
-                    <input
-                      type="text"
-                      value={voiceName}
-                      onChange={(e) => setVoiceName(e.target.value)}
-                      placeholder="Name your voice..."
-                      className="w-full px-4 py-3 bg-gray-100 rounded-xl text-[17px] text-black
-                               placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-
-                    {/* Action Buttons */}
-                    <div className="flex gap-3">
-                      <button
-                        onClick={() => {
-                          clearRecording();
-                          setVoiceName('');
-                        }}
-                        className="flex-1 py-3 bg-gray-200 text-gray-700 rounded-xl text-[17px] font-medium"
-                      >
-                        Re-record
-                      </button>
-                      <button
-                        onClick={handleCreateVoice}
-                        disabled={!voiceName.trim()}
-                        className="flex-1 py-3 bg-blue-500 text-white rounded-xl text-[17px] font-medium
-                                 disabled:opacity-50"
-                      >
-                        Create Voice
-                      </button>
-                    </div>
-                  </div>
-                )}
+                  <button
+                    onClick={createVoice}
+                    disabled={!voiceName.trim()}
+                    className="flex-1 py-3 text-white rounded-xl text-[17px] font-medium disabled:opacity-50"
+                    style={{ backgroundColor: primaryColor }}
+                  >
+                    Create Voice
+                  </button>
+                </div>
               </div>
             )}
 
             {step === 'creating' && (
               <div className="text-center py-8">
-                <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                <div
+                  className="w-16 h-16 border-4 border-t-transparent rounded-full animate-spin mx-auto mb-4"
+                  style={{ borderColor: primaryColor, borderTopColor: 'transparent' }}
+                />
                 <p className="text-[17px] text-black">Creating your voice...</p>
-                <p className="text-[15px] text-gray-500">This may take a moment</p>
               </div>
             )}
 
             {step === 'done' && (
-              <div className="text-center py-8">
-                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="text-center py-4">
+                <div
+                  className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"
+                  style={{ backgroundColor: '#34C75920' }}
+                >
                   <span className="text-4xl">✅</span>
                 </div>
-                <h3 className="text-[17px] font-semibold text-black mb-2">
-                  Voice Created!
-                </h3>
+                <h3 className="text-[17px] font-semibold text-black mb-2">Voice Created!</h3>
                 <p className="text-[15px] text-gray-500 mb-4">
-                  Your custom voice &quot;{voiceName}&quot; is ready to use.
+                  &quot;{voiceName}&quot; is ready to use
                 </p>
                 <button
-                  onClick={handleTestVoice}
-                  className="w-full py-3 bg-blue-500 text-white rounded-xl text-[17px] font-medium"
+                  onClick={() => testVoice(settings.selectedVoiceId)}
+                  className="w-full py-3 text-white rounded-xl text-[17px] font-medium"
+                  style={{ backgroundColor: primaryColor }}
                 >
                   🔊 Test Your Voice
                 </button>
@@ -275,59 +368,10 @@ export default function VoicePage() {
             )}
           </div>
         </div>
-
-        {/* Voice Settings */}
-        <div className="px-4 py-6">
-          <p className="text-[13px] text-gray-500 uppercase tracking-wide px-4 mb-2">
-            Voice Settings
-          </p>
-          <div className="bg-white rounded-xl overflow-hidden">
-            {/* Speech Rate */}
-            <div className="px-4 py-3 border-b border-gray-100">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[17px] text-black">Speech Rate</span>
-                <span className="text-[15px] text-gray-500">{settings.rate.toFixed(1)}x</span>
-              </div>
-              <input
-                type="range"
-                min="0.5"
-                max="2"
-                step="0.1"
-                value={settings.rate}
-                onChange={(e) => updateSettings({ rate: parseFloat(e.target.value) })}
-                className="w-full h-1 bg-gray-200 rounded-full appearance-none
-                         [&::-webkit-slider-thumb]:appearance-none
-                         [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6
-                         [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full
-                         [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:border
-                         [&::-webkit-slider-thumb]:border-gray-200"
-              />
-            </div>
-
-            {/* Volume */}
-            <div className="px-4 py-3">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[17px] text-black">Volume</span>
-                <span className="text-[15px] text-gray-500">{Math.round(settings.volume * 100)}%</span>
-              </div>
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.1"
-                value={settings.volume}
-                onChange={(e) => updateSettings({ volume: parseFloat(e.target.value) })}
-                className="w-full h-1 bg-gray-200 rounded-full appearance-none
-                         [&::-webkit-slider-thumb]:appearance-none
-                         [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6
-                         [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full
-                         [&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:border
-                         [&::-webkit-slider-thumb]:border-gray-200"
-              />
-            </div>
-          </div>
-        </div>
       </div>
+
+      {/* Dock */}
+      <Dock primaryColor={primaryColor} />
     </div>
   );
 }
