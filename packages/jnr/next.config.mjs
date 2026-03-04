@@ -12,7 +12,8 @@ const nextConfig = {
           has: [
             {
               type: 'host',
-              value: '(?<subdomain>[^.]+)\\.8gent\\.app',
+              // Match subdomains except 'www' - www.8gent.app routes normally
+              value: '(?<subdomain>(?!www)[^.]+)\\.8gent\\.app',
             },
           ],
           destination: '/tenant/:subdomain/:path*',
