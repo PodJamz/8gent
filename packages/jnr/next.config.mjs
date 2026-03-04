@@ -1,6 +1,5 @@
-import type { NextConfig } from 'next';
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   // Enable wildcard subdomains for multi-tenant routing
   // e.g., nick.8gent.app, emma.8gent.app
   // Mode (kid/adult) is a setting toggle, not a domain change
