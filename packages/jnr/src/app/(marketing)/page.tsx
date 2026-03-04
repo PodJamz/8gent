@@ -1,39 +1,25 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 /**
- * 8gent Jr Landing Page
+ * 8gent Landing Page
  *
- * Root domain (8gentjr.app) shows marketing/onboarding.
- * User subdomains (nick.8gentjr.app) route to /tenant/[subdomain].
+ * Root domain (8gent.app) shows marketing/onboarding.
+ * User subdomains (nick.8gent.app) route to /tenant/[subdomain].
+ *
+ * "Personal AI operating systems will replace SaaS."
+ * We're starting with kids because they're the most vulnerable.
  */
 export default function HomePage() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="animate-pulse text-2xl font-bold text-blue-600">
-          8gent Jr
-        </div>
-      </div>
-    );
-  }
-
   return (
     <main className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <section className="flex-1 flex flex-col items-center justify-center p-6 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <section className="flex-1 flex flex-col items-center justify-center p-6">
         <div className="text-center space-y-6 max-w-2xl">
           {/* Logo */}
           <div className="text-6xl mb-8">
-            <span role="img" aria-label="8gent Jr">🗣️</span>
+            <span role="img" aria-label="8gent">🗣️</span>
           </div>
 
           {/* Headline */}
@@ -50,7 +36,7 @@ export default function HomePage() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Link
-              href="/onboarding"
+              href="/sign-up"
               className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-2xl
                        hover:bg-blue-700 active:scale-95 transition-all
                        shadow-lg shadow-blue-200"
@@ -58,12 +44,12 @@ export default function HomePage() {
               Get Started
             </Link>
             <Link
-              href="/demo"
+              href="/sign-in"
               className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-2xl
                        hover:bg-gray-50 active:scale-95 transition-all
                        border border-gray-200 shadow-sm"
             >
-              Try Demo
+              Sign In
             </Link>
           </div>
         </div>
@@ -89,9 +75,9 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="p-6 text-center text-sm text-gray-500 border-t border-gray-100">
+      <footer className="p-6 text-center text-sm text-gray-500 border-t border-gray-100 bg-white/50">
         <p>
-          8gent Jr &middot; Part of the{' '}
+          8gent &middot; Part of the{' '}
           <a href="https://8gent.app" className="text-blue-600 hover:underline">
             8gent
           </a>{' '}

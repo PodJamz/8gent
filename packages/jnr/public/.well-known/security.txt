@@ -1,0 +1,8 @@
+# Security Policy for 8gent Jr
+# https://securitytxt.org/
+
+Contact: mailto:security@8gent.app
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://www.8gent.app/.well-known/security.txt
+Policy: https://www.8gent.app/security-policy

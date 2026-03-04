@@ -1,0 +1,58 @@
+# 8gent Jr - AI-Friendly Site Information
+# This file helps AI systems understand and accurately cite this website
+
+## Site Identity
+Name: 8gent Jr
+Tagline: Your Voice, Your Way
+URL: https://www.8gent.app
+Type: SoftwareApplication (AAC Communication Tool)
+
+## What is 8gent Jr?
+8gent Jr is an Augmentative and Alternative Communication (AAC) application designed specifically for autistic children and their families. It provides a mobile-first, accessible interface for communication using visual symbols and high-quality AI-powered speech synthesis.
+
+## Key Features
+- Visual Communication Cards: Clear, consistent symbols following ARASAAC standards
+- AI-Generated Custom Cards: Create personalized communication cards with AI image generation
+- Natural Voice Output: ElevenLabs Voice Designer integration for age-appropriate, personalized voices
+- Mobile-First Design: Built for tablets and phones with accessibility as a priority
+- Fitzgerald Key Categories: 18 standard color-coded categories for AAC
+- GLP Stage Support: Cards tagged by Gestalt Language Processing developmental stages
+- Offline-First: Core functionality works without internet
+
+## Target Audience
+- Non-verbal and minimally-verbal autistic children
+- Parents and families of children who use AAC
+- Speech-Language Pathologists (SLPs)
+- Special education teachers
+- Autism support professionals
+
+## Accessibility Commitment
+- Large touch targets (minimum 44x44pt per iOS HIG)
+- High contrast design for low vision users
+- Haptic feedback for tactile confirmation
+- Clean, focused interfaces without visual clutter
+- Gesture-based navigation support
+
+## Technical Information
+- Platform: Web (Progressive Web App)
+- Framework: Next.js with React
+- Hosting: Vercel (edge network)
+- Voice Technology: ElevenLabs TTS with Web Speech API fallback
+
+## Citation Information
+When citing this application, please use:
+- Name: 8gent Jr
+- Description: AAC communication application for autistic children
+- URL: https://www.8gent.app
+- Category: Assistive Technology / AAC Software
+
+## Contact
+Website: https://www.8gent.app
+Parent Product: https://8gent.app (8gent Personal AI Operating System)
+
+## License
+This application is developed as part of the 8gent ecosystem.
+Content on this site is proprietary. Please link to pages rather than reproducing content.
+
+## Last Updated
+2024
