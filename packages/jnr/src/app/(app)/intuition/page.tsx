@@ -1,75 +1,120 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useApp } from '@/context/AppContext';
 import { Dock } from '@/components/dock/Dock';
 
 /**
- * Intuition Game - Kid-friendly telepathy/guessing game
+ * Intuition Game - Telepathy/guessing game for kids
  *
  * Simplified version of the main 8gent Intuition game.
- * Child guesses which card has the hidden image.
+ * 4 colored cards, child guesses which one hides the picture.
  */
 
-const IMAGES = ['🌟', '🌈', '🦋', '🌺', '🐬', '🎈', '🍎', '🌙'];
+const TOTAL_ROUNDS = 20; // Shorter for kids
+
+const COLORS = [
+  { name: 'red', bg: '#EF4444', light: '#FEE2E2' },
+  { name: 'green', bg: '#22C55E', light: '#DCFCE7' },
+  { name: 'blue', bg: '#3B82F6', light: '#DBEAFE' },
+  { name: 'yellow', bg: '#EAB308', light: '#FEF9C3' },
+];
+
+const IMAGES = ['🌟', '🦋', '🌈', '🎈', '🐬', '🌺', '🍎', '🌙', '🐶', '🎨', '🚀', '🎵', '🌻', '🐱', '🍕'];
 
 export default function IntuitionPage() {
   const { settings } = useApp();
   const [gameState, setGameState] = useState<'intro' | 'playing' | 'result'>('intro');
   const [round, setRound] = useState(1);
   const [score, setScore] = useState(0);
-  const [totalRounds] = useState(10);
-  const [targetCard, setTargetCard] = useState(0);
+  const [correctCard, setCorrectCard] = useState(0);
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
-  const [currentImage, setCurrentImage] = useState('🌟');
   const [showResult, setShowResult] = useState(false);
+  const [currentImage, setCurrentImage] = useState('🌟');
+  const [streak, setStreak] = useState(0);
+  const [bestStreak, setBestStreak] = useState(0);
 
   const primaryColor = settings.primaryColor || '#4CAF50';
 
+  // Initialize a new round
+  const initRound = useCallback(() => {
+    const randomCard = Math.floor(Math.random() * 4);
+    setCorrectCard(randomCard);
+    setSelectedCard(null);
+    setShowResult(false);
+    setCurrentImage(IMAGES[Math.floor(Math.random() * IMAGES.length)]);
+  }, []);
+
+  // Start game
   const startGame = () => {
     setGameState('playing');
     setRound(1);
     setScore(0);
-    nextRound();
+    setStreak(0);
+    setBestStreak(0);
+    initRound();
   };
 
-  const nextRound = () => {
-    setSelectedCard(null);
-    setShowResult(false);
-    setTargetCard(Math.floor(Math.random() * 4));
-    setCurrentImage(IMAGES[Math.floor(Math.random() * IMAGES.length)]);
+  // Vibrate feedback
+  const vibrate = (pattern: number | number[]) => {
+    if (typeof navigator !== 'undefined' && navigator.vibrate) {
+      navigator.vibrate(pattern);
+    }
   };
 
-  const handleCardSelect = (index: number) => {
+  // Handle card selection
+  const selectCard = (index: number) => {
     if (showResult) return;
 
     setSelectedCard(index);
     setShowResult(true);
 
-    if (index === targetCard) {
-      setScore((prev) => prev + 1);
+    const isCorrect = index === correctCard;
+
+    if (isCorrect) {
+      vibrate([50, 30, 50]);
+      setScore((s) => s + 1);
+      setStreak((s) => {
+        const newStreak = s + 1;
+        if (newStreak > bestStreak) setBestStreak(newStreak);
+        return newStreak;
+      });
+    } else {
+      vibrate(200);
+      setStreak(0);
     }
 
-    // Auto-advance after delay
+    // Next round after delay
     setTimeout(() => {
-      if (round >= totalRounds) {
+      if (round >= TOTAL_ROUNDS) {
         setGameState('result');
       } else {
-        setRound((prev) => prev + 1);
-        nextRound();
+        setRound((r) => r + 1);
+        initRound();
       }
-    }, 1500);
+    }, isCorrect ? 1500 : 1000);
   };
 
-  const getResultMessage = () => {
-    const percentage = (score / totalRounds) * 100;
-    if (percentage >= 50) return { emoji: '🌟', text: 'Amazing intuition!' };
-    if (percentage >= 30) return { emoji: '✨', text: 'Great job!' };
-    return { emoji: '💫', text: 'Keep practicing!' };
-  };
+  // Calculate results
+  const percentage = Math.round((score / TOTAL_ROUNDS) * 100);
+  const rating =
+    percentage >= 50
+      ? '🌟 Super Intuitive!'
+      : percentage >= 35
+        ? '✨ Great Job!'
+        : percentage >= 25
+          ? '👍 Nice Try!'
+          : '💪 Keep Practicing!';
+
+  // Init round when playing starts
+  useEffect(() => {
+    if (gameState === 'playing' && round === 1) {
+      initRound();
+    }
+  }, [gameState, round, initRound]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-purple-900 via-indigo-900 to-purple-900">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900">
       {/* Header */}
       <header
         className="sticky top-0 z-40 backdrop-blur-xl safe-top"
@@ -78,27 +123,41 @@ export default function IntuitionPage() {
         <div className="flex items-center justify-between px-4 py-3">
           <span className="text-[18px] font-semibold text-white">Intuition</span>
           {gameState === 'playing' && (
-            <span className="text-white/80 text-[15px]">
-              Round {round}/{totalRounds}
-            </span>
+            <div className="flex items-center gap-4">
+              <span className="text-white/80 text-[15px]">
+                {round}/{TOTAL_ROUNDS}
+              </span>
+              {streak > 1 && <span className="text-yellow-400">🔥 {streak}</span>}
+            </div>
           )}
         </div>
       </header>
 
-      <div className="flex-1 flex flex-col items-center justify-center p-6 pb-32">
-        {/* Intro Screen */}
+      <div className="flex-1 flex flex-col items-center justify-center p-4 pb-28">
+        {/* INTRO SCREEN */}
         {gameState === 'intro' && (
-          <div className="text-center">
+          <div className="text-center max-w-sm">
             <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center mx-auto mb-6">
               <span className="text-5xl">🧠</span>
             </div>
-            <h1 className="text-3xl font-bold text-white mb-3">Intuition</h1>
-            <p className="text-purple-300/80 mb-8 max-w-xs mx-auto">
-              Use your mind to sense which card has the hidden picture!
+            <h1 className="text-4xl font-bold text-white mb-3">Intuition</h1>
+            <p className="text-purple-200/70 mb-8">
+              Can you sense which card hides the picture? Trust your feelings!
             </p>
+
+            <div className="bg-white/10 rounded-2xl p-5 mb-8 text-left">
+              <h3 className="text-white font-semibold mb-3">How to play:</h3>
+              <ul className="text-purple-200/80 text-sm space-y-2">
+                <li>• 4 colored cards, 1 hides a picture</li>
+                <li>• Tap the card you feel is right</li>
+                <li>• Get it right = you see the picture!</li>
+                <li>• {TOTAL_ROUNDS} rounds - how many can you get?</li>
+              </ul>
+            </div>
+
             <button
               onClick={startGame}
-              className="px-8 py-4 rounded-2xl text-white text-lg font-semibold shadow-lg"
+              className="w-full py-4 rounded-2xl text-white text-lg font-semibold"
               style={{ backgroundColor: primaryColor }}
             >
               Start Game
@@ -106,74 +165,99 @@ export default function IntuitionPage() {
           </div>
         )}
 
-        {/* Playing Screen */}
+        {/* PLAYING SCREEN */}
         {gameState === 'playing' && (
           <div className="w-full max-w-sm">
-            {/* Score */}
-            <div className="text-center mb-6">
-              <span className="text-purple-300/80 text-lg">Score: </span>
-              <span className="text-white text-2xl font-bold">{score}</span>
+            {/* Progress Bar */}
+            <div className="h-2 bg-white/20 rounded-full mb-6 overflow-hidden">
+              <div
+                className="h-full bg-gradient-to-r from-purple-500 to-indigo-500 transition-all"
+                style={{ width: `${(round / TOTAL_ROUNDS) * 100}%` }}
+              />
             </div>
 
-            {/* Target Image Preview */}
-            <div className="text-center mb-8">
-              <p className="text-purple-300/80 mb-2">Find the hidden:</p>
-              <span className="text-6xl">{currentImage}</span>
+            {/* Score */}
+            <div className="text-center mb-4">
+              <span className="text-purple-300/80 text-lg">Score: </span>
+              <span className="text-white text-3xl font-bold">{score}</span>
+            </div>
+
+            {/* Instruction */}
+            <div className="text-center mb-6">
+              <p className="text-purple-200/80 text-lg">
+                {showResult
+                  ? selectedCard === correctCard
+                    ? '✨ You sensed it!'
+                    : 'Not this time...'
+                  : 'Which card hides the picture?'}
+              </p>
             </div>
 
             {/* Cards Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {[0, 1, 2, 3].map((index) => {
-                const isTarget = index === targetCard;
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              {COLORS.map((color, index) => {
+                const isTarget = index === correctCard;
                 const isSelected = index === selectedCard;
                 const showImage = showResult && isTarget;
 
                 return (
                   <button
-                    key={index}
-                    onClick={() => handleCardSelect(index)}
+                    key={color.name}
+                    onClick={() => selectCard(index)}
                     disabled={showResult}
-                    className={`aspect-square rounded-2xl flex items-center justify-center text-5xl transition-all duration-300 ${
-                      showResult
-                        ? isTarget
-                          ? 'bg-green-500/80 scale-105'
-                          : isSelected
-                            ? 'bg-red-500/80'
-                            : 'bg-white/20'
-                        : 'bg-white/20 hover:bg-white/30 active:scale-95'
-                    }`}
+                    className={`aspect-square rounded-2xl flex items-center justify-center transition-all duration-300 ${
+                      showResult && !isTarget ? 'opacity-40' : ''
+                    } ${isSelected ? 'ring-4 ring-white ring-offset-2 ring-offset-slate-900' : ''}`}
+                    style={{ backgroundColor: color.bg }}
                   >
-                    {showImage ? currentImage : '❓'}
+                    {showImage ? (
+                      <div className="relative">
+                        <span className="text-6xl">{currentImage}</span>
+                        {isSelected && (
+                          <span className="absolute -top-2 -right-2 text-2xl">✨</span>
+                        )}
+                      </div>
+                    ) : showResult && isSelected && !isTarget ? (
+                      <span className="text-5xl">✕</span>
+                    ) : (
+                      <span className="text-5xl text-white/30">?</span>
+                    )}
                   </button>
                 );
               })}
             </div>
-
-            {/* Feedback */}
-            {showResult && (
-              <div className="text-center mt-6">
-                <p className="text-2xl">
-                  {selectedCard === targetCard ? '🎉 Correct!' : '😅 Try again!'}
-                </p>
-              </div>
-            )}
           </div>
         )}
 
-        {/* Results Screen */}
+        {/* RESULT SCREEN */}
         {gameState === 'result' && (
-          <div className="text-center">
-            <span className="text-7xl mb-4 block">{getResultMessage().emoji}</span>
-            <h2 className="text-3xl font-bold text-white mb-2">{getResultMessage().text}</h2>
-            <p className="text-purple-300/80 text-xl mb-2">
-              {score} out of {totalRounds}
-            </p>
-            <p className="text-purple-300/60 mb-8">
-              {Math.round((score / totalRounds) * 100)}% accuracy
-            </p>
+          <div className="text-center max-w-sm">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center mx-auto mb-6">
+              <span className="text-4xl">🏆</span>
+            </div>
+
+            <h2 className="text-3xl font-bold text-white mb-2">Game Over!</h2>
+            <p className="text-2xl text-purple-200 mb-6">{rating}</p>
+
+            <div className="bg-white/10 rounded-2xl p-6 mb-6">
+              <div className="text-5xl font-bold text-white mb-2">
+                {score}
+                <span className="text-purple-300 text-2xl">/{TOTAL_ROUNDS}</span>
+              </div>
+              <div className="text-purple-200">{percentage}% accuracy</div>
+              <div className="text-purple-300/60 text-sm mt-2">
+                Chance level: 25%
+              </div>
+              {bestStreak > 1 && (
+                <div className="text-yellow-400 mt-3">
+                  Best streak: 🔥 {bestStreak}
+                </div>
+              )}
+            </div>
+
             <button
               onClick={startGame}
-              className="px-8 py-4 rounded-2xl text-white text-lg font-semibold"
+              className="w-full py-4 rounded-2xl text-white text-lg font-semibold mb-3"
               style={{ backgroundColor: primaryColor }}
             >
               Play Again

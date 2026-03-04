@@ -54,7 +54,7 @@ export const AAC_CATEGORIES: AACCategory[] = [
   { id: 'general', name: 'General', color: FITZGERALD_COLORS.misc, imageUrl: ARASAAC(6964) },
   { id: 'feelings', name: 'Feelings', color: FITZGERALD_COLORS.feelings, imageUrl: ARASAAC(37190) },
   { id: 'actions', name: 'Actions', color: FITZGERALD_COLORS.verbs, imageUrl: ARASAAC(6503) },
-  { id: 'questions', name: 'Questions', color: FITZGERALD_COLORS.questions, imageUrl: ARASAAC(9218) },
+  { id: 'questions', name: 'Questions', color: FITZGERALD_COLORS.questions, imageUrl: ARASAAC(8262) },
 
   // Daily Life
   { id: 'food', name: 'Food', color: FITZGERALD_COLORS.nouns, imageUrl: ARASAAC(4610) },
@@ -148,16 +148,16 @@ export const ACTIONS_PHRASES: AACPhrase[] = [
 // =============================================================================
 
 export const QUESTIONS_PHRASES: AACPhrase[] = [
-  { id: 'q-what', text: 'what?', imageUrl: ARASAAC(9218), categoryId: 'questions' },
-  { id: 'q-where', text: 'where?', imageUrl: ARASAAC(9218), categoryId: 'questions' },
-  { id: 'q-when', text: 'when?', imageUrl: ARASAAC(9218), categoryId: 'questions' },
-  { id: 'q-who', text: 'who?', imageUrl: ARASAAC(9218), categoryId: 'questions' },
-  { id: 'q-why', text: 'why?', imageUrl: ARASAAC(9218), categoryId: 'questions' },
-  { id: 'q-how', text: 'how?', imageUrl: ARASAAC(9218), categoryId: 'questions' },
-  { id: 'q-can-i', text: 'can I?', imageUrl: ARASAAC(9218), categoryId: 'questions' },
-  { id: 'q-do-you', text: 'do you?', imageUrl: ARASAAC(9218), categoryId: 'questions' },
-  { id: 'q-is-it', text: 'is it?', imageUrl: ARASAAC(9218), categoryId: 'questions' },
-  { id: 'q-dont-know', text: "I don't know", imageUrl: ARASAAC(11295), categoryId: 'questions' },
+  { id: 'q-what', text: 'what?', imageUrl: ARASAAC(8262), categoryId: 'questions' },
+  { id: 'q-where', text: 'where?', imageUrl: ARASAAC(8263), categoryId: 'questions' },
+  { id: 'q-when', text: 'when?', imageUrl: ARASAAC(8264), categoryId: 'questions' },
+  { id: 'q-who', text: 'who?', imageUrl: ARASAAC(8265), categoryId: 'questions' },
+  { id: 'q-why', text: 'why?', imageUrl: ARASAAC(8266), categoryId: 'questions' },
+  { id: 'q-how', text: 'how?', imageUrl: ARASAAC(8267), categoryId: 'questions' },
+  { id: 'q-can-i', text: 'can I?', imageUrl: ARASAAC(6632), categoryId: 'questions' },
+  { id: 'q-do-you', text: 'do you?', imageUrl: ARASAAC(7116), categoryId: 'questions' },
+  { id: 'q-is-it', text: 'is it?', imageUrl: ARASAAC(8262), categoryId: 'questions' },
+  { id: 'q-dont-know', text: "I don't know", imageUrl: ARASAAC(6916), categoryId: 'questions' },
 ];
 
 // =============================================================================
