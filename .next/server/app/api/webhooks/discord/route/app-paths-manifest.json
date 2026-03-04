@@ -1,0 +1,3 @@
+{
+  "/api/webhooks/discord/route": "app/api/webhooks/discord/route.js"
+}

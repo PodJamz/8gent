@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/jamesspalding/OpenClaw-OS/node_modules/.pnpm/streamdown%402.2.0_react%4019.2.3/node_modules/streamdown/dist/mermaid-NOHMQCX5.js"],"sourcesContent":["\"use client\";\nexport{e as Mermaid}from'./chunk-LPQFK2AO.js';"],"names":[],"mappings":";AACA;AADA","ignoreList":[0]}}]
+}

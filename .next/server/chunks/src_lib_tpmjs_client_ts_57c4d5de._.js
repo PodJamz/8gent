@@ -1,0 +1,3 @@
+module.exports=[909461,e=>{"use strict";class r{apiUrl;executorUrl;executorApiKey;constructor(e={}){this.apiUrl=e.apiUrl||"https://tpmjs.com",this.executorUrl=e.executorUrl||"https://executor.tpmjs.com",this.executorApiKey=e.executorApiKey}async searchTools(e,r){return{tools:[],total:0}}async executeTool(e,r,t){throw Error("TPMJS executor not configured")}async checkExecutorHealth(){return{healthy:!1,error:"Not configured"}}}let t=null;function o(){return t||(t=new r({apiUrl:process.env.NEXT_PUBLIC_TPMJS_API_URL,executorUrl:process.env.NEXT_PUBLIC_TPMJS_EXECUTOR_URL,executorApiKey:process.env.NEXT_PUBLIC_TPMJS_EXECUTOR_API_KEY})),t}e.s(["getTPMJSClient",()=>o])}];
+
+//# sourceMappingURL=src_lib_tpmjs_client_ts_57c4d5de._.js.map

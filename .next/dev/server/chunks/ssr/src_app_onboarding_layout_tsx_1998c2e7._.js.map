@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/jamesspalding/OpenClaw-OS/src/app/onboarding/layout.tsx"],"sourcesContent":["import { DesignThemeProvider } from '@/context/DesignThemeContext';\n\nexport const metadata = {\n  title: 'Welcome | OpenClaw-OS',\n  description: 'Get started with OpenClaw-OS',\n};\n\nexport default function OnboardingLayout({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return (\n    <DesignThemeProvider>\n      <div className=\"min-h-screen bg-white\">\n        {children}\n      </div>\n    </DesignThemeProvider>\n  );\n}\n"],"names":[],"mappings":";;;;;;;AAAA;;;AAEO,MAAM,WAAW;IACtB,OAAO;IACP,aAAa;AACf;AAEe,SAAS,iBAAiB,EACvC,QAAQ,EAGT;IACC,qBACE,ubAAC,4JAAmB;kBAClB,cAAA,ubAAC;YAAI,WAAU;sBACZ;;;;;;;;;;;AAIT"}}]
+}

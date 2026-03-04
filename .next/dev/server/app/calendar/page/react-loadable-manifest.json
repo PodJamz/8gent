@@ -1,0 +1,10 @@
+{
+  "[project]/src/app/calendar/CalendarClient.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/app/calendar/CalendarClient.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/src_f7df7b35._.js",
+      "static/chunks/e78d9_lucide-react_dist_esm_icons_e595ffe2._.js",
+      "static/chunks/src_app_calendar_CalendarClient_tsx_bc0773ec._.js"
+    ]
+  }
+}

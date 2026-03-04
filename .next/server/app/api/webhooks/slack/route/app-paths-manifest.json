@@ -1,0 +1,3 @@
+{
+  "/api/webhooks/slack/route": "app/api/webhooks/slack/route.js"
+}

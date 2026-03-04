@@ -1,0 +1,2583 @@
+/* Theme CSS Variables - Based on tweakcn themes */
+/* Each theme defines HSL values and font families for consistent theming */
+
+/* ROOT FALLBACK - Ensures --theme-* variables are always defined */
+/* Uses base theme values as fallback for hydration safety */
+:root {
+  --theme-background: 0 0% 100%;
+  --theme-foreground: 222.2 84% 4.9%;
+  --theme-card: 0 0% 100%;
+  --theme-card-foreground: 222.2 84% 4.9%;
+  --theme-primary: 222.2 47.4% 11.2%;
+  --theme-primary-foreground: 210 40% 98%;
+  --theme-secondary: 210 40% 96.1%;
+  --theme-secondary-foreground: 222.2 47.4% 11.2%;
+  --theme-muted: 210 40% 96.1%;
+  --theme-muted-foreground: 215.4 16.3% 46.9%;
+  --theme-accent: 210 40% 96.1%;
+  --theme-accent-foreground: 222.2 47.4% 11.2%;
+  --theme-border: 214.3 31.8% 91.4%;
+  --theme-ring: 222.2 84% 4.9%;
+  --theme-font: Inter, system-ui, -apple-system, sans-serif;
+  --theme-font-heading: Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* Note: Dark mode colors are handled by individual theme dark variants */
+/* The :root fallback above provides base values for hydration safety */
+
+/* Utilitarian - Tactical briefing document aesthetic */
+/* Inspired by Atlas Tactical AI Laboratory design */
+[data-design-theme="utilitarian"] {
+  --theme-background: 45 30% 92%;
+  --theme-foreground: 0 0% 0%;
+  --theme-card: 45 35% 95%;
+  --theme-card-foreground: 0 0% 0%;
+  --theme-primary: 15 85% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 45 20% 85%;
+  --theme-secondary-foreground: 0 0% 0%;
+  --theme-muted: 45 15% 88%;
+  --theme-muted-foreground: 0 0% 35%;
+  --theme-accent: 15 85% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 0%;
+  --theme-ring: 15 85% 55%;
+  --theme-font: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+  --theme-font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Base/Default Theme */
+[data-design-theme="base"] {
+  --theme-background: 0 0% 100%;
+  --theme-foreground: 222.2 84% 4.9%;
+  --theme-card: 0 0% 100%;
+  --theme-card-foreground: 222.2 84% 4.9%;
+  --theme-primary: 222.2 47.4% 11.2%;
+  --theme-primary-foreground: 210 40% 98%;
+  --theme-secondary: 210 40% 96.1%;
+  --theme-secondary-foreground: 222.2 47.4% 11.2%;
+  --theme-muted: 210 40% 96.1%;
+  --theme-muted-foreground: 215.4 16.3% 46.9%;
+  --theme-accent: 210 40% 96.1%;
+  --theme-accent-foreground: 222.2 47.4% 11.2%;
+  --theme-border: 214.3 31.8% 91.4%;
+  --theme-ring: 222.2 84% 4.9%;
+  --theme-font: Inter, system-ui, -apple-system, sans-serif;
+  --theme-font-heading: Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* Claude Theme - Warm orange/terracotta */
+[data-design-theme="claude"] {
+  --theme-background: 30 20% 98%;
+  --theme-foreground: 20 14% 10%;
+  --theme-card: 30 30% 96%;
+  --theme-card-foreground: 20 14% 10%;
+  --theme-primary: 24 90% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 30 20% 90%;
+  --theme-secondary-foreground: 20 14% 20%;
+  --theme-muted: 30 15% 92%;
+  --theme-muted-foreground: 20 10% 40%;
+  --theme-accent: 24 80% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 30 20% 85%;
+  --theme-ring: 24 90% 55%;
+  --theme-font: "Söhne", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --theme-font-heading: "Söhne", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* ChatGPT Theme - OpenAI interface with teal accent (#74AA9C) */
+[data-design-theme="chatgpt"] {
+  --theme-background: 0 0% 98%;
+  --theme-foreground: 0 0% 10%;
+  --theme-card: 0 0% 100%;
+  --theme-card-foreground: 0 0% 10%;
+  --theme-primary: 161 23% 45%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 0 0% 94%;
+  --theme-secondary-foreground: 0 0% 20%;
+  --theme-muted: 0 0% 92%;
+  --theme-muted-foreground: 0 0% 40%;
+  --theme-accent: 161 23% 45%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 85%;
+  --theme-ring: 161 23% 45%;
+  --theme-font: "OpenAI Sans", "Söhne", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --theme-font-heading: "OpenAI Sans", "Söhne", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* Vercel Theme - Clean black and white with Geist */
+[data-design-theme="vercel"] {
+  --theme-background: 0 0% 100%;
+  --theme-foreground: 0 0% 5%;
+  --theme-card: 0 0% 98%;
+  --theme-card-foreground: 0 0% 5%;
+  --theme-primary: 0 0% 5%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 0 0% 95%;
+  --theme-secondary-foreground: 0 0% 10%;
+  --theme-muted: 0 0% 96%;
+  --theme-muted-foreground: 0 0% 40%;
+  --theme-accent: 0 0% 5%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 90%;
+  --theme-ring: 0 0% 5%;
+  --theme-font: "Geist", Inter, system-ui, -apple-system, sans-serif;
+  --theme-font-heading: "Geist", Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* Kodama Grove - Forest green nature */
+[data-design-theme="kodama-grove"] {
+  --theme-background: 120 20% 97%;
+  --theme-foreground: 120 30% 10%;
+  --theme-card: 120 25% 94%;
+  --theme-card-foreground: 120 30% 10%;
+  --theme-primary: 142 70% 35%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 120 20% 88%;
+  --theme-secondary-foreground: 120 30% 15%;
+  --theme-muted: 120 15% 90%;
+  --theme-muted-foreground: 120 15% 40%;
+  --theme-accent: 142 60% 40%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 120 20% 82%;
+  --theme-ring: 142 70% 35%;
+  --theme-font: "Nunito", "Quicksand", system-ui, sans-serif;
+  --theme-font-heading: "Nunito", "Quicksand", system-ui, sans-serif;
+}
+
+/* Vintage Paper - Sepia/aged paper look */
+[data-design-theme="vintage-paper"] {
+  --theme-background: 40 30% 95%;
+  --theme-foreground: 30 20% 15%;
+  --theme-card: 40 35% 92%;
+  --theme-card-foreground: 30 20% 15%;
+  --theme-primary: 30 50% 35%;
+  --theme-primary-foreground: 40 30% 95%;
+  --theme-secondary: 40 25% 85%;
+  --theme-secondary-foreground: 30 20% 20%;
+  --theme-muted: 40 20% 88%;
+  --theme-muted-foreground: 30 15% 45%;
+  --theme-accent: 30 60% 45%;
+  --theme-accent-foreground: 40 30% 95%;
+  --theme-border: 40 25% 78%;
+  --theme-ring: 30 50% 35%;
+  --theme-font: "Courier Prime", "Courier New", Courier, monospace;
+  --theme-font-heading: "Playfair Display", "Times New Roman", Georgia, serif;
+}
+
+/* Claymorphism - Soft shadows, rounded, clay-like */
+[data-design-theme="claymorphism"] {
+  --theme-background: 220 20% 97%;
+  --theme-foreground: 220 30% 15%;
+  --theme-card: 220 25% 94%;
+  --theme-card-foreground: 220 30% 15%;
+  --theme-primary: 220 80% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 220 20% 88%;
+  --theme-secondary-foreground: 220 30% 20%;
+  --theme-muted: 220 15% 90%;
+  --theme-muted-foreground: 220 15% 45%;
+  --theme-accent: 260 70% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 20% 85%;
+  --theme-ring: 220 80% 55%;
+  --theme-font: "Poppins", "Nunito Sans", system-ui, sans-serif;
+  --theme-font-heading: "Poppins", "Nunito Sans", system-ui, sans-serif;
+}
+
+/* Nature - Earth tones */
+[data-design-theme="nature"] {
+  --theme-background: 45 25% 96%;
+  --theme-foreground: 30 30% 12%;
+  --theme-card: 45 30% 92%;
+  --theme-card-foreground: 30 30% 12%;
+  --theme-primary: 85 50% 40%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 45 20% 85%;
+  --theme-secondary-foreground: 30 30% 18%;
+  --theme-muted: 45 15% 88%;
+  --theme-muted-foreground: 30 20% 45%;
+  --theme-accent: 30 60% 50%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 45 20% 78%;
+  --theme-ring: 85 50% 40%;
+  --theme-font: "Lora", "Merriweather", Georgia, serif;
+  --theme-font-heading: "Lora", "Merriweather", Georgia, serif;
+}
+
+/* Neo Brutalism - Bold, raw, high contrast */
+[data-design-theme="neo-brutalism"] {
+  --theme-background: 60 100% 97%;
+  --theme-foreground: 0 0% 0%;
+  --theme-card: 0 0% 100%;
+  --theme-card-foreground: 0 0% 0%;
+  --theme-primary: 0 0% 0%;
+  --theme-primary-foreground: 60 100% 97%;
+  --theme-secondary: 60 100% 85%;
+  --theme-secondary-foreground: 0 0% 0%;
+  --theme-muted: 60 50% 90%;
+  --theme-muted-foreground: 0 0% 30%;
+  --theme-accent: 350 100% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 0%;
+  --theme-ring: 0 0% 0%;
+  --theme-font: "Space Grotesk", "Space Mono", Impact, sans-serif;
+  --theme-font-heading: "Space Grotesk", Impact, "Arial Black", sans-serif;
+}
+
+/* Elegant Luxury - Gold and light */
+[data-design-theme="elegant-luxury"] {
+  --theme-background: 40 20% 98%;
+  --theme-foreground: 30 30% 12%;
+  --theme-card: 40 25% 96%;
+  --theme-card-foreground: 30 30% 12%;
+  --theme-primary: 45 80% 50%;
+  --theme-primary-foreground: 40 20% 98%;
+  --theme-secondary: 40 15% 92%;
+  --theme-secondary-foreground: 30 30% 18%;
+  --theme-muted: 40 12% 94%;
+  --theme-muted-foreground: 30 20% 45%;
+  --theme-accent: 45 90% 55%;
+  --theme-accent-foreground: 40 20% 98%;
+  --theme-border: 40 15% 88%;
+  --theme-ring: 45 80% 50%;
+  --theme-font: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+  --theme-font-heading: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+}
+
+/* Pastel Dreams - Soft pastels */
+[data-design-theme="pastel-dreams"] {
+  --theme-background: 300 30% 98%;
+  --theme-foreground: 280 20% 20%;
+  --theme-card: 300 40% 95%;
+  --theme-card-foreground: 280 20% 20%;
+  --theme-primary: 280 60% 70%;
+  --theme-primary-foreground: 280 20% 15%;
+  --theme-secondary: 200 50% 90%;
+  --theme-secondary-foreground: 280 20% 25%;
+  --theme-muted: 300 25% 92%;
+  --theme-muted-foreground: 280 15% 45%;
+  --theme-accent: 340 60% 75%;
+  --theme-accent-foreground: 280 20% 15%;
+  --theme-border: 300 30% 85%;
+  --theme-ring: 280 60% 70%;
+  --theme-font: "Quicksand", "Comfortaa", system-ui, sans-serif;
+  --theme-font-heading: "Quicksand", "Comfortaa", system-ui, sans-serif;
+}
+
+/* Cosmic Night - Deep space purple/blue light */
+[data-design-theme="cosmic-night"] {
+  --theme-background: 260 30% 98%;
+  --theme-foreground: 260 40% 12%;
+  --theme-card: 260 35% 96%;
+  --theme-card-foreground: 260 40% 12%;
+  --theme-primary: 280 70% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 260 25% 92%;
+  --theme-secondary-foreground: 260 40% 18%;
+  --theme-muted: 260 20% 94%;
+  --theme-muted-foreground: 260 30% 45%;
+  --theme-accent: 200 90% 50%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 260 25% 88%;
+  --theme-ring: 280 70% 55%;
+  --theme-font: "Orbitron", "Exo 2", system-ui, sans-serif;
+  --theme-font-heading: "Orbitron", "Exo 2", system-ui, sans-serif;
+}
+
+/* Clean Slate - Minimal gray */
+[data-design-theme="clean-slate"] {
+  --theme-background: 210 15% 98%;
+  --theme-foreground: 210 20% 15%;
+  --theme-card: 210 15% 95%;
+  --theme-card-foreground: 210 20% 15%;
+  --theme-primary: 210 100% 50%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 210 10% 90%;
+  --theme-secondary-foreground: 210 20% 20%;
+  --theme-muted: 210 10% 92%;
+  --theme-muted-foreground: 210 10% 45%;
+  --theme-accent: 210 90% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 210 15% 85%;
+  --theme-ring: 210 100% 50%;
+  --theme-font: "DM Sans", "Roboto", system-ui, sans-serif;
+  --theme-font-heading: "DM Sans", "Roboto", system-ui, sans-serif;
+}
+
+/* Caffeine - Coffee browns */
+[data-design-theme="caffeine"] {
+  --theme-background: 30 15% 95%;
+  --theme-foreground: 25 40% 12%;
+  --theme-card: 30 20% 90%;
+  --theme-card-foreground: 25 40% 12%;
+  --theme-primary: 25 70% 30%;
+  --theme-primary-foreground: 30 15% 95%;
+  --theme-secondary: 30 15% 82%;
+  --theme-secondary-foreground: 25 40% 18%;
+  --theme-muted: 30 12% 85%;
+  --theme-muted-foreground: 25 25% 40%;
+  --theme-accent: 15 80% 45%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 30 15% 75%;
+  --theme-ring: 25 70% 30%;
+  --theme-font: "Libre Baskerville", "Georgia", serif;
+  --theme-font-heading: "Libre Baskerville", "Georgia", serif;
+}
+
+/* Ocean Breeze - Cool blues */
+[data-design-theme="ocean-breeze"] {
+  --theme-background: 200 30% 97%;
+  --theme-foreground: 200 40% 12%;
+  --theme-card: 200 35% 93%;
+  --theme-card-foreground: 200 40% 12%;
+  --theme-primary: 200 90% 45%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 200 25% 85%;
+  --theme-secondary-foreground: 200 40% 18%;
+  --theme-muted: 200 20% 88%;
+  --theme-muted-foreground: 200 20% 42%;
+  --theme-accent: 180 70% 45%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 200 25% 78%;
+  --theme-ring: 200 90% 45%;
+  --theme-font: "Source Sans Pro", "Open Sans", system-ui, sans-serif;
+  --theme-font-heading: "Source Sans Pro", "Open Sans", system-ui, sans-serif;
+}
+
+/* Perpetuity - Monochrome elegance */
+[data-design-theme="perpetuity"] {
+  --theme-background: 0 0% 98%;
+  --theme-foreground: 0 0% 8%;
+  --theme-card: 0 0% 95%;
+  --theme-card-foreground: 0 0% 8%;
+  --theme-primary: 0 0% 15%;
+  --theme-primary-foreground: 0 0% 98%;
+  --theme-secondary: 0 0% 88%;
+  --theme-secondary-foreground: 0 0% 15%;
+  --theme-muted: 0 0% 90%;
+  --theme-muted-foreground: 0 0% 45%;
+  --theme-accent: 0 0% 25%;
+  --theme-accent-foreground: 0 0% 98%;
+  --theme-border: 0 0% 82%;
+  --theme-ring: 0 0% 15%;
+  --theme-font: "EB Garamond", "Garamond", "Times New Roman", serif;
+  --theme-font-heading: "EB Garamond", "Garamond", "Times New Roman", serif;
+}
+
+/* Midnight Bloom - Light with purple accents */
+[data-design-theme="midnight-bloom"] {
+  --theme-background: 270 25% 98%;
+  --theme-foreground: 270 40% 12%;
+  --theme-card: 270 30% 96%;
+  --theme-card-foreground: 270 40% 12%;
+  --theme-primary: 300 65% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 270 20% 92%;
+  --theme-secondary-foreground: 270 40% 18%;
+  --theme-muted: 270 15% 94%;
+  --theme-muted-foreground: 270 30% 45%;
+  --theme-accent: 330 75% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 270 20% 88%;
+  --theme-ring: 300 65% 55%;
+  --theme-font: "Crimson Text", "Crimson Pro", Georgia, serif;
+  --theme-font-heading: "Crimson Text", "Crimson Pro", Georgia, serif;
+}
+
+/* Northern Lights - Aurora colors light */
+[data-design-theme="northern-lights"] {
+  --theme-background: 220 25% 98%;
+  --theme-foreground: 180 40% 12%;
+  --theme-card: 220 30% 96%;
+  --theme-card-foreground: 180 40% 12%;
+  --theme-primary: 160 70% 45%;
+  --theme-primary-foreground: 220 25% 98%;
+  --theme-secondary: 220 20% 92%;
+  --theme-secondary-foreground: 180 40% 18%;
+  --theme-muted: 220 15% 94%;
+  --theme-muted-foreground: 180 30% 45%;
+  --theme-accent: 280 65% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 20% 88%;
+  --theme-ring: 160 70% 45%;
+  --theme-font: "Outfit", "Montserrat", system-ui, sans-serif;
+  --theme-font-heading: "Outfit", "Montserrat", system-ui, sans-serif;
+}
+
+/* Sunset Horizon - Warm sunset gradients */
+[data-design-theme="sunset-horizon"] {
+  --theme-background: 25 40% 96%;
+  --theme-foreground: 15 50% 12%;
+  --theme-card: 25 45% 92%;
+  --theme-card-foreground: 15 50% 12%;
+  --theme-primary: 15 90% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 35 35% 85%;
+  --theme-secondary-foreground: 15 50% 18%;
+  --theme-muted: 30 30% 88%;
+  --theme-muted-foreground: 15 30% 42%;
+  --theme-accent: 340 85% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 25 35% 78%;
+  --theme-ring: 15 90% 55%;
+  --theme-font: "Rubik", "Nunito", system-ui, sans-serif;
+  --theme-font-heading: "Rubik", "Nunito", system-ui, sans-serif;
+}
+
+/* Modern Minimal - Ultra clean */
+[data-design-theme="modern-minimal"] {
+  --theme-background: 0 0% 100%;
+  --theme-foreground: 0 0% 5%;
+  --theme-card: 0 0% 98%;
+  --theme-card-foreground: 0 0% 5%;
+  --theme-primary: 0 0% 5%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 0 0% 95%;
+  --theme-secondary-foreground: 0 0% 10%;
+  --theme-muted: 0 0% 96%;
+  --theme-muted-foreground: 0 0% 40%;
+  --theme-accent: 0 0% 15%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 90%;
+  --theme-ring: 0 0% 5%;
+  --theme-font: "Manrope", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --theme-font-heading: "Manrope", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Candyland - Bright playful colors */
+[data-design-theme="candyland"] {
+  --theme-background: 330 50% 97%;
+  --theme-foreground: 330 60% 15%;
+  --theme-card: 330 60% 94%;
+  --theme-card-foreground: 330 60% 15%;
+  --theme-primary: 330 90% 60%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 180 60% 85%;
+  --theme-secondary-foreground: 330 60% 20%;
+  --theme-muted: 330 40% 90%;
+  --theme-muted-foreground: 330 40% 40%;
+  --theme-accent: 50 100% 55%;
+  --theme-accent-foreground: 330 60% 15%;
+  --theme-border: 330 50% 82%;
+  --theme-ring: 330 90% 60%;
+  --theme-font: "Baloo 2", "Comic Neue", "Comic Sans MS", cursive;
+  --theme-font-heading: "Baloo 2", "Fredoka One", "Comic Sans MS", cursive;
+}
+
+/* Cyberpunk - Neon on light */
+[data-design-theme="cyberpunk"] {
+  --theme-background: 260 30% 98%;
+  --theme-foreground: 260 50% 12%;
+  --theme-card: 260 35% 96%;
+  --theme-card-foreground: 260 50% 12%;
+  --theme-primary: 320 90% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 260 25% 92%;
+  --theme-secondary-foreground: 260 50% 18%;
+  --theme-muted: 260 20% 94%;
+  --theme-muted-foreground: 260 40% 45%;
+  --theme-accent: 180 90% 45%;
+  --theme-accent-foreground: 260 30% 98%;
+  --theme-border: 260 25% 88%;
+  --theme-ring: 320 90% 55%;
+  --theme-font: "Share Tech Mono", "Fira Code", "Roboto Mono", monospace;
+  --theme-font-heading: "Rajdhani", "Audiowide", "Impact", sans-serif;
+}
+
+/* Retro Arcade - 80s game aesthetics light */
+[data-design-theme="retro-arcade"] {
+  --theme-background: 240 25% 98%;
+  --theme-foreground: 240 50% 12%;
+  --theme-card: 240 30% 96%;
+  --theme-card-foreground: 240 50% 12%;
+  --theme-primary: 120 90% 45%;
+  --theme-primary-foreground: 240 25% 98%;
+  --theme-secondary: 240 20% 92%;
+  --theme-secondary-foreground: 240 50% 18%;
+  --theme-muted: 240 15% 94%;
+  --theme-muted-foreground: 240 40% 45%;
+  --theme-accent: 0 90% 50%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 240 20% 88%;
+  --theme-ring: 120 90% 45%;
+  --theme-font: "Press Start 2P", "VT323", "Courier New", monospace;
+  --theme-font-heading: "Press Start 2P", "VT323", "Courier New", monospace;
+}
+
+/* Quantum Rose - Soft pink/rose */
+[data-design-theme="quantum-rose"] {
+  --theme-background: 350 30% 97%;
+  --theme-foreground: 350 40% 15%;
+  --theme-card: 350 35% 94%;
+  --theme-card-foreground: 350 40% 15%;
+  --theme-primary: 350 80% 60%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 350 25% 88%;
+  --theme-secondary-foreground: 350 40% 20%;
+  --theme-muted: 350 20% 90%;
+  --theme-muted-foreground: 350 20% 45%;
+  --theme-accent: 320 70% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 350 25% 82%;
+  --theme-ring: 350 80% 60%;
+  --theme-font: "Raleway", "Lato", system-ui, sans-serif;
+  --theme-font-heading: "Raleway", "Lato", system-ui, sans-serif;
+}
+
+/* Bold Tech - Strong tech-forward colors light */
+[data-design-theme="bold-tech"] {
+  --theme-background: 220 20% 98%;
+  --theme-foreground: 220 40% 12%;
+  --theme-card: 220 25% 96%;
+  --theme-card-foreground: 220 40% 12%;
+  --theme-primary: 200 90% 50%;
+  --theme-primary-foreground: 220 20% 98%;
+  --theme-secondary: 220 15% 92%;
+  --theme-secondary-foreground: 220 40% 18%;
+  --theme-muted: 220 12% 94%;
+  --theme-muted-foreground: 220 30% 45%;
+  --theme-accent: 160 90% 40%;
+  --theme-accent-foreground: 220 20% 98%;
+  --theme-border: 220 15% 88%;
+  --theme-ring: 200 90% 50%;
+  --theme-font: "JetBrains Mono", "Fira Code", "Source Code Pro", monospace;
+  --theme-font-heading: "Inter", "SF Pro Display", system-ui, sans-serif;
+}
+
+/* Violet Bloom - Purple elegance */
+[data-design-theme="violet-bloom"] {
+  --theme-background: 0 0% 99%;
+  --theme-foreground: 0 0% 0%;
+  --theme-card: 0 0% 99%;
+  --theme-card-foreground: 0 0% 0%;
+  --theme-primary: 258 100% 60%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 220 20% 93%;
+  --theme-secondary-foreground: 0 0% 3%;
+  --theme-muted: 0 0% 96%;
+  --theme-muted-foreground: 0 0% 32%;
+  --theme-accent: 220 100% 95%;
+  --theme-accent-foreground: 220 90% 45%;
+  --theme-border: 270 15% 91%;
+  --theme-ring: 0 0% 0%;
+  --theme-font: "Plus Jakarta Sans", system-ui, sans-serif;
+  --theme-font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+/* T3 Chat - Pink/purple chat interface */
+[data-design-theme="t3-chat"] {
+  --theme-background: 300 33% 97%;
+  --theme-foreground: 296 56% 21%;
+  --theme-card: 300 33% 97%;
+  --theme-card-foreground: 296 56% 21%;
+  --theme-primary: 333 43% 46%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 320 50% 94%;
+  --theme-secondary-foreground: 300 40% 45%;
+  --theme-muted: 300 40% 96%;
+  --theme-muted-foreground: 300 30% 50%;
+  --theme-accent: 320 50% 94%;
+  --theme-accent-foreground: 300 40% 45%;
+  --theme-border: 300 40% 92%;
+  --theme-ring: 330 70% 50%;
+  --theme-font: system-ui, -apple-system, sans-serif;
+  --theme-font-heading: system-ui, -apple-system, sans-serif;
+}
+
+/* Mocha Mousse - Coffee browns and creams */
+[data-design-theme="mocha-mousse"] {
+  --theme-background: 55 30% 92%;
+  --theme-foreground: 16 15% 29%;
+  --theme-card: 55 30% 92%;
+  --theme-card-foreground: 16 15% 29%;
+  --theme-primary: 18 26% 52%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 30 25% 70%;
+  --theme-secondary-foreground: 0 0% 100%;
+  --theme-muted: 20 30% 80%;
+  --theme-muted-foreground: 20 25% 40%;
+  --theme-accent: 20 30% 80%;
+  --theme-accent-foreground: 16 15% 29%;
+  --theme-border: 30 25% 70%;
+  --theme-ring: 18 26% 52%;
+  --theme-font: "DM Sans", system-ui, sans-serif;
+  --theme-font-heading: "DM Sans", system-ui, sans-serif;
+}
+
+/* Amethyst Haze - Purple mist */
+[data-design-theme="amethyst-haze"] {
+  --theme-background: 260 23% 97%;
+  --theme-foreground: 243 14% 27%;
+  --theme-card: 0 0% 100%;
+  --theme-card-foreground: 243 14% 27%;
+  --theme-primary: 260 23% 57%;
+  --theme-primary-foreground: 260 23% 97%;
+  --theme-secondary: 260 25% 88%;
+  --theme-secondary-foreground: 243 14% 27%;
+  --theme-muted: 260 20% 86%;
+  --theme-muted-foreground: 260 25% 45%;
+  --theme-accent: 340 50% 80%;
+  --theme-accent-foreground: 20 50% 20%;
+  --theme-border: 260 20% 82%;
+  --theme-ring: 260 23% 57%;
+  --theme-font: "Geist", system-ui, sans-serif;
+  --theme-font-heading: "Geist", system-ui, sans-serif;
+}
+
+/* Doom 64 - Retro game aesthetic */
+[data-design-theme="doom-64"] {
+  --theme-background: 0 0% 80%;
+  --theme-foreground: 0 0% 12%;
+  --theme-card: 0 0% 69%;
+  --theme-card-foreground: 0 0% 12%;
+  --theme-primary: 0 73% 41%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 80 40% 35%;
+  --theme-secondary-foreground: 0 0% 100%;
+  --theme-muted: 0 0% 72%;
+  --theme-muted-foreground: 0 0% 29%;
+  --theme-accent: 210 50% 50%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 31%;
+  --theme-ring: 0 73% 41%;
+  --theme-font: "Oxanium", system-ui, sans-serif;
+  --theme-font-heading: "Oxanium", system-ui, sans-serif;
+}
+
+/* Amber Minimal - Warm amber tones */
+[data-design-theme="amber-minimal"] {
+  --theme-background: 0 0% 100%;
+  --theme-foreground: 0 0% 15%;
+  --theme-card: 0 0% 100%;
+  --theme-card-foreground: 0 0% 15%;
+  --theme-primary: 38 92% 50%;
+  --theme-primary-foreground: 0 0% 0%;
+  --theme-secondary: 220 15% 95%;
+  --theme-secondary-foreground: 0 0% 29%;
+  --theme-muted: 220 15% 98%;
+  --theme-muted-foreground: 0 0% 44%;
+  --theme-accent: 48 100% 96%;
+  --theme-accent-foreground: 38 80% 30%;
+  --theme-border: 220 13% 90%;
+  --theme-ring: 38 92% 50%;
+  --theme-font: "Inter", system-ui, sans-serif;
+  --theme-font-heading: "Inter", system-ui, sans-serif;
+}
+
+/* Solar Dusk - Warm sunset tones */
+[data-design-theme="solar-dusk"] {
+  --theme-background: 40 60% 98%;
+  --theme-foreground: 21 18% 25%;
+  --theme-card: 40 35% 97%;
+  --theme-card-foreground: 21 18% 25%;
+  --theme-primary: 26 90% 37%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 38 50% 75%;
+  --theme-secondary-foreground: 21 15% 30%;
+  --theme-muted: 40 30% 92%;
+  --theme-muted-foreground: 21 12% 45%;
+  --theme-accent: 40 50% 85%;
+  --theme-accent-foreground: 21 15% 30%;
+  --theme-border: 40 40% 82%;
+  --theme-ring: 26 90% 37%;
+  --theme-font: "Oxanium", system-ui, sans-serif;
+  --theme-font-heading: "Oxanium", system-ui, sans-serif;
+}
+
+/* Starry Night - Deep blue with stars */
+[data-design-theme="starry-night"] {
+  --theme-background: 216 33% 97%;
+  --theme-foreground: 224 37% 16%;
+  --theme-card: 216 30% 89%;
+  --theme-card-foreground: 224 37% 16%;
+  --theme-primary: 221 47% 43%;
+  --theme-primary-foreground: 48 100% 95%;
+  --theme-secondary: 48 70% 85%;
+  --theme-secondary-foreground: 224 37% 16%;
+  --theme-muted: 60 10% 88%;
+  --theme-muted-foreground: 221 47% 43%;
+  --theme-accent: 200 50% 60%;
+  --theme-accent-foreground: 48 100% 95%;
+  --theme-border: 216 25% 75%;
+  --theme-ring: 48 70% 85%;
+  --theme-font: "Libre Baskerville", Georgia, serif;
+  --theme-font-heading: "Libre Baskerville", Georgia, serif;
+}
+
+/* Soft Pop - Vibrant and playful */
+[data-design-theme="soft-pop"] {
+  --theme-background: 80 33% 96%;
+  --theme-foreground: 0 0% 0%;
+  --theme-card: 0 0% 100%;
+  --theme-card-foreground: 0 0% 0%;
+  --theme-primary: 243 75% 59%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 170 70% 50%;
+  --theme-secondary-foreground: 0 0% 100%;
+  --theme-muted: 0 0% 94%;
+  --theme-muted-foreground: 0 0% 20%;
+  --theme-accent: 38 92% 50%;
+  --theme-accent-foreground: 0 0% 0%;
+  --theme-border: 0 0% 0%;
+  --theme-ring: 250 60% 75%;
+  --theme-font: "DM Sans", system-ui, sans-serif;
+  --theme-font-heading: "DM Sans", system-ui, sans-serif;
+}
+
+/* Sage Garden - Earthy greens */
+[data-design-theme="sage-garden"] {
+  --theme-background: 45 22% 96%;
+  --theme-foreground: 225 28% 14%;
+  --theme-card: 0 0% 100%;
+  --theme-card-foreground: 225 28% 14%;
+  --theme-primary: 138 8% 53%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 80 20% 80%;
+  --theme-secondary-foreground: 225 28% 14%;
+  --theme-muted: 45 15% 91%;
+  --theme-muted-foreground: 0 0% 44%;
+  --theme-accent: 80 15% 75%;
+  --theme-accent-foreground: 225 28% 14%;
+  --theme-border: 45 15% 91%;
+  --theme-ring: 138 8% 53%;
+  --theme-font: "Antic", system-ui, sans-serif;
+  --theme-font-heading: "Antic", system-ui, sans-serif;
+}
+
+/* Research - Clean academic paper aesthetic */
+[data-design-theme="research"] {
+  --theme-background: 0 0% 100%;
+  --theme-foreground: 0 0% 8%;
+  --theme-card: 0 0% 99%;
+  --theme-card-foreground: 0 0% 8%;
+  --theme-primary: 220 60% 45%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 0 0% 97%;
+  --theme-secondary-foreground: 0 0% 15%;
+  --theme-muted: 0 0% 96%;
+  --theme-muted-foreground: 0 0% 40%;
+  --theme-accent: 220 50% 95%;
+  --theme-accent-foreground: 220 60% 35%;
+  --theme-border: 0 0% 88%;
+  --theme-ring: 220 60% 45%;
+  --theme-font: "Source Serif Pro", "Crimson Pro", Georgia, serif;
+  --theme-font-heading: "Crimson Pro", "Source Serif Pro", Georgia, serif;
+}
+
+/* Google - Material Design 3 */
+/* Research-led: Google Blue #4285F4, Google Sans/Roboto, 28dp corner radius */
+[data-design-theme="google"] {
+  --theme-background: 0 0% 100%;
+  --theme-foreground: 214 9% 15%;
+  --theme-card: 210 20% 98%;
+  --theme-card-foreground: 214 9% 15%;
+  --theme-primary: 217 90% 61%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 210 20% 95%;
+  --theme-secondary-foreground: 214 9% 20%;
+  --theme-muted: 210 16% 93%;
+  --theme-muted-foreground: 214 5% 45%;
+  --theme-accent: 142 53% 43%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 210 14% 89%;
+  --theme-ring: 217 90% 61%;
+  --theme-font: "Google Sans", "Roboto", system-ui, -apple-system, sans-serif;
+  --theme-font-heading: "Google Sans Display", "Google Sans", "Roboto", system-ui, sans-serif;
+}
+
+/* Google Dark */
+.dark [data-design-theme="google"] {
+  --theme-background: 210 6% 13%;
+  --theme-foreground: 210 17% 95%;
+  --theme-card: 210 8% 17%;
+  --theme-card-foreground: 210 17% 95%;
+  --theme-primary: 217 90% 65%;
+  --theme-primary-foreground: 210 6% 10%;
+  --theme-secondary: 210 8% 22%;
+  --theme-secondary-foreground: 210 17% 90%;
+  --theme-muted: 210 6% 20%;
+  --theme-muted-foreground: 210 10% 60%;
+  --theme-accent: 142 53% 48%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 210 6% 25%;
+  --theme-ring: 217 90% 65%;
+}
+
+/* Apple - Human Interface Guidelines */
+/* Research-led: iOS Blue #007AFF, SF Pro font, 8pt grid, vibrancy */
+[data-design-theme="apple"] {
+  --theme-background: 0 0% 100%;
+  --theme-foreground: 0 0% 0%;
+  --theme-card: 0 0% 98%;
+  --theme-card-foreground: 0 0% 0%;
+  --theme-primary: 211 100% 50%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 220 10% 94%;
+  --theme-secondary-foreground: 0 0% 20%;
+  --theme-muted: 220 8% 96%;
+  --theme-muted-foreground: 0 0% 45%;
+  --theme-accent: 211 100% 50%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 10% 88%;
+  --theme-ring: 211 100% 50%;
+  --theme-font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", system-ui, sans-serif;
+  --theme-font-heading: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", system-ui, sans-serif;
+}
+
+/* Apple Dark */
+.dark [data-design-theme="apple"] {
+  --theme-background: 0 0% 0%;
+  --theme-foreground: 0 0% 100%;
+  --theme-card: 0 0% 11%;
+  --theme-card-foreground: 0 0% 100%;
+  --theme-primary: 211 100% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 0 0% 18%;
+  --theme-secondary-foreground: 0 0% 92%;
+  --theme-muted: 0 0% 15%;
+  --theme-muted-foreground: 0 0% 55%;
+  --theme-accent: 211 100% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 22%;
+  --theme-ring: 211 100% 55%;
+}
+
+/* Microsoft - Fluent Design System */
+/* Research-led: Windows Blue #0078D4, Segoe UI, Mica material, Reveal effects */
+[data-design-theme="microsoft"] {
+  --theme-background: 0 0% 100%;
+  --theme-foreground: 0 0% 11%;
+  --theme-card: 0 0% 98%;
+  --theme-card-foreground: 0 0% 11%;
+  --theme-primary: 206 100% 42%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 210 14% 93%;
+  --theme-secondary-foreground: 0 0% 20%;
+  --theme-muted: 210 11% 96%;
+  --theme-muted-foreground: 0 0% 44%;
+  --theme-accent: 206 100% 42%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 210 14% 89%;
+  --theme-ring: 206 100% 42%;
+  --theme-font: "Segoe UI Variable", "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --theme-font-heading: "Segoe UI Variable Display", "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* Microsoft Dark */
+.dark [data-design-theme="microsoft"] {
+  --theme-background: 0 0% 11%;
+  --theme-foreground: 0 0% 100%;
+  --theme-card: 0 0% 15%;
+  --theme-card-foreground: 0 0% 100%;
+  --theme-primary: 206 100% 52%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 0 0% 20%;
+  --theme-secondary-foreground: 0 0% 95%;
+  --theme-muted: 0 0% 17%;
+  --theme-muted-foreground: 0 0% 60%;
+  --theme-accent: 206 100% 52%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 25%;
+  --theme-ring: 206 100% 52%;
+}
+
+/* Notion - Block-based workspace */
+/* Research-led: Notion grayscale, Inter font, minimal chrome, block structure */
+[data-design-theme="notion"] {
+  --theme-background: 0 0% 100%;
+  --theme-foreground: 0 0% 9%;
+  --theme-card: 0 0% 100%;
+  --theme-card-foreground: 0 0% 9%;
+  --theme-primary: 0 0% 9%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 45 33% 97%;
+  --theme-secondary-foreground: 0 0% 20%;
+  --theme-muted: 45 10% 94%;
+  --theme-muted-foreground: 0 0% 45%;
+  --theme-accent: 210 100% 65%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 90%;
+  --theme-ring: 0 0% 9%;
+  --theme-font: "Inter", ui-sans-serif, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --theme-font-heading: "Inter", ui-sans-serif, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* Notion Dark */
+.dark [data-design-theme="notion"] {
+  --theme-background: 0 0% 13%;
+  --theme-foreground: 0 0% 92%;
+  --theme-card: 0 0% 15%;
+  --theme-card-foreground: 0 0% 92%;
+  --theme-primary: 0 0% 92%;
+  --theme-primary-foreground: 0 0% 13%;
+  --theme-secondary: 0 0% 18%;
+  --theme-secondary-foreground: 0 0% 85%;
+  --theme-muted: 0 0% 20%;
+  --theme-muted-foreground: 0 0% 55%;
+  --theme-accent: 210 100% 65%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 24%;
+  --theme-ring: 0 0% 92%;
+}
+
+/* Cursor - AI-native code editor */
+/* Research-led: Teal/purple accents, JetBrains Mono */
+[data-design-theme="cursor"] {
+  --theme-background: 220 14% 96%;
+  --theme-foreground: 240 6% 10%;
+  --theme-card: 220 14% 98%;
+  --theme-card-foreground: 240 6% 10%;
+  --theme-primary: 173 80% 40%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 220 13% 91%;
+  --theme-secondary-foreground: 240 6% 15%;
+  --theme-muted: 220 10% 94%;
+  --theme-muted-foreground: 220 9% 40%;
+  --theme-accent: 262 83% 58%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 13% 86%;
+  --theme-ring: 173 80% 40%;
+  --theme-font: "JetBrains Mono", "Fira Code", "SF Mono", monospace;
+  --theme-font-heading: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* Cursor Dark */
+.dark [data-design-theme="cursor"] {
+  --theme-background: 240 6% 10%;
+  --theme-foreground: 220 13% 91%;
+  --theme-card: 240 5% 13%;
+  --theme-card-foreground: 220 13% 91%;
+  --theme-primary: 173 80% 40%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 240 5% 17%;
+  --theme-secondary-foreground: 220 13% 85%;
+  --theme-muted: 240 4% 16%;
+  --theme-muted-foreground: 220 9% 50%;
+  --theme-accent: 262 83% 58%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 240 4% 20%;
+  --theme-ring: 173 80% 40%;
+}
+
+/* Miro - Collaborative canvas */
+/* Research-led: Miro yellow #F2D600, canvas patterns, Inter font */
+[data-design-theme="miro"] {
+  --theme-background: 0 0% 98%;
+  --theme-foreground: 0 0% 12%;
+  --theme-card: 0 0% 100%;
+  --theme-card-foreground: 0 0% 12%;
+  --theme-primary: 51 100% 48%;
+  --theme-primary-foreground: 0 0% 0%;
+  --theme-secondary: 220 14% 96%;
+  --theme-secondary-foreground: 0 0% 20%;
+  --theme-muted: 220 10% 94%;
+  --theme-muted-foreground: 0 0% 45%;
+  --theme-accent: 220 90% 56%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 13% 91%;
+  --theme-ring: 51 100% 48%;
+  --theme-font: "Inter", "Work Sans", ui-sans-serif, system-ui, sans-serif;
+  --theme-font-heading: "Inter", "Work Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Miro Dark */
+.dark [data-design-theme="miro"] {
+  --theme-background: 220 13% 18%;
+  --theme-foreground: 0 0% 96%;
+  --theme-card: 220 13% 22%;
+  --theme-card-foreground: 0 0% 96%;
+  --theme-primary: 51 100% 50%;
+  --theme-primary-foreground: 0 0% 0%;
+  --theme-secondary: 220 13% 26%;
+  --theme-secondary-foreground: 0 0% 92%;
+  --theme-muted: 220 10% 24%;
+  --theme-muted-foreground: 0 0% 55%;
+  --theme-accent: 220 90% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 13% 30%;
+  --theme-ring: 51 100% 50%;
+}
+
+/* Notebook - Warm paper aesthetic with ruled lines */
+[data-design-theme="notebook"] {
+  --theme-background: 40 30% 92%;
+  --theme-foreground: 0 0% 20%;
+  --theme-card: 0 0% 100%;
+  --theme-card-foreground: 0 0% 20%;
+  --theme-primary: 38 70% 50%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 40 20% 88%;
+  --theme-secondary-foreground: 0 0% 20%;
+  --theme-muted: 40 15% 94%;
+  --theme-muted-foreground: 0 0% 40%;
+  --theme-accent: 38 50% 85%;
+  --theme-accent-foreground: 0 0% 20%;
+  --theme-border: 40 20% 80%;
+  --theme-ring: 38 70% 50%;
+  --theme-font: "Courier Prime", "Courier New", Courier, monospace;
+  --theme-font-heading: "Libre Baskerville", Georgia, serif;
+}
+
+/* ============================================
+   DARK MODE VARIANTS
+   ============================================ */
+
+/* Utilitarian Dark */
+.dark [data-design-theme="utilitarian"] {
+  --theme-background: 45 20% 12%;
+  --theme-foreground: 0 0% 95%;
+  --theme-card: 45 25% 15%;
+  --theme-card-foreground: 0 0% 95%;
+  --theme-primary: 15 85% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 45 15% 20%;
+  --theme-secondary-foreground: 0 0% 90%;
+  --theme-muted: 45 12% 18%;
+  --theme-muted-foreground: 0 0% 65%;
+  --theme-accent: 15 85% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 45 20% 25%;
+  --theme-ring: 15 85% 55%;
+}
+
+/* Base Dark */
+.dark [data-design-theme="base"] {
+  --theme-background: 222.2 47.4% 11.2%;
+  --theme-foreground: 210 40% 98%;
+  --theme-card: 222.2 47.4% 13%;
+  --theme-card-foreground: 210 40% 98%;
+  --theme-primary: 210 40% 98%;
+  --theme-primary-foreground: 222.2 47.4% 11.2%;
+  --theme-secondary: 217.2 32.6% 17.5%;
+  --theme-secondary-foreground: 210 40% 98%;
+  --theme-muted: 217.2 32.6% 17.5%;
+  --theme-muted-foreground: 215 20.2% 65.1%;
+  --theme-accent: 217.2 32.6% 17.5%;
+  --theme-accent-foreground: 210 40% 98%;
+  --theme-border: 217.2 32.6% 17.5%;
+  --theme-ring: 212.7 26.8% 83.9%;
+}
+
+/* Claude Dark */
+.dark [data-design-theme="claude"] {
+  --theme-background: 30 15% 10%;
+  --theme-foreground: 20 10% 92%;
+  --theme-card: 30 20% 12%;
+  --theme-card-foreground: 20 10% 92%;
+  --theme-primary: 24 90% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 30 15% 18%;
+  --theme-secondary-foreground: 20 10% 85%;
+  --theme-muted: 30 12% 15%;
+  --theme-muted-foreground: 20 8% 60%;
+  --theme-accent: 24 80% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 30 15% 22%;
+  --theme-ring: 24 90% 55%;
+}
+
+/* ChatGPT Dark */
+.dark [data-design-theme="chatgpt"] {
+  --theme-background: 0 0% 8%;
+  --theme-foreground: 0 0% 95%;
+  --theme-card: 0 0% 12%;
+  --theme-card-foreground: 0 0% 95%;
+  --theme-primary: 161 23% 56%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 0 0% 16%;
+  --theme-secondary-foreground: 0 0% 90%;
+  --theme-muted: 0 0% 18%;
+  --theme-muted-foreground: 0 0% 60%;
+  --theme-accent: 161 23% 56%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 20%;
+  --theme-ring: 161 23% 56%;
+}
+
+/* Vercel Dark */
+.dark [data-design-theme="vercel"] {
+  --theme-background: 0 0% 0%;
+  --theme-foreground: 0 0% 100%;
+  --theme-card: 0 0% 4%;
+  --theme-card-foreground: 0 0% 100%;
+  --theme-primary: 0 0% 100%;
+  --theme-primary-foreground: 0 0% 0%;
+  --theme-secondary: 0 0% 10%;
+  --theme-secondary-foreground: 0 0% 90%;
+  --theme-muted: 0 0% 8%;
+  --theme-muted-foreground: 0 0% 60%;
+  --theme-accent: 0 0% 100%;
+  --theme-accent-foreground: 0 0% 0%;
+  --theme-border: 0 0% 15%;
+  --theme-ring: 0 0% 100%;
+}
+
+/* Kodama Grove Dark */
+.dark [data-design-theme="kodama-grove"] {
+  --theme-background: 120 25% 8%;
+  --theme-foreground: 120 20% 92%;
+  --theme-card: 120 30% 10%;
+  --theme-card-foreground: 120 20% 92%;
+  --theme-primary: 142 70% 40%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 120 25% 15%;
+  --theme-secondary-foreground: 120 20% 85%;
+  --theme-muted: 120 20% 12%;
+  --theme-muted-foreground: 120 15% 55%;
+  --theme-accent: 142 60% 45%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 120 25% 20%;
+  --theme-ring: 142 70% 40%;
+}
+
+/* Vintage Paper Dark */
+.dark [data-design-theme="vintage-paper"] {
+  --theme-background: 40 25% 12%;
+  --theme-foreground: 30 15% 88%;
+  --theme-card: 40 30% 15%;
+  --theme-card-foreground: 30 15% 88%;
+  --theme-primary: 30 50% 45%;
+  --theme-primary-foreground: 40 25% 12%;
+  --theme-secondary: 40 20% 20%;
+  --theme-secondary-foreground: 30 15% 82%;
+  --theme-muted: 40 18% 18%;
+  --theme-muted-foreground: 30 12% 55%;
+  --theme-accent: 30 60% 55%;
+  --theme-accent-foreground: 40 25% 12%;
+  --theme-border: 40 22% 25%;
+  --theme-ring: 30 50% 45%;
+}
+
+/* Claymorphism Dark */
+.dark [data-design-theme="claymorphism"] {
+  --theme-background: 220 25% 10%;
+  --theme-foreground: 220 20% 92%;
+  --theme-card: 220 30% 12%;
+  --theme-card-foreground: 220 20% 92%;
+  --theme-primary: 220 80% 60%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 220 25% 18%;
+  --theme-secondary-foreground: 220 20% 85%;
+  --theme-muted: 220 20% 15%;
+  --theme-muted-foreground: 220 15% 55%;
+  --theme-accent: 260 70% 65%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 25% 22%;
+  --theme-ring: 220 80% 60%;
+}
+
+/* Nature Dark */
+.dark [data-design-theme="nature"] {
+  --theme-background: 45 20% 10%;
+  --theme-foreground: 30 25% 90%;
+  --theme-card: 45 25% 12%;
+  --theme-card-foreground: 30 25% 90%;
+  --theme-primary: 85 50% 45%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 45 18% 18%;
+  --theme-secondary-foreground: 30 25% 85%;
+  --theme-muted: 45 15% 15%;
+  --theme-muted-foreground: 30 20% 55%;
+  --theme-accent: 30 60% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 45 20% 22%;
+  --theme-ring: 85 50% 45%;
+}
+
+/* Neo Brutalism Dark */
+.dark [data-design-theme="neo-brutalism"] {
+  --theme-background: 0 0% 5%;
+  --theme-foreground: 60 100% 95%;
+  --theme-card: 0 0% 8%;
+  --theme-card-foreground: 60 100% 95%;
+  --theme-primary: 60 100% 95%;
+  --theme-primary-foreground: 0 0% 5%;
+  --theme-secondary: 0 0% 12%;
+  --theme-secondary-foreground: 60 100% 90%;
+  --theme-muted: 0 0% 10%;
+  --theme-muted-foreground: 60 50% 70%;
+  --theme-accent: 350 100% 65%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 15%;
+  --theme-ring: 60 100% 95%;
+}
+
+/* Elegant Luxury Dark */
+.dark [data-design-theme="elegant-luxury"] {
+  --theme-background: 30 10% 8%;
+  --theme-foreground: 40 50% 90%;
+  --theme-card: 30 10% 12%;
+  --theme-card-foreground: 40 50% 90%;
+  --theme-primary: 45 90% 55%;
+  --theme-primary-foreground: 30 10% 8%;
+  --theme-secondary: 30 10% 18%;
+  --theme-secondary-foreground: 40 40% 80%;
+  --theme-muted: 30 8% 20%;
+  --theme-muted-foreground: 40 20% 55%;
+  --theme-accent: 45 100% 60%;
+  --theme-accent-foreground: 30 10% 8%;
+  --theme-border: 30 15% 25%;
+  --theme-ring: 45 90% 55%;
+}
+
+/* Pastel Dreams Dark */
+.dark [data-design-theme="pastel-dreams"] {
+  --theme-background: 280 30% 12%;
+  --theme-foreground: 300 20% 88%;
+  --theme-card: 280 35% 15%;
+  --theme-card-foreground: 300 20% 88%;
+  --theme-primary: 280 60% 75%;
+  --theme-primary-foreground: 280 30% 12%;
+  --theme-secondary: 200 40% 20%;
+  --theme-secondary-foreground: 280 20% 82%;
+  --theme-muted: 280 25% 18%;
+  --theme-muted-foreground: 280 15% 55%;
+  --theme-accent: 340 60% 80%;
+  --theme-accent-foreground: 280 30% 12%;
+  --theme-border: 280 30% 22%;
+  --theme-ring: 280 60% 75%;
+}
+
+/* Cosmic Night Dark */
+.dark [data-design-theme="cosmic-night"] {
+  --theme-background: 260 40% 8%;
+  --theme-foreground: 260 20% 95%;
+  --theme-card: 260 35% 12%;
+  --theme-card-foreground: 260 20% 95%;
+  --theme-primary: 280 80% 65%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 260 30% 18%;
+  --theme-secondary-foreground: 260 20% 85%;
+  --theme-muted: 260 25% 15%;
+  --theme-muted-foreground: 260 15% 55%;
+  --theme-accent: 200 100% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 260 25% 25%;
+  --theme-ring: 280 80% 65%;
+}
+
+/* Clean Slate Dark */
+.dark [data-design-theme="clean-slate"] {
+  --theme-background: 210 20% 10%;
+  --theme-foreground: 210 15% 92%;
+  --theme-card: 210 18% 12%;
+  --theme-card-foreground: 210 15% 92%;
+  --theme-primary: 210 100% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 210 15% 18%;
+  --theme-secondary-foreground: 210 15% 85%;
+  --theme-muted: 210 12% 15%;
+  --theme-muted-foreground: 210 10% 55%;
+  --theme-accent: 210 90% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 210 18% 22%;
+  --theme-ring: 210 100% 55%;
+}
+
+/* Caffeine Dark */
+.dark [data-design-theme="caffeine"] {
+  --theme-background: 30 20% 8%;
+  --theme-foreground: 25 35% 90%;
+  --theme-card: 30 25% 10%;
+  --theme-card-foreground: 25 35% 90%;
+  --theme-primary: 25 70% 35%;
+  --theme-primary-foreground: 30 20% 8%;
+  --theme-secondary: 30 20% 15%;
+  --theme-secondary-foreground: 25 35% 85%;
+  --theme-muted: 30 18% 12%;
+  --theme-muted-foreground: 25 25% 50%;
+  --theme-accent: 15 80% 50%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 30 20% 20%;
+  --theme-ring: 25 70% 35%;
+}
+
+/* Ocean Breeze Dark */
+.dark [data-design-theme="ocean-breeze"] {
+  --theme-background: 200 35% 10%;
+  --theme-foreground: 200 30% 92%;
+  --theme-card: 200 40% 12%;
+  --theme-card-foreground: 200 30% 92%;
+  --theme-primary: 200 90% 50%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 200 30% 18%;
+  --theme-secondary-foreground: 200 30% 85%;
+  --theme-muted: 200 25% 15%;
+  --theme-muted-foreground: 200 20% 52%;
+  --theme-accent: 180 70% 50%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 200 30% 22%;
+  --theme-ring: 200 90% 50%;
+}
+
+/* Perpetuity Dark */
+.dark [data-design-theme="perpetuity"] {
+  --theme-background: 0 0% 8%;
+  --theme-foreground: 0 0% 92%;
+  --theme-card: 0 0% 12%;
+  --theme-card-foreground: 0 0% 92%;
+  --theme-primary: 0 0% 85%;
+  --theme-primary-foreground: 0 0% 8%;
+  --theme-secondary: 0 0% 18%;
+  --theme-secondary-foreground: 0 0% 85%;
+  --theme-muted: 0 0% 15%;
+  --theme-muted-foreground: 0 0% 55%;
+  --theme-accent: 0 0% 75%;
+  --theme-accent-foreground: 0 0% 8%;
+  --theme-border: 0 0% 22%;
+  --theme-ring: 0 0% 85%;
+}
+
+/* Midnight Bloom Dark */
+.dark [data-design-theme="midnight-bloom"] {
+  --theme-background: 270 30% 6%;
+  --theme-foreground: 270 15% 92%;
+  --theme-card: 270 25% 10%;
+  --theme-card-foreground: 270 15% 92%;
+  --theme-primary: 300 70% 60%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 270 20% 15%;
+  --theme-secondary-foreground: 270 15% 82%;
+  --theme-muted: 270 18% 12%;
+  --theme-muted-foreground: 270 12% 50%;
+  --theme-accent: 330 80% 65%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 270 20% 20%;
+  --theme-ring: 300 70% 60%;
+}
+
+/* Northern Lights Dark */
+.dark [data-design-theme="northern-lights"] {
+  --theme-background: 220 30% 8%;
+  --theme-foreground: 180 30% 92%;
+  --theme-card: 220 25% 12%;
+  --theme-card-foreground: 180 30% 92%;
+  --theme-primary: 160 80% 50%;
+  --theme-primary-foreground: 220 30% 8%;
+  --theme-secondary: 220 20% 18%;
+  --theme-secondary-foreground: 180 25% 80%;
+  --theme-muted: 220 18% 15%;
+  --theme-muted-foreground: 180 15% 50%;
+  --theme-accent: 280 70% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 20% 22%;
+  --theme-ring: 160 80% 50%;
+}
+
+/* Sunset Horizon Dark */
+.dark [data-design-theme="sunset-horizon"] {
+  --theme-background: 25 35% 10%;
+  --theme-foreground: 15 45% 90%;
+  --theme-card: 25 40% 12%;
+  --theme-card-foreground: 15 45% 90%;
+  --theme-primary: 15 90% 58%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 35 30% 18%;
+  --theme-secondary-foreground: 15 45% 85%;
+  --theme-muted: 30 25% 15%;
+  --theme-muted-foreground: 15 30% 52%;
+  --theme-accent: 340 85% 63%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 25 32% 22%;
+  --theme-ring: 15 90% 58%;
+}
+
+/* Modern Minimal Dark */
+.dark [data-design-theme="modern-minimal"] {
+  --theme-background: 0 0% 5%;
+  --theme-foreground: 0 0% 95%;
+  --theme-card: 0 0% 8%;
+  --theme-card-foreground: 0 0% 95%;
+  --theme-primary: 0 0% 95%;
+  --theme-primary-foreground: 0 0% 5%;
+  --theme-secondary: 0 0% 12%;
+  --theme-secondary-foreground: 0 0% 90%;
+  --theme-muted: 0 0% 10%;
+  --theme-muted-foreground: 0 0% 50%;
+  --theme-accent: 0 0% 85%;
+  --theme-accent-foreground: 0 0% 5%;
+  --theme-border: 0 0% 18%;
+  --theme-ring: 0 0% 95%;
+}
+
+/* Candyland Dark */
+.dark [data-design-theme="candyland"] {
+  --theme-background: 330 45% 12%;
+  --theme-foreground: 330 50% 88%;
+  --theme-card: 330 50% 15%;
+  --theme-card-foreground: 330 50% 88%;
+  --theme-primary: 330 90% 65%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 180 50% 20%;
+  --theme-secondary-foreground: 330 50% 82%;
+  --theme-muted: 330 35% 18%;
+  --theme-muted-foreground: 330 35% 52%;
+  --theme-accent: 50 100% 60%;
+  --theme-accent-foreground: 330 45% 12%;
+  --theme-border: 330 45% 25%;
+  --theme-ring: 330 90% 65%;
+}
+
+/* Cyberpunk Dark */
+.dark [data-design-theme="cyberpunk"] {
+  --theme-background: 260 50% 5%;
+  --theme-foreground: 180 100% 80%;
+  --theme-card: 260 45% 8%;
+  --theme-card-foreground: 180 100% 80%;
+  --theme-primary: 320 100% 60%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 260 40% 12%;
+  --theme-secondary-foreground: 180 80% 70%;
+  --theme-muted: 260 35% 10%;
+  --theme-muted-foreground: 180 50% 50%;
+  --theme-accent: 180 100% 50%;
+  --theme-accent-foreground: 260 50% 5%;
+  --theme-border: 260 40% 18%;
+  --theme-ring: 320 100% 60%;
+}
+
+/* Retro Arcade Dark */
+.dark [data-design-theme="retro-arcade"] {
+  --theme-background: 240 40% 8%;
+  --theme-foreground: 60 100% 70%;
+  --theme-card: 240 35% 12%;
+  --theme-card-foreground: 60 100% 70%;
+  --theme-primary: 120 100% 50%;
+  --theme-primary-foreground: 240 40% 8%;
+  --theme-secondary: 240 30% 18%;
+  --theme-secondary-foreground: 60 90% 60%;
+  --theme-muted: 240 28% 15%;
+  --theme-muted-foreground: 60 60% 45%;
+  --theme-accent: 0 100% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 240 30% 25%;
+  --theme-ring: 120 100% 50%;
+}
+
+/* Quantum Rose Dark */
+.dark [data-design-theme="quantum-rose"] {
+  --theme-background: 350 25% 12%;
+  --theme-foreground: 350 35% 90%;
+  --theme-card: 350 30% 15%;
+  --theme-card-foreground: 350 35% 90%;
+  --theme-primary: 350 80% 65%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 350 20% 20%;
+  --theme-secondary-foreground: 350 35% 85%;
+  --theme-muted: 350 18% 18%;
+  --theme-muted-foreground: 350 18% 52%;
+  --theme-accent: 320 70% 60%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 350 22% 25%;
+  --theme-ring: 350 80% 65%;
+}
+
+/* Bold Tech Dark */
+.dark [data-design-theme="bold-tech"] {
+  --theme-background: 220 25% 10%;
+  --theme-foreground: 0 0% 95%;
+  --theme-card: 220 22% 14%;
+  --theme-card-foreground: 0 0% 95%;
+  --theme-primary: 200 100% 55%;
+  --theme-primary-foreground: 220 25% 10%;
+  --theme-secondary: 220 20% 20%;
+  --theme-secondary-foreground: 0 0% 85%;
+  --theme-muted: 220 18% 17%;
+  --theme-muted-foreground: 0 0% 55%;
+  --theme-accent: 160 100% 45%;
+  --theme-accent-foreground: 220 25% 10%;
+  --theme-border: 220 20% 25%;
+  --theme-ring: 200 100% 55%;
+}
+
+/* Violet Bloom Dark */
+.dark [data-design-theme="violet-bloom"] {
+  --theme-background: 270 20% 10%;
+  --theme-foreground: 270 10% 94%;
+  --theme-card: 270 25% 13%;
+  --theme-card-foreground: 270 10% 94%;
+  --theme-primary: 265 100% 65%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 270 15% 20%;
+  --theme-secondary-foreground: 270 10% 94%;
+  --theme-muted: 270 15% 18%;
+  --theme-muted-foreground: 270 8% 63%;
+  --theme-accent: 220 50% 25%;
+  --theme-accent-foreground: 200 80% 80%;
+  --theme-border: 270 15% 25%;
+  --theme-ring: 265 100% 65%;
+}
+
+/* T3 Chat Dark */
+.dark [data-design-theme="t3-chat"] {
+  --theme-background: 270 20% 13%;
+  --theme-foreground: 270 30% 87%;
+  --theme-card: 270 25% 18%;
+  --theme-card-foreground: 270 30% 85%;
+  --theme-primary: 330 60% 40%;
+  --theme-primary-foreground: 320 30% 90%;
+  --theme-secondary: 270 20% 25%;
+  --theme-secondary-foreground: 270 30% 85%;
+  --theme-muted: 270 18% 20%;
+  --theme-muted-foreground: 270 25% 75%;
+  --theme-accent: 270 25% 30%;
+  --theme-accent-foreground: 300 20% 96%;
+  --theme-border: 270 20% 28%;
+  --theme-ring: 330 70% 50%;
+}
+
+/* Mocha Mousse Dark */
+.dark [data-design-theme="mocha-mousse"] {
+  --theme-background: 20 15% 18%;
+  --theme-foreground: 30 20% 94%;
+  --theme-card: 20 18% 24%;
+  --theme-card-foreground: 30 20% 94%;
+  --theme-primary: 20 30% 65%;
+  --theme-primary-foreground: 20 15% 18%;
+  --theme-secondary: 20 25% 35%;
+  --theme-secondary-foreground: 30 20% 94%;
+  --theme-muted: 20 20% 30%;
+  --theme-muted-foreground: 20 25% 70%;
+  --theme-accent: 30 25% 70%;
+  --theme-accent-foreground: 20 15% 18%;
+  --theme-border: 20 20% 30%;
+  --theme-ring: 20 30% 65%;
+}
+
+/* Amethyst Haze Dark */
+.dark [data-design-theme="amethyst-haze"] {
+  --theme-background: 260 25% 10%;
+  --theme-foreground: 270 20% 88%;
+  --theme-card: 260 30% 15%;
+  --theme-card-foreground: 270 20% 88%;
+  --theme-primary: 260 40% 70%;
+  --theme-primary-foreground: 260 25% 10%;
+  --theme-secondary: 260 25% 35%;
+  --theme-secondary-foreground: 270 20% 88%;
+  --theme-muted: 260 25% 18%;
+  --theme-muted-foreground: 260 20% 65%;
+  --theme-accent: 260 20% 25%;
+  --theme-accent-foreground: 340 50% 85%;
+  --theme-border: 260 25% 25%;
+  --theme-ring: 260 40% 70%;
+}
+
+/* Doom 64 Dark */
+.dark [data-design-theme="doom-64"] {
+  --theme-background: 0 0% 10%;
+  --theme-foreground: 0 0% 88%;
+  --theme-card: 0 0% 16%;
+  --theme-card-foreground: 0 0% 88%;
+  --theme-primary: 0 75% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 80 50% 30%;
+  --theme-secondary-foreground: 0 0% 0%;
+  --theme-muted: 0 0% 15%;
+  --theme-muted-foreground: 0 0% 63%;
+  --theme-accent: 210 60% 60%;
+  --theme-accent-foreground: 0 0% 0%;
+  --theme-border: 0 0% 29%;
+  --theme-ring: 0 75% 55%;
+}
+
+/* Amber Minimal Dark */
+.dark [data-design-theme="amber-minimal"] {
+  --theme-background: 0 0% 9%;
+  --theme-foreground: 0 0% 90%;
+  --theme-card: 0 0% 15%;
+  --theme-card-foreground: 0 0% 90%;
+  --theme-primary: 38 92% 50%;
+  --theme-primary-foreground: 0 0% 0%;
+  --theme-secondary: 0 0% 15%;
+  --theme-secondary-foreground: 0 0% 90%;
+  --theme-muted: 0 0% 12%;
+  --theme-muted-foreground: 0 0% 64%;
+  --theme-accent: 38 80% 30%;
+  --theme-accent-foreground: 48 90% 85%;
+  --theme-border: 0 0% 25%;
+  --theme-ring: 38 92% 50%;
+}
+
+/* Solar Dusk Dark */
+.dark [data-design-theme="solar-dusk"] {
+  --theme-background: 25 20% 11%;
+  --theme-foreground: 40 15% 96%;
+  --theme-card: 25 15% 16%;
+  --theme-card-foreground: 40 15% 96%;
+  --theme-primary: 25 100% 60%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 25 15% 35%;
+  --theme-secondary-foreground: 40 10% 90%;
+  --theme-muted: 25 15% 13%;
+  --theme-muted-foreground: 25 10% 65%;
+  --theme-accent: 200 60% 30%;
+  --theme-accent-foreground: 40 10% 90%;
+  --theme-border: 25 15% 27%;
+  --theme-ring: 25 100% 60%;
+}
+
+/* Starry Night Dark */
+.dark [data-design-theme="starry-night"] {
+  --theme-background: 220 25% 10%;
+  --theme-foreground: 220 20% 91%;
+  --theme-card: 220 30% 15%;
+  --theme-card-foreground: 220 20% 91%;
+  --theme-primary: 220 50% 40%;
+  --theme-primary-foreground: 48 100% 70%;
+  --theme-secondary: 48 100% 70%;
+  --theme-secondary-foreground: 220 30% 15%;
+  --theme-muted: 220 20% 12%;
+  --theme-muted-foreground: 220 20% 63%;
+  --theme-accent: 220 20% 75%;
+  --theme-accent-foreground: 220 25% 10%;
+  --theme-border: 220 25% 20%;
+  --theme-ring: 48 100% 70%;
+}
+
+/* Soft Pop Dark */
+.dark [data-design-theme="soft-pop"] {
+  --theme-background: 0 0% 0%;
+  --theme-foreground: 0 0% 100%;
+  --theme-card: 220 30% 11%;
+  --theme-card-foreground: 0 0% 100%;
+  --theme-primary: 250 70% 75%;
+  --theme-primary-foreground: 0 0% 0%;
+  --theme-secondary: 170 70% 50%;
+  --theme-secondary-foreground: 0 0% 0%;
+  --theme-muted: 0 0% 20%;
+  --theme-muted-foreground: 0 0% 80%;
+  --theme-accent: 48 90% 70%;
+  --theme-accent-foreground: 0 0% 0%;
+  --theme-border: 0 0% 33%;
+  --theme-ring: 250 70% 75%;
+}
+
+/* Sage Garden Dark */
+.dark [data-design-theme="sage-garden"] {
+  --theme-background: 0 0% 4%;
+  --theme-foreground: 0 0% 96%;
+  --theme-card: 0 0% 7%;
+  --theme-card-foreground: 0 0% 96%;
+  --theme-primary: 150 20% 45%;
+  --theme-primary-foreground: 0 0% 0%;
+  --theme-secondary: 0 0% 10%;
+  --theme-secondary-foreground: 0 0% 96%;
+  --theme-muted: 0 0% 10%;
+  --theme-muted-foreground: 0 0% 63%;
+  --theme-accent: 150 15% 20%;
+  --theme-accent-foreground: 0 0% 96%;
+  --theme-border: 0 0% 16%;
+  --theme-ring: 150 20% 45%;
+}
+
+/* Notebook Dark */
+.dark [data-design-theme="notebook"] {
+  --theme-background: 0 0% 8%;
+  --theme-foreground: 40 10% 90%;
+  --theme-card: 0 0% 12%;
+  --theme-card-foreground: 40 10% 90%;
+  --theme-primary: 38 70% 55%;
+  --theme-primary-foreground: 0 0% 0%;
+  --theme-secondary: 0 0% 15%;
+  --theme-secondary-foreground: 40 10% 85%;
+  --theme-muted: 0 0% 10%;
+  --theme-muted-foreground: 40 5% 60%;
+  --theme-accent: 38 30% 25%;
+  --theme-accent-foreground: 40 10% 90%;
+  --theme-border: 0 0% 20%;
+  --theme-ring: 38 70% 55%;
+}
+
+/* Tao - Contemplative water/ocean aesthetic */
+/* Deep, calm, still pond reflecting the sky */
+[data-design-theme="tao"] {
+  --theme-background: 220 15% 96%;
+  --theme-foreground: 220 25% 18%;
+  --theme-card: 220 20% 92%;
+  --theme-card-foreground: 220 25% 18%;
+  --theme-primary: 210 60% 50%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 220 12% 88%;
+  --theme-secondary-foreground: 220 25% 22%;
+  --theme-muted: 220 10% 90%;
+  --theme-muted-foreground: 220 15% 45%;
+  --theme-accent: 200 45% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 15% 82%;
+  --theme-ring: 210 60% 50%;
+  --theme-font: "Crimson Text", "EB Garamond", Georgia, serif;
+  --theme-font-heading: "Crimson Text", "EB Garamond", Georgia, serif;
+}
+
+/* Tao Dark - Deep ocean contemplation */
+.dark [data-design-theme="tao"] {
+  --theme-background: 220 30% 8%;
+  --theme-foreground: 210 20% 90%;
+  --theme-card: 220 25% 12%;
+  --theme-card-foreground: 210 20% 90%;
+  --theme-primary: 210 50% 55%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 220 25% 15%;
+  --theme-secondary-foreground: 210 20% 85%;
+  --theme-muted: 220 20% 12%;
+  --theme-muted-foreground: 210 15% 55%;
+  --theme-accent: 200 40% 50%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 220 25% 20%;
+  --theme-ring: 210 50% 55%;
+}
+
+/* Research Dark */
+.dark [data-design-theme="research"] {
+  --theme-background: 220 15% 8%;
+  --theme-foreground: 0 0% 92%;
+  --theme-card: 220 15% 11%;
+  --theme-card-foreground: 0 0% 92%;
+  --theme-primary: 220 70% 60%;
+  --theme-primary-foreground: 220 15% 8%;
+  --theme-secondary: 220 12% 15%;
+  --theme-secondary-foreground: 0 0% 88%;
+  --theme-muted: 220 10% 12%;
+  --theme-muted-foreground: 0 0% 55%;
+  --theme-accent: 220 30% 18%;
+  --theme-accent-foreground: 220 70% 75%;
+  --theme-border: 220 12% 20%;
+  --theme-ring: 220 70% 60%;
+}
+
+/* Field Guide - Editorial design journal aesthetic */
+/* Inspired by Federico Villa's AI Design Field Guide */
+[data-design-theme="field-guide"] {
+  --theme-background: 45 35% 94%;
+  --theme-foreground: 0 0% 15%;
+  --theme-card: 45 40% 96%;
+  --theme-card-foreground: 0 0% 15%;
+  --theme-primary: 355 78% 50%;
+  --theme-primary-foreground: 45 35% 96%;
+  --theme-secondary: 45 25% 88%;
+  --theme-secondary-foreground: 0 0% 20%;
+  --theme-muted: 45 20% 90%;
+  --theme-muted-foreground: 0 0% 40%;
+  --theme-accent: 355 78% 50%;
+  --theme-accent-foreground: 45 35% 96%;
+  --theme-border: 355 78% 50%;
+  --theme-ring: 355 78% 50%;
+  --theme-font: "DM Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --theme-font-heading: "Fraunces", "Playfair Display", Georgia, serif;
+}
+
+/* Field Guide Dark */
+.dark [data-design-theme="field-guide"] {
+  --theme-background: 30 15% 8%;
+  --theme-foreground: 45 30% 92%;
+  --theme-card: 30 15% 11%;
+  --theme-card-foreground: 45 30% 92%;
+  --theme-primary: 355 75% 55%;
+  --theme-primary-foreground: 30 15% 8%;
+  --theme-secondary: 30 12% 15%;
+  --theme-secondary-foreground: 45 25% 88%;
+  --theme-muted: 30 10% 14%;
+  --theme-muted-foreground: 45 15% 55%;
+  --theme-accent: 355 75% 55%;
+  --theme-accent-foreground: 30 15% 8%;
+  --theme-border: 355 75% 55%;
+  --theme-ring: 355 75% 55%;
+}
+
+/* Denim - Deep indigo blues with elegant typography */
+/* Inspired by classic brand studio matchbook aesthetics */
+[data-design-theme="denim"] {
+  --theme-background: 225 30% 97%;
+  --theme-foreground: 228 45% 18%;
+  --theme-card: 225 35% 94%;
+  --theme-card-foreground: 228 45% 18%;
+  --theme-primary: 228 65% 42%;
+  --theme-primary-foreground: 45 30% 96%;
+  --theme-secondary: 225 25% 88%;
+  --theme-secondary-foreground: 228 45% 22%;
+  --theme-muted: 225 20% 91%;
+  --theme-muted-foreground: 228 30% 45%;
+  --theme-accent: 225 55% 52%;
+  --theme-accent-foreground: 45 30% 96%;
+  --theme-border: 225 25% 82%;
+  --theme-ring: 228 65% 42%;
+  --theme-font: "DM Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --theme-font-heading: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+}
+
+/* Denim Dark - Rich indigo depths */
+.dark [data-design-theme="denim"] {
+  --theme-background: 228 55% 15%;
+  --theme-foreground: 45 25% 92%;
+  --theme-card: 228 50% 18%;
+  --theme-card-foreground: 45 25% 92%;
+  --theme-primary: 45 30% 88%;
+  --theme-primary-foreground: 228 55% 15%;
+  --theme-secondary: 228 45% 22%;
+  --theme-secondary-foreground: 45 20% 85%;
+  --theme-muted: 228 40% 20%;
+  --theme-muted-foreground: 225 20% 60%;
+  --theme-accent: 225 45% 55%;
+  --theme-accent-foreground: 45 30% 96%;
+  --theme-border: 228 40% 28%;
+  --theme-ring: 45 30% 88%;
+}
+
+/* Nike - Athletic performance meets cozy warmth */
+/* Inspired by fluffy plush aesthetics with bold swoosh energy */
+[data-design-theme="nike"] {
+  --theme-background: 40 30% 95%;
+  --theme-foreground: 0 0% 8%;
+  --theme-card: 40 35% 97%;
+  --theme-card-foreground: 0 0% 8%;
+  --theme-primary: 0 0% 8%;
+  --theme-primary-foreground: 40 30% 97%;
+  --theme-secondary: 40 20% 90%;
+  --theme-secondary-foreground: 0 0% 15%;
+  --theme-muted: 40 15% 88%;
+  --theme-muted-foreground: 0 0% 45%;
+  --theme-accent: 28 100% 55%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 40 20% 85%;
+  --theme-ring: 0 0% 8%;
+  --theme-font: "Helvetica Neue", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  --theme-font-heading: "Helvetica Neue", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+}
+
+/* Nike Dark - Bold performance black */
+.dark [data-design-theme="nike"] {
+  --theme-background: 0 0% 6%;
+  --theme-foreground: 40 25% 95%;
+  --theme-card: 0 0% 10%;
+  --theme-card-foreground: 40 25% 95%;
+  --theme-primary: 40 30% 95%;
+  --theme-primary-foreground: 0 0% 6%;
+  --theme-secondary: 0 0% 14%;
+  --theme-secondary-foreground: 40 20% 90%;
+  --theme-muted: 0 0% 12%;
+  --theme-muted-foreground: 40 10% 55%;
+  --theme-accent: 75 100% 50%;
+  --theme-accent-foreground: 0 0% 8%;
+  --theme-border: 0 0% 20%;
+  --theme-ring: 40 30% 95%;
+}
+
+/* Adidas - Three stripes performance heritage */
+/* Clean athletic aesthetic with trefoil blue accents */
+[data-design-theme="adidas"] {
+  --theme-background: 0 0% 98%;
+  --theme-foreground: 0 0% 8%;
+  --theme-card: 0 0% 100%;
+  --theme-card-foreground: 0 0% 8%;
+  --theme-primary: 210 100% 45%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 0 0% 94%;
+  --theme-secondary-foreground: 0 0% 15%;
+  --theme-muted: 0 0% 92%;
+  --theme-muted-foreground: 0 0% 50%;
+  --theme-accent: 0 0% 8%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 88%;
+  --theme-ring: 210 100% 45%;
+  --theme-font: "Helvetica Neue", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  --theme-font-heading: "Helvetica Neue", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+}
+
+/* Adidas Dark - Performance black with electric blue */
+.dark [data-design-theme="adidas"] {
+  --theme-background: 0 0% 8%;
+  --theme-foreground: 0 0% 98%;
+  --theme-card: 0 0% 12%;
+  --theme-card-foreground: 0 0% 98%;
+  --theme-primary: 210 100% 55%;
+  --theme-primary-foreground: 0 0% 8%;
+  --theme-secondary: 0 0% 16%;
+  --theme-secondary-foreground: 0 0% 92%;
+  --theme-muted: 0 0% 14%;
+  --theme-muted-foreground: 0 0% 55%;
+  --theme-accent: 38 100% 55%;
+  --theme-accent-foreground: 0 0% 8%;
+  --theme-border: 0 0% 22%;
+  --theme-ring: 210 100% 55%;
+}
+
+/* ============================================
+   KINETIC EDITORIAL THEME
+   Inspired by smooth-scroll studios like Studio Freight
+   High contrast monochrome, bold editorial typography
+   Motion-forward, magazine aesthetic
+   ============================================ */
+[data-design-theme="kinetic-editorial"] {
+  --theme-background: 0 0% 99%;
+  --theme-foreground: 0 0% 4%;
+  --theme-card: 0 0% 100%;
+  --theme-card-foreground: 0 0% 4%;
+  --theme-primary: 0 0% 4%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 0 0% 96%;
+  --theme-secondary-foreground: 0 0% 8%;
+  --theme-muted: 0 0% 94%;
+  --theme-muted-foreground: 0 0% 40%;
+  --theme-accent: 0 0% 4%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 88%;
+  --theme-ring: 0 0% 4%;
+  --theme-font: "Neue Haas Grotesk Display Pro", "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
+  --theme-font-heading: "Neue Haas Grotesk Display Pro", "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Kinetic Editorial Dark - Inverted editorial elegance */
+.dark [data-design-theme="kinetic-editorial"] {
+  --theme-background: 0 0% 4%;
+  --theme-foreground: 0 0% 96%;
+  --theme-card: 0 0% 8%;
+  --theme-card-foreground: 0 0% 96%;
+  --theme-primary: 0 0% 100%;
+  --theme-primary-foreground: 0 0% 4%;
+  --theme-secondary: 0 0% 12%;
+  --theme-secondary-foreground: 0 0% 88%;
+  --theme-muted: 0 0% 14%;
+  --theme-muted-foreground: 0 0% 55%;
+  --theme-accent: 0 0% 100%;
+  --theme-accent-foreground: 0 0% 4%;
+  --theme-border: 0 0% 18%;
+  --theme-ring: 0 0% 100%;
+}
+
+/* ============================================
+   VARIABLE MAPPING
+   Map theme variables to Tailwind CSS variables
+   This ensures all components using Tailwind classes
+   inherit the active theme's colors and fonts
+   ============================================ */
+
+[data-design-theme] {
+  /* Colors */
+  --background: var(--theme-background);
+  --foreground: var(--theme-foreground);
+  --card: var(--theme-card);
+  --card-foreground: var(--theme-card-foreground);
+  --popover: var(--theme-card);
+  --popover-foreground: var(--theme-card-foreground);
+  --primary: var(--theme-primary);
+  --primary-foreground: var(--theme-primary-foreground);
+  --secondary: var(--theme-secondary);
+  --secondary-foreground: var(--theme-secondary-foreground);
+  --muted: var(--theme-muted);
+  --muted-foreground: var(--theme-muted-foreground);
+  --accent: var(--theme-accent);
+  --accent-foreground: var(--theme-accent-foreground);
+  --border: var(--theme-border);
+  --input: var(--theme-border);
+  --ring: var(--theme-ring);
+}
+
+/* ============================================
+   CHAT-SPECIFIC THEME VARIABLES
+   Deep chat experience customization per theme
+   Makes each theme feel like the original product
+   ============================================ */
+
+/* Default Chat Variables (sensible fallbacks) */
+[data-design-theme] {
+  /* Message bubbles - complete CSS color values for direct use in JS */
+  --theme-chat-user-bg: hsl(var(--theme-primary));
+  --theme-chat-user-fg: hsl(var(--theme-primary-foreground));
+  --theme-chat-assistant-bg: hsl(var(--theme-card));
+  --theme-chat-assistant-fg: hsl(var(--theme-card-foreground));
+
+  /* Input area */
+  --theme-chat-input-bg: var(--theme-muted);
+  --theme-chat-input-fg: var(--theme-foreground);
+  --theme-chat-input-border: var(--theme-border);
+  --theme-chat-input-placeholder: var(--theme-muted-foreground);
+
+  /* Avatars */
+  --theme-chat-avatar-user: var(--theme-primary);
+  --theme-chat-avatar-assistant: var(--theme-muted);
+
+  /* Layout & styling */
+  --theme-chat-bubble-radius: 1.25rem;
+  --theme-chat-bubble-radius-tail: 0.25rem;
+  --theme-chat-message-gap: 1rem;
+  --theme-chat-max-width: 75%;
+
+  /* Sidebar */
+  --theme-chat-sidebar-bg: var(--theme-card);
+  --theme-chat-sidebar-border: var(--theme-border);
+  --theme-chat-sidebar-hover: var(--theme-muted);
+  --theme-chat-sidebar-active: var(--theme-primary);
+
+  /* Send button */
+  --theme-chat-send-bg: var(--theme-primary);
+  --theme-chat-send-fg: var(--theme-primary-foreground);
+  --theme-chat-send-disabled-bg: var(--theme-muted);
+  --theme-chat-send-disabled-fg: var(--theme-muted-foreground);
+
+  /* Typing indicator */
+  --theme-chat-typing-dot: var(--theme-muted-foreground);
+
+  /* Code blocks */
+  --theme-chat-code-bg: var(--theme-muted);
+  --theme-chat-code-border: var(--theme-border);
+}
+
+/* ============================================
+   CLAUDE THEME - Warm, approachable AI assistant
+   Terracotta/orange tones, cream backgrounds
+   ============================================ */
+[data-design-theme="claude"] {
+  /* User messages: warm terracotta gradient */
+  --theme-chat-user-bg: linear-gradient(135deg, hsl(24 90% 55%), hsl(24 80% 45%));
+  --theme-chat-user-fg: hsl(0 0% 100%);
+
+  /* Assistant messages: warm cream */
+  --theme-chat-assistant-bg: hsl(30 40% 94%);
+  --theme-chat-assistant-fg: hsl(20 14% 10%);
+
+  /* Input: subtle warm tint */
+  --theme-chat-input-bg: hsl(30 25% 95%);
+  --theme-chat-input-border: 30 20% 85%;
+
+  /* Avatar: Claude's signature orange */
+  --theme-chat-avatar-assistant: linear-gradient(135deg, hsl(24 90% 55%), hsl(20 85% 50%));
+
+  /* Bubble styling: rounded, friendly */
+  --theme-chat-bubble-radius: 1.5rem;
+  --theme-chat-bubble-radius-tail: 0.375rem;
+}
+
+.dark [data-design-theme="claude"] {
+  --theme-chat-assistant-bg: hsl(30 20% 18%);
+  --theme-chat-assistant-fg: hsl(0 0% 95%);
+  --theme-chat-input-bg: hsl(30 18% 12%);
+  --theme-chat-input-border: 30 15% 25%;
+}
+
+/* ============================================
+   CHATGPT THEME - Clean, professional, teal accent
+   OpenAI's distinctive interface style
+   ============================================ */
+[data-design-theme="chatgpt"] {
+  /* User messages: solid dark background (ChatGPT style) */
+  --theme-chat-user-bg: hsl(0 0% 15%);
+  --theme-chat-user-fg: hsl(0 0% 100%);
+
+  /* Assistant messages: clean white/light gray */
+  --theme-chat-assistant-bg: hsl(0 0% 100%);
+  --theme-chat-assistant-fg: hsl(0 0% 10%);
+
+  /* Input: white with subtle border */
+  --theme-chat-input-bg: hsl(0 0% 100%);
+  --theme-chat-input-border: 0 0% 85%;
+
+  /* Avatar: ChatGPT teal */
+  --theme-chat-avatar-assistant: 161 23% 45%;
+  --theme-chat-avatar-user: 0 0% 20%;
+
+  /* Send button: teal accent */
+  --theme-chat-send-bg: hsl(161 23% 45%);
+
+  /* Bubble styling: more squared, professional */
+  --theme-chat-bubble-radius: 0.75rem;
+  --theme-chat-bubble-radius-tail: 0.25rem;
+  --theme-chat-max-width: 100%;
+}
+
+.dark [data-design-theme="chatgpt"] {
+  /* Dark mode ChatGPT: very dark backgrounds */
+  --theme-chat-user-bg: hsl(0 0% 28%);
+  --theme-chat-user-fg: hsl(0 0% 100%);
+  --theme-chat-assistant-bg: hsl(0 0% 13%);
+  --theme-chat-assistant-fg: hsl(0 0% 95%);
+  --theme-chat-input-bg: hsl(0 0% 15%);
+  --theme-chat-input-border: 0 0% 25%;
+  --theme-chat-avatar-assistant: 161 23% 56%;
+}
+
+/* ============================================
+   VERCEL THEME - Minimal, monochrome, Geist font
+   Ultra-clean with v0/ai.vercel.dev aesthetics
+   ============================================ */
+[data-design-theme="vercel"] {
+  /* User messages: pure black */
+  --theme-chat-user-bg: hsl(0 0% 5%);
+  --theme-chat-user-fg: hsl(0 0% 100%);
+
+  /* Assistant messages: very light gray */
+  --theme-chat-assistant-bg: hsl(0 0% 97%);
+  --theme-chat-assistant-fg: hsl(0 0% 5%);
+
+  /* Input: white with subtle gray border */
+  --theme-chat-input-bg: hsl(0 0% 100%);
+  --theme-chat-input-border: 0 0% 90%;
+
+  /* Avatar: monochrome */
+  --theme-chat-avatar-assistant: 0 0% 10%;
+  --theme-chat-avatar-user: 0 0% 5%;
+
+  /* Send button: solid black */
+  --theme-chat-send-bg: hsl(0 0% 5%);
+  --theme-chat-send-fg: 0 0% 100%;
+
+  /* Bubble styling: sharp, minimal */
+  --theme-chat-bubble-radius: 0.5rem;
+  --theme-chat-bubble-radius-tail: 0.125rem;
+  --theme-chat-message-gap: 1.5rem;
+}
+
+.dark [data-design-theme="vercel"] {
+  /* Dark Vercel: pure black background, white accents */
+  --theme-chat-user-bg: hsl(0 0% 100%);
+  --theme-chat-user-fg: hsl(0 0% 0%);
+  --theme-chat-assistant-bg: hsl(0 0% 8%);
+  --theme-chat-assistant-fg: hsl(0 0% 95%);
+  --theme-chat-input-bg: hsl(0 0% 5%);
+  --theme-chat-input-border: 0 0% 20%;
+  --theme-chat-avatar-assistant: 0 0% 100%;
+  --theme-chat-send-bg: hsl(0 0% 100%);
+  --theme-chat-send-fg: 0 0% 0%;
+}
+
+/* ============================================
+   CURSOR THEME - IDE-inspired, purple accents
+   Code-focused chat aesthetic
+   ============================================ */
+[data-design-theme="cursor"] {
+  /* User messages: purple gradient */
+  --theme-chat-user-bg: linear-gradient(135deg, hsl(262 83% 58%), hsl(262 70% 48%));
+  --theme-chat-user-fg: hsl(0 0% 100%);
+
+  /* Assistant messages: dark code editor style */
+  --theme-chat-assistant-bg: hsl(220 20% 97%);
+  --theme-chat-assistant-fg: hsl(220 14% 10%);
+
+  /* Input: code editor inspired */
+  --theme-chat-input-bg: hsl(220 15% 96%);
+  --theme-chat-input-border: 220 13% 88%;
+
+  /* Avatar: Cursor purple */
+  --theme-chat-avatar-assistant: linear-gradient(135deg, hsl(262 83% 58%), hsl(262 70% 48%));
+
+  /* Bubble styling: slightly rounded, technical */
+  --theme-chat-bubble-radius: 0.625rem;
+  --theme-chat-code-bg: 220 18% 94%;
+}
+
+.dark [data-design-theme="cursor"] {
+  --theme-chat-assistant-bg: hsl(220 15% 12%);
+  --theme-chat-assistant-fg: hsl(220 10% 92%);
+  --theme-chat-input-bg: hsl(220 15% 10%);
+  --theme-chat-input-border: 220 12% 20%;
+  --theme-chat-code-bg: 220 18% 8%;
+}
+
+/* ============================================
+   NOTION THEME - Clean, wiki-style documentation
+   Readable, productivity-focused
+   ============================================ */
+[data-design-theme="notion"] {
+  /* User messages: warm gray */
+  --theme-chat-user-bg: hsl(0 0% 25%);
+  --theme-chat-user-fg: hsl(0 0% 100%);
+
+  /* Assistant messages: paper-like */
+  --theme-chat-assistant-bg: hsl(0 0% 100%);
+  --theme-chat-assistant-fg: hsl(0 0% 15%);
+
+  /* Input: clean white */
+  --theme-chat-input-bg: hsl(0 0% 100%);
+  --theme-chat-input-border: 0 0% 90%;
+
+  /* Avatar: Notion black */
+  --theme-chat-avatar-assistant: 0 0% 15%;
+
+  /* Bubble styling: clean, document-like */
+  --theme-chat-bubble-radius: 0.375rem;
+  --theme-chat-max-width: 85%;
+}
+
+.dark [data-design-theme="notion"] {
+  --theme-chat-user-bg: hsl(0 0% 85%);
+  --theme-chat-user-fg: hsl(0 0% 10%);
+  --theme-chat-assistant-bg: hsl(0 0% 15%);
+  --theme-chat-assistant-fg: hsl(0 0% 90%);
+  --theme-chat-input-bg: hsl(0 0% 12%);
+  --theme-chat-input-border: 0 0% 22%;
+}
+
+/* ============================================
+   GOOGLE THEME - Material Design colors
+   Blue accent, card-based design
+   ============================================ */
+[data-design-theme="google"] {
+  /* User messages: Google blue */
+  --theme-chat-user-bg: hsl(217 89% 45%);
+  --theme-chat-user-fg: hsl(0 0% 100%);
+
+  /* Assistant messages: light gray card */
+  --theme-chat-assistant-bg: hsl(0 0% 98%);
+  --theme-chat-assistant-fg: hsl(0 0% 13%);
+
+  /* Input: Material Design style */
+  --theme-chat-input-bg: hsl(0 0% 100%);
+  --theme-chat-input-border: 0 0% 85%;
+
+  /* Avatar: Google blue */
+  --theme-chat-avatar-assistant: 217 89% 45%;
+
+  /* Send button: Google blue */
+  --theme-chat-send-bg: hsl(217 89% 45%);
+
+  /* Bubble styling: Material rounded */
+  --theme-chat-bubble-radius: 1rem;
+}
+
+.dark [data-design-theme="google"] {
+  --theme-chat-assistant-bg: hsl(210 6% 18%);
+  --theme-chat-assistant-fg: hsl(210 17% 95%);
+  --theme-chat-input-bg: hsl(210 6% 15%);
+  --theme-chat-input-border: 210 6% 25%;
+}
+
+/* ============================================
+   APPLE THEME - SF Pro, subtle gradients
+   Clean, premium feel
+   ============================================ */
+[data-design-theme="apple"] {
+  /* User messages: iOS blue */
+  --theme-chat-user-bg: linear-gradient(135deg, hsl(210 100% 52%), hsl(210 100% 45%));
+  --theme-chat-user-fg: hsl(0 0% 100%);
+
+  /* Assistant messages: iOS light gray */
+  --theme-chat-assistant-bg: hsl(0 0% 93%);
+  --theme-chat-assistant-fg: hsl(0 0% 10%);
+
+  /* Input: iOS style */
+  --theme-chat-input-bg: hsl(0 0% 95%);
+  --theme-chat-input-border: 0 0% 88%;
+
+  /* Avatar: iOS gradient */
+  --theme-chat-avatar-assistant: linear-gradient(135deg, hsl(210 100% 52%), hsl(210 100% 45%));
+
+  /* Bubble styling: iOS Messages style */
+  --theme-chat-bubble-radius: 1.125rem;
+  --theme-chat-bubble-radius-tail: 0.25rem;
+}
+
+.dark [data-design-theme="apple"] {
+  --theme-chat-user-bg: linear-gradient(135deg, hsl(210 100% 50%), hsl(210 100% 42%));
+  --theme-chat-assistant-bg: hsl(0 0% 18%);
+  --theme-chat-assistant-fg: hsl(0 0% 95%);
+  --theme-chat-input-bg: hsl(0 0% 12%);
+  --theme-chat-input-border: 0 0% 22%;
+}
+
+/* ============================================
+   MICROSOFT THEME - Fluent Design
+   Blue accent, clean cards
+   ============================================ */
+[data-design-theme="microsoft"] {
+  /* User messages: Microsoft blue */
+  --theme-chat-user-bg: hsl(206 100% 42%);
+  --theme-chat-user-fg: hsl(0 0% 100%);
+
+  /* Assistant messages: Fluent card */
+  --theme-chat-assistant-bg: hsl(0 0% 98%);
+  --theme-chat-assistant-fg: hsl(0 0% 13%);
+
+  /* Bubble styling: Fluent rounded */
+  --theme-chat-bubble-radius: 0.5rem;
+
+  /* Avatar: Microsoft blue */
+  --theme-chat-avatar-assistant: 206 100% 42%;
+}
+
+.dark [data-design-theme="microsoft"] {
+  --theme-chat-assistant-bg: hsl(207 26% 17%);
+  --theme-chat-assistant-fg: hsl(0 0% 95%);
+  --theme-chat-input-bg: hsl(207 26% 14%);
+  --theme-chat-input-border: 207 26% 25%;
+}
+
+/* ============================================
+   T3 CHAT THEME - Community chat aesthetic
+   Purple/violet accent
+   ============================================ */
+[data-design-theme="t3-chat"] {
+  /* User messages: T3 purple */
+  --theme-chat-user-bg: linear-gradient(135deg, hsl(265 85% 50%), hsl(280 75% 45%));
+  --theme-chat-user-fg: hsl(0 0% 100%);
+
+  /* Assistant messages: dark surface */
+  --theme-chat-assistant-bg: hsl(265 20% 96%);
+  --theme-chat-assistant-fg: hsl(265 30% 10%);
+
+  /* Avatar: T3 gradient */
+  --theme-chat-avatar-assistant: linear-gradient(135deg, hsl(265 85% 50%), hsl(280 75% 45%));
+
+  /* Bubble styling: modern rounded */
+  --theme-chat-bubble-radius: 1rem;
+}
+
+.dark [data-design-theme="t3-chat"] {
+  --theme-chat-assistant-bg: hsl(265 25% 12%);
+  --theme-chat-assistant-fg: hsl(265 15% 92%);
+  --theme-chat-input-bg: hsl(265 25% 10%);
+  --theme-chat-input-border: 265 20% 20%;
+}
+
+/* ============================================
+   CYBERPUNK THEME - Neon, high contrast
+   Futuristic chat experience
+   ============================================ */
+[data-design-theme="cyberpunk"] {
+  /* User messages: neon cyan */
+  --theme-chat-user-bg: linear-gradient(135deg, hsl(180 100% 50%), hsl(190 100% 45%));
+  --theme-chat-user-fg: hsl(0 0% 0%);
+
+  /* Assistant messages: dark with glow */
+  --theme-chat-assistant-bg: hsl(230 25% 12%);
+  --theme-chat-assistant-fg: hsl(180 100% 70%);
+
+  /* Input: dark terminal style */
+  --theme-chat-input-bg: hsl(230 25% 8%);
+  --theme-chat-input-border: 180 100% 50%;
+
+  /* Avatar: neon */
+  --theme-chat-avatar-assistant: linear-gradient(135deg, hsl(180 100% 50%), hsl(300 100% 50%));
+
+  /* Bubble styling: sharp, tech */
+  --theme-chat-bubble-radius: 0.25rem;
+}
+
+/* ============================================
+   NEO BRUTALISM THEME - Bold, chunky
+   Strong shadows, sharp edges
+   ============================================ */
+[data-design-theme="neo-brutalism"] {
+  /* User messages: bright yellow */
+  --theme-chat-user-bg: hsl(50 100% 50%);
+  --theme-chat-user-fg: hsl(0 0% 0%);
+
+  /* Assistant messages: white with black border */
+  --theme-chat-assistant-bg: hsl(0 0% 100%);
+  --theme-chat-assistant-fg: hsl(0 0% 0%);
+
+  /* Bubble styling: sharp, no radius */
+  --theme-chat-bubble-radius: 0;
+  --theme-chat-bubble-radius-tail: 0;
+}
+
+/* ============================================
+   NATURE THEME - Earth tones, organic
+   Calming, natural aesthetic
+   ============================================ */
+[data-design-theme="nature"] {
+  /* User messages: forest green */
+  --theme-chat-user-bg: hsl(142 45% 38%);
+  --theme-chat-user-fg: hsl(0 0% 100%);
+
+  /* Assistant messages: paper/cream */
+  --theme-chat-assistant-bg: hsl(45 30% 96%);
+  --theme-chat-assistant-fg: hsl(142 20% 15%);
+
+  /* Input: natural */
+  --theme-chat-input-bg: hsl(45 25% 94%);
+  --theme-chat-input-border: 142 20% 75%;
+
+  /* Avatar: leaf green */
+  --theme-chat-avatar-assistant: 142 50% 42%;
+
+  /* Bubble styling: organic, soft */
+  --theme-chat-bubble-radius: 1.25rem;
+}
+
+.dark [data-design-theme="nature"] {
+  --theme-chat-assistant-bg: hsl(142 25% 12%);
+  --theme-chat-assistant-fg: hsl(142 20% 88%);
+  --theme-chat-input-bg: hsl(142 25% 10%);
+  --theme-chat-input-border: 142 20% 22%;
+}
+
+/* ============================================
+   MIRO THEME - Collaborative whiteboard
+   Yellow accent, creative vibe
+   ============================================ */
+[data-design-theme="miro"] {
+  /* User messages: Miro yellow */
+  --theme-chat-user-bg: hsl(45 100% 51%);
+  --theme-chat-user-fg: hsl(0 0% 0%);
+
+  /* Assistant messages: clean white */
+  --theme-chat-assistant-bg: hsl(0 0% 100%);
+  --theme-chat-assistant-fg: hsl(0 0% 15%);
+
+  /* Avatar: Miro yellow */
+  --theme-chat-avatar-assistant: 45 100% 51%;
+
+  /* Bubble styling: whiteboard sticky note feel */
+  --theme-chat-bubble-radius: 0.25rem;
+}
+
+.dark [data-design-theme="miro"] {
+  --theme-chat-user-bg: hsl(45 100% 55%);
+  --theme-chat-assistant-bg: hsl(230 15% 18%);
+  --theme-chat-assistant-fg: hsl(0 0% 95%);
+}
+
+/* ============================================
+   NIKE THEME - Bold, athletic
+   Strong black/white with accent
+   ============================================ */
+[data-design-theme="nike"] {
+  /* User messages: Nike orange/red */
+  --theme-chat-user-bg: linear-gradient(135deg, hsl(14 100% 52%), hsl(6 100% 48%));
+  --theme-chat-user-fg: hsl(0 0% 100%);
+
+  /* Assistant messages: pure white */
+  --theme-chat-assistant-bg: hsl(0 0% 100%);
+  --theme-chat-assistant-fg: hsl(0 0% 5%);
+
+  /* Avatar: Nike swoosh orange */
+  --theme-chat-avatar-assistant: linear-gradient(135deg, hsl(14 100% 52%), hsl(6 100% 48%));
+
+  /* Bubble styling: athletic, sharp */
+  --theme-chat-bubble-radius: 0.375rem;
+}
+
+.dark [data-design-theme="nike"] {
+  --theme-chat-assistant-bg: hsl(0 0% 10%);
+  --theme-chat-assistant-fg: hsl(0 0% 95%);
+}
+
+/* ============================================
+   ADIDAS THEME - Three stripes aesthetic
+   Clean, sporty
+   ============================================ */
+[data-design-theme="adidas"] {
+  /* User messages: Adidas black */
+  --theme-chat-user-bg: hsl(0 0% 8%);
+  --theme-chat-user-fg: hsl(0 0% 100%);
+
+  /* Assistant messages: white */
+  --theme-chat-assistant-bg: hsl(0 0% 100%);
+  --theme-chat-assistant-fg: hsl(0 0% 8%);
+
+  /* Avatar: Adidas trefoil */
+  --theme-chat-avatar-assistant: 0 0% 8%;
+
+  /* Bubble styling: clean, geometric */
+  --theme-chat-bubble-radius: 0.25rem;
+}
+
+.dark [data-design-theme="adidas"] {
+  --theme-chat-user-bg: hsl(0 0% 95%);
+  --theme-chat-user-fg: hsl(0 0% 5%);
+  --theme-chat-assistant-bg: hsl(0 0% 12%);
+  --theme-chat-assistant-fg: hsl(0 0% 95%);
+}
+
+/* ============================================
+   KINETIC EDITORIAL THEME - Chat Variables
+   Bold monochrome, editorial clarity
+   ============================================ */
+[data-design-theme="kinetic-editorial"] {
+  /* User messages: pure black */
+  --theme-chat-user-bg: hsl(0 0% 4%);
+  --theme-chat-user-fg: hsl(0 0% 100%);
+
+  /* Assistant messages: crisp white with subtle border */
+  --theme-chat-assistant-bg: hsl(0 0% 100%);
+  --theme-chat-assistant-fg: hsl(0 0% 4%);
+
+  /* Avatar: editorial black */
+  --theme-chat-avatar-assistant: 0 0% 4%;
+
+  /* Bubble styling: minimal, editorial */
+  --theme-chat-bubble-radius: 0.125rem;
+}
+
+.dark [data-design-theme="kinetic-editorial"] {
+  --theme-chat-user-bg: hsl(0 0% 100%);
+  --theme-chat-user-fg: hsl(0 0% 4%);
+  --theme-chat-assistant-bg: hsl(0 0% 8%);
+  --theme-chat-assistant-fg: hsl(0 0% 96%);
+}
+
+/* ============================================
+   TEENAGE ENGINEERING THEME
+   Minimalist precision meets playful engineering
+   Monospaced typography, tactile interfaces
+   Inspired by OP-1, OP-Z, and Pocket Operator designs
+   ============================================ */
+[data-design-theme="teenage-engineering"] {
+  --theme-background: 0 0% 90%;
+  --theme-foreground: 0 0% 17%;
+  --theme-card: 0 0% 94%;
+  --theme-card-foreground: 0 0% 17%;
+  --theme-primary: 14 100% 57%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 0 0% 78%;
+  --theme-secondary-foreground: 0 0% 17%;
+  --theme-muted: 0 0% 85%;
+  --theme-muted-foreground: 0 0% 40%;
+  --theme-accent: 14 100% 57%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 17%;
+  --theme-ring: 14 100% 57%;
+  --theme-font: "SF Mono", "Roboto Mono", "Courier New", "Courier", monospace;
+  --theme-font-heading: "SF Mono", "Roboto Mono", "Courier New", "Courier", monospace;
+}
+
+/* Teenage Engineering Dark - Inverted technical precision */
+.dark [data-design-theme="teenage-engineering"] {
+  --theme-background: 0 0% 12%;
+  --theme-foreground: 0 0% 90%;
+  --theme-card: 0 0% 17%;
+  --theme-card-foreground: 0 0% 90%;
+  --theme-primary: 14 100% 57%;
+  --theme-primary-foreground: 0 0% 100%;
+  --theme-secondary: 0 0% 25%;
+  --theme-secondary-foreground: 0 0% 85%;
+  --theme-muted: 0 0% 20%;
+  --theme-muted-foreground: 0 0% 60%;
+  --theme-accent: 14 100% 57%;
+  --theme-accent-foreground: 0 0% 100%;
+  --theme-border: 0 0% 30%;
+  --theme-ring: 14 100% 57%;
+}
+
+/* Teenage Engineering Chat Variables */
+[data-design-theme="teenage-engineering"] {
+  /* User messages: TE orange accent */
+  --theme-chat-user-bg: hsl(14 100% 57%);
+  --theme-chat-user-fg: hsl(0 0% 100%);
+
+  /* Assistant messages: technical grey card */
+  --theme-chat-assistant-bg: hsl(0 0% 94%);
+  --theme-chat-assistant-fg: hsl(0 0% 17%);
+
+  /* Input: monospace technical */
+  --theme-chat-input-bg: hsl(0 0% 78%);
+  --theme-chat-input-border: 0 0% 17%;
+
+  /* Avatar: TE orange */
+  --theme-chat-avatar-assistant: 14 100% 57%;
+
+  /* Send button: TE orange */
+  --theme-chat-send-bg: hsl(14 100% 57%);
+
+  /* Bubble styling: minimal, precise */
+  --theme-chat-bubble-radius: 0.25rem;
+  --theme-chat-bubble-radius-tail: 0.125rem;
+}
+
+.dark [data-design-theme="teenage-engineering"] {
+  --theme-chat-assistant-bg: hsl(0 0% 17%);
+  --theme-chat-assistant-fg: hsl(0 0% 90%);
+  --theme-chat-input-bg: hsl(0 0% 25%);
+  --theme-chat-input-border: 0 0% 40%;
+}

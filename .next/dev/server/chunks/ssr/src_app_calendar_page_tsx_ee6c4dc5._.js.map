@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/jamesspalding/OpenClaw-OS/src/app/calendar/page.tsx"],"sourcesContent":["'use client';\n\nimport dynamic from 'next/dynamic';\n\nconst CalendarClient = dynamic(\n  () => import('./CalendarClient').then((mod) => mod.CalendarClient),\n  { ssr: false }\n);\n\nexport default function CalendarPage() {\n  return <CalendarClient />;\n}\n"],"names":[],"mappings":";;;;;AAEA;;AAFA;;;AAIA,MAAM,iBAAiB,IAAA,mXAAO;;;;;;IAE1B,KAAK;;AAGM,SAAS;IACtB,qBAAO,ubAAC;;;;;AACV"}}]
+}

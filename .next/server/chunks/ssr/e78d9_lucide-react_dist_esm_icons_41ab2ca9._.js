@@ -1,0 +1,3 @@
+module.exports=[169114,511661,a=>{"use strict";let b=(0,a.i(627552).default)("Terminal",[["polyline",{points:"4 17 10 11 4 5",key:"akl6gq"}],["line",{x1:"12",x2:"20",y1:"19",y2:"19",key:"q2wloq"}]]);a.s(["default",()=>b],511661),a.s(["Terminal",()=>b],169114)},565450,a=>{"use strict";let b=(0,a.i(627552).default)("FolderOpen",[["path",{d:"m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2",key:"usdka0"}]]);a.s(["default",()=>b])},594978,a=>{"use strict";var b=a.i(565450);a.s(["FolderOpen",()=>b.default])}];
+
+//# sourceMappingURL=e78d9_lucide-react_dist_esm_icons_41ab2ca9._.js.map

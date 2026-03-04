@@ -1,0 +1,31 @@
+(globalThis.TURBOPACK_CHUNK_LISTS || (globalThis.TURBOPACK_CHUNK_LISTS = [])).push({
+    script: typeof document === "object" ? document.currentScript : undefined,
+    chunks: [
+  "static/chunks/node_modules__pnpm_7768a779._.js",
+  "static/chunks/src_components_ios_27b6fc77._.js",
+  "static/chunks/src_components_voice-call_1f278000._.js",
+  "static/chunks/src_components_command-palette_c2686d5a._.js",
+  "static/chunks/src_components_os_316fa576._.js",
+  "static/chunks/src_components_fd5571a4._.js",
+  "static/chunks/src_hooks_e22ed949._.js",
+  "static/chunks/src_context_4d6c6cbb._.js",
+  "static/chunks/src_68a6c050._.js",
+  "static/chunks/5d253_next_2c6fcf48._.js",
+  "static/chunks/ee59b_motion-dom_dist_es_ccd2ac01._.js",
+  "static/chunks/725b7_framer-motion_dist_es_7fc9ef71._.js",
+  "static/chunks/node_modules__pnpm_a99d64dd._.js",
+  "static/chunks/e78d9_lucide-react_dist_esm_147c0a68._.js",
+  "static/chunks/1ab8a_parse5_dist_d8a0d2fc._.js",
+  "static/chunks/b5ecd_micromark-core-commonmark_dev_lib_bc76a96f._.js",
+  "static/chunks/f545a_micromark_dev_lib_2a08bc19._.js",
+  "static/chunks/ae4b8_streamdown_dist_08c9a229._.js",
+  "static/chunks/513b0_livekit-client_dist_livekit-client_esm_mjs_b956a3c5._.js",
+  "static/chunks/44e9e_@clerk_shared_dist_runtime_f8ba22b4._.js",
+  "static/chunks/d8277_swr_dist_3458586b._.js",
+  "static/chunks/b96e3_@clerk_clerk-react_dist_b07c02b3._.js",
+  "static/chunks/9be8e_@clerk_nextjs_dist_esm_bac9b999._.js",
+  "static/chunks/node_modules__pnpm_8b396548._.js",
+  "static/chunks/src_9ff777d2._.css"
+],
+    source: "dynamic"
+});

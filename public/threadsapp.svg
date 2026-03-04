@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="threadsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="200" height="200" rx="40" fill="url(#threadsGradient)"/>
+
+  <!-- Thread lines - parallel execution visualization -->
+  <g stroke="white" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.95">
+    <!-- Left thread -->
+    <path d="M60 45 L60 80 Q60 90 70 95 L85 102"/>
+    <path d="M60 155 L60 120 Q60 110 70 105 L85 98"/>
+
+    <!-- Center thread (main) -->
+    <path d="M100 40 L100 160"/>
+
+    <!-- Right thread -->
+    <path d="M140 45 L140 80 Q140 90 130 95 L115 102"/>
+    <path d="M140 155 L140 120 Q140 110 130 105 L115 98"/>
+
+    <!-- Fusion point circle -->
+    <circle cx="100" cy="100" r="12" fill="white" stroke="none"/>
+
+    <!-- Connector nodes -->
+    <circle cx="60" cy="45" r="5" fill="white" stroke="none"/>
+    <circle cx="100" cy="40" r="5" fill="white" stroke="none"/>
+    <circle cx="140" cy="45" r="5" fill="white" stroke="none"/>
+
+    <circle cx="60" cy="155" r="5" fill="white" stroke="none"/>
+    <circle cx="100" cy="160" r="5" fill="white" stroke="none"/>
+    <circle cx="140" cy="155" r="5" fill="white" stroke="none"/>
+  </g>
+
+  <!-- CPU-like inner detail on fusion point -->
+  <g fill="url(#threadsGradient)">
+    <circle cx="100" cy="100" r="6"/>
+  </g>
+</svg>

@@ -1,0 +1,3 @@
+{
+  "/book/[username]/[eventSlug]/page": "app/book/[username]/[eventSlug]/page.js"
+}

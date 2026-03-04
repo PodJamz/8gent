@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/jamesspalding/OpenClaw-OS/src/app/canvas/page.tsx"],"sourcesContent":["'use client';\n\nimport dynamic from 'next/dynamic';\n\nconst CanvasClient = dynamic(\n  () => import('./CanvasClient').then((mod) => mod.CanvasClient),\n  { ssr: false }\n);\n\nexport default function CanvasPage() {\n  return <CanvasClient />;\n}\n"],"names":[],"mappings":";;;;;AAEA;;AAFA;;;AAIA,MAAM,eAAe,IAAA,sXAAO,EAC1B,IAAM,iIAAyB,IAAI,CAAC,CAAC,MAAQ,IAAI,YAAY;;;;;;IAC3D,KAAK;;KAFH;AAKS,SAAS;IACtB,qBAAO,sYAAC;;;;;AACV;MAFwB"}}]
+}

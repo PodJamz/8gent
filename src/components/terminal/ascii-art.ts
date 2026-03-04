@@ -1,0 +1,223 @@
+// ASCII Art collection for Terminal Easter Egg
+
+export const JAMES_LOGO = `
+     ╭──────────────────────╮
+     │    ┌─────────────┐   │
+     │    │   OPENCLAW  │   │
+     │    │     OS      │   │
+     │    └─────────────┘   │
+     ╰──────────────────────╯`;
+
+export const JAMES_LOGO_LARGE = `
+        ██████╗ ██████╗ ███████╗███╗   ██╗ ██████╗██╗      █████╗ ██╗    ██╗
+       ██╔═══██╗██╔══██╗██╔════╝████╗  ██║██╔════╝██║     ██╔══██╗██║    ██║
+       ██║   ██║██████╔╝█████╗  ██╔██╗ ██║██║     ██║     ███████║██║ █╗ ██║
+       ██║   ██║██╔═══╝ ██╔══╝  ██║╚██╗██║██║     ██║     ██╔══██║██║███╗██║
+       ╚██████╔╝██║     ███████╗██║ ╚████║╚██████╗███████╗██║  ██║╚███╔███╔╝
+        ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝ ╚═════╝╚══════╝╚═╝  ╚═╝ ╚══╝╚══╝ `;
+
+export const SKULL = `
+     ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+     ░░░░░░░░░░▄▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▄░░░░░░░░░░
+     ░░░░░░░░▄▀░░░░░░░░░░░░░░░░░░░░▀▄░░░░░░░░
+     ░░░░░░░█░░░░░░░░░░░░░░░░░░░░░░░░█░░░░░░░
+     ░░░░░░█░░░░░░░░░░░░░░░░░░░░░░░░░░█░░░░░░
+     ░░░░░█░░░░▀▀▀░░░░░░░░▀▀▀▀░░░░░░░░░█░░░░░
+     ░░░░░█░░░░░░░▄█░░░░░░░▄█░░░░░░░░░░█░░░░░
+     ░░░░░█░░░░░░░░░░░░▄▄▄░░░░░░░░░░░░░█░░░░░
+     ░░░░░░█░░░░░░░▄█▀▀▀▀▀█▄░░░░░░░░░░█░░░░░░
+     ░░░░░░░▀▄░░░░░█░░░░░░░█░░░░░░░░▄▀░░░░░░░
+     ░░░░░░░░░▀▀▀▀▀░░░░░░░░░▀▀▀▀▀▀▀░░░░░░░░░░`;
+
+export const HACKER = `
+    ⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣴⣶⣾⣿⣿⣿⣿⣷⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⣠⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣄⠀⠀⠀⠀⠀
+    ⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀
+    ⠀⠀⣴⣿⣿⣿⣿⣿⣿⡿⠛⠉⠉⠉⠉⠉⠉⠉⠛⢿⣿⣿⣿⣿⣿⣿⣿⣦⠀⠀
+    ⠀⣼⣿⣿⣿⣿⣿⣿⠏⠀██████████████████⠀⠹⣿⣿⣿⣿⣿⣿⣿⣧⠀
+    ⢰⣿⣿⣿⣿⣿⣿⡏⠀░░░░░░░░░░░░░░░░░░░░░░░░░░⠀⢹⣿⣿⣿⣿⣿⣿⣿⡆
+    ⣾⣿⣿⣿⣿⣿⣿⠀⠀ACCESS GRANTED⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣷
+    ⣿⣿⣿⣿⣿⣿⣿⠀⠀░░░░░░░░░░░░░░░░░░░░░░░░░░⠀⣿⣿⣿⣿⣿⣿⣿⣿
+    ⢿⣿⣿⣿⣿⣿⣿⡆⠀██████████████████⠀⢸⣿⣿⣿⣿⣿⣿⣿⡿
+    ⠸⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⠇
+    ⠀⠹⣿⣿⣿⣿⣿⣿⣿⣶⣤⣀⣀⣀⣀⣀⣀⣀⣀⣤⣶⣿⣿⣿⣿⣿⣿⣿⠏⠀
+    ⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀
+    ⠀⠀⠀⠀⠈⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠁⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠿⠿⠿⠛⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀`;
+
+export const WELCOME_BANNER = `
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║     ▄▄▄██▀▀▀▄▄▄       ███▄ ▄███▓▓█████   ██████  ▒█████    ██████   ║
+║       ▒██  ▒████▄    ▓██▒▀█▀ ██▒▓█   ▀ ▒██    ▒ ▒██▒  ██▒▒██    ▒   ║
+║       ░██  ▒██  ▀█▄  ▓██    ▓██░▒███   ░ ▓██▄   ▒██░  ██▒░ ▓██▄     ║
+║    ▓██▄██▓ ░██▄▄▄▄██ ▒██    ▒██ ▒▓█  ▄   ▒   ██▒▒██   ██░  ▒   ██▒  ║
+║     ▓███▒   ▓█   ▓██▒▒██▒   ░██▒░▒████▒▒██████▒▒░ ████▓▒░▒██████▒▒  ║
+║     ▒▓▒▒░   ▒▒   ▓▒█░░ ▒░   ░  ░░░ ▒░ ░▒ ▒▓▒ ▒ ░░ ▒░▒░▒░ ▒ ▒▓▒ ▒ ░  ║
+║     ▒ ░▒░    ▒   ▒▒ ░░  ░      ░ ░ ░  ░░ ░▒  ░ ░  ░ ▒ ▒░ ░ ░▒  ░ ░  ║
+║     ░ ░ ░    ░   ▒   ░      ░      ░   ░  ░  ░  ░ ░ ░ ▒  ░  ░  ░    ║
+║     ░   ░        ░  ░       ░      ░  ░      ░      ░ ░        ░    ║
+║                                                                      ║
+║                     Terminal v1.0.0 | Est. 2026                      ║
+║                  Type 'help' for available commands                  ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝`;
+
+export const cowsay = (message: string): string => {
+  const maxWidth = 40;
+  const words = message.split(' ');
+  const lines: string[] = [];
+  let currentLine = '';
+
+  for (const word of words) {
+    if ((currentLine + ' ' + word).trim().length <= maxWidth) {
+      currentLine = (currentLine + ' ' + word).trim();
+    } else {
+      if (currentLine) lines.push(currentLine);
+      currentLine = word;
+    }
+  }
+  if (currentLine) lines.push(currentLine);
+
+  const maxLen = Math.max(...lines.map(l => l.length));
+  const border = '-'.repeat(maxLen + 2);
+
+  const paddedLines = lines.map(line => {
+    const padding = ' '.repeat(maxLen - line.length);
+    return `| ${line}${padding} |`;
+  });
+
+  return `
+ ${border}
+${paddedLines.join('\n')}
+ ${border}
+        \\   ^__^
+         \\  (oo)\\_______
+            (__)\\       )\\/\\
+                ||----w |
+                ||     ||`;
+};
+
+export const NEOFETCH_TEMPLATE = (info: {
+  os: string;
+  host: string;
+  kernel: string;
+  uptime: string;
+  shell: string;
+  theme: string;
+  terminal: string;
+  cpu: string;
+  memory: string;
+}) => `
+${JAMES_LOGO}
+                        ${info.os}
+                        ─────────────────
+                        Host: ${info.host}
+                        Kernel: ${info.kernel}
+                        Uptime: ${info.uptime}
+                        Shell: ${info.shell}
+                        Theme: ${info.theme}
+                        Terminal: ${info.terminal}
+                        CPU: ${info.cpu}
+                        Memory: ${info.memory}`;
+
+export const SKILL_BAR = (skill: string, level: number, maxWidth = 20): string => {
+  const filled = Math.round((level / 100) * maxWidth);
+  const empty = maxWidth - filled;
+  const bar = '█'.repeat(filled) + '░'.repeat(empty);
+  const percentage = `${level}%`.padStart(4);
+  return `${skill.padEnd(16)} [${bar}] ${percentage}`;
+};
+
+export const RESUME_ASCII = `
+╔══════════════════════════════════════════════════════════════╗
+║                        OPENCLAW-OS                         ║
+║              AI-Native Workspace & Platform                ║
+╠══════════════════════════════════════════════════════════════╣
+║                                                              ║
+║  EXPERIENCE                                                  ║
+║  ──────────                                                  ║
+║  → Senior Full-Stack Engineer                                ║
+║    Building AI-powered experiences                           ║
+║    React, TypeScript, Node.js, Python                        ║
+║                                                              ║
+║  SKILLS                                                      ║
+║  ──────                                                      ║
+║  Frontend    [████████████████████] 100%                     ║
+║  Backend     [██████████████████░░]  90%                     ║
+║  AI/ML       [████████████████░░░░]  80%                     ║
+║  DevOps      [██████████████░░░░░░]  70%                     ║
+║  Design      [████████████████░░░░]  80%                     ║
+║                                                              ║
+║  EDUCATION                                                   ║
+║  ─────────                                                   ║
+║  → Computer Science & Systems                                ║
+║    Architected with precision                                 ║
+║                                                              ║
+║  CONTACT                                                     ║
+║  ───────                                                     ║
+║  → github.com/openclaw                                       ║
+║  → linkedin.com/company/openclaw                             ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝`;
+
+export const GLITCH_FRAMES = [
+  `
+  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+  ▓  SYSTEM COMPROMISED  ▓  ACCESSING MAINFRAME  ▓
+  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+  ░  [████████████████████] 100% COMPLETE       ░
+  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░`,
+  `
+  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+  ▒  █▀▀▀▀█ █▀▀▀▀█ █▀▀▀▀█ █▀▀▀▀█ █▀▀▀▀█ █▀▀▀▀█  ▒
+  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+  ▓  ACCESS GRANTED - WELCOME BACK, HACKER      ▓
+  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓`,
+];
+
+export const SUDO_RESPONSE = `
+ ┌────────────────────────────────────────────────┐
+ │  ⚠️  PERMISSION DENIED                         │
+ │                                                │
+ │  Nice try! But you don't have root access      │
+ │  to this system.                               │
+ │                                                │
+ │  Perhaps try asking nicely? 😏                 │
+ │                                                │
+ │  Hint: Type 'help' for available commands      │
+ └────────────────────────────────────────────────┘`;
+
+export const RM_RF_RESPONSE = `
+ ⚠️  CRITICAL SYSTEM WARNING ⚠️
+
+ Deleting all files...
+
+  /home/openclaw/systems     [DELETED]
+ /home/openclaw/projects    [DELETED]
+ /home/openclaw/evolution.txt [DELETED]
+ /usr/bin                  [DELETED]
+ /etc/passwd               [DEL̸̡̛͍̫E̵̢̞̲T̷̨̧̺E̶̡̛̝D̵̨̧͎]
+ ▓▒░ S̷̡̧Y̶̢̛S̵̡̛T̷̢̧E̶̡̛M̷̢̧ ̶F̵̡̛A̶̢̧I̷̡̛L̶̢̧Ư̷̡R̶̢̧E̷̡̛ ░▒▓
+
+ ...
+
+ Just kidding! 😄 Your files are safe.
+ This is a simulated terminal after all.`;
+
+export const FORTUNES = [
+  "The best code is no code at all.",
+  "There are only two hard things in CS: cache invalidation and naming things.",
+  "It works on my machine!",
+  "// TODO: fix this later (written 3 years ago)",
+  "A bug is never just a mistake. It represents a missed test.",
+  "First, solve the problem. Then, write the code.",
+  "Talk is cheap. Show me the code. - Linus Torvalds",
+  "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+  "The only way to go fast is to go well.",
+  "Simplicity is prerequisite for reliability.",
+  "Make it work, make it right, make it fast.",
+  "Code is like humor. When you have to explain it, it's bad.",
+];

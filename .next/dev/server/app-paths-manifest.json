@@ -1,0 +1,17 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/agent/page": "app/agent/page.js",
+  "/api/auth/admin/route": "app/api/auth/admin/route.js",
+  "/api/health/providers/route": "app/api/health/providers/route.js",
+  "/browser/page": "app/browser/page.js",
+  "/chat/page": "app/chat/page.js",
+  "/design/page": "app/design/page.js",
+  "/design/tao/page": "app/design/tao/page.js",
+  "/music/page": "app/music/page.js",
+  "/onboarding/page": "app/onboarding/page.js",
+  "/page": "app/page.js",
+  "/security/page": "app/security/page.js",
+  "/settings/page": "app/settings/page.js",
+  "/skills/page": "app/skills/page.js",
+  "/story/page": "app/story/page.js"
+}

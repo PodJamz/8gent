@@ -1,0 +1,3 @@
+{
+  "/api/cron/hourly-summary/route": "app/api/cron/hourly-summary/route.js"
+}

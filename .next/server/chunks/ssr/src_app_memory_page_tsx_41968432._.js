@@ -1,0 +1,3 @@
+module.exports=[561831,a=>{"use strict";var b=a.i(499969),c=a.i(155399),d=a.i(662482);let e=(0,c.default)(async()=>{},{loadableGenerated:{modules:[98242]},ssr:!1,loading:()=>(0,b.jsx)("div",{className:"min-h-screen flex items-center justify-center bg-background",children:(0,b.jsx)(d.Loader2,{className:"w-8 h-8 animate-spin text-primary"})})});function f(){return(0,b.jsx)(e,{})}a.s(["default",()=>f])}];
+
+//# sourceMappingURL=src_app_memory_page_tsx_41968432._.js.map

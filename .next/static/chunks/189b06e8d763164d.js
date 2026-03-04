@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,468040,a=>{"use strict";var e=a.i(779602),t=a.i(429575);a.s(["SandboxManager",()=>e.SandboxManager,"createInitialSandboxState",()=>e.createInitialSandboxState,"createSandboxTools",()=>t.createSandboxTools,"getSandboxManager",()=>e.getSandboxManager])}]);

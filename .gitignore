@@ -1,19 +1,28 @@
 # Dependencies
-node_modules
+node_modules/
+**/node_modules/
 .pnpm-store
+/.pnp
+.pnp.js
 
 # Next.js
-.next
-out
-.vercel
+.next/
+/.next/
+out/
+/out/
 
 # Build outputs
 dist
 build
+/build
+
+# Vercel
+.vercel
 
 # Environment
 .env
 .env.local
+.env*.local
 .env.*.local
 
 # IDE
@@ -38,6 +47,10 @@ next-env.d.ts
 
 # Testing
 coverage
+/coverage
 
 # Misc
 *.pem
+
+# Clerk
+/.clerk/

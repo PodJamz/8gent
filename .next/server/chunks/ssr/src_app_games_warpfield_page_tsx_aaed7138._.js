@@ -1,0 +1,3 @@
+module.exports=[592123,a=>{"use strict";var b=a.i(499969);let c=(0,a.i(155399).default)(async()=>{},{loadableGenerated:{modules:[145710]},ssr:!1,loading:()=>(0,b.jsx)("div",{className:"w-full h-screen bg-black flex items-center justify-center",children:(0,b.jsxs)("div",{className:"text-center",children:[(0,b.jsx)("div",{className:"w-16 h-16 border-4 border-orange-500/20 border-t-orange-500 rounded-full animate-spin mx-auto mb-4"}),(0,b.jsx)("p",{className:"text-white/50 text-sm",children:"Loading Warpfield..."})]})})});function d(){return(0,b.jsx)(c,{})}a.s(["default",()=>d])}];
+
+//# sourceMappingURL=src_app_games_warpfield_page_tsx_aaed7138._.js.map

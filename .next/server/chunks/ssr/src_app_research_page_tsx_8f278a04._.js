@@ -1,0 +1,3 @@
+module.exports=[134627,a=>{"use strict";var b=a.i(499969),c=a.i(155399),d=a.i(662482);let e=(0,c.default)(async()=>{},{loadableGenerated:{modules:[346314]},ssr:!1,loading:()=>(0,b.jsx)("div",{className:"min-h-screen bg-black flex items-center justify-center",children:(0,b.jsx)(d.Loader2,{className:"w-8 h-8 text-white/40 animate-spin"})})});function f(){return(0,b.jsx)(e,{})}a.s(["default",()=>f])}];
+
+//# sourceMappingURL=src_app_research_page_tsx_8f278a04._.js.map
