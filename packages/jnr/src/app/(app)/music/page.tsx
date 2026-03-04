@@ -36,7 +36,7 @@ export default function MusicPage() {
   const current = DEMO_TRACKS.find((t) => t.id === currentTrack);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f2f2f7]">
+    <div className="h-screen flex flex-col bg-[#f2f2f7] overflow-hidden">
       {/* Header */}
       <header
         className="sticky top-0 z-40 backdrop-blur-xl safe-top"

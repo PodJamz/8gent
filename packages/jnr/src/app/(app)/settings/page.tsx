@@ -29,7 +29,7 @@ export default function SettingsPage() {
   const selectedVoice = ELEVENLABS_VOICES.find((v) => v.id === settings.selectedVoiceId);
 
   return (
-    <div className="min-h-screen bg-[#f2f2f7] flex flex-col">
+    <div className="h-screen bg-[#f2f2f7] flex flex-col overflow-hidden">
       {/* Header */}
       <header
         className="sticky top-0 z-40 backdrop-blur-xl safe-top"

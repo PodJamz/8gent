@@ -132,7 +132,7 @@ export default function AACAppPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f2f2f7]">
+    <div className="h-screen flex flex-col bg-[#f2f2f7] overflow-hidden">
       {/* Header - Sticky with blur */}
       <header
         className="sticky top-0 z-40 backdrop-blur-xl safe-top"

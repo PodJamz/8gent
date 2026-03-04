@@ -114,7 +114,7 @@ export default function IntuitionPage() {
   }, [gameState, round, initRound]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900">
+    <div className="h-screen flex flex-col bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 overflow-hidden">
       {/* Header */}
       <header
         className="sticky top-0 z-40 backdrop-blur-xl safe-top"

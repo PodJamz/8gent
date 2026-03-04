@@ -3,145 +3,34 @@
 import { useState } from 'react';
 import { useApp } from '@/context/AppContext';
 import { Dock } from '@/components/dock/Dock';
+import { REELS_DATA, CATEGORIES, getReelsByCategory, type Reel } from '@/lib/schooltube/data';
+import { GamePlayer } from '@/components/schooltube/GamePlayer';
 
 /**
- * SchoolTube - Safe, curated educational videos for kids
+ * SchoolTube - Safe, curated educational videos AND games for kids
  *
- * A kid-safe YouTube alternative with curated educational content.
+ * Features both playable educational games and video content.
  */
-
-interface Video {
-  id: string;
-  title: string;
-  thumbnail: string;
-  emoji: string;
-  category: string;
-  duration: string;
-}
-
-const CATEGORIES = [
-  { id: 'all', label: 'All', emoji: '📺' },
-  { id: 'learning', label: 'Learning', emoji: '📚' },
-  { id: 'science', label: 'Science', emoji: '🔬' },
-  { id: 'music', label: 'Music', emoji: '🎵' },
-  { id: 'stories', label: 'Stories', emoji: '📖' },
-  { id: 'art', label: 'Art', emoji: '🎨' },
-];
-
-// Demo curated videos - safe, educational content
-const DEMO_VIDEOS: Video[] = [
-  {
-    id: '1',
-    title: 'Learn Your Colors',
-    thumbnail: '🌈',
-    emoji: '🌈',
-    category: 'learning',
-    duration: '3:20',
-  },
-  {
-    id: '2',
-    title: 'Counting to 20',
-    thumbnail: '🔢',
-    emoji: '🔢',
-    category: 'learning',
-    duration: '4:15',
-  },
-  {
-    id: '3',
-    title: 'Animal Sounds',
-    thumbnail: '🐮',
-    emoji: '🐮',
-    category: 'learning',
-    duration: '2:45',
-  },
-  {
-    id: '4',
-    title: 'How Plants Grow',
-    thumbnail: '🌱',
-    emoji: '🌱',
-    category: 'science',
-    duration: '5:30',
-  },
-  {
-    id: '5',
-    title: 'The Water Cycle',
-    thumbnail: '💧',
-    emoji: '💧',
-    category: 'science',
-    duration: '4:00',
-  },
-  {
-    id: '6',
-    title: 'Solar System Song',
-    thumbnail: '🪐',
-    emoji: '🪐',
-    category: 'science',
-    duration: '3:45',
-  },
-  {
-    id: '7',
-    title: 'ABC Alphabet Song',
-    thumbnail: '🎶',
-    emoji: '🎶',
-    category: 'music',
-    duration: '2:30',
-  },
-  {
-    id: '8',
-    title: 'Baby Shark Dance',
-    thumbnail: '🦈',
-    emoji: '🦈',
-    category: 'music',
-    duration: '2:15',
-  },
-  {
-    id: '9',
-    title: 'The Three Little Pigs',
-    thumbnail: '🐷',
-    emoji: '🐷',
-    category: 'stories',
-    duration: '8:00',
-  },
-  {
-    id: '10',
-    title: 'Goldilocks',
-    thumbnail: '🐻',
-    emoji: '🐻',
-    category: 'stories',
-    duration: '6:30',
-  },
-  {
-    id: '11',
-    title: 'How to Draw a Cat',
-    thumbnail: '🐱',
-    emoji: '🐱',
-    category: 'art',
-    duration: '5:00',
-  },
-  {
-    id: '12',
-    title: 'Rainbow Painting',
-    thumbnail: '🎨',
-    emoji: '🎨',
-    category: 'art',
-    duration: '4:30',
-  },
-];
 
 export default function SchoolTubePage() {
   const { settings } = useApp();
   const [activeCategory, setActiveCategory] = useState('all');
-  const [playingVideo, setPlayingVideo] = useState<Video | null>(null);
+  const [playingReel, setPlayingReel] = useState<Reel | null>(null);
 
   const primaryColor = settings.primaryColor || '#4CAF50';
 
-  const filteredVideos =
-    activeCategory === 'all'
-      ? DEMO_VIDEOS
-      : DEMO_VIDEOS.filter((v) => v.category === activeCategory);
+  const filteredReels = getReelsByCategory(activeCategory);
+
+  const handleReelTap = (reel: Reel) => {
+    // Haptic feedback
+    if (typeof navigator !== 'undefined' && navigator.vibrate) {
+      navigator.vibrate(30);
+    }
+    setPlayingReel(reel);
+  };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f2f2f7]">
+    <div className="h-screen flex flex-col bg-[#f2f2f7] overflow-hidden">
       {/* Header */}
       <header
         className="sticky top-0 z-40 backdrop-blur-xl safe-top"
@@ -153,23 +42,6 @@ export default function SchoolTubePage() {
           </span>
         </div>
       </header>
-
-      {/* Video Player (when playing) */}
-      {playingVideo && (
-        <div className="bg-black aspect-video flex items-center justify-center relative">
-          <div className="text-center">
-            <span className="text-8xl mb-4 block">{playingVideo.emoji}</span>
-            <p className="text-white text-xl">{playingVideo.title}</p>
-            <p className="text-gray-400 mt-2">Video playing...</p>
-          </div>
-          <button
-            onClick={() => setPlayingVideo(null)}
-            className="absolute top-4 right-4 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-white text-xl"
-          >
-            ✕
-          </button>
-        </div>
-      )}
 
       {/* Categories */}
       <div className="px-4 py-3 bg-white border-b border-gray-200">
@@ -192,38 +64,81 @@ export default function SchoolTubePage() {
         </div>
       </div>
 
-      {/* Video Grid */}
+      {/* Content Grid */}
       <div className="flex-1 overflow-y-auto pb-24 px-4 py-4">
         <div className="grid grid-cols-2 gap-3">
-          {filteredVideos.map((video) => (
+          {filteredReels.map((reel) => (
             <button
-              key={video.id}
-              onClick={() => setPlayingVideo(video)}
+              key={reel.id}
+              onClick={() => handleReelTap(reel)}
               className="bg-white rounded-2xl overflow-hidden shadow-sm active:scale-95 transition-transform text-left"
             >
               {/* Thumbnail */}
               <div
-                className="aspect-video flex items-center justify-center text-5xl"
+                className="aspect-video flex items-center justify-center text-5xl relative"
                 style={{ backgroundColor: `${primaryColor}20` }}
               >
-                {video.emoji}
+                {reel.emoji}
+                {/* Game badge */}
+                {reel.type === 'game' && (
+                  <div className="absolute top-2 right-2 bg-pink-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                    GAME
+                  </div>
+                )}
+                {/* Video badge */}
+                {reel.type === 'video' && (
+                  <div className="absolute top-2 right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                    VIDEO
+                  </div>
+                )}
               </div>
               {/* Info */}
               <div className="p-3">
-                <p className="text-[15px] font-medium text-black line-clamp-2">{video.title}</p>
-                <p className="text-[13px] text-gray-500 mt-1">{video.duration}</p>
+                <p className="text-[15px] font-medium text-black line-clamp-2">{reel.title}</p>
+                {reel.duration && (
+                  <p className="text-[13px] text-gray-500 mt-1">{reel.duration}</p>
+                )}
+                {reel.type === 'game' && (
+                  <p className="text-[13px] text-pink-500 mt-1 font-medium">Tap to play!</p>
+                )}
               </div>
             </button>
           ))}
         </div>
 
-        {filteredVideos.length === 0 && (
+        {filteredReels.length === 0 && (
           <div className="text-center py-12">
             <span className="text-5xl mb-4 block">📭</span>
-            <p className="text-gray-500">No videos in this category yet</p>
+            <p className="text-gray-500">No content in this category yet</p>
           </div>
         )}
       </div>
+
+      {/* Game/Video Player */}
+      {playingReel && playingReel.type === 'game' && (
+        <GamePlayer
+          reel={playingReel}
+          primaryColor={primaryColor}
+          onClose={() => setPlayingReel(null)}
+        />
+      )}
+
+      {/* Video Player (placeholder for now) */}
+      {playingReel && playingReel.type === 'video' && (
+        <div className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center">
+          <div className="text-center p-8">
+            <span className="text-8xl mb-4 block">{playingReel.emoji}</span>
+            <p className="text-white text-xl font-bold mb-2">{playingReel.title}</p>
+            <p className="text-gray-400 mb-6">Video coming soon!</p>
+            <button
+              onClick={() => setPlayingReel(null)}
+              className="px-8 py-3 bg-white text-black rounded-2xl font-semibold active:scale-95 transition-transform"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Dock */}
       <Dock primaryColor={primaryColor} />
