@@ -225,10 +225,6 @@ export class AgeGraduationService {
         userId,
         tenantId: tenant?.id || '',
         eligibleAt,
-        seniorSubdomain: config?.seniorSubdomain,
-        migratedData: config?.migratedData,
-        initiatedAt: config?.initiatedAt,
-        completedAt: config?.completedAt,
       });
     }
 

@@ -26,7 +26,7 @@ export interface GeneratedVoice {
   createdAt: Date;
 }
 
-export interface VoiceDesignerConfig {
+export interface VoiceDesignerAPIConfig {
   apiKey: string;
   baseUrl?: string;
   modelId?: string;

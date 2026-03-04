@@ -270,6 +270,7 @@ export class TenantResolver {
       parentUserId,
       displayName,
       dateOfBirth,
+      mode: 'kid',
       productTier: 'junior',
       status: 'reserved',
       createdAt: new Date(),

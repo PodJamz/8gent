@@ -19,7 +19,7 @@
  */
 
 import React, { useState } from 'react';
-import type { CardGenerationRequest, AACCategory, AACCard } from '@/types/aac';
+import type { CardGenerationRequest, AACCategory, AACCard, AACCategoryId } from '@/types/aac';
 
 /**
  * Props for the CardGenerator component
@@ -64,7 +64,7 @@ export function CardGenerator({
   const [prompt, setPrompt] = useState('');
   const [label, setLabel] = useState('');
   const [speechText, setSpeechText] = useState('');
-  const [categoryId, setCategoryId] = useState(categories[0]?.id || '');
+  const [categoryId, setCategoryId] = useState<AACCategoryId>(categories[0]?.id || 'custom');
   const [style, setStyle] = useState<GenerationStyle>('arasaac');
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -171,7 +171,7 @@ export function CardGenerator({
           <select
             id="category"
             value={categoryId}
-            onChange={(e) => setCategoryId(e.target.value)}
+            onChange={(e) => setCategoryId(e.target.value as AACCategoryId)}
           >
             {categories.map((cat) => (
               <option key={cat.id} value={cat.id}>
