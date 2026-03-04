@@ -45,6 +45,11 @@ const nextConfig: NextConfig = {
         hostname: 'api.arasaac.org',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'static.arasaac.org',
+        pathname: '/**',
+      },
     ],
   },
 
