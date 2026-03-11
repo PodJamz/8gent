@@ -54,7 +54,7 @@ export const AAC_CATEGORIES: AACCategory[] = [
   { id: 'general', name: 'General', color: FITZGERALD_COLORS.misc, imageUrl: ARASAAC(6964) },
   { id: 'feelings', name: 'Feelings', color: FITZGERALD_COLORS.feelings, imageUrl: ARASAAC(37190) },
   { id: 'actions', name: 'Actions', color: FITZGERALD_COLORS.verbs, imageUrl: ARASAAC(6503) },
-  { id: 'questions', name: 'Questions', color: FITZGERALD_COLORS.questions, imageUrl: ARASAAC(7217) },
+  { id: 'questions', name: 'Questions', color: FITZGERALD_COLORS.questions, imageUrl: ARASAAC(22620) },
 
   // Daily Life
   { id: 'food', name: 'Food', color: FITZGERALD_COLORS.nouns, imageUrl: ARASAAC(4610) },
