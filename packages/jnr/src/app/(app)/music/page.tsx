@@ -75,6 +75,12 @@ const DRUM_PADS = [
   { id: 'tom1', label: 'Bop', emoji: '🔵', freq: 120, color: '#A8E6CF' },
   { id: 'tom2', label: 'Tap', emoji: '🟣', freq: 160, color: '#DDA0DD' },
   { id: 'crash', label: 'Crash', emoji: '💫', freq: 600, color: '#FFB347' },
+  { id: 'cowbell', label: 'Ding', emoji: '🔔', freq: 540, color: '#F0E68C' },
+  { id: 'shaker', label: 'Shh', emoji: '🌀', freq: 1200, color: '#87CEEB' },
+  { id: 'clap', label: 'Clap', emoji: '🙌', freq: 300, color: '#FF85A2' },
+  { id: 'bass', label: 'Wub', emoji: '🫀', freq: 50, color: '#7B68EE' },
+  { id: 'rim', label: 'Tick', emoji: '🪵', freq: 400, color: '#D2B48C' },
+  { id: 'splash', label: 'Psh', emoji: '💦', freq: 900, color: '#00CED1' },
 ];
 
 const XYLOPHONE_KEYS = [
@@ -473,12 +479,16 @@ export default function MusicPage() {
             </div>
 
             {/* Prompt to create */}
-            <div className="px-4 py-6 text-center">
+            <div className="px-4 py-6">
               <button
                 onClick={() => setActiveTab('create')}
-                className="text-gray-400 text-sm hover:text-gray-600 transition-colors"
+                className="w-full py-5 rounded-3xl text-white text-xl font-bold shadow-lg active:scale-95 transition-transform"
+                style={{
+                  background: `linear-gradient(135deg, ${primaryColor}, #9333EA)`,
+                  minHeight: 64,
+                }}
               >
-                Want to make a new song? Go to ✨ Create!
+                ✨ Make a New Song! ✨
               </button>
             </div>
           </div>
@@ -488,20 +498,20 @@ export default function MusicPage() {
         {/* DRUMS TAB */}
         {/* ============================================================= */}
         {activeTab === 'drums' && (
-          <div className="h-full flex flex-col items-center justify-center px-4 pb-24">
-            <p className="text-[15px] font-semibold text-gray-700 mb-6">
+          <div className="h-full flex flex-col items-center px-4 pb-24 pt-4 overflow-y-auto">
+            <p className="text-[17px] font-bold text-gray-700 mb-4">
               Tap to play!
             </p>
-            <div className="grid grid-cols-3 gap-4 w-full max-w-[340px]">
+            <div className="grid grid-cols-3 gap-3 w-full max-w-[360px]">
               {DRUM_PADS.map((pad) => (
                 <button
                   key={pad.id}
                   onPointerDown={() => playDrum(pad.freq)}
                   className="aspect-square rounded-3xl flex flex-col items-center justify-center text-white font-bold shadow-lg active:scale-90 transition-transform select-none"
-                  style={{ backgroundColor: pad.color, minHeight: 90 }}
+                  style={{ backgroundColor: pad.color, minHeight: 80 }}
                 >
                   <span className="text-3xl mb-1">{pad.emoji}</span>
-                  <span className="text-[13px]">{pad.label}</span>
+                  <span className="text-[14px]">{pad.label}</span>
                 </button>
               ))}
             </div>
